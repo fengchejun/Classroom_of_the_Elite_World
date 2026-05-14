@@ -1,0 +1,107 @@
+{
+  "bus_seat_decision": {
+    "name": "公交车让座风波",
+    "type": "ai_guided_choice",
+    "trigger_conditions": {
+      "required_date": "2024-04-01",
+      "required_location": "school_bus",
+      "required_time_slot": "morning"
+    },
+    "ai_setup_prompt": "【前情提要】你正乘坐公交车前往学校。车上座位已满，一位看起来不太好惹的高年级学生上了车，目光在车厢内扫视，最终落在一个女生身上。女生看起来有些困扰。\n【强制演出】描写车厢内的紧张气氛，让高年级学生开口要求女生让座，画面悬停在冲突即将爆发的一刻。严禁替玩家做决定！",
+    "options": [
+      {
+        "id": "1",
+        "text": "静观其变，不介入麻烦。",
+        "target_event": "bus_incident_bystander",
+        "stat_changes": {}
+      },
+      {
+        "id": "2",
+        "text": "站起身来，把自己的座位让给他。",
+        "target_event": "bus_incident_give_seat",
+        "stat_changes": {}
+      },
+      {
+        "id": "3",
+        "text": "出声制止，指出他的行为不妥。",
+        "target_event": "bus_incident_confront",
+        "stat_changes": {}
+      }
+    ]
+  },
+
+  "first_day_classroom": {
+    "name": "D班初印象",
+    "type": "fixed_story",
+    "trigger_conditions": {
+      "required_date": "2024-04-01",
+      "required_location": "classroom_d",
+      "required_time_slot": "noon"
+    },
+    "active_prompt": "【环境氛围】这是高度育成高中一年D班的教室。学生们刚结束开学典礼，陆续回到教室。教室里的氛围慵懒而散漫——有人趴在桌上睡觉，有人旁若无人地聊天，还有人用手机外放音乐。黑板上写着今天的安排，但似乎没人在意。作为这所学校的新生，你能感受到这个班级与其他班级微妙的差距。空气中弥漫着一种'我们是吊车尾'的颓废气息。\n【要求】用一两句话自然地点缀这个环境氛围，不要大段堆砌描写。",
+    "active_start_date": "2024-04-01",
+    "active_end_date": "2024-04-30"
+  },
+
+  "ryuen_consolidates_c": {
+    "name": "龙园暗中统治C班",
+    "type": "silent_fixed",
+    "trigger_conditions": {
+      "required_date": "2024-04-15"
+    },
+    "silent_effects": {
+      "status_tag_changes": {},
+      "relation_changes": [
+        {
+          "from": "ishizaki",
+          "to": "ryuen",
+          "type": "subservient",
+          "reason": "龙园以暴力手段确立了在C班的绝对统治地位"
+        },
+        {
+          "from": "ibuki",
+          "to": "ryuen",
+          "type": "subservient",
+          "reason": "虽然心中不服，但表面上服从龙园的统治"
+        }
+      ]
+    }
+  },
+
+  "midterm_exam_foreshadow": {
+    "name": "期中考试预警",
+    "type": "fixed_story",
+    "trigger_conditions": {
+      "required_date": "2024-05-01"
+    },
+    "foreshadow_start_date": "2024-05-01",
+    "foreshadow_probability": 0.3,
+    "foreshadow_prompt": "【流言蜚语】走廊里偶尔能听到关于期中考试的只言片语。据说这次考试如果不及格就会被退学。用一两句话点缀这个传闻，不要展开。",
+    "transition_date": "2024-05-07",
+    "ai_setup_prompt": "【转场】班主任茶柱老师走进教室，手里拿着一叠文件。她面无表情地宣布期中考试的具体安排——不及格者将被立即退学。描写教室里的气氛骤变。",
+    "active_start_date": "2024-05-08",
+    "active_end_date": "2024-05-15",
+    "active_prompt": "【期中考试周】整个校园笼罩在紧张的氛围中。D班的学生们前所未有地认真，连须藤都在拼命复习。图书馆里座无虚席，到处是临时抱佛脚的身影。",
+    "rules_appendix": "midterm_exam"
+  },
+
+  "uninhabited_island_exam": {
+    "name": "无人岛特别考试",
+    "type": "ai_guided_choice",
+    "trigger_conditions": {
+      "required_date": "2024-08-01",
+      "required_location": "school_gymnasium",
+      "required_time_slot": "morning"
+    },
+    "foreshadow_start_date": "2024-07-25",
+    "foreshadow_probability": 0.3,
+    "foreshadow_prompt": "【流言】校园里流传着关于暑假期间会有一场「特别考试」的传闻。据说去年是在无人岛上进行的。用一两句话点缀这个传闻。",
+    "transition_date": "2024-08-01",
+    "ai_setup_prompt": "【强制演出】全校学生被召集到体育馆。校长宣布今年的特别考试将在无人岛上进行，为期两周的野外生存挑战。描写现场的轰动和各班学生的反应。",
+    "active_start_date": "2024-08-01",
+    "active_end_date": "2024-08-14",
+    "active_prompt": "【无人岛特别考试中】你们身处无人岛上。周围是茂密的丛林和一望无际的海洋。每个班级都有自己的营地。生存资源有限，你需要做出各种抉择。",
+    "rules_appendix": "uninhabited_island",
+    "options": []
+  }
+}

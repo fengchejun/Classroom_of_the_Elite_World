@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实教AI模拟器</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+    /* Side Panel */
+    #app-wrapper { display: none; }
+    #app-wrapper.active { display: flex; }
+    #side-panel {
+        width: 300px;
+        min-width: 300px;
+        height: 100vh;
+        overflow-y: auto;
+        background: #111827;
+        border-left: 1px solid #2a2a4a;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .side-panel-title {
+        font-size: 0.75em;
+        color: #6070a0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+        border-bottom: 1px solid #1e2a3a;
+        padding-bottom: 4px;
+    }
+    #event-panel-section:empty { display: none; }
+    #event-panel-content { font-size: 0.8em; color: #da8; line-height: 1.5; }
+    #event-panel-content:empty { display: none; }
+    #event-panel-content:empty + .side-panel-title { display: none; }
+    #debug-panel-section { display: none; flex-direction: column; gap: 4px; }
+    .debug-block {
+        margin: 0;
+        font-size: 0.7em;
+        color: #a0a0c0;
+        border: 1px solid #3a3a5a;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .debug-toggle {
+        background: #1a1a35;
+        color: #8090b0;
+        border: none;
+        padding: 4px 10px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        font-size: inherit;
+    }
+    .debug-toggle:hover { color: #e0d8c8; }
+    .debug-content {
+        display: none;
+        background: #0d0d1a;
+        padding: 6px 10px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        max-height: 250px;
+        overflow-y: auto;
+        font-family: Consolas, monospace;
+        color: #a0a0c0;
+    }
+    .debug-content.open { display: block; }
+    .debug-label {
+        font-size: 0.75em;
+        color: #6070a0;
+        border-top: 1px solid #1e2a3a;
+        padding-top: 4px;
+        margin-top: 4px;
+    }
+    /* Perspective area */
+    #perspective-area {
+        padding: 12px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        border-top: 1px solid #3a2a4a;
+    }
+    #perspective-area .perspective-hint {
+        font-size: 0.8em;
+        color: #9070b0;
+    }
+    #perspective-npc-select {
+        background: #1a1a35;
+        border: 1px solid #533483;
+        color: #e0d8c8;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 0.9em;
+        font-family: inherit;
+        outline: none;
+    }
+    #perspective-npc-select:focus { border-color: #9070b0; }
+    .perspective-btn-row {
+        display: flex;
+        gap: 8px;
+    }
+    .perspective-btn {
+        background: #0f3460;
+        color: #e0d8c8;
+        border: 1px solid #533483;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.85em;
+        transition: all 0.15s;
+    }
+    .perspective-btn:hover { background: #533483; }
+    .perspective-btn.skip { background: transparent; border-color: #3a3a5a; color: #6070a0; }
+    .perspective-btn.skip:hover { border-color: #555; color: #8090b0; }
+
+    /* Perspective result */
+    #perspective-result {
+        padding: 0 20px 12px;
+    }
+    .perspective-narrative {
+        background: rgba(83, 52, 131, 0.15);
+        border-left: 3px solid #9070b0;
+        padding: 12px 16px;
+        border-radius: 0 6px 6px 0;
+        font-style: italic;
+        line-height: 1.8;
+        color: #c0b0d0;
+        white-space: pre-wrap;
+        margin-bottom: 10px;
+    }
+    .perspective-npc-label {
+        font-size: 0.75em;
+        color: #9070b0;
+        margin-bottom: 6px;
+    }
+    .perspective-npc-label span { color: #c0b0d0; font-weight: bold; }
+
+    @media (max-width: 900px) {
+        #side-panel { display: none; }
+    }
+
+    /* Start menu */
+    #start-menu, #character-setup {
+        width: 100%;
+        max-width: 800px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #16213e;
+        border-left: 1px solid #2a2a4a;
+        border-right: 1px solid #2a2a4a;
+        padding: 40px 20px;
+    }
+    #character-setup { justify-content: flex-start; padding-top: 60px; }
+    .menu-title {
+        font-size: 2em;
+        color: #e94560;
+        margin-bottom: 8px;
+    }
+    .menu-subtitle {
+        font-size: 0.9em;
+        color: #8090b0;
+        margin-bottom: 48px;
+    }
+    .menu-btn {
+        width: 280px;
+        padding: 16px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1em;
+        font-weight: bold;
+        border: none;
+        transition: all 0.2s;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    .menu-btn.primary {
+        background: #e94560;
+        color: #fff;
+    }
+    .menu-btn.primary:hover { background: #c73652; }
+    .menu-btn.secondary {
+        background: #0f3460;
+        color: #e0d8c8;
+        border: 1px solid #533483;
+    }
+    .menu-btn.secondary:hover { background: #533483; }
+    .menu-btn:disabled {
+        background: #2a2a3a;
+        color: #555;
+        border-color: #333;
+        cursor: not-allowed;
+    }
+
+    /* Character setup */
+    .setup-step {
+        width: 100%;
+        max-width: 520px;
+        display: none;
+    }
+    .setup-step.active { display: block; }
+    .setup-step h2 {
+        color: #e0d8c8;
+        margin-bottom: 20px;
+        font-size: 1.3em;
+        border-bottom: 1px solid #333;
+        padding-bottom: 10px;
+    }
+    .setup-input {
+        width: 100%;
+        background: #1a1a35;
+        border: 1px solid #3a3a5a;
+        color: #e0d8c8;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 0.95em;
+        font-family: inherit;
+        margin-bottom: 16px;
+        outline: none;
+    }
+    .setup-input:focus { border-color: #533483; }
+    .setup-label {
+        color: #8090b0;
+        font-size: 0.85em;
+        margin-bottom: 6px;
+        display: block;
+    }
+    .setup-select {
+        width: 100%;
+        background: #1a1a35;
+        border: 1px solid #3a3a5a;
+        color: #e0d8c8;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 0.95em;
+        font-family: inherit;
+        margin-bottom: 16px;
+        outline: none;
+    }
+    .char-card {
+        background: #1a1a35;
+        border: 1px solid #533483;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px 0;
+    }
+    .char-card h3 { color: #e94560; margin-bottom: 8px; }
+    .char-card .info-item { margin: 4px 0; font-size: 0.9em; }
+    .char-card .info-label { color: #8090b0; }
+    .tag-list { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+    .tag {
+        background: #0f3460;
+        color: #a0b0d0;
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-size: 0.8em;
+    }
+    .setup-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    .btn-sm {
+        padding: 8px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9em;
+        border: none;
+        font-family: inherit;
+    }
+    .btn-sm.primary { background: #e94560; color: #fff; }
+    .btn-sm.primary:hover { background: #c73652; }
+    .btn-sm.secondary { background: #2a2a4a; color: #a0a0c0; border: 1px solid #3a3a5a; }
+    .btn-sm.secondary:hover { background: #3a3a5a; }
+    .setup-msg {
+        color: #8090b0;
+        font-size: 0.85em;
+        margin: 8px 0;
+        padding: 8px;
+        border-radius: 4px;
+    }
+    .setup-msg.error { color: #e94560; background: rgba(233,69,96,0.1); }
+    .setup-msg.success { color: #4a4; background: rgba(68,170,68,0.1); }
+
+    /* File upload */
+    .file-upload-area {
+        border: 2px dashed #3a3a5a;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        margin: 12px 0;
+        cursor: pointer;
+        transition: border-color 0.2s;
+    }
+    .file-upload-area:hover { border-color: #533483; }
+    .file-upload-area input { display: none; }
+
+    /* Story blocks (for history display) */
+    .narrative-block.user {
+        color: #a0b0d0;
+        font-size: 0.9em;
+        padding: 4px 0;
+        border-bottom: 1px dashed #2a2a3a;
+    }
+
+    /* Format panel */
+    #import-format-panel {
+        background: #12122a;
+        border: 1px solid #2a2a4a;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 16px 0;
+        max-height: 520px;
+        overflow-y: auto;
+    }
+    .format-section {
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #1a1a3a;
+    }
+    .format-section:last-child { border-bottom: none; margin-bottom: 0; }
+    .format-section h4 {
+        color: #c0c0e0;
+        margin-bottom: 4px;
+    }
+    .format-desc {
+        color: #6070a0;
+        font-size: 0.78em;
+        margin-bottom: 8px;
+    }
+    .format-section pre {
+        background: #0a0a1a;
+        border: 1px solid #1a1a3a;
+        border-radius: 4px;
+        padding: 10px 14px;
+        overflow-x: auto;
+        margin: 8px 0;
+    }
+    .format-section code {
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.75em;
+        color: #a0c0a0;
+        white-space: pre;
+    }
+    .format-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.78em;
+        margin-top: 8px;
+    }
+    .format-table td {
+        padding: 3px 8px;
+        border: 1px solid #1a1a3a;
+        color: #8090b0;
+    }
+    .format-table td:first-child {
+        color: #c0a0a0;
+        white-space: nowrap;
+        width: 1%;
+    }
+</style>
+</head>
+<body>
+<!-- ===== START MENU ===== -->
+<div id="start-menu">
+    <h1 class="menu-title">实教AI模拟器</h1>
+    <p class="menu-subtitle">高度育成高中 —— 实力至上主义的教室</p>
+    <button class="menu-btn primary" onclick="startNewGame()">开始新游戏</button>
+    <button class="menu-btn secondary" id="btn-continue" onclick="continueGame()" disabled>继续游戏</button>
+    <p id="save-status" style="color:#555;font-size:0.8em;margin-top:8px;">检查存档中...</p>
+</div>
+
+<!-- ===== CHARACTER SETUP ===== -->
+<div id="character-setup" style="display:none;">
+    <!-- Step 1: Name input -->
+    <div class="setup-step active" id="step-1">
+        <h2>第一步：你扮演的角色是谁？</h2>
+        <label class="setup-label">请输入角色名字</label>
+        <input type="text" class="setup-input" id="char-name" placeholder="例如：绫小路清隆、堀北铃音...">
+        <div id="match-result"></div>
+        <div class="setup-actions">
+            <button class="btn-sm primary" onclick="matchCharacter()">查询角色</button>
+            <button class="btn-sm secondary" onclick="skipToCustom()">创建新角色</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Create custom character -->
+    <div class="setup-step" id="step-2">
+        <h2>第二步：创建你的角色</h2>
+        <label class="setup-label">全名</label>
+        <input type="text" class="setup-input" id="new-char-name" placeholder="角色名">
+        <label class="setup-label">班级</label>
+        <select class="setup-select" id="new-char-class">
+            <option value="D">D班</option>
+            <option value="A">A班</option>
+            <option value="B">B班</option>
+            <option value="C">C班</option>
+        </select>
+        <label class="setup-label">性格特征（逗号分隔）</label>
+        <input type="text" class="setup-input" id="new-char-traits" placeholder="冷静, 聪明, 寡言...">
+        <label class="setup-label">初始私人点数</label>
+        <input type="number" class="setup-input" id="new-char-points" value="100000">
+        <div class="setup-actions">
+            <button class="btn-sm primary" onclick="createCustomCharacter()">确认创建</button>
+            <button class="btn-sm secondary" onclick="backToStep1()">返回上一步</button>
+        </div>
+    </div>
+
+    <!-- Step 3: Import world settings + Confirm -->
+    <div class="setup-step" id="step-3">
+        <h2>第三步：导入世界设定（可选）</h2>
+        <p style="color:#8090b0;font-size:0.85em;margin-bottom:12px;">你可以上传JSON文件来扩展角色库、地点和事件。也可以跳过，使用默认的《实教》设定。</p>
+
+        <div class="setup-actions">
+            <button class="btn-sm secondary" onclick="triggerFileImport()">导入 JSON 文件</button>
+            <button class="btn-sm secondary" onclick="toggleFormatPanel()">查看 JSON 格式说明</button>
+        </div>
+        <input type="file" id="file-import" accept=".json" multiple onchange="handleFileImport(event)" style="position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;">
+        <div id="import-status"></div>
+
+        <div id="import-format-panel" style="display:none;">
+            <h3 style="color:#e94560;margin-bottom:12px;">JSON 格式说明</h3>
+            <p style="color:#8090b0;font-size:0.8em;margin-bottom:16px;">请按以下格式准备JSON文件，每种类型为一个数组。文件名可任意。</p>
+
+            <div class="format-section">
+                <h4>角色 (characters)</h4>
+                <p class="format-desc">扩展角色库。如果角色名与已有角色重复，将被跳过。</p>
+<pre><code>[
+  {
+    "name": "角色全名",
+    "role_id": "unique_id",
+    "class_name": "D",
+    "traits": ["冷静", "寡言", "隐藏实力"],
+    "public_info": [
+      {"label": "外貌", "content": "普通高中生外表"},
+      {"label": "身份", "content": "一年D班学生"},
+      {"label": "性格", "content": "不引人注目"}
+    ],
+    "secrets": [
+      {
+        "info_id": "hidden_power",
+        "content": "该角色在入学考试中刻意隐藏了真实实力",
+        "known_by": []
+      },
+      {
+        "info_id": "dark_past",
+        "content": "该角色初中时期曾导致班级崩溃",
+        "known_by": ["堀北铃音"]
+      }
+    ]
+  }
+]</code></pre>
+                <table class="format-table">
+                    <tr><td>name</td><td>必填 · 角色全名，用于匹配</td></tr>
+                    <tr><td>role_id</td><td>必填 · 唯一标识，英文+下划线</td></tr>
+                    <tr><td>class_name</td><td>必填 · A/B/C/D 之一</td></tr>
+                    <tr><td>traits</td><td>必填 · 性格特征数组</td></tr>
+                    <tr><td>public_info</td><td>可选 · [{label, content}] 格式的公开信息</td></tr>
+                    <tr><td>secrets</td><td>可选 · 隐藏信息数组 [{info_id, content, known_by}]</td></tr>
+                    <tr><td>secrets[].info_id</td><td>秘密唯一标识，英文+下划线</td></tr>
+                    <tr><td>secrets[].content</td><td>秘密的具体内容文本</td></tr>
+                    <tr><td>secrets[].known_by</td><td>开局已知该秘密的角色名数组，可选</td></tr>
+                </table>
+            </div>
+
+            <div class="format-section">
+                <h4>地点 (locations)</h4>
+                <p class="format-desc">添加可探索的新地点。location_id不可与已有地点重复。</p>
+<pre><code>[
+  {
+    "location_id": "rooftop_east",
+    "name": "东天台",
+    "description": "教学楼东侧的天台，视野开阔，能眺望整个运动场。",
+    "tags": ["outdoor", "secluded", "high"],
+    "connected_to": ["hallway_5f", "rooftop"],
+    "zone_id": "teaching_building"
+  }
+]</code></pre>
+                <table class="format-table">
+                    <tr><td>location_id</td><td>必填 · 唯一英文ID</td></tr>
+                    <tr><td>name</td><td>必填 · 中文地点名</td></tr>
+                    <tr><td>description</td><td>必填 · 环境描述文本</td></tr>
+                    <tr><td>tags</td><td>必填 · 标签数组，如 ["indoor","quiet"]</td></tr>
+                    <tr><td>connected_to</td><td>必填 · 相邻地点ID数组</td></tr>
+                    <tr><td>zone_id</td><td>必填 · 所属区域ID</td></tr>
+                </table>
+            </div>
+
+            <div class="format-section">
+                <h4>事件 (events)</h4>
+                <p class="format-desc">预设游戏事件。暂存于内存，后续版本将完整支持。</p>
+<pre><code>[
+  {
+    "event_type": "fixed_story",
+    "name": "特别考试预告",
+    "template_id": "special_exam_01",
+    "required_date": "2024-04-15",
+    "required_location": "classroom_d",
+    "active_prompt": "一场重要的特别考试即将开始..."
+  }
+]</code></pre>
+                <table class="format-table">
+                    <tr><td>event_type</td><td>必填 · fixed_story | ai_guided_choice | silent_fixed</td></tr>
+                    <tr><td>name</td><td>必填 · 事件名称</td></tr>
+                    <tr><td>template_id</td><td>必填 · 唯一模板ID</td></tr>
+                    <tr><td>required_date</td><td>可选 · 触发日期 YYYY-MM-DD</td></tr>
+                    <tr><td>required_location</td><td>可选 · 触发地点ID</td></tr>
+                </table>
+            </div>
+
+            <div class="format-section">
+                <h4>世界观 (worldview)</h4>
+                <p class="format-desc">自由格式的JSON对象，用于记录世界观设定。暂存于内存。</p>
+<pre><code>{
+  "world_name": "高度育成高中",
+  "era": "近未来",
+  "rules": [
+    "学生每月获得定额私人点数",
+    "班级点数决定一切待遇",
+    "允许以个人点数进行交易"
+  ],
+  "special_exams": ["无人岛生存", "纸牌对决", "投票淘汰"],
+  "factions": ["A班·坂柳派", "C班·龙园组", "学生会"]
+}</code></pre>
+                <table class="format-table">
+                    <tr><td>任意</td><td>自由格式，记录世界观相关内容</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="char-confirm" style="margin-top:16px;"></div>
+
+        <div class="setup-actions">
+            <button class="btn-sm primary" onclick="confirmStart()">确认开始游戏</button>
+            <button class="btn-sm secondary" onclick="skipImport()">跳过导入，直接开始</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MAIN GAME ===== -->
+<div id="app-wrapper">
+<div id="app" style="display:none;">
+    <div id="header">
+        <h1>实教AI模拟器</h1>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <button id="llm-toggle" onclick="toggleLLM()" style="background:#2a4a2a;color:#8f8;border:1px solid #4a4;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:0.8em;">AI: OFF</button>
+            <div style="display:flex;align-items:center;gap:4px;">
+                <label for="max-tokens-slider" style="font-size:0.7em;color:#888;">Tokens:</label>
+                <input type="range" id="max-tokens-slider" min="256" max="8192" step="256" value="1024" style="width:70px;accent-color:#4a4;">
+                <span id="max-tokens-value" style="font-size:0.7em;color:#aaa;min-width:32px;">1024</span>
+            </div>
+            <label style="font-size:0.7em;color:#888;display:flex;align-items:center;gap:3px;cursor:pointer;">
+                <input type="checkbox" id="test-mode" onchange="testMode = this.checked; updateDebugPanelVisibility()"> 测试
+            </label>
+            <label style="font-size:0.7em;color:#888;display:flex;align-items:center;gap:3px;cursor:pointer;">
+                <input type="checkbox" id="perspective-mode" onchange="perspectiveEnabled = this.checked; saveSettings()"> 心理视角
+            </label>
+            <div>
+                <div id="time-display">2024-04-01 上午</div>
+                <div id="location-display">D班教室</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="status-bar">
+        <div class="status-item">班级点数: <span id="class-pts">0</span></div>
+        <div class="status-item">私人点数: <span id="private-pts">100,000</span></div>
+        <div class="status-item">在场: <span id="npcs-present">-</span></div>
+    </div>
+
+    <div id="connected-area"></div>
+
+    <div id="narrative-area"></div>
+
+    <div id="choices-area"></div>
+    <div id="perspective-area" style="display:none;"></div>
+    <div id="perspective-result" style="display:none;"></div>
+    <div id="loading">AI 正在生成剧情...</div>
+
+    <div id="input-area">
+        <input type="text" id="user-input" placeholder="输入你的行动..." autofocus
+               onkeydown="if(event.key==='Enter')sendInput()">
+        <button id="send-btn" onclick="sendInput()">行动</button>
+    </div>
+</div><!-- /#app -->
+
+<div id="side-panel">
+    <div id="event-panel-section">
+        <div class="side-panel-title">◆ 事件</div>
+        <div id="event-panel-content"></div>
+    </div>
+    <div id="debug-panel-section">
+        <div class="side-panel-title">◆ 调试</div>
+        <div id="debug-panel-content"></div>
+    </div>
+</div><!-- /#side-panel -->
+
+</div><!-- /#app-wrapper -->
+
+<script>
+// ---- State ----
+let currentChoices = [];
+let isLoading = false;
+let useLLM = false;
+let testMode = false;
+let dialogueRoundCounter = 0;
+let maxTokens = 1024;
+let matchedCharacter = null;
+let importedFiles = [];
+let lastPlayerInput = '';
+let perspectiveMode = false;
+let lastNarrative = '';
+let lastStateData = null;
+let perspectiveEnabled = true;
+
+// ---- Persistence ----
+function loadSettings() {
+    const saved = localStorage.getItem('maxTokens');
+    if (saved) maxTokens = parseInt(saved);
+    useLLM = localStorage.getItem('useLLM') === 'true';
+    testMode = localStorage.getItem('testMode') === 'true';
+    perspectiveEnabled = localStorage.getItem('perspectiveEnabled') !== 'false';
+}
+
+function saveSettings() {
+    localStorage.setItem('maxTokens', maxTokens);
+    localStorage.setItem('useLLM', useLLM);
+    localStorage.setItem('testMode', testMode);
+    localStorage.setItem('perspectiveEnabled', perspectiveEnabled);
+}
+
+function saveChatHistory(history) {
+    try {
+        localStorage.setItem('chatHistory', JSON.stringify(history.slice(-20)));
+    } catch(e) {}
+}
+
+function loadChatHistory() {
+    try {
+        const raw = localStorage.getItem('chatHistory');
+        return raw ? JSON.parse(raw) : [];
+    } catch(e) { return []; }
+}
+
+function applySettings() {
+    document.getElementById('max-tokens-slider').value = maxTokens;
+    document.getElementById('max-tokens-value').textContent = maxTokens;
+    document.getElementById('test-mode').checked = testMode;
+    document.getElementById('perspective-mode').checked = perspectiveEnabled;
+    updateLLMButton();
+    updateDebugPanelVisibility();
+}
+
+function updateDebugPanelVisibility() {
+    const section = document.getElementById('debug-panel-section');
+    if (testMode) {
+        section.style.display = 'flex';
+    } else {
+        section.style.display = 'none';
+    }
+}
+
+function updateLLMButton() {
+    const btn = document.getElementById('llm-toggle');
+    if (useLLM) {
+        btn.textContent = 'AI: ON';
+        btn.style.background = '#4a2a2a';
+        btn.style.color = '#f88';
+        btn.style.borderColor = '#a44';
+    } else {
+        btn.textContent = 'AI: OFF';
+        btn.style.background = '#2a4a2a';
+        btn.style.color = '#8f8';
+        btn.style.borderColor = '#4a4';
+    }
+}
+
+function toggleLLM() {
+    useLLM = !useLLM;
+    updateLLMButton();
+    saveSettings();
+}
+
+// ---- Initialize ----
+loadSettings();
+applySettings();
+
+document.getElementById('max-tokens-slider').addEventListener('input', (e) => {
+    maxTokens = parseInt(e.target.value);
+    document.getElementById('max-tokens-value').textContent = maxTokens;
+    saveSettings();
+});
+
+// Check for existing save on load
+(async function checkSave() {
+    try {
+        const resp = await fetch('/api/game/load').then(r => r.json());
+        const btn = document.getElementById('btn-continue');
+        const status = document.getElementById('save-status');
+        if (resp.has_save) {
+            btn.disabled = false;
+            status.textContent = '检测到存档 — 可以继续游戏';
+            status.style.color = '#4a4';
+        } else {
+            btn.disabled = true;
+            status.textContent = '没有存档，请开始新游戏';
+            status.style.color = '#555';
+        }
+    } catch(e) {
+        document.getElementById('save-status').textContent = '服务器未连接';
+        document.getElementById('save-status').style.color = '#e94560';
+    }
+})();
+
+// ---- Start Menu ----
+function startNewGame() {
+    matchedCharacter = null;
+    importedFiles = [];
+    document.getElementById('start-menu').style.display = 'none';
+    document.getElementById('character-setup').style.display = 'flex';
+    showSetupStep('step-1');
+    document.getElementById('char-name').value = '';
+    document.getElementById('match-result').innerHTML = '';
+}
+
+async function continueGame() {
+    try {
+        const resp = await fetch('/api/game/load').then(r => r.json());
+        if (!resp.has_save) {
+            alert('没有找到存档。');
+            return;
+        }
+
+        document.getElementById('start-menu').style.display = 'none';
+        document.getElementById('character-setup').style.display = 'none';
+        document.getElementById('app-wrapper').classList.add('active');
+        document.getElementById('app').style.display = 'flex';
+
+        // Restore state
+        if (resp.state) updateUI(resp.state);
+
+        // Restore history
+        const area = document.getElementById('narrative-area');
+        area.innerHTML = '';
+        if (resp.history && resp.history.length > 0) {
+            for (const entry of resp.history) {
+                appendNarrative('user', entry.user_input);
+                appendNarrative('story', entry.narrative);
+                if (entry.choices && entry.choices.length > 0) {
+                    const choiceDiv = document.createElement('div');
+                    choiceDiv.style.cssText = 'padding:4px 20px;font-size:0.8em;color:#6070a0;';
+                    choiceDiv.textContent = '选项: ' + entry.choices.map(c => `[${c.id}] ${c.text}`).join(' | ');
+                    area.appendChild(choiceDiv);
+                }
+            }
+            area.scrollTop = area.scrollHeight;
+        } else {
+            // No history, show default intro
+            appendNarrative('system', '欢迎回到高度育成高中。');
+        }
+
+        // Save to localStorage
+        saveChatHistory(resp.history || []);
+
+        // If AI is ON, don't auto-generate — let player continue
+        if (useLLM) {
+            document.getElementById('user-input').focus();
+        }
+    } catch(e) {
+        alert('加载存档失败: ' + e.message);
+    }
+}
+
+// ---- Character Setup ----
+function showSetupStep(stepId) {
+    document.querySelectorAll('.setup-step').forEach(s => s.classList.remove('active'));
+    document.getElementById(stepId).classList.add('active');
+}
+
+async function matchCharacter() {
+    const name = document.getElementById('char-name').value.trim();
+    if (!name) {
+        document.getElementById('match-result').innerHTML = '<p class="setup-msg error">请输入名字</p>';
+        return;
+    }
+
+    try {
+        const resp = await fetch('/api/game/match_character', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({name: name}),
+        }).then(r => r.json());
+
+        const container = document.getElementById('match-result');
+
+        if (resp.matched) {
+            const c = resp.character;
+            matchedCharacter = {name: resp.name, ...c};
+            let html = `<div class="char-card">
+                <h3>${resp.name}</h3>
+                <p class="info-item"><span class="info-label">班级：</span>${c.class_name}班</p>`;
+            if (c.traits && c.traits.length > 0) {
+                html += '<div class="tag-list">' + c.traits.map(t => `<span class="tag">${t}</span>`).join('') + '</div>';
+            }
+            if (c.public_info && c.public_info.length > 0) {
+                for (const info of c.public_info) {
+                    html += `<p class="info-item"><span class="info-label">${info.label}：</span>${info.content}</p>`;
+                }
+            }
+            html += `</div>
+                <p class="setup-msg success">角色匹配成功！将扮演 ${resp.name}。</p>
+                <button class="btn-sm primary" onclick="goToStep3()">确认，进入下一步</button>`;
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<p class="setup-msg error">${resp.message}</p>
+                <button class="btn-sm primary" onclick="skipToCustom()">创建新角色</button>`;
+        }
+    } catch(e) {
+        document.getElementById('match-result').innerHTML = `<p class="setup-msg error">匹配失败: ${e.message}</p>`;
+    }
+}
+
+function skipToCustom() {
+    const name = document.getElementById('char-name').value.trim();
+    if (name) document.getElementById('new-char-name').value = name;
+    showSetupStep('step-2');
+}
+
+function backToStep1() {
+    showSetupStep('step-1');
+}
+
+async function createCustomCharacter() {
+    const name = document.getElementById('new-char-name').value.trim();
+    const className = document.getElementById('new-char-class').value;
+    const traitsRaw = document.getElementById('new-char-traits').value;
+    const points = parseInt(document.getElementById('new-char-points').value) || 100000;
+
+    if (!name) {
+        alert('请填写角色名');
+        return;
+    }
+
+    const traits = traitsRaw ? traitsRaw.split(/[,，]/).map(t => t.trim()).filter(t => t) : [];
+
+    try {
+        const resp = await fetch('/api/game/create_character', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                name: name,
+                class_name: className,
+                traits: traits,
+                public_info: [{label: '自定义角色', content: `班级${className}班`}],
+                private_points: points,
+            }),
+        }).then(r => r.json());
+
+        if (resp.success) {
+            matchedCharacter = {name: resp.name, ...resp.character};
+            goToStep3();
+        } else {
+            alert('创建失败: ' + (resp.error || '未知错误'));
+        }
+    } catch(e) {
+        alert('服务器错误: ' + e.message);
+    }
+}
+
+function goToStep3() {
+    showSetupStep('step-3');
+    const container = document.getElementById('char-confirm');
+    const c = matchedCharacter;
+    let html = `<h3 style="color:#e0d8c8;margin-bottom:8px;">确认角色信息</h3>
+        <div class="char-card">
+            <h3>${c.name}</h3>
+            <p class="info-item"><span class="info-label">班级：</span>${c.class_name}班</p>`;
+    if (c.traits && c.traits.length > 0) {
+        html += '<div class="tag-list">' + c.traits.map(t => `<span class="tag">${t}</span>`).join('') + '</div>';
+    }
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function triggerFileImport() {
+    document.getElementById('file-import').click();
+}
+
+function toggleFormatPanel() {
+    const panel = document.getElementById('import-format-panel');
+    if (panel.style.display === 'none') {
+        panel.style.display = 'block';
+    } else {
+        panel.style.display = 'none';
+    }
+}
+
+async function handleFileImport(event) {
+    const files = event.target.files;
+    const statusEl = document.getElementById('import-status');
+    let imported = 0;
+
+    for (const file of files) {
+        try {
+            const text = await file.text();
+            const data = JSON.parse(text);
+
+            // Determine type from content
+            let importType = 'worldview';
+            if (Array.isArray(data)) {
+                if (data.length > 0) {
+                    if (data[0].name && data[0].traits) importType = 'characters';
+                    else if (data[0].location_id) importType = 'locations';
+                    else if (data[0].event_type) importType = 'events';
+                }
+            }
+
+            importedFiles.push({type: importType, data: data});
+
+            const resp = await fetch('/api/game/import', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({type: importType, data: Array.isArray(data) ? data : [data]}),
+            }).then(r => r.json());
+
+            if (resp.success) imported += resp.imported || 0;
+        } catch(e) {
+            statusEl.innerHTML += `<p class="setup-msg error">导入 ${file.name} 失败: ${e.message}</p>`;
+        }
+    }
+
+    if (imported > 0) {
+        statusEl.innerHTML += `<p class="setup-msg success">成功导入 ${imported} 条数据。</p>`;
+    }
+}
+
+function skipImport() {
+    confirmStart();
+}
+
+async function confirmStart() {
+    if (!matchedCharacter) {
+        alert('请先选择或创建角色');
+        return;
+    }
+
+    try {
+        await fetch('/api/game/reset', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                player_name: matchedCharacter.name,
+                player_char_id: matchedCharacter.role_id || null,
+            }),
+        }).then(r => r.json());
+
+        // Clear localStorage chat history
+        localStorage.removeItem('chatHistory');
+
+        // Hide setup, show game
+        document.getElementById('character-setup').style.display = 'none';
+        document.getElementById('app-wrapper').classList.add('active');
+        document.getElementById('app').style.display = 'flex';
+
+        // Refresh state and send intro
+        const stateResp = await fetch('/api/demo/state').then(r => r.json());
+        updateUI(stateResp);
+
+        if (useLLM) {
+            await sendInputStream('/intro');
+        } else {
+            appendNarrative('system', `欢迎来到高度育成高中。你是${matchedCharacter.class_name || 'D'}班的新生${matchedCharacter.name}。`);
+        }
+    } catch(e) {
+        alert('启动游戏失败: ' + e.message);
+    }
+}
+
+// Extract narrative text from partial JSON during streaming
+function extractStreamingText(raw) {
+    let content = raw.replace(/^```(?:json)?\s*\n?/i, '').replace(/\n?\s*```$/i, '');
+    const m = content.match(/"narrative"\s*:\s*"((?:[^"\\]|\\.)*)/);
+    if (m) {
+        return m[1]
+            .replace(/\\n/g, '\n')
+            .replace(/\\"/g, '"')
+            .replace(/\\t/g, '\t')
+            .replace(/\\\\/g, '\\');
+    }
+    if (content.startsWith('{') && content.length < 24) return '';
+    return '';
+}
+
+function tryParseLLMResponse(raw) {
+    let content = raw.replace(/^```(?:json)?\s*\n?/i, '').replace(/\n?\s*```$/i, '');
+    try {
+        return JSON.parse(content);
+    } catch(e) {
+        return null;
+    }
+}
+
+// ---- Send Input ----
+async function sendInput(text) {
+    if (isLoading) return;
+    const inputEl = document.getElementById('user-input');
+    const userText = text || inputEl.value.trim();
+    if (!userText) return;
+
+    isLoading = true;
+    document.getElementById('send-btn').disabled = true;
+    document.getElementById('loading').classList.add('active');
+    inputEl.value = '';
+    clearChoices();
+    hidePerspectiveArea();
+    document.getElementById('perspective-result').style.display = 'none';
+    document.getElementById('perspective-result').innerHTML = '';
+    perspectiveMode = false;
+
+    appendNarrative('user', userText);
+
+    if (useLLM) {
+        await sendInputStream(userText);
+    } else {
+        await sendInputNormal(userText);
+    }
+
+    document.getElementById('send-btn').disabled = false;
+    document.getElementById('loading').classList.remove('active');
+    isLoading = false;
+    inputEl.focus();
+}
+
+async function sendInputNormal(userText) {
+    try {
+        const resp = await fetch('/api/demo/act', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({user_input: userText, use_llm: false, max_tokens: maxTokens}),
+        });
+        const data = await resp.json();
+        appendNarrative('story', data.narrative);
+        updateUI(data);
+        if (data.choices && data.choices.length > 0) showChoices(data.choices);
+
+        // Save to localStorage
+        const history = loadChatHistory();
+        history.push({user_input: userText, narrative: data.narrative, choices: data.choices || []});
+        saveChatHistory(history);
+
+        // Store for perspective shift
+        lastPlayerInput = userText;
+        lastNarrative = data.narrative || '';
+        lastStateData = data;
+        if (data.choices && data.choices.length > 0) {
+            lastStateData.choices = data.choices;
+        }
+        document.getElementById('perspective-result').style.display = 'none';
+        document.getElementById('perspective-result').innerHTML = '';
+        perspectiveMode = false;
+        setTimeout(() => showPerspectiveArea(), 100);
+    } catch(e) {
+        appendNarrative('system', '[错误] 服务器连接失败。');
+    }
+}
+
+async function sendInputStream(userText) {
+    const block = appendNarrativeBlock('story', '');
+    let lastDebug = null;
+    let accumulatedRaw = '';
+    dialogueRoundCounter++;
+    try {
+        const resp = await fetch('/api/llm/stream', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({user_input: userText, max_tokens: maxTokens}),
+        });
+
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        while (true) {
+            const {done, value} = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, {stream: true});
+            const parts = buffer.split('\n\n');
+            buffer = parts.pop();
+            for (const part of parts) {
+                if (!part.startsWith('data: ')) continue;
+                try {
+                    const data = JSON.parse(part.slice(6));
+                    if (data.done) {
+                        // Always clean up the block with proper narrative
+                        const narrative = (data.state && data.state.narrative) ? data.state.narrative : '';
+                        if (narrative) {
+                            block.innerHTML = escapeHtml(narrative).replace(/\n/g, '<br>');
+                        } else if (accumulatedRaw) {
+                            // Fallback: try to parse narrative from accumulatedRaw
+                            const parsed = tryParseLLMResponse(accumulatedRaw);
+                            if (parsed && parsed.narrative) {
+                                block.innerHTML = escapeHtml(parsed.narrative).replace(/\n/g, '<br>');
+                            } else {
+                                block.innerHTML = '[解析响应失败，请重试]';
+                            }
+                        } else {
+                            block.innerHTML = '[空响应，请重试]';
+                        }
+                        accumulatedRaw = '';
+                        updateUI(data.state || {});
+                        if (data.choices && data.choices.length > 0) showChoices(data.choices);
+                        lastDebug = data.debug;
+                        if (testMode && lastDebug) insertDebugBlocks(dialogueRoundCounter, lastDebug);
+
+                        // Save to localStorage
+                        const history = loadChatHistory();
+                        history.push({
+                            user_input: userText,
+                            narrative: narrative,
+                            choices: data.choices || [],
+                        });
+                        saveChatHistory(history);
+
+                        // Store for perspective shift
+                        lastPlayerInput = userText;
+                        lastNarrative = narrative;
+                        lastStateData = data.state || {};
+                        if (data.choices && data.choices.length > 0) {
+                            lastStateData.choices = data.choices;
+                        }
+
+                        // Hide previous perspective UI when new narrative arrives
+                        document.getElementById('perspective-result').style.display = 'none';
+                        document.getElementById('perspective-result').innerHTML = '';
+                        perspectiveMode = false;
+
+                        // Offer perspective after a short delay to let narrative render
+                        setTimeout(() => showPerspectiveArea(), 100);
+                    } else if (data.token) {
+                        accumulatedRaw += data.token;
+                        const extracted = extractStreamingText(accumulatedRaw);
+                        // Don't show snippets that look like raw JSON beginnings
+                        if (extracted && !extracted.startsWith('{') && !extracted.startsWith('[')) {
+                            block.innerHTML = escapeHtml(extracted).replace(/\n/g, '<br>');
+                        } else if (!extracted) {
+                            // Show subtle "thinking" dots instead of raw JSON
+                            block.innerHTML = '<span style="color:#6070a0">...</span>';
+                        }
+                        document.getElementById('narrative-area').scrollTop = document.getElementById('narrative-area').scrollHeight;
+                    } else if (data.error) {
+                        block.innerHTML += '<br>[' + escapeHtml(data.error) + ']';
+                    }
+                } catch(e) {}
+            }
+        }
+    } catch(e) {
+        block.textContent += '\n[流式连接失败，请重试]';
+    }
+}
+
+function insertDebugBlocks(roundLabel, debug) {
+    const area = document.getElementById('debug-panel-content');
+    // Round separator
+    const labelDiv = document.createElement('div');
+    labelDiv.className = 'debug-label';
+    labelDiv.textContent = `--- 第 ${roundLabel} 轮 ---`;
+    area.appendChild(labelDiv);
+
+    // Tool calls (if any)
+    if (debug.tool_calls && debug.tool_calls.length > 0) {
+        const toolDiv = document.createElement('div');
+        toolDiv.className = 'debug-block';
+        let toolHtml = '<button class="debug-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\')">🔧 工具调用 (' + debug.tool_calls.length + ')</button>';
+        toolHtml += '<div class="debug-content">';
+        debug.tool_calls.forEach(tc => {
+            toolHtml += '<div style="margin-bottom:6px;padding:4px 6px;background:#1a1a2e;border-radius:3px;">';
+            toolHtml += '<span style="color:#ffa500;">' + escapeHtml(tc.tool) + '</span> ';
+            toolHtml += '<span style="color:#888;">' + escapeHtml(tc.args) + '</span>';
+            toolHtml += '<pre style="color:#7d7;margin:4px 0 0;white-space:pre-wrap;font-size:0.85em;">' + escapeHtml(tc.result) + '</pre>';
+            toolHtml += '</div>';
+        });
+        toolHtml += '</div>';
+        toolDiv.innerHTML = toolHtml;
+        area.appendChild(toolDiv);
+    }
+
+    const promptDiv = document.createElement('div');
+    promptDiv.className = 'debug-block';
+    promptDiv.innerHTML = `<button class="debug-toggle" onclick="this.nextElementSibling.classList.toggle('open')">▶ 发送的提示词</button><div class="debug-content">${escapeHtml(debug.prompt)}</div>`;
+    area.appendChild(promptDiv);
+
+    const rawDiv = document.createElement('div');
+    rawDiv.className = 'debug-block';
+    rawDiv.innerHTML = `<button class="debug-toggle" onclick="this.nextElementSibling.classList.toggle('open')">▶ 原始JSON返回</button><div class="debug-content">${escapeHtml(debug.raw_json)}</div>`;
+    area.appendChild(rawDiv);
+
+    area.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+}
+
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+// ---- Perspective Shift ----
+function showPerspectiveArea() {
+    if (!perspectiveEnabled) return;
+    if (!lastStateData) return;
+    const npcs = (lastStateData.spotlight_npcs && lastStateData.spotlight_npcs.length > 0)
+        ? lastStateData.spotlight_npcs
+        : lastStateData.npcs || [];
+    if (npcs.length === 0) return;
+
+    const area = document.getElementById('perspective-area');
+    let html = '<div class="perspective-hint">💭 查看其他角色的心理活动：</div>';
+    html += '<select id="perspective-npc-select">';
+    npcs.forEach(n => {
+        html += `<option value="${escapeHtml(n.name)}">${escapeHtml(n.name)}</option>`;
+    });
+    html += '</select>';
+    html += '<div class="perspective-btn-row">';
+    html += '<button class="perspective-btn" onclick="viewPerspective()">查看</button>';
+    html += '<button class="perspective-btn skip" onclick="hidePerspectiveArea()">跳过</button>';
+    html += '</div>';
+    area.innerHTML = html;
+    area.style.display = 'flex';
+}
+
+function hidePerspectiveArea() {
+    document.getElementById('perspective-area').style.display = 'none';
+}
+
+async function viewPerspective() {
+    const select = document.getElementById('perspective-npc-select');
+    if (!select || !select.value) return;
+    const targetNpc = select.value;
+    hidePerspectiveArea();
+
+    const resultArea = document.getElementById('perspective-result');
+    resultArea.style.display = 'block';
+    resultArea.innerHTML = `<div class="perspective-npc-label">💭 <span>${escapeHtml(targetNpc)}</span> 的心理活动 — 正在生成...</div>`;
+
+    const narrativeDiv = document.createElement('div');
+    narrativeDiv.className = 'perspective-narrative';
+    narrativeDiv.textContent = '';
+    resultArea.appendChild(narrativeDiv);
+
+    const timeDisplay = lastStateData && lastStateData.time_display ? lastStateData.time_display : '';
+    const locationId = lastStateData && lastStateData.location ? (lastStateData.location.location_id || 'classroom_d') : 'classroom_d';
+    const playerName = lastStateData && lastStateData.player_name ? lastStateData.player_name : '';
+
+    try {
+        const resp = await fetch('/api/llm/perspective', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                target_npc_name: targetNpc,
+                last_narrative: lastNarrative,
+                last_user_input: lastPlayerInput,
+                location_id: locationId,
+                time_display: timeDisplay,
+                player_name: playerName,
+                max_tokens: maxTokens,
+            }),
+        });
+
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let accumulated = '';
+        while (true) {
+            const {done, value} = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, {stream: true});
+            const parts = buffer.split('\n\n');
+            buffer = parts.pop();
+            for (const part of parts) {
+                if (!part.startsWith('data: ')) continue;
+                try {
+                    const data = JSON.parse(part.slice(6));
+                    if (data.done) {
+                        accumulated = data.perspective || accumulated;
+                        narrativeDiv.textContent = accumulated;
+                        showPostPerspectiveActions(targetNpc, resultArea);
+                    } else if (data.token) {
+                        accumulated += data.token;
+                        narrativeDiv.textContent = accumulated;
+                        document.getElementById('narrative-area').scrollTop = document.getElementById('narrative-area').scrollHeight;
+                    } else if (data.error) {
+                        narrativeDiv.textContent = '[错误] ' + data.error;
+                        showPostPerspectiveActions(targetNpc, resultArea);
+                    }
+                } catch(e) {}
+            }
+        }
+    } catch(e) {
+        narrativeDiv.textContent = '[连接失败，请重试]';
+        showPostPerspectiveActions(targetNpc, resultArea);
+    }
+}
+
+function showPostPerspectiveActions(lastViewedNpc, resultArea) {
+    // Remove old label and replace with final
+    const oldLabel = resultArea.querySelector('.perspective-npc-label');
+    if (oldLabel) oldLabel.remove();
+
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'perspective-btn-row';
+    actionsDiv.style.marginTop = '8px';
+    actionsDiv.innerHTML = `
+        <button class="perspective-btn" onclick="continueAfterPerspective()">继续游戏</button>
+        <button class="perspective-btn" onclick="viewAnotherPerspective()">查看其他角色</button>
+    `;
+    resultArea.appendChild(actionsDiv);
+}
+
+function continueAfterPerspective() {
+    document.getElementById('perspective-result').style.display = 'none';
+    document.getElementById('perspective-result').innerHTML = '';
+    perspectiveMode = false;
+    if (lastStateData && lastStateData.choices && lastStateData.choices.length > 0) {
+        showChoices(lastStateData.choices);
+    }
+}
+
+function viewAnotherPerspective() {
+    document.getElementById('perspective-result').style.display = 'none';
+    document.getElementById('perspective-result').innerHTML = '';
+    showPerspectiveArea();
+}
+
+// ---- Send Choice ----
+async function sendChoice(choiceId, choiceText) {
+    if (isLoading) return;
+    isLoading = true;
+    document.getElementById('send-btn').disabled = true;
+    document.getElementById('loading').classList.add('active');
+    clearChoices();
+    hidePerspectiveArea();
+    document.getElementById('perspective-result').style.display = 'none';
+    document.getElementById('perspective-result').innerHTML = '';
+    perspectiveMode = false;
+    appendNarrative('user', '[选择] ' + choiceText);
+
+    if (useLLM) {
+        await sendInputStream(choiceText);
+    } else {
+        try {
+            const resp = await fetch('/api/demo/act', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({user_input: choiceText, choice_id: choiceId, use_llm: false, max_tokens: maxTokens}),
+            });
+            const data = await resp.json();
+            appendNarrative('story', data.narrative);
+            updateUI(data);
+            if (data.choices && data.choices.length > 0) showChoices(data.choices);
+
+            const history = loadChatHistory();
+            history.push({user_input: '[选择] ' + choiceText, narrative: data.narrative, choices: data.choices || []});
+            saveChatHistory(history);
+
+            // Store for perspective shift
+            lastPlayerInput = '[选择] ' + choiceText;
+            lastNarrative = data.narrative || '';
+            lastStateData = data;
+            if (data.choices && data.choices.length > 0) {
+                lastStateData.choices = data.choices;
+            }
+            document.getElementById('perspective-result').style.display = 'none';
+            document.getElementById('perspective-result').innerHTML = '';
+            perspectiveMode = false;
+            setTimeout(() => showPerspectiveArea(), 100);
+        } catch(e) {
+            appendNarrative('system', '[错误] 服务器连接失败。');
+        }
+    }
+
+    document.getElementById('send-btn').disabled = false;
+    document.getElementById('loading').classList.remove('active');
+    isLoading = false;
+}
+
+// ---- UI Updates ----
+function updateUI(data) {
+    if (data.time_display) {
+        document.getElementById('time-display').textContent = data.time_display;
+    }
+    if (data.location && data.location.name) {
+        document.getElementById('location-display').textContent = data.location.name;
+    }
+    if (data.player_state) {
+        document.getElementById('class-pts').textContent = data.player_state.class_points || 0;
+        document.getElementById('private-pts').textContent = (data.player_state.private_points || 0).toLocaleString();
+    } else {
+        document.getElementById('class-pts').textContent = data.class_points || 0;
+        document.getElementById('private-pts').textContent = (data.private_points || 0).toLocaleString();
+    }
+    if (data.spotlight_npcs && data.spotlight_npcs.length > 0) {
+        document.getElementById('npcs-present').textContent = data.spotlight_npcs.map(n => n.name).join('、');
+    } else {
+        document.getElementById('npcs-present').textContent = '无';
+    }
+    if (data.location && data.location.connected_to) {
+        document.getElementById('connected-area').innerHTML = data.location.connected_to.map(id => `<span class="connected-tag">${id}</span>`).join('');
+    }
+    const eventPanel = document.getElementById('event-panel-content');
+    if (data.active_events && data.active_events.length > 0) {
+        eventPanel.innerHTML = data.active_events.map(ev =>
+            `<div style="margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #2a2a2a;">[事件] ${escapeHtml(ev.name)} — 剩余${ev.days_left}天 · ${escapeHtml(ev.description)}</div>`
+        ).join('');
+    } else {
+        eventPanel.innerHTML = '';
+    }
+}
+
+function appendNarrativeBlock(type, text) {
+    const area = document.getElementById('narrative-area');
+    const div = document.createElement('div');
+    div.className = `narrative-block ${type}`;
+    div.style.whiteSpace = 'pre-line';
+    // Escape HTML entities, then convert newlines to <br>
+    div.innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
+    area.appendChild(div);
+    area.scrollTop = area.scrollHeight;
+    return div;
+}
+
+function appendNarrative(type, text) {
+    appendNarrativeBlock(type, text);
+}
+
+function showChoices(choices) {
+    currentChoices = choices;
+    const area = document.getElementById('choices-area');
+    area.innerHTML = '';
+    choices.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn';
+        btn.textContent = `[${c.id}] ${c.text}`;
+        btn.onclick = () => sendChoice(c.id, c.text);
+        area.appendChild(btn);
+    });
+}
+
+function clearChoices() {
+    currentChoices = [];
+    document.getElementById('choices-area').innerHTML = '';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+{
+  "characters": [
+    {
+      "role_id": "player",
+      "name": "绫小路清隆",
+      "current_location_id": "classroom_d",
+      "status_tags": ["normal"],
+      "class_name": "D",
+      "public_info": [
+        "你是一年D班的新生。",
+        "表面上看起来是一个平凡、不起眼的学生，对周围的事情漠不关心。",
+        "说话方式平淡，很少表露情感，总是一副无所谓的表情。",
+        "体育成绩一般，学习成绩也刻意保持在班级中游水平。",
+        "平时在教室靠窗的后排座位，经常看着窗外发呆。",
+        "虽然看起来不合群，但偶尔会在关键时刻说出一些有见地的话。"
+      ],
+      "secret_info": [
+        {
+          "info_id": "ayanokoji_true_nature",
+          "content": "绫小路清隆是'白色房间'（White Room）的产物，从小接受了远超常人的精英教育。他的智力、体能、谋略都达到了近乎超人的水平，但他刻意隐藏这一切，只想在高中过一个'平凡'的校园生活。",
+          "known_by": ["ayanokoji"]
+        }
+      ]
+    },
+    {
+      "role_id": "horikita_suzune",
+      "name": "堀北铃音",
+      "current_location_id": "classroom_d",
+      "status_tags": ["calm"],
+      "class_name": "D",
+      "schedule_weights": {
+        "morning": {"classroom_d": 0.8, "library": 0.2},
+        "noon": {"classroom_d": 0.5, "library": 0.3, "cafeteria": 0.2},
+        "dusk": {"library": 0.6, "classroom_d": 0.3, "dormitory": 0.1},
+        "evening": {"dormitory": 0.7, "library": 0.3},
+        "late_night": {"dormitory": 1.0}
+      },
+      "public_info": [
+        "堀北铃音是一年D班的学生，座位在教室前排。",
+        "外表冷艳的黑长直发女生，总是独自一人，不主动与他人交流。",
+        "学习成绩优异，行事风格严谨认真，对自己的要求极高。",
+        "说话方式冷峻而直接，不擅长也不屑于社交。",
+        "以升上A班为目标，认为D班的其他学生大多是没有自觉的废物。",
+        "有一个哥哥堀北学，是学生会会长，她似乎对哥哥有着复杂的情感。"
+      ],
+      "secret_info": [
+        {
+          "info_id": "horikita_brother_complex",
+          "content": "堀北铃音对哥哥堀北学有着极深的执念。她来到这所学校、拼命想要升上A班，很大程度上是为了向哥哥证明自己的价值。她的冷傲外表下隐藏着对认可的极度渴望和因为一直活在哥哥阴影下的自卑。",
+          "known_by": ["horikita_suzune", "ayanokoji"]
+        }
+      ]
+    },
+    {
+      "role_id": "kushida_kikyo",
+      "name": "栉田桔梗",
+      "current_location_id": "classroom_d",
+      "status_tags": ["calm"],
+      "class_name": "D",
+      "schedule_weights": {
+        "morning": {"classroom_d": 0.7, "hallway_1f": 0.3},
+        "noon": {"classroom_d": 0.4, "cafeteria": 0.4, "hallway_1f": 0.2},
+        "dusk": {"hallway_1f": 0.5, "classroom_d": 0.3, "school_field": 0.2},
+        "evening": {"dormitory": 0.8, "library": 0.2},
+        "late_night": {"dormitory": 1.0}
+      },
+      "public_info": [
+        "栉田桔梗是一年D班的偶像般的存在。",
+        "性格温柔开朗，外表甜美可爱，对所有人都一视同仁地友善。",
+        "擅长社交，在班级和年级里都有大量的朋友，男女通吃。",
+        "说话方式温柔体贴，总是带着微笑，从不发脾气。",
+        "学习成绩中上，但人缘极好，经常帮助同学解决困难。",
+        "注意：这是栉田在公开场合的形象。"
+      ],
+      "secret_info": [
+        {
+          "info_id": "kushida_dark_side",
+          "content": "栉田桔梗有着极其黑暗的另一面人格。她内心极度厌恶所有人，认为维持完美形象是一种折磨。她会利用社交网络收集每个人的秘密和弱点，用于控制和摧毁威胁到她'完美形象'的人。她对任何可能暴露她真实面目的人都抱有毁灭性的敌意。她来到这所学校最初的目标是埋葬自己不堪的过去。",
+          "known_by": ["kushida_kikyo", "ayanokoji"]
+        }
+      ]
+    },
+    {
+      "role_id": "sudo_ken",
+      "name": "须藤健",
+      "current_location_id": "classroom_d",
+      "status_tags": ["normal"],
+      "class_name": "D",
+      "schedule_weights": {
+        "morning": {"classroom_d": 0.6, "school_field": 0.4},
+        "noon": {"school_field": 0.5, "classroom_d": 0.3, "cafeteria": 0.2},
+        "dusk": {"school_field": 0.8, "school_gymnasium": 0.2},
+        "evening": {"dormitory": 0.7, "school_field": 0.3},
+        "late_night": {"dormitory": 1.0}
+      },
+      "public_info": [
+        "须藤健是一年D班的问题学生，篮球部成员。",
+        "身材高大强壮，体育能力出众，尤其是篮球。",
+        "性格暴躁冲动，容易与人发生冲突，经常被老师警告。",
+        "学习成绩非常差，几乎每科都在及格线以下。",
+        "说话方式粗鲁直接，但对待认可的朋友非常讲义气。",
+        "对堀北铃音有好感，但表达方式笨拙。"
+      ],
+      "secret_info": [
+        {
+          "info_id": "sudo_potential",
+          "content": "须藤虽然学习成绩极差，但篮球天赋惊人。如果能够得到正确的引导和帮助，他有成为职业篮球运动员的潜质。他暴躁的外表下有着重情重义的内心，是那种会为了朋友两肋插刀的人。",
+          "known_by": ["sudo_ken"]
+        }
+      ]
+    },
+    {
+      "role_id": "hirata_yosuke",
+      "name": "平田洋介",
+      "current_location_id": "classroom_d",
+      "status_tags": ["calm"],
+      "class_name": "D",
+      "schedule_weights": {
+        "morning": {"classroom_d": 0.8, "hallway_1f": 0.2},
+        "noon": {"cafeteria": 0.5, "classroom_d": 0.3, "school_field": 0.2},
+        "dusk": {"school_field": 0.5, "classroom_d": 0.3, "hallway_1f": 0.2},
+        "evening": {"dormitory": 0.8, "library": 0.2},
+        "late_night": {"dormitory": 1.0}
+      },
+      "public_info": [
+        "平田洋介是一年D班的优等生，足球部王牌。",
+        "外表清秀帅气，性格温和，在班级里人气很高，男女都信赖他。",
+        "学习成绩优秀，运动能力也出类拔萃，是班级的核心人物。",
+        "说话方式温和有礼，总是能照顾到每个人的感受。",
+        "热心于班级事务，经常主动调解同学之间的矛盾。",
+        "注意：这是平田在公开场合的形象。"
+      ],
+      "secret_info": [
+        {
+          "info_id": "hirata_trauma",
+          "content": "平田洋介在初中时期因为自己的懦弱导致最好的朋友自杀。这份深重的愧疚感驱使他在高中成为一个'完美的好人'——他必须保护所有人，不能拒绝任何人的求助。但他的善良是一种病态的补偿行为，内心深处充满了自我厌恶。",
+          "known_by": ["hirata_yosuke"]
+        }
+      ]
+    },
+    {
+      "role_id": "karuizawa_kei",
+      "name": "轻井泽惠",
+      "current_location_id": "classroom_d",
+      "status_tags": ["normal"],
+      "class_name": "D",
+      "schedule_weights": {
+        "morning": {"classroom_d": 0.7, "hallway_1f": 0.3},
+        "noon": {"cafeteria": 0.5, "classroom_d": 0.3, "hallway_1f": 0.2},
+        "dusk": {"hallway_1f": 0.5, "school_field": 0.3, "classroom_d": 0.2},
+        "evening": {"dormitory": 0.8, "hallway_1f": 0.2},
+        "late_night": {"dormitory": 1.0}
+      },
+      "public_info": [
+        "轻井泽惠是一年D班的女生领袖，辣妹风格。",
+        "打扮时尚，性格强势，在女生团体中说一不二。",
+        "有一个同班的男朋友平田洋介，两人的关系在班级里是公开的秘密。",
+        "说话方式活泼但有时刻薄，对待外人态度强硬。",
+        "看似自信满满，但实际上很在意周围人的眼光。",
+        "注意：这是轻井泽在公开场合的形象。"
+      ],
+      "secret_info": [
+        {
+          "info_id": "karuizawa_past",
+          "content": "轻井泽惠在初中时期曾经是校园霸凌的受害者。那段经历给她留下了深重的心理创伤。她现在的强势外表、和平田的恋爱关系，全都是为了保护自己而建立的'防御系统'。她内心深处极度恐惧再次被孤立和欺负。",
+          "known_by": ["karuizawa_kei"]
+        }
+      ]
+    },
+    {
+      "role_id": "ryuen_kakeru",
+      "name": "龙园翔",
+      "current_location_id": "school_field",
+      "status_tags": ["calm"],
+      "class_name": "C",
+      "schedule_weights": {
+        "morning": {"special_building": 0.5, "school_field": 0.3, "hallway_1f": 0.2},
+        "noon": {"cafeteria": 0.4, "school_field": 0.3, "special_building": 0.3},
+        "dusk": {"special_building": 0.5, "rooftop": 0.3, "hallway_1f": 0.2},
+        "evening": {"dormitory": 0.5, "special_building": 0.3, "rooftop": 0.2},
+        "late_night": {"dormitory": 1.0}
+      },
+      "public_info": [
+        "龙园翔是一年C班的学生，实际上的C班统治者。",
+        "身材中等偏瘦，眼神锐利，带着一种令人不安的压迫感。",
+        "以暴力和计谋统治C班，手段冷酷无情，为达目的不择手段。",
+        "说话方式慢条斯理但充满威胁意味，擅长心理战。",
+        "公开宣称学校是弱肉强食的丛林，只有强者才配生存。",
+        "喜欢在天台和特别教学楼一带活动。"
+      ],
+      "secret_info": [
+        {
+          "info_id": "ryuen_rule_c",
+          "content": "龙园以暴力殴打和威胁的手段迫使C班所有学生臣服于他。他建立了一个严密的统治体系，C班的每一个人——除了少数几个例外——都在他的绝对控制之下。他享受掌控一切的快感，将全校视为自己的棋盘。他的最终目标是摧毁堀北学领导的学生会体系，建立自己的规则。",
+          "known_by": ["ryuen_kakeru", "ayanokoji"]
+        }
+      ]
+    },
+    {
+      "role_id": "ishizaki",
+      "name": "石崎大地",
+      "current_location_id": "hallway_1f",
+      "status_tags": ["normal"],
+      "class_name": "C",
+      "schedule_weights": {
+        "morning": {"hallway_1f": 0.6, "school_field": 0.4},
+        "noon": {"cafeteria": 0.5, "hallway_1f": 0.3, "school_field": 0.2},
+        "dusk": {"school_field": 0.5, "hallway_1f": 0.3, "special_building": 0.2},
+        "evening": {"dormitory": 0.8, "hallway_1f": 0.2},
+        "late_night": {"dormitory": 1.0}
+      },
+      "public_info": [
+        "石崎大地是一年C班的学生，龙园的手下。",
+        "身材高大，染了金发，典型的街头不良少年形象。",
+        "性格粗暴，但本质上是个懦弱的人，只会欺负比自己弱小的人。",
+        "对龙园极度畏惧，完全不敢违抗龙园的命令。"
+      ]
+    }
+  ]
+}
