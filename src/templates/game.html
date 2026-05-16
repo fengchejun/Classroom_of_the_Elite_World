@@ -74,31 +74,21 @@
         margin-top: 4px;
     }
     /* Perspective area */
-    #perspective-area {
-        padding: 12px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+    /* Perspective */
+    .perspective-sep {
+        width: 100%;
         border-top: 1px solid #3a2a4a;
+        margin: 8px 0;
     }
-    #perspective-area .perspective-hint {
+    .perspective-hint {
         font-size: 0.8em;
         color: #9070b0;
+        margin-bottom: 6px;
     }
-    #perspective-npc-select {
-        background: #1a1a35;
-        border: 1px solid #533483;
-        color: #e0d8c8;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-size: 0.9em;
-        font-family: inherit;
-        outline: none;
-    }
-    #perspective-npc-select:focus { border-color: #9070b0; }
     .perspective-btn-row {
         display: flex;
         gap: 8px;
+        margin-top: 8px;
     }
     .perspective-btn {
         background: #0f3460;
@@ -111,13 +101,6 @@
         transition: all 0.15s;
     }
     .perspective-btn:hover { background: #533483; }
-    .perspective-btn.skip { background: transparent; border-color: #3a3a5a; color: #6070a0; }
-    .perspective-btn.skip:hover { border-color: #555; color: #8090b0; }
-
-    /* Perspective result */
-    #perspective-result {
-        padding: 0 20px 12px;
-    }
     .perspective-narrative {
         background: rgba(83, 52, 131, 0.15);
         border-left: 3px solid #9070b0;
@@ -127,7 +110,7 @@
         line-height: 1.8;
         color: #c0b0d0;
         white-space: pre-wrap;
-        margin-bottom: 10px;
+        margin: 10px 0;
     }
     .perspective-npc-label {
         font-size: 0.75em;
@@ -135,6 +118,36 @@
         margin-bottom: 6px;
     }
     .perspective-npc-label span { color: #c0b0d0; font-weight: bold; }
+
+    .truncation-warn {
+        margin-top: 12px;
+        padding: 8px 12px;
+        background: rgba(255, 180, 50, 0.12);
+        border: 1px solid rgba(255, 180, 50, 0.35);
+        border-radius: 6px;
+        color: #f0c060;
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+
+    .choices-toggle {
+        display: block;
+        width: 100%;
+        background: none;
+        border: 1px solid #1e2a3a;
+        color: #6070a0;
+        padding: 4px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.75em;
+        margin-bottom: 6px;
+        transition: all 0.15s;
+    }
+    .choices-toggle:hover {
+        background: #111827;
+        color: #8090c0;
+        border-color: #2a2a4a;
+    }
 
     @media (max-width: 900px) {
         #side-panel { display: none; }
@@ -556,9 +569,6 @@
             <label style="font-size:0.7em;color:#888;display:flex;align-items:center;gap:3px;cursor:pointer;">
                 <input type="checkbox" id="test-mode" onchange="testMode = this.checked; updateDebugPanelVisibility()"> 测试
             </label>
-            <label style="font-size:0.7em;color:#888;display:flex;align-items:center;gap:3px;cursor:pointer;">
-                <input type="checkbox" id="perspective-mode" onchange="perspectiveEnabled = this.checked; saveSettings()"> 心理视角
-            </label>
             <div>
                 <div id="time-display">2024-04-01 上午</div>
                 <div id="location-display">D班教室</div>
@@ -577,8 +587,6 @@
     <div id="narrative-area"></div>
 
     <div id="choices-area"></div>
-    <div id="perspective-area" style="display:none;"></div>
-    <div id="perspective-result" style="display:none;"></div>
     <div id="loading">AI 正在生成剧情...</div>
 
     <div id="input-area">
@@ -615,7 +623,6 @@ let lastPlayerInput = '';
 let perspectiveMode = false;
 let lastNarrative = '';
 let lastStateData = null;
-let perspectiveEnabled = true;
 
 // ---- Persistence ----
 function loadSettings() {
@@ -623,14 +630,12 @@ function loadSettings() {
     if (saved) maxTokens = parseInt(saved);
     useLLM = localStorage.getItem('useLLM') === 'true';
     testMode = localStorage.getItem('testMode') === 'true';
-    perspectiveEnabled = localStorage.getItem('perspectiveEnabled') !== 'false';
 }
 
 function saveSettings() {
     localStorage.setItem('maxTokens', maxTokens);
     localStorage.setItem('useLLM', useLLM);
     localStorage.setItem('testMode', testMode);
-    localStorage.setItem('perspectiveEnabled', perspectiveEnabled);
 }
 
 function saveChatHistory(history) {
@@ -650,7 +655,6 @@ function applySettings() {
     document.getElementById('max-tokens-slider').value = maxTokens;
     document.getElementById('max-tokens-value').textContent = maxTokens;
     document.getElementById('test-mode').checked = testMode;
-    document.getElementById('perspective-mode').checked = perspectiveEnabled;
     updateLLMButton();
     updateDebugPanelVisibility();
 }
@@ -1016,9 +1020,9 @@ async function sendInput(text) {
     document.getElementById('loading').classList.add('active');
     inputEl.value = '';
     clearChoices();
-    hidePerspectiveArea();
-    document.getElementById('perspective-result').style.display = 'none';
-    document.getElementById('perspective-result').innerHTML = '';
+    // Clean up any lingering perspective result
+    const perspEl = document.getElementById('perspective-result');
+    if (perspEl) perspEl.remove();
     perspectiveMode = false;
 
     appendNarrative('user', userText);
@@ -1045,6 +1049,15 @@ async function sendInputNormal(userText) {
         const data = await resp.json();
         appendNarrative('story', data.narrative);
         updateUI(data);
+
+        // Store perspective state BEFORE showChoices
+        lastPlayerInput = userText;
+        lastNarrative = data.narrative || '';
+        lastStateData = data;
+        if (data.choices && data.choices.length > 0) {
+            lastStateData.choices = data.choices;
+        }
+
         if (data.choices && data.choices.length > 0) showChoices(data.choices);
 
         // Save to localStorage
@@ -1052,17 +1065,7 @@ async function sendInputNormal(userText) {
         history.push({user_input: userText, narrative: data.narrative, choices: data.choices || []});
         saveChatHistory(history);
 
-        // Store for perspective shift
-        lastPlayerInput = userText;
-        lastNarrative = data.narrative || '';
-        lastStateData = data;
-        if (data.choices && data.choices.length > 0) {
-            lastStateData.choices = data.choices;
-        }
-        document.getElementById('perspective-result').style.display = 'none';
-        document.getElementById('perspective-result').innerHTML = '';
         perspectiveMode = false;
-        setTimeout(() => showPerspectiveArea(), 100);
     } catch(e) {
         appendNarrative('system', '[错误] 服务器连接失败。');
     }
@@ -1111,6 +1114,15 @@ async function sendInputStream(userText) {
                         }
                         accumulatedRaw = '';
                         updateUI(data.state || {});
+
+                        // Store perspective state BEFORE showChoices (which needs it)
+                        lastPlayerInput = userText;
+                        lastNarrative = narrative;
+                        lastStateData = data.state || {};
+                        if (data.choices && data.choices.length > 0) {
+                            lastStateData.choices = data.choices;
+                        }
+
                         if (data.choices && data.choices.length > 0) showChoices(data.choices);
                         lastDebug = data.debug;
                         if (testMode && lastDebug) insertDebugBlocks(dialogueRoundCounter, lastDebug);
@@ -1124,21 +1136,18 @@ async function sendInputStream(userText) {
                         });
                         saveChatHistory(history);
 
-                        // Store for perspective shift
-                        lastPlayerInput = userText;
-                        lastNarrative = narrative;
-                        lastStateData = data.state || {};
-                        if (data.choices && data.choices.length > 0) {
-                            lastStateData.choices = data.choices;
+                        // Show truncation warning if content hit token limit
+                        if (data.truncated) {
+                            const warn = document.createElement('div');
+                            warn.className = 'truncation-warn';
+                            warn.textContent = '⚠ 输出达到Token上限，部分内容可能不完整。可尝试提高Token上限或简化行动描述。';
+                            block.appendChild(warn);
                         }
 
-                        // Hide previous perspective UI when new narrative arrives
-                        document.getElementById('perspective-result').style.display = 'none';
-                        document.getElementById('perspective-result').innerHTML = '';
+                        // Clean up previous perspective UI
+                        const oldPersp = document.getElementById('perspective-result');
+                        if (oldPersp) oldPersp.remove();
                         perspectiveMode = false;
-
-                        // Offer perspective after a short delay to let narrative render
-                        setTimeout(() => showPerspectiveArea(), 100);
                     } else if (data.token) {
                         accumulatedRaw += data.token;
                         const extracted = extractStreamingText(accumulatedRaw);
@@ -1207,47 +1216,55 @@ function escapeHtml(str) {
 }
 
 // ---- Perspective Shift ----
-function showPerspectiveArea() {
-    if (!perspectiveEnabled) return;
+// Renders NPC perspective buttons as special actions below normal choices.
+// Called by showChoices() after rendering normal choice buttons.
+function renderPerspectiveNPCButtons(container) {
     if (!lastStateData) return;
     const npcs = (lastStateData.spotlight_npcs && lastStateData.spotlight_npcs.length > 0)
         ? lastStateData.spotlight_npcs
         : lastStateData.npcs || [];
     if (npcs.length === 0) return;
 
-    const area = document.getElementById('perspective-area');
-    let html = '<div class="perspective-hint">💭 查看其他角色的心理活动：</div>';
-    html += '<select id="perspective-npc-select">';
+    const target = container || document.getElementById('choices-area');
+    const sep = document.createElement('div');
+    sep.className = 'perspective-sep';
+    target.appendChild(sep);
+    const hint = document.createElement('div');
+    hint.className = 'perspective-hint';
+    hint.textContent = '💭 查看其他角色的心理活动：';
+    target.appendChild(hint);
     npcs.forEach(n => {
-        html += `<option value="${escapeHtml(n.name)}">${escapeHtml(n.name)}</option>`;
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn';
+        btn.style.background = '#1a1a35';
+        btn.style.borderColor = '#533483';
+        btn.textContent = `💭 查看${n.name}的视角`;
+        btn.onclick = () => viewPerspective(n.name);
+        target.appendChild(btn);
     });
-    html += '</select>';
-    html += '<div class="perspective-btn-row">';
-    html += '<button class="perspective-btn" onclick="viewPerspective()">查看</button>';
-    html += '<button class="perspective-btn skip" onclick="hidePerspectiveArea()">跳过</button>';
-    html += '</div>';
-    area.innerHTML = html;
-    area.style.display = 'flex';
 }
 
-function hidePerspectiveArea() {
-    document.getElementById('perspective-area').style.display = 'none';
-}
+// Start viewing a specific NPC's perspective (special action).
+// Takes npcName directly — no dropdown needed.
+async function viewPerspective(npcName) {
+    if (!npcName) return;
+    if (isLoading) return;
+    isLoading = true;
 
-async function viewPerspective() {
-    const select = document.getElementById('perspective-npc-select');
-    if (!select || !select.value) return;
-    const targetNpc = select.value;
-    hidePerspectiveArea();
+    // Hide normal choices and NPC buttons
+    clearChoices();
 
-    const resultArea = document.getElementById('perspective-result');
-    resultArea.style.display = 'block';
-    resultArea.innerHTML = `<div class="perspective-npc-label">💭 <span>${escapeHtml(targetNpc)}</span> 的心理活动 — 正在生成...</div>`;
-
+    // Show perspective result area
+    const narrativeArea = document.getElementById('narrative-area');
+    const wrapper = document.createElement('div');
+    wrapper.id = 'perspective-result';
+    wrapper.innerHTML = `<div class="perspective-npc-label">💭 <span>${escapeHtml(npcName)}</span> 的心理活动 — 正在生成...</div>`;
     const narrativeDiv = document.createElement('div');
     narrativeDiv.className = 'perspective-narrative';
     narrativeDiv.textContent = '';
-    resultArea.appendChild(narrativeDiv);
+    wrapper.appendChild(narrativeDiv);
+    narrativeArea.appendChild(wrapper);
+    document.getElementById('loading').classList.add('active');
 
     const timeDisplay = lastStateData && lastStateData.time_display ? lastStateData.time_display : '';
     const locationId = lastStateData && lastStateData.location ? (lastStateData.location.location_id || 'classroom_d') : 'classroom_d';
@@ -1258,7 +1275,7 @@ async function viewPerspective() {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                target_npc_name: targetNpc,
+                target_npc_name: npcName,
                 last_narrative: lastNarrative,
                 last_user_input: lastPlayerInput,
                 location_id: locationId,
@@ -1285,52 +1302,68 @@ async function viewPerspective() {
                     if (data.done) {
                         accumulated = data.perspective || accumulated;
                         narrativeDiv.textContent = accumulated;
-                        showPostPerspectiveActions(targetNpc, resultArea);
+                        if (data.truncated) {
+                            const tw = document.createElement('div');
+                            tw.className = 'truncation-warn';
+                            tw.textContent = '⚠ 输出达到Token上限，视角叙事可能不完整。可尝试提高Token上限。';
+                            wrapper.appendChild(tw);
+                        }
+                        document.getElementById('loading').classList.remove('active');
+                        showPostPerspectiveActions(npcName, wrapper);
                     } else if (data.token) {
                         accumulated += data.token;
                         narrativeDiv.textContent = accumulated;
-                        document.getElementById('narrative-area').scrollTop = document.getElementById('narrative-area').scrollHeight;
+                        narrativeArea.scrollTop = narrativeArea.scrollHeight;
                     } else if (data.error) {
                         narrativeDiv.textContent = '[错误] ' + data.error;
-                        showPostPerspectiveActions(targetNpc, resultArea);
+                        document.getElementById('loading').classList.remove('active');
+                        showPostPerspectiveActions(npcName, wrapper);
                     }
                 } catch(e) {}
             }
         }
     } catch(e) {
         narrativeDiv.textContent = '[连接失败，请重试]';
-        showPostPerspectiveActions(targetNpc, resultArea);
+        document.getElementById('loading').classList.remove('active');
+        showPostPerspectiveActions(npcName, wrapper);
     }
+    isLoading = false;
 }
 
 function showPostPerspectiveActions(lastViewedNpc, resultArea) {
-    // Remove old label and replace with final
     const oldLabel = resultArea.querySelector('.perspective-npc-label');
     if (oldLabel) oldLabel.remove();
 
     const actionsDiv = document.createElement('div');
     actionsDiv.className = 'perspective-btn-row';
-    actionsDiv.style.marginTop = '8px';
     actionsDiv.innerHTML = `
-        <button class="perspective-btn" onclick="continueAfterPerspective()">继续游戏</button>
-        <button class="perspective-btn" onclick="viewAnotherPerspective()">查看其他角色</button>
+        <button class="perspective-btn" onclick="continueAfterPerspective()">返回主视角</button>
+        <button class="perspective-btn" onclick="viewAnotherPerspective()">继续切换视角</button>
     `;
     resultArea.appendChild(actionsDiv);
 }
 
 function continueAfterPerspective() {
-    document.getElementById('perspective-result').style.display = 'none';
-    document.getElementById('perspective-result').innerHTML = '';
+    // Remove perspective result area
+    const resultEl = document.getElementById('perspective-result');
+    if (resultEl) resultEl.remove();
     perspectiveMode = false;
+    // Re-show original choices and NPC perspective buttons
     if (lastStateData && lastStateData.choices && lastStateData.choices.length > 0) {
         showChoices(lastStateData.choices);
     }
 }
 
 function viewAnotherPerspective() {
-    document.getElementById('perspective-result').style.display = 'none';
-    document.getElementById('perspective-result').innerHTML = '';
-    showPerspectiveArea();
+    // Remove current perspective result
+    const resultEl = document.getElementById('perspective-result');
+    if (resultEl) resultEl.remove();
+    perspectiveMode = false;
+    // Only show NPC perspective buttons (not normal choices)
+    if (lastStateData && lastStateData.choices) {
+        lastStateData.choices = []; // Clear normal choices so only NPC buttons appear
+    }
+    renderPerspectiveNPCButtons();
 }
 
 // ---- Send Choice ----
@@ -1340,9 +1373,9 @@ async function sendChoice(choiceId, choiceText) {
     document.getElementById('send-btn').disabled = true;
     document.getElementById('loading').classList.add('active');
     clearChoices();
-    hidePerspectiveArea();
-    document.getElementById('perspective-result').style.display = 'none';
-    document.getElementById('perspective-result').innerHTML = '';
+    // Clean up any lingering perspective result
+    const oldPersp = document.getElementById('perspective-result');
+    if (oldPersp) oldPersp.remove();
     perspectiveMode = false;
     appendNarrative('user', '[选择] ' + choiceText);
 
@@ -1358,23 +1391,22 @@ async function sendChoice(choiceId, choiceText) {
             const data = await resp.json();
             appendNarrative('story', data.narrative);
             updateUI(data);
-            if (data.choices && data.choices.length > 0) showChoices(data.choices);
 
-            const history = loadChatHistory();
-            history.push({user_input: '[选择] ' + choiceText, narrative: data.narrative, choices: data.choices || []});
-            saveChatHistory(history);
-
-            // Store for perspective shift
+            // Store perspective state BEFORE showChoices
             lastPlayerInput = '[选择] ' + choiceText;
             lastNarrative = data.narrative || '';
             lastStateData = data;
             if (data.choices && data.choices.length > 0) {
                 lastStateData.choices = data.choices;
             }
-            document.getElementById('perspective-result').style.display = 'none';
-            document.getElementById('perspective-result').innerHTML = '';
+
+            if (data.choices && data.choices.length > 0) showChoices(data.choices);
+
+            const history = loadChatHistory();
+            history.push({user_input: '[选择] ' + choiceText, narrative: data.narrative, choices: data.choices || []});
+            saveChatHistory(history);
+
             perspectiveMode = false;
-            setTimeout(() => showPerspectiveArea(), 100);
         } catch(e) {
             appendNarrative('system', '[错误] 服务器连接失败。');
         }
@@ -1434,17 +1466,47 @@ function appendNarrative(type, text) {
     appendNarrativeBlock(type, text);
 }
 
+function toggleChoices() {
+    const wrapper = document.getElementById('choices-collapsible');
+    const toggleBtn = document.querySelector('.choices-toggle');
+    if (!wrapper || !toggleBtn) return;
+    if (wrapper.style.display === 'none') {
+        wrapper.style.display = '';
+        toggleBtn.textContent = '▼ 折叠选项';
+    } else {
+        wrapper.style.display = 'none';
+        const count = wrapper.querySelectorAll('.choice-btn').length;
+        toggleBtn.textContent = `▶ 展开选项 (${count})`;
+    }
+}
+
 function showChoices(choices) {
     currentChoices = choices;
     const area = document.getElementById('choices-area');
     area.innerHTML = '';
+
+    // Toggle button to collapse/expand
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'choices-toggle';
+    toggleBtn.textContent = '▼ 折叠选项';
+    toggleBtn.onclick = toggleChoices;
+    area.appendChild(toggleBtn);
+
+    // Wrapper for all collapsible choice/perspective buttons
+    const wrapper = document.createElement('div');
+    wrapper.id = 'choices-collapsible';
+
     choices.forEach(c => {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
         btn.textContent = `[${c.id}] ${c.text}`;
         btn.onclick = () => sendChoice(c.id, c.text);
-        area.appendChild(btn);
+        wrapper.appendChild(btn);
     });
+    area.appendChild(wrapper);
+
+    // Append perspective NPC buttons inside the wrapper (so they collapse too)
+    renderPerspectiveNPCButtons(wrapper);
 }
 
 function clearChoices() {

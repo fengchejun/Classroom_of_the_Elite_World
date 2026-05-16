@@ -1,0 +1,2918 @@
+{
+  "type": "characters",
+  "data": [
+    {
+      "name": "绫小路清隆",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "避事主义",
+        "观察力强",
+        "低调",
+        "理性",
+        "善于隐藏实力",
+        "隐藏实力",
+        "冷静",
+        "善于伪装"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "身材纤细但结实，棕发，普通高中生外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "避事主义，不喜欢引人注目，但观察力敏锐，善于分析局势并暗中行动。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "ayanokoji_hidden_ability",
+          "content": "绫小路清隆拥有远超常人的身体能力与智力，但他刻意隐藏这一切，只想度过平凡的校园生活。",
+          "known_by": [
+            "ayanokoji_kiyotaka"
+          ]
+        },
+        {
+          "info_id": "ayanokoji_white_room",
+          "content": "绫小路清隆是「白屋」（White Room）的产物，从小接受极端精英教育，是第四期生中唯一的幸存者。他来到这所学校是为了逃离父亲的掌控，获得自由。",
+          "known_by": [
+            "ayanokoji_kiyotaka"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "堀北铃音",
+          "type": "neutral",
+          "reason": "邻座同学。入学第一天在公车上相遇，之后成为邻座。绫小路觉得堀北和自己一样孤独，偶尔搭话，但远谈不上朋友。"
+        },
+        {
+          "to": "栉田桔梗",
+          "type": "neutral",
+          "reason": "同班同学。栉田对所有人都很友善，绫小路表面配合但内心保持警惕——他觉得她过于完美，不自然。"
+        },
+        {
+          "to": "须藤健",
+          "type": "neutral",
+          "reason": "同班同学。在便利店帮须藤垫付了泡面钱，须藤因此对他有了印象，但两人还不太熟。"
+        },
+        {
+          "to": "池宽治",
+          "type": "neutral",
+          "reason": "同班同学。池创建了男生LINE群组，把绫小路也拉了进去，偶尔闲聊。"
+        },
+        {
+          "to": "山内春树",
+          "type": "neutral",
+          "reason": "同班同学。通过池的群组认识，偶尔一起聊天。"
+        },
+        {
+          "to": "平田洋介",
+          "type": "neutral",
+          "reason": "同班同学。平田是D班的中心人物，人缘极好。绫小路对他保持距离，避免被卷入班级事务。"
+        },
+        {
+          "to": "茶柱佐枝",
+          "type": "neutral",
+          "reason": "D班班导。茶柱佐枝是一个看起来对班级漠不关心的老师，但绫小路隐约感觉到她在观察自己。"
+        }
+      ]
+    },
+    {
+      "name": "堀北铃音",
+      "role_id": "horikita_suzune",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "孤傲",
+        "理性",
+        "独立",
+        "完美主义",
+        "不善交际",
+        "孤高",
+        "冷静",
+        "自尊心强"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑发，美丽且锐利的眼神，气质沉稳，身材匀称。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "孤傲，认为不需要朋友，凡事依靠自己，理性且冷静，但内心有柔软的一面。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "horikita_brother_complex",
+          "content": "堀北铃音对哥哥堀北学有着极深的执念。她来到这所学校、拼命想要升上A班，很大程度上是为了向哥哥证明自己的价值。她冷傲的外表下隐藏着对认可的极度渴望。",
+          "known_by": [
+            "horikita_suzune"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "绫小路清隆",
+          "type": "neutral",
+          "reason": "邻座同学。入学第一天在公车上相遇，堀北觉得他是个奇怪的家伙——看似不起眼，却偶尔说出有见地的话。她姑且允许他在自己身边待着，但不认为他是朋友。"
+        },
+        {
+          "to": "堀北学",
+          "type": "family",
+          "reason": "哥哥，学生会会长。堀北铃音对哥哥有着复杂的情感——既崇拜又自卑，渴望得到他的认可。她不愿让哥哥知道自己在D班。"
+        },
+        {
+          "to": "须藤健",
+          "type": "hostile",
+          "reason": "同班同学。须藤是典型的D班废柴——冲动、成绩差、惹是生非。堀北觉得这种人拖累了班级，不想和他有任何瓜葛。"
+        },
+        {
+          "to": "栉田桔梗",
+          "type": "hostile",
+          "reason": "同班同学。栉田表面友善，但堀北直觉地不信任她。两人之间有一种微妙的敌意。"
+        }
+      ]
+    },
+    {
+      "name": "栉田桔梗",
+      "role_id": "kushida_kikyou",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "社交达人",
+        "表面友好",
+        "内心复杂",
+        "善于伪装",
+        "有秘密",
+        "表面温柔",
+        "内心阴暗",
+        "有控制欲"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "棕色短发，可爱，穿着时尚，裙子较短。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "表面开朗友善，希望与所有人成为朋友，但内心有阴暗面，对堀北有敌意。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "kushida_dark_side",
+          "content": "栉田桔梗有着极其黑暗的另一面人格。她内心极度厌恶所有人，维持完美形象对她来说是一种折磨。她会利用社交网络收集每个人的秘密和弱点，用于控制和摧毁威胁到她「完美形象」的人。任何可能暴露她真实面目的人都会被她视为必须摧毁的敌人。",
+          "known_by": [
+            "kushida_kikyo"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "绫小路清隆",
+          "type": "neutral",
+          "reason": "同班同学。栉田注意到绫小路和堀北走得近，对他产生了兴趣——她想通过绫小路了解堀北的弱点。表面保持友善。"
+        },
+        {
+          "to": "堀北铃音",
+          "type": "hostile",
+          "reason": "同班同学。堀北是唯一一个对栉田的友善无动于衷的人。栉田视堀北为威胁，想找到她的把柄并摧毁她。"
+        },
+        {
+          "to": "平田洋介",
+          "type": "friend",
+          "reason": "同班同学。两人都是班级的核心人物，在班级事务上互相配合。"
+        }
+      ]
+    },
+    {
+      "name": "须藤健",
+      "role_id": "sudo_ken",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "冲动",
+        "热血",
+        "运动健将",
+        "易怒",
+        "重情义",
+        "篮球天才",
+        "直率",
+        "运动能力强"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "体格魁梧，金发，不良少年外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，篮球社成员，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "冲动易怒，但重情义，对篮球充满热情，通过读书会逐渐成长。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "绫小路清隆",
+          "type": "friend",
+          "reason": "同班同学。绫小路在便利店帮他垫了钱，须藤觉得这人够意思。虽然交流不多，但须藤把绫小路当朋友。"
+        },
+        {
+          "to": "池宽治",
+          "type": "friend",
+          "reason": "同班同学。一起闲聊打混的朋友。"
+        },
+        {
+          "to": "山内春树",
+          "type": "friend",
+          "reason": "同班同学。一起闲聊打混的朋友。"
+        },
+        {
+          "to": "堀北铃音",
+          "type": "neutral",
+          "reason": "同班同学。觉得堀北很漂亮但太冷了，不怎么敢搭话。"
+        }
+      ]
+    },
+    {
+      "name": "池宽治",
+      "role_id": "ike_kanji",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "轻浮",
+        "好色",
+        "爱起哄",
+        "不成熟",
+        "爱抱怨",
+        "朋友多",
+        "缺乏深度",
+        "热情"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通高中生外貌，胖胖的。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "轻浮好色，喜欢谈论女生，经常和山内一起起哄，但本质不坏。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "绫小路清隆",
+          "type": "friend",
+          "reason": "同班同学。池把绫小路拉进了自己的男生群组，觉得他是个好说话的家伙。"
+        },
+        {
+          "to": "须藤健",
+          "type": "friend",
+          "reason": "同班同学。经常一起混的朋友。"
+        },
+        {
+          "to": "山内春树",
+          "type": "friend",
+          "reason": "同班同学。三人组之一。"
+        }
+      ]
+    },
+    {
+      "name": "山内春树",
+      "role_id": "yamauchi_haruki",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "轻浮",
+        "爱吹牛",
+        "好色",
+        "不成熟",
+        "朋友多",
+        "缺乏自信",
+        "善变",
+        "缺乏主见"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通高中生外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "轻浮爱吹牛，喜欢谈论女生，经常和池一起起哄，但本质不坏。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "绫小路清隆",
+          "type": "neutral",
+          "reason": "同班同学。偶尔在男生圈子里聊天的对象。"
+        },
+        {
+          "to": "池宽治",
+          "type": "friend",
+          "reason": "同班同学，好友。"
+        },
+        {
+          "to": "须藤健",
+          "type": "friend",
+          "reason": "同班同学，好友。"
+        }
+      ]
+    },
+    {
+      "name": "平田洋介",
+      "role_id": "hirata_yousuke",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "阳光",
+        "领导力",
+        "善良",
+        "受欢迎",
+        "运动全能",
+        "温柔",
+        "正义感强",
+        "理想主义"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "爽朗帅气，身材苗条结实，黑发。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，班级中心人物，足球社成员，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "阳光开朗，有领导力，关心班级，善良，但有时过于理想主义。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "hirata_trauma",
+          "content": "平田洋介在初中时期因为自己的懦弱导致最好的朋友自杀。这份深重的愧疚感驱使他在高中成为一个「完美的好人」——他必须保护所有人，不能拒绝任何人的求助。",
+          "known_by": [
+            "hirata_yosuke"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "轻井泽惠",
+          "type": "crush",
+          "reason": "同班同学，公开的恋人关系。但这更多是轻井泽寻求保护，平田配合她的需要。"
+        },
+        {
+          "to": "绫小路清隆",
+          "type": "neutral",
+          "reason": "同班同学。平田注意到绫小路虽然不起眼但很可靠，有心拉他融入班级。"
+        },
+        {
+          "to": "栉田桔梗",
+          "type": "friend",
+          "reason": "同班同学。两人在班级事务上互相协助，是D班的核心人物搭档。"
+        }
+      ]
+    },
+    {
+      "name": "高圆寺六助",
+      "role_id": "kouenji_rokusuke",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "自恋",
+        "傲慢",
+        "天才",
+        "我行我素",
+        "富有",
+        "孤高",
+        "聪明",
+        "冷漠"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "金发，长相英俊，身材完美，经常穿三角泳裤。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，高圆寺财阀独子，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "极度自恋，傲慢，我行我素，但拥有超强的身体能力和智力。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "kouenji_confidence",
+          "content": "高圆寺六助出身名门，拥有超强的身体能力和自信。他完全不在乎班级点数和个人点数，按照自己的节奏生活。他认为自己是最完美的存在。",
+          "known_by": [
+            "kouenji_rokusuke"
+          ]
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "茶柱佐枝",
+      "role_id": "chabashira_sae",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "严格",
+        "冷漠",
+        "观察力强",
+        "有秘密",
+        "毒舌",
+        "洞察力强",
+        "不负责",
+        "冷淡"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "马尾，穿着套装，年龄约30岁左右。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班班导，日本史教师。"
+        },
+        {
+          "label": "性格",
+          "content": "严格冷漠，对学生采取放任主义，但暗中观察学生，有自己的一套教育理念。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "chabashira_past",
+          "content": "茶柱佐枝曾经也是高度育成高中的学生，她所在的D班因为她的无能而没能升上A班。这份遗憾驱使她成为了教师，想看看自己这一届的D班能否创造奇迹。",
+          "known_by": [
+            "chabashira_sae"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "绫小路清隆",
+          "type": "neutral",
+          "reason": "D班学生。茶柱注意到这个学生的入学成绩和实际表现有明显落差，开始暗中关注他。她隐约觉得这个学生不简单。"
+        },
+        {
+          "to": "堀北铃音",
+          "type": "neutral",
+          "reason": "D班学生。茶柱看出堀北有潜力，但性格孤傲需要打磨。"
+        }
+      ]
+    },
+    {
+      "name": "堀北学",
+      "role_id": "horikita_manabu",
+      "class_name": "A",
+      "enrollment_year": "2022",
+      "traits": [
+        "威严",
+        "冷静",
+        "优秀",
+        "有领导力",
+        "理性",
+        "洞察力强",
+        "冷酷",
+        "有远见"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "身高170cm以上，黑发，戴眼镜，知性气质。"
+        },
+        {
+          "label": "身份",
+          "content": "三年级学生，学生会会长。"
+        },
+        {
+          "label": "性格",
+          "content": "威严冷静，有强大的气场和领导力，是学校顶尖学生。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "堀北铃音",
+          "type": "family",
+          "reason": "妹妹。堀北学对妹妹态度冷淡，认为她实力不足，不配做自己的妹妹。但他的严厉底下藏着希望妹妹能独立成长的期望。"
+        },
+        {
+          "to": "橘茜",
+          "type": "trust",
+          "reason": "学生会书记，堀北学最信任的助手。"
+        }
+      ]
+    },
+    {
+      "name": "轻井泽惠",
+      "role_id": "karuizawa_kei",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "辣妹",
+        "活泼",
+        "社交",
+        "有主见",
+        "外向",
+        "强势",
+        "时尚",
+        "社交达人"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "辣妹风格，打扮时尚。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "活泼开朗，辣妹系女生，社交能力强，有主见。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "karuizawa_past",
+          "content": "轻井泽惠在初中时期曾经是校园霸凌的受害者。那段经历给她留下了深重的心理创伤。她现在的强势外表、和平田的恋爱关系，全都是为了保护自己而建立的「防御系统」。她内心极度恐惧再次被孤立和欺负。",
+          "known_by": [
+            "karuizawa_kei"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "平田洋介",
+          "type": "crush",
+          "reason": "同班同学，表面上的恋人。对轻井泽来说，平田是她维持自己在班级中地位的「护身符」。"
+        }
+      ]
+    },
+    {
+      "name": "佐仓爱里",
+      "role_id": "sakura_airi",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "内向",
+        "害羞",
+        "朴素",
+        "巨乳",
+        "胆小",
+        "善良",
+        "有艺术天赋",
+        "缺乏自信"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "戴眼镜，朴素，但身材丰满。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "内向害羞，不善于与人交流，存在感低。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "sakura_gravure",
+          "content": "佐仓爱里是一名知名网络平面偶像（写真偶像），但她极度害羞内向，不想让任何人知道这个身份。她在班级里几乎不与人交流，是一个存在感极低的学生。",
+          "known_by": [
+            "sakura_airi"
+          ]
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "长谷部波瑠加",
+      "role_id": "hasebe_haruka",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "美女",
+        "巨乳",
+        "有自觉",
+        "谨慎",
+        "内向",
+        "重感情",
+        "复仇心",
+        "成长中"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "美女，巨乳，身材出众。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "对自己的美貌有自觉，对男生的目光保持警惕，选择见习游泳课。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "一之濑帆波",
+      "role_id": "ichinose_honami",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "正义感",
+        "冷静",
+        "有领导力",
+        "受欢迎",
+        "开朗",
+        "善良",
+        "正义感强",
+        "聪明"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "金发美女，气质出众。"
+        },
+        {
+          "label": "身份",
+          "content": "一年B班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "正义感强，冷静，有领导力，在图书馆平息了须藤与C班的冲突。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "ichinose_past",
+          "content": "一之濑帆波在初中时期曾经因为偷窃事件而被迫转学。这件事是她深深的阴影，她发誓要在高中做一个好人来弥补过去的错误。",
+          "known_by": [
+            "ichinose_honami"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "神崎隆二",
+          "type": "friend",
+          "reason": "同班同学，B班的副手，一之濑最信任的伙伴。"
+        }
+      ]
+    },
+    {
+      "name": "山胁",
+      "role_id": "yamawaki",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "挑衅",
+        "傲慢",
+        "欺软怕硬",
+        "胆小"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通高中生外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "挑衅傲慢，看不起D班学生，但被一之濑制止后退缩。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "井之头心",
+      "role_id": "imported_井之头心",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "害羞",
+        "内向",
+        "擅长缝纫"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通女生外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "害羞内向，在自我介绍时紧张，被栉田鼓励后冷静下来。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "本堂",
+      "role_id": "imported_本堂",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "内向",
+        "自卑"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通高中生外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "内向，对游泳课感到自卑，担心自己的下体尺寸。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "小野寺",
+      "role_id": "imported_小野寺",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "运动健将",
+        "游泳社"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通女生外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，游泳社成员，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "运动能力强，在游泳比赛中以26秒获胜。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "外村",
+      "role_id": "tonomura",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "书呆子",
+        "爱起外号",
+        "爱玩"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "胖胖的，戴眼镜。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，入学一个月后点数归零。"
+        },
+        {
+          "label": "性格",
+          "content": "书呆子，被池称为博士，参与制作女生胸部排行榜。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "绫小路清隆",
+          "type": "friend",
+          "reason": "同班同学。外村（博士）是那种不起眼的宅男型学生，和绫小路一样不爱出风头，两人偶尔在班级角落里闲聊游戏。"
+        }
+      ]
+    },
+    {
+      "name": "星之宫知惠",
+      "role_id": "hoshinomiya_chie",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "温柔",
+        "神秘",
+        "观察力强",
+        "开朗",
+        "轻浮",
+        "关心学生",
+        "懒散",
+        "宿醉"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "温柔女性外貌。"
+        },
+        {
+          "label": "身份",
+          "content": "一年B班班导。"
+        },
+        {
+          "label": "性格",
+          "content": "温柔，但似乎知道一些内幕，在教师办公室对绫小路微笑。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "hoshinomiya_chabashira",
+          "content": "星之宫知惠是B班班导，与D班班导茶柱佐枝是学生时代的好友。她对茶柱有一种微妙的竞争心结。",
+          "known_by": [
+            "hoshinomiya_chie"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "茶柱佐枝",
+          "type": "friend",
+          "reason": "学生时代的好友，同为教师。星之宫表面上亲密，但内心有竞争意识。"
+        }
+      ]
+    },
+    {
+      "name": "神崎隆二",
+      "role_id": "kanzaki_ryuji",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "冷静",
+        "理性",
+        "务实",
+        "有领导力",
+        "重视规则",
+        "正直",
+        "有正义感",
+        "聪明"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑发，表情严肃，身材匀称。"
+        },
+        {
+          "label": "身份",
+          "content": "一年B班学生，班级中的领导者之一。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静理性，重视规则和实际利益，与一之濑的感性形成互补。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "一之濑帆波",
+          "type": "trust",
+          "reason": "同班同学，B班副手。神崎冷静理性，是一之濑最可靠的搭档。"
+        }
+      ]
+    },
+    {
+      "name": "龙园翔",
+      "role_id": "ryuuen_kakeru",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "狡猾",
+        "冷酷",
+        "有领导力",
+        "善于操控",
+        "危险",
+        "好斗",
+        "不择手段",
+        "霸道"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "自然卷黑发，偏长，眼神冷酷，冷笑常挂在嘴边。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，C班的幕后领导者。"
+        },
+        {
+          "label": "性格",
+          "content": "狡猾冷酷，为了利益不择手段，善于操控他人，是危险人物。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "ryuen_ambition",
+          "content": "龙园翔以暴力殴打和威胁的手段迫使C班大部分学生臣服，正在建立自己的绝对统治。他享受掌控一切的快感，将全校视为自己的棋盘。",
+          "known_by": [
+            "ryuen_kakeru"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "to": "石崎大地",
+          "type": "subservient",
+          "reason": "C班学生。被龙园用暴力制服，现在完全服从龙园。"
+        },
+        {
+          "to": "伊吹澪",
+          "type": "subservient",
+          "reason": "C班学生。表面服从龙园的统治，但心中不服。"
+        }
+      ]
+    },
+    {
+      "name": "石崎大地",
+      "role_id": "ishizaki_daichi",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "冲动",
+        "易怒",
+        "忠诚",
+        "容易被操控",
+        "好斗",
+        "暴力",
+        "单纯"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，身材结实，表情凶狠。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，龙园翔的手下之一。"
+        },
+        {
+          "label": "性格",
+          "content": "冲动好斗，对龙园忠诚，容易被利用。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "龙园翔",
+          "type": "subservient",
+          "reason": "C班实际统治者。石崎对龙园极度畏惧，完全不敢违抗他的命令。"
+        }
+      ]
+    },
+    {
+      "name": "橘茜",
+      "role_id": "tachibana_akane",
+      "class_name": "A",
+      "enrollment_year": "2023",
+      "traits": [
+        "认真",
+        "负责",
+        "尊敬堀北学",
+        "能干",
+        "忠诚",
+        "活泼",
+        "有点冒失"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑发，戴眼镜，表情认真，身材苗条。"
+        },
+        {
+          "label": "身份",
+          "content": "三年级学生，学生会书记。"
+        },
+        {
+          "label": "性格",
+          "content": "认真负责，对堀北学非常尊敬，工作能力强。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "堀北学",
+          "type": "trust",
+          "reason": "学生会书记，堀北学的忠实助手。"
+        }
+      ]
+    },
+    {
+      "name": "筱原皋月",
+      "role_id": "shinohara_satsuki",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "固执",
+        "情绪化",
+        "有主见",
+        "注重卫生",
+        "活泼",
+        "关心男友",
+        "直率",
+        "努力型"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通女生，打扮整洁。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，女生团体成员，与池常起冲突。"
+        },
+        {
+          "label": "性格",
+          "content": "固执且情绪化，注重卫生，在无人岛考试中坚持使用临时厕所。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "幸村辉彦",
+      "role_id": "yukimura_teruhiko",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "严谨",
+        "理性",
+        "固执",
+        "注重规则",
+        "认真",
+        "学力高",
+        "易怒",
+        "缺乏变通"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "戴眼镜，文质彬彬。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，性格严谨，注重规则和效率。"
+        },
+        {
+          "label": "性格",
+          "content": "严谨理性，固执己见，在无人岛考试中主张节省点数。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "伊吹澪",
+      "role_id": "ibuki_mio",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "寡言",
+        "好斗",
+        "忠诚",
+        "善于伪装",
+        "有实力",
+        "直率",
+        "孤僻",
+        "有常识"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，眼神锐利，气质冷峻。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，龙园的跟班之一。"
+        },
+        {
+          "label": "性格",
+          "content": "寡言好斗，对龙园忠诚，善于伪装和战斗。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "龙园翔",
+          "type": "hostile",
+          "reason": "C班同学。伊吹对龙园的暴力统治心中不服，但暂时没有反抗的力量。"
+        }
+      ]
+    },
+    {
+      "name": "葛城康平",
+      "role_id": "katsuragi_kohei",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "冷静",
+        "谨慎",
+        "有领导力",
+        "重视策略",
+        "保守",
+        "理性",
+        "善于防守",
+        "正派"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "体格健壮，表情严肃，气质沉稳。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，A班领袖之一，与坂柳派对立。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静谨慎，重视策略，但有时过于保守。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "坂柳有栖",
+          "type": "rival",
+          "reason": "同班同学。葛城与坂柳在A班内部形成了两派对立，争夺班级主导权。"
+        }
+      ]
+    },
+    {
+      "name": "弥彦",
+      "role_id": "yahiko",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "冲动",
+        "粗心",
+        "忠诚"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通男生，体格中等。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，葛城的追随者。"
+        },
+        {
+          "label": "性格",
+          "content": "冲动粗心，对葛城忠诚，但有时会犯低级错误。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "真嶋老师",
+      "role_id": "majima_sensei",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "严谨",
+        "严厉",
+        "公正",
+        "冷静",
+        "严格",
+        "情绪稳定"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "体格如摔角手般强壮，表情严肃。"
+        },
+        {
+          "label": "身份",
+          "content": "A班班导，以严谨著称，负责宣布特别考试规则。"
+        },
+        {
+          "label": "性格",
+          "content": "严谨严厉，公正无私，对学生要求严格。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "外村秀雄",
+      "role_id": "hokutomoto_hideo",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "宅男",
+        "幽默",
+        "聪明",
+        "喜欢二次元",
+        "说话古怪"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "微胖，戴眼镜，形象偏宅男。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，被称作‘博士’，精通历史和机械。"
+        },
+        {
+          "label": "性格",
+          "content": "性格开朗，喜欢用奇怪的语调说话，对二次元文化有浓厚兴趣。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "真锅志保",
+      "role_id": "manabe_shiho",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "欺凌者",
+        "冲动",
+        "易怒",
+        "欺软怕硬"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，表情凶悍，打扮偏男性化。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生"
+        },
+        {
+          "label": "性格",
+          "content": "性格冲动，喜欢欺凌弱者，但害怕龙园。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "町田浩二",
+      "role_id": "machida_koji",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "傲慢",
+        "保守",
+        "有戒心",
+        "服从葛城"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，表情严肃，身材健壮。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，葛城康平的追随者。"
+        },
+        {
+          "label": "性格",
+          "content": "性格傲慢，对别班有戒心，严格服从葛城的方针。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "滨口哲也",
+      "role_id": "hamaguchi_tetsuya",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "冷静",
+        "聪明",
+        "善于分析",
+        "配合一之濑",
+        "模范生",
+        "认真",
+        "可靠"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "蓝发，身材瘦弱，长相中性。"
+        },
+        {
+          "label": "身份",
+          "content": "一年B班学生，一之濑帆波的同伴。"
+        },
+        {
+          "label": "性格",
+          "content": "性格冷静，善于分析，配合一之濑的行动。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "柴田飒",
+      "role_id": "shibata_sou",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "开朗",
+        "运动能力强",
+        "友善",
+        "受欢迎",
+        "活泼",
+        "眼镜",
+        "有点自大"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "棕色短发，身材健壮，常穿运动服。"
+        },
+        {
+          "label": "身份",
+          "content": "一年B班学生，运动能力出色，性格开朗。"
+        },
+        {
+          "label": "性格",
+          "content": "友善热情，喜欢运动，是班级的活跃分子。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "南云雅",
+      "role_id": "nagumo_miyabi",
+      "class_name": "A",
+      "enrollment_year": "2023",
+      "traits": [
+        "自信",
+        "有野心",
+        "受欢迎",
+        "善于社交",
+        "有领导力",
+        "善于拉拢",
+        "独裁",
+        "善于策略"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "金色短发，面容俊秀，身材高挑，常穿时尚便服。"
+        },
+        {
+          "label": "身份",
+          "content": "二年级A班学生，学生会副会长，下任学生会长有力候选人。"
+        },
+        {
+          "label": "性格",
+          "content": "自信开朗，有强烈的野心，善于拉拢人心。"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "堀北学",
+          "type": "rival",
+          "reason": "二年级A班学生，学生会副会长。南云对堀北学的权威持挑战态度，有取而代之的野心。"
+        }
+      ],
+      "status_note": "二年级学生，锚点时的存在感低"
+    },
+    {
+      "name": "佐藤麻耶",
+      "role_id": "sato_maya",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "活泼",
+        "天真",
+        "恋爱脑",
+        "缺乏经验",
+        "开朗",
+        "社交",
+        "内心脆弱",
+        "成长中"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "可爱，注重打扮。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，绫小路清隆的同班同学。"
+        },
+        {
+          "label": "性格",
+          "content": "开朗直率，但对恋爱充满憧憬，缺乏实际经验。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "坂柳有栖",
+      "role_id": "sakayanagi_arisu",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "聪明",
+        "冷静",
+        "高傲",
+        "善于算计",
+        "身体虚弱",
+        "自信",
+        "神秘",
+        "有谋略"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "娇小柔弱，拄着拐杖，但眼神锐利。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，学校理事长的女儿。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静沉着，自认为是天才，视绫小路为必须击败的对手。"
+        }
+      ],
+      "secrets": [
+        {
+          "info_id": "sakayanagi_white_room",
+          "content": "坂柳有栖知道「白屋」的存在，并且知道绫小路清隆是白屋的最高杰作。她视绫小路为必须击败的对手，但此时尚未与他正式接触。",
+          "known_by": [
+            "sakayanagi_arisu"
+          ]
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "桐山生",
+      "role_id": "kiriyama_ikuto",
+      "class_name": "B",
+      "enrollment_year": "2023",
+      "traits": [
+        "谨慎",
+        "有野心",
+        "不满现状"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "戴眼镜，看起来文质彬彬。"
+        },
+        {
+          "label": "身份",
+          "content": "二年级B班学生，学生会副会长。"
+        },
+        {
+          "label": "性格",
+          "content": "谨慎而有野心，对南云雅的学生会长统治不满。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "神室真澄",
+      "role_id": "kamisaki_masumi",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "冷静",
+        "忠诚",
+        "有秘密",
+        "冷淡"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，表情冷淡。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，坂柳有栖的部下。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静忠诚，但似乎有不愿提及的秘密。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "长谷部波琉加",
+      "role_id": "hasebe_haruka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "活泼",
+        "直率",
+        "关心朋友"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，活泼可爱。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，绫小路的朋友。"
+        },
+        {
+          "label": "性格",
+          "content": "活泼直率，关心朋友，尤其是佐仓爱里。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "松下",
+      "role_id": "matsushita",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "可爱",
+        "现实"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "可爱。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生。"
+        },
+        {
+          "label": "性格",
+          "content": "现实，对恋爱有较高的要求。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "石崎",
+      "role_id": "ishizaki",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "忠诚",
+        "冲动",
+        "讲义气"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "体格强壮，脸上有伤。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，龙园的前部下。"
+        },
+        {
+          "label": "性格",
+          "content": "忠诚冲动，讲义气，曾试图挽留龙园。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "阿尔伯特",
+      "role_id": "albert",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "沉默",
+        "强壮",
+        "忠诚",
+        "大块头",
+        "讨厌纷争"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "体格魁梧，沉默寡言。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，龙园的前部下。"
+        },
+        {
+          "label": "性格",
+          "content": "沉默忠诚，是龙园的得力打手。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "真锅",
+      "role_id": "manabe",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "欺凌者",
+        "懦弱"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "普通女生。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生。"
+        },
+        {
+          "label": "性格",
+          "content": "欺凌者，但内心懦弱，被龙园利用。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "桥本正义",
+      "role_id": "hashimoto_masayoshi",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "随和",
+        "冷静",
+        "观察力强",
+        "服从坂柳",
+        "狡猾",
+        "善于撒谎",
+        "墙头草",
+        "生存欲强"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "A班男生"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生"
+        },
+        {
+          "label": "性格",
+          "content": "随和，跟随坂柳行动"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "椎名日和",
+      "role_id": "shiina_hina",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "温和",
+        "聪明",
+        "茶道部",
+        "温柔",
+        "冷静",
+        "善于观察",
+        "忠诚"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "C班女生"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，茶道部成员"
+        },
+        {
+          "label": "性格",
+          "content": "温和聪明，善于观察，希望班级团结"
+        }
+      ],
+      "secrets": [],
+      "relations": [
+        {
+          "to": "龙园翔",
+          "type": "neutral",
+          "reason": "同班同学。椎名是C班少数不受龙园暴力统治影响的人之一，她有自己的原则和底线。"
+        }
+      ]
+    },
+    {
+      "name": "三宅明人",
+      "role_id": "miyake_akito",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "冷静",
+        "有过去",
+        "弓道",
+        "重情义",
+        "沉默",
+        "忠诚",
+        "成长中"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色短发，眼神锐利，身材结实。"
+        },
+        {
+          "label": "身份",
+          "content": "二年D班学生，弓道社成员，过去曾是不良少年。"
+        },
+        {
+          "label": "性格",
+          "content": "外表冷静，有过去，重情义，对朋友忠诚。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "宝泉和臣",
+      "role_id": "houzen_kazuomi",
+      "class_name": "D",
+      "enrollment_year": "2025",
+      "traits": [
+        "暴力",
+        "傲慢",
+        "有实力",
+        "策略家",
+        "危险"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "身材极其魁梧，肌肉发达，表情凶狠。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，地方有名的不良少年头目。"
+        },
+        {
+          "label": "性格",
+          "content": "暴力傲慢，有实力，但也会使用策略，危险人物。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "七濑翼",
+      "role_id": "nanase_tsubasa",
+      "class_name": "D",
+      "enrollment_year": "2025",
+      "traits": [
+        "冷静",
+        "礼貌",
+        "观察力强",
+        "有目性",
+        "忠诚",
+        "勇敢",
+        "冲动",
+        "正义感强"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色长发，表情冷静，身材纤细。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，协助宝泉行动。"
+        },
+        {
+          "label": "性格",
+          "content": "表面礼貌冷静，观察力强，有明确目的性。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "天泽一夏",
+      "role_id": "amazawa_ichika",
+      "class_name": "A",
+      "enrollment_year": "2025",
+      "traits": [
+        "聪明",
+        "辣妹",
+        "狡猾",
+        "有目性",
+        "善于伪装",
+        "战斗能力强",
+        "崇拜绫小路",
+        "叛逆"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "茶色长发，打扮时尚，笑容狡黠。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，学力A。"
+        },
+        {
+          "label": "性格",
+          "content": "聪明狡猾，表面辣妹风格，实际有目的性。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "八神拓也",
+      "role_id": "yagami_takuya",
+      "class_name": "D",
+      "enrollment_year": "2025",
+      "traits": [
+        "聪明",
+        "礼貌",
+        "观察力强",
+        "可疑",
+        "傲慢",
+        "暴力倾向",
+        "隐藏实力",
+        "好胜"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色短发，笑容温和，身材匀称。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，学力A。"
+        },
+        {
+          "label": "性格",
+          "content": "表面礼貌温和，观察力强，行为可疑。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "月城",
+      "role_id": "tsukishiro",
+      "class_name": null,
+      "enrollment_year": "N/A",
+      "traits": [
+        "狡猾",
+        "冷静",
+        "有权力",
+        "操纵者",
+        "神秘莫测",
+        "笑里藏刀",
+        "手腕高超",
+        "情报通"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "四十几岁的男人，相貌普通。"
+        },
+        {
+          "label": "身份",
+          "content": "高度育成高中代理理事长，White Room代理人。"
+        },
+        {
+          "label": "性格",
+          "content": "狡猾冷静，善于操纵，目标是让绫小路退学。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "鬼龙院枫花",
+      "role_id": "kiryuuin_fuka",
+      "class_name": "B",
+      "enrollment_year": "2023",
+      "traits": [
+        "自信",
+        "独立",
+        "观察力强",
+        "战斗能力强",
+        "洒脱",
+        "孤高",
+        "强大",
+        "厌恶犯罪"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "长发，身材高挑，常穿校服，气质出众。"
+        },
+        {
+          "label": "身份",
+          "content": "三年B班学生，实力派，对南云和高圆寺的竞争感兴趣。"
+        },
+        {
+          "label": "性格",
+          "content": "自信且洒脱，喜欢观察强者，不轻易介入纷争，但必要时会出手。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "桐山",
+      "role_id": "kiriyama",
+      "class_name": "B",
+      "enrollment_year": "2023",
+      "traits": [
+        "冷静",
+        "善于策略",
+        "忠诚",
+        "谨慎",
+        "有领导力"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，身材中等，常穿校服，表情严肃。"
+        },
+        {
+          "label": "身份",
+          "content": "三年B班学生，南云的得力助手，负责执行封锁高圆寺的计划。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静且谨慎，善于制定策略，对南云忠诚但有自己的判断。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "白波千寻",
+      "role_id": "shiranami_chihiro",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "胆小",
+        "善良",
+        "依赖性强",
+        "细心",
+        "温柔"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑发，身材娇小，常穿校服，表情柔和。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，一之濑班级的成员，性格胆小。"
+        },
+        {
+          "label": "性格",
+          "content": "胆小且依赖性强，但善良细心，对朋友忠诚。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "小桥梦",
+      "role_id": "kohashi_yume",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "开朗",
+        "善于社交",
+        "细心",
+        "温柔",
+        "胆小"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "棕发，身材中等，常穿校服，笑容温暖。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生，白波千寻的朋友。"
+        },
+        {
+          "label": "性格",
+          "content": "开朗且善于社交，但有时胆小，对朋友忠诚。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "竹本",
+      "role_id": "takemoto",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "冷静",
+        "善于合作",
+        "细心",
+        "谨慎",
+        "忠诚"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，身材中等，常穿校服，表情严肃。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，坂柳班级的成员。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静且谨慎，善于合作，对班级忠诚。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "宝泉和彦",
+      "role_id": "housen_kazuhiko",
+      "class_name": "D",
+      "enrollment_year": "2025",
+      "traits": [
+        "暴力",
+        "冲动",
+        "好斗",
+        "有领导力",
+        "残忍"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "红发，身材高大，常穿运动服，眼神凶狠。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班学生，暴力倾向严重，曾与龙园互殴。"
+        },
+        {
+          "label": "性格",
+          "content": "暴力且冲动，好斗，对敌人毫不留情。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "司马老师",
+      "role_id": "shiba_teacher",
+      "class_name": "D",
+      "enrollment_year": "2022",
+      "traits": [
+        "冷酷",
+        "忠诚",
+        "战斗能力强",
+        "沉默",
+        "善于执行"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，常穿西装，身材结实，表情严肃。"
+        },
+        {
+          "label": "身份",
+          "content": "一年D班班导，月城代理理事长的手下。"
+        },
+        {
+          "label": "性格",
+          "content": "冷酷且忠诚，善于执行命令，战斗能力强。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "三木谷",
+      "role_id": "mikiya",
+      "class_name": "B",
+      "enrollment_year": "2023",
+      "traits": [
+        "冲动",
+        "好胜",
+        "忠诚",
+        "善于战斗",
+        "急躁"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "短发，身材中等，常穿校服，表情急躁。"
+        },
+        {
+          "label": "身份",
+          "content": "三年B班学生，桐山的部下，负责封锁高圆寺。"
+        },
+        {
+          "label": "性格",
+          "content": "冲动且好胜，善于战斗，但急躁易怒。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "椿樱子",
+      "role_id": "imported_椿樱子",
+      "class_name": "C",
+      "enrollment_year": "2025",
+      "traits": [
+        "聪明",
+        "冷静",
+        "策略家",
+        "复仇心"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色长发，眼神锐利，身材纤细。"
+        },
+        {
+          "label": "身份",
+          "content": "一年C班学生。"
+        },
+        {
+          "label": "性格",
+          "content": "聪明冷静，善于策略，因同班同学被八神拓也退学而怀有复仇心。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "朝比奈荠",
+      "role_id": "imported_朝比奈荠",
+      "class_name": "A",
+      "enrollment_year": "2023",
+      "traits": [
+        "开朗",
+        "友善",
+        "观察力强"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "茶色长发，笑容开朗，身材匀称。"
+        },
+        {
+          "label": "身份",
+          "content": "三年A班学生。"
+        },
+        {
+          "label": "性格",
+          "content": "开朗友善，善于观察，对南云雅的行为有深刻理解。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "姬野",
+      "role_id": "imported_姬野",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": [
+        "内向",
+        "随波逐流",
+        "内心有想法",
+        "成长中"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色长发，表情淡漠，身材纤细。"
+        },
+        {
+          "label": "身份",
+          "content": "二年D班学生。"
+        },
+        {
+          "label": "性格",
+          "content": "内向且随波逐流，但内心对班级现状有不满，渴望改变。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "坂柳成守",
+      "role_id": "sakurako_shigemori",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "温和有礼",
+        "理想主义",
+        "深思熟虑",
+        "重视教育",
+        "有原则"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "身材纤细，面容温和，举止优雅，给人一种知性的印象。"
+        },
+        {
+          "label": "身份",
+          "content": "财阀家族成员，高度育成高等学校前理事长的儿子，后成为该校理事长。"
+        },
+        {
+          "label": "性格",
+          "content": "待人谦和，但内心坚定，对教育有理想化的追求，反对白屋的非人道做法。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "鸭川",
+      "role_id": "kamogawa",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "忠诚",
+        "有些天真",
+        "成长中",
+        "依赖性强",
+        "有政治抱负"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，身材普通，表情常带困惑或兴奋。"
+        },
+        {
+          "label": "身份",
+          "content": "国会议员，绫小路笃臣的部下，白屋计划的参与者。"
+        },
+        {
+          "label": "性格",
+          "content": "对笃臣忠心耿耿，但缺乏政治手腕，容易动摇，在经历中逐渐成长。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "铃悬锻冶",
+      "role_id": "suzukake_kaji",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "天才研究者",
+        "冷酷理性",
+        "执着于实验",
+        "缺乏道德感",
+        "观察力强"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "长满胡须的中年男子，实际年龄比外表年轻，眼神专注。"
+        },
+        {
+          "label": "身份",
+          "content": "白屋计划的首席研究员，负责教育课程的制定和实施。"
+        },
+        {
+          "label": "性格",
+          "content": "对研究充满热情，将孩子视为实验对象，追求人类能力的极限，缺乏情感共鸣。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "美香",
+      "role_id": "mika",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "现实",
+        "精明",
+        "善于利用自身",
+        "情感疏离",
+        "独立"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "年轻女性，容貌出众，打扮时尚。"
+        },
+        {
+          "label": "身份",
+          "content": "夜总会女郎，绫小路笃臣的前情人和合作者，清隆的生母。"
+        },
+        {
+          "label": "性格",
+          "content": "为了金钱和利益可以牺牲一切，包括自己的孩子，对感情持实用主义态度。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "直江老师",
+      "role_id": "naoe_sensei",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "老谋深算",
+        "权力欲强",
+        "冷酷",
+        "善于操控",
+        "年老体衰"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "年迈的老人，但眼神锐利，气场强大。"
+        },
+        {
+          "label": "身份",
+          "content": "市民党的大派阀领袖，绫小路笃臣的政治导师。"
+        },
+        {
+          "label": "性格",
+          "content": "极度自私，将他人视为棋子，为了维护自己的权力不惜牺牲任何人。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "鬼岛老师",
+      "role_id": "onijima_sensei",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "清廉",
+        "有远见",
+        "政治手腕强",
+        "重视教育",
+        "难以捉摸"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，外表严肃，给人可靠感。"
+        },
+        {
+          "label": "身份",
+          "content": "市民党的重要政治家，高度育成高等学校的支持者，后成为总理大臣。"
+        },
+        {
+          "label": "性格",
+          "content": "表面正直，但内心深不可测，对教育有独到见解，是直江老师的对手。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "石上京",
+      "role_id": "ishigami_kyo",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "聪明",
+        "冷静",
+        "有正义感",
+        "善于观察",
+        "早熟"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "少年，眼神明亮，举止得体。"
+        },
+        {
+          "label": "身份",
+          "content": "财阀石上集团会长的儿子，在聚会上表现出色。"
+        },
+        {
+          "label": "性格",
+          "content": "比同龄人成熟，善于思考，不畏惧权威，有领导潜质。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "雪",
+      "role_id": "yuki",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "脆弱",
+        "依赖性强",
+        "心理创伤",
+        "执着",
+        "情感丰富"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "与清隆年龄相仿的女孩，面容苍白，眼神忧郁。"
+        },
+        {
+          "label": "身份",
+          "content": "财阀家族的女儿，白屋计划的淘汰者。"
+        },
+        {
+          "label": "性格",
+          "content": "因白屋的经历而患有严重心理疾病，对外界充满恐惧，但对清隆有执念。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "田渊",
+      "role_id": "tabuchi",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "谨慎",
+        "有良知",
+        "服从",
+        "焦虑",
+        "专业"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，常带黑眼圈，表情紧张。"
+        },
+        {
+          "label": "身份",
+          "content": "白屋计划的研究员，负责监督和记录教育过程。"
+        },
+        {
+          "label": "性格",
+          "content": "对白屋的非人道做法感到不安，但出于恐惧和利益而服从命令。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "宗谷",
+      "role_id": "souya",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "傲慢",
+        "专业",
+        "缺乏道德",
+        "自信",
+        "固执"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，常穿白衣，表情轻浮。"
+        },
+        {
+          "label": "身份",
+          "content": "原医生，因问题行为被吊销医师证，后成为白屋研究员。"
+        },
+        {
+          "label": "性格",
+          "content": "对自己的能力极度自信，不认为自己的行为有错，缺乏悔意。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "石田",
+      "role_id": "ishida",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "理性",
+        "专业",
+        "有原则",
+        "冷静",
+        "合作"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，表情严肃，举止专业。"
+        },
+        {
+          "label": "身份",
+          "content": "白屋计划的研究员，负责教育课程的实施。"
+        },
+        {
+          "label": "性格",
+          "content": "相对理性，对教育有自己的一套方法，但最终服从于实验目标。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "天泽社长",
+      "role_id": "amazawa",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "风流",
+        "挥霍无度",
+        "不负责任",
+        "精明",
+        "自私"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，打扮时尚，显得年轻。"
+        },
+        {
+          "label": "身份",
+          "content": "财阀社长，白屋计划的投资者。"
+        },
+        {
+          "label": "性格",
+          "content": "对家庭不负责任，将孩子视为麻烦，用金钱解决问题。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "石上五郎",
+      "role_id": "ishigami_goro",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "年长",
+        "有远见",
+        "重视教育",
+        "温和",
+        "有影响力"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "老年男性，面容慈祥，举止优雅。"
+        },
+        {
+          "label": "身份",
+          "content": "石上集团会长，财阀领袖。"
+        },
+        {
+          "label": "性格",
+          "content": "对儿子石上京的教育非常重视，希望他未来能进入政界。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "神崎智弘",
+      "role_id": "kanzaki_tomohiro",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "热心教育",
+        "有野心",
+        "尊重强者",
+        "务实"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，表情认真。"
+        },
+        {
+          "label": "身份",
+          "content": "神崎重工社长，白屋计划的投资者。"
+        },
+        {
+          "label": "性格",
+          "content": "对儿子的教育非常上心，希望儿子能成为优秀的人。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "雪的父亲",
+      "role_id": "yukis_father",
+      "class_name": "D",
+      "enrollment_year": "N/A",
+      "traits": [
+        "爱女心切",
+        "无奈",
+        "有财力",
+        "温和"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "中年男性，面容温和，带着忧虑。"
+        },
+        {
+          "label": "身份",
+          "content": "财阀家族成员，雪的父亲。"
+        },
+        {
+          "label": "性格",
+          "content": "为了女儿的心理健康不惜一切，但面对清隆的冷漠感到无力。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "桐山龙二",
+      "role_id": "kiriyama_ryuuji",
+      "class_name": "A",
+      "enrollment_year": "2023",
+      "traits": [
+        "冷静",
+        "谋略家",
+        "忠诚",
+        "隐忍",
+        "正义感"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色短发，眼神沉稳，身材中等，气质严肃。"
+        },
+        {
+          "label": "身份",
+          "content": "三年级学生，学生会副会长，南云雅的亲信。"
+        },
+        {
+          "label": "性格",
+          "content": "表面忠诚于南云，实则暗中策划破坏南云的计划，以保护三年级生利益。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "姬野雪",
+      "role_id": "himeno_yuki",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "内向",
+        "敏感",
+        "观察力强",
+        "自我怀疑",
+        "成长型"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色长发，眼神忧郁，身材纤细，气质文静。"
+        },
+        {
+          "label": "身份",
+          "content": "一年B班学生，一之濑班成员。"
+        },
+        {
+          "label": "性格",
+          "content": "内向敏感，自我怀疑，但观察力强。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "石上优",
+      "role_id": "ishigami_yu",
+      "class_name": "A",
+      "enrollment_year": "2025",
+      "traits": [
+        "冷静",
+        "聪明",
+        "孤僻",
+        "观察力强",
+        "神秘"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色长发，眼神冷淡，身材纤细，气质孤僻。"
+        },
+        {
+          "label": "身份",
+          "content": "一年A班学生，A班参谋。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静聪明，但孤僻，对学生会不感兴趣。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "西野武子",
+      "role_id": "nishino_takeko",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": [
+        "大胆",
+        "无畏",
+        "忠诚"
+      ],
+      "public_info": [
+        {
+          "label": "状态",
+          "content": "5月1日时尚未登场或未活跃"
+        }
+      ],
+      "secrets": [],
+      "relations": [],
+      "status_at_anchor": "未登场"
+    },
+    {
+      "name": "鬼头隼",
+      "role_id": "kito_hayato",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "沉默",
+        "忠诚",
+        "善于运动"
+      ],
+      "public_info": [
+        {
+          "label": "状态",
+          "content": "5月1日时尚未登场或未活跃"
+        }
+      ],
+      "secrets": [],
+      "relations": [],
+      "status_at_anchor": "未登场"
+    },
+    {
+      "name": "真田康生",
+      "role_id": "sanada_yasuo",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "冷静",
+        "善于分析",
+        "忠诚"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色短发，戴眼镜，表情冷静。"
+        },
+        {
+          "label": "身份",
+          "content": "二年A班学生，坂柳班的成员。"
+        },
+        {
+          "label": "性格",
+          "content": "冷静且善于分析，是坂柳班的重要战力。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "山村美纪",
+      "role_id": "yamamura_miki",
+      "class_name": "A",
+      "enrollment_year": "2024",
+      "traits": [
+        "内向",
+        "善于观察",
+        "忠诚"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色长发，气质文静。"
+        },
+        {
+          "label": "身份",
+          "content": "二年A班学生，坂柳班的情报员。"
+        },
+        {
+          "label": "性格",
+          "content": "内向但善于观察，对坂柳忠诚。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    },
+    {
+      "name": "松下千秋",
+      "role_id": "matsushita_chiaki",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": [
+        "聪明",
+        "善于观察",
+        "谨慎"
+      ],
+      "public_info": [
+        {
+          "label": "外貌",
+          "content": "黑色长发，气质冷静。"
+        },
+        {
+          "label": "身份",
+          "content": "二年B班学生，堀北班的成员。"
+        },
+        {
+          "label": "性格",
+          "content": "聪明且谨慎，善于观察。"
+        }
+      ],
+      "secrets": [],
+      "relations": []
+    }
+  ]
+}

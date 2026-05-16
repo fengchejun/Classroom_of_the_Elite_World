@@ -91,6 +91,7 @@ class GameService:
             location_id=player_loc,
             game_date=self.clock.now.game_date,
             time_slot=self.clock.now.time_slot,
+            player_char_id=game_session.player_char_id,
         )
 
         # Fire the highest priority match

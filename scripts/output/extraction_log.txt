@@ -1,0 +1,625 @@
+Found 34 volume directories
+
+============================================================
+  Phase 1: Extracting WORLDVIEW from KEYWORDS chapters
+============================================================
+  Total worldview source: 60746 chars
+  Processing 1 chunk(s)...
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\worldview_extracted.json
+
+============================================================
+  Phase 2: Extracting CHARACTERS & LOCATIONS per volume
+============================================================
+
+--- [1/34] 01_��һ�� ---
+  Volume text: 139,891 chars
+  [CACHE HIT] 21 chars, 17 locs
+
+--- [2/34] 02_�ڶ��� ---
+  Volume text: 134,041 chars
+  Extracting characters + locations (combined)...
+    Found 17 characters, 10 locations
+
+--- [3/34] 03_������ ---
+  Volume text: 140,540 chars
+  Extracting characters + locations (combined)...
+    Found 20 characters, 8 locations
+
+--- [4/34] 04_���ľ� ---
+  Volume text: 137,072 chars
+  Extracting characters + locations (combined)...
+    Found 20 characters, 12 locations
+
+--- [5/34] 05_��4.5�� ---
+  Volume text: 128,788 chars
+  Extracting characters + locations (combined)...
+    Found 18 characters, 10 locations
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\characters_extracted_partial.json
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\locations_extracted_partial.json
+  [CHECKPOINT] Merged: 37 chars, 55 locs
+
+--- [6/34] 06_����� ---
+  Volume text: 126,708 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�۲�������", "Ļ�������", "�侲", "��������
+    Failed to parse combined response
+
+--- [7/34] 07_������ ---
+  Volume text: 128,558 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲���ǿ", "����ʵ��", "���Լ�", 
+    Failed to parse combined response
+
+--- [8/34] 08_���߾� ---
+  Volume text: 117,916 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "����", "��ز�¶", "�۲���ǿ", "
+    Failed to parse combined response
+
+--- [9/34] 09_��7.5�� ---
+  Volume text: 114,885 chars
+  Extracting characters + locations (combined)...
+    Found 23 characters, 10 locations
+
+--- [10/34] 10_�ڰ˾� ---
+  Volume text: 128,900 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": ["�۲�������", "�侲", "��������ʵ��", "���Լ�
+    Failed to parse combined response
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\characters_extracted_partial.json
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\locations_extracted_partial.json
+  [CHECKPOINT] Merged: 47 chars, 62 locs
+
+--- [11/34] 11_�ھž� ---
+  Volume text: 98,586 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "һ֮������",
+      "role_id": "ichinose_honami",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": ["����", "����", "���쵼��", "���Ĵ���", "�����
+    Failed to parse combined response
+
+--- [12/34] 12_��ʮ�� ---
+  Volume text: 122,278 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲���ǿ", "�͵�", "����", "����
+    Failed to parse combined response
+
+--- [13/34] 13_��ʮһ�� ---
+  Volume text: 130,795 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲���ǿ", "����ʵ��", "�������",
+    Failed to parse combined response
+
+--- [14/34] 14_��ƪ ---
+  Volume text: 23,381 chars
+  Extracting characters + locations (combined)...
+    Found 20 characters, 7 locations
+
+--- [15/34] 15_��11.5�� ---
+  Volume text: 140,255 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲���ǿ", "��������ʵ��", "����",
+    Failed to parse combined response
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\characters_extracted_partial.json
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\locations_extracted_partial.json
+  [CHECKPOINT] Merged: 49 chars, 65 locs
+
+--- [16/34] 16_��ʮ���� ���꼶ƪ 1 ---
+  Volume text: 142,359 chars
+  Extracting characters + locations (combined)...
+    Found 18 characters, 12 locations
+
+--- [17/34] 17_��ʮ���� ���꼶ƪ 2 ---
+  Volume text: 133,044 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokouji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "������", "����ʵ��", "�۲���ǿ",
+    Failed to parse combined response
+
+--- [18/34] 18_��ʮ�ľ� ���꼶ƪ 3 ---
+  Volume text: 132,215 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲���ǿ", "����ʵ��", "����", "
+    Failed to parse combined response
+
+--- [19/34] 19_��ʮ��� ���꼶ƪ 4 ---
+  Volume text: 136,774 chars
+  Extracting characters + locations (combined)...
+    Found 21 characters, 10 locations
+
+--- [20/34] 20_��15.5�� ���꼶ƪ 4.5 ---
+  Volume text: 138,015 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲�������", "����ʵ��", "���ڷ���"
+    Failed to parse combined response
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\characters_extracted_partial.json
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\locations_extracted_partial.json
+  [CHECKPOINT] Merged: 64 chars, 81 locs
+
+--- [21/34] 21_��ʮ���� ���꼶ƪ 5 ---
+  Volume text: 145,894 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "���", "�۲���ǿ", "����ʵ��", "
+    Failed to parse combined response
+
+--- [22/34] 22_��ʮ�߾� ���꼶ƪ 6 ---
+  Volume text: 137,940 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "���", "�۲���ǿ", "����ʵ��", "
+    Failed to parse combined response
+
+--- [23/34] 23_��ʮ�˾� ���꼶ƪ 7 ---
+  Volume text: 138,353 chars
+  Extracting characters + locations (combined)...
+    Found 20 characters, 10 locations
+
+--- [24/34] 24_��ʮ�ž� ���꼶ƪ 8 ---
+  Volume text: 132,406 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "B",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲�������", "���Լ�", "����ʵ��",
+    Failed to parse combined response
+
+--- [25/34] 25_����� ---
+  Volume text: 105,806 chars
+  Extracting characters + locations (combined)...
+    Found 19 characters, 9 locations
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\characters_extracted_partial.json
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\locations_extracted_partial.json
+  [CHECKPOINT] Merged: 83 chars, 95 locs
+
+--- [26/34] 26_�ڶ�ʮ�� ���꼶ƪ 9 ---
+  Volume text: 143,007 chars
+  Extracting characters + locations (combined)...
+    Found 20 characters, 11 locations
+
+--- [27/34] 27_��20.5�� ���꼶ƪ 9.5 ---
+  Volume text: 125,316 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲���ǿ", "����αװ", "Ļ�����",
+    Failed to parse combined response
+
+--- [28/34] 28_�ڶ�ʮһ�� ���꼶ƪ 10 ---
+  Volume text: 146,082 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲�������", "���ڷ���", "����ʵ��"
+    Failed to parse combined response
+
+--- [29/34] 29_�ڶ�ʮ���� ���꼶ƪ 11 ---
+  Volume text: 127,995 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "������ǿ", "��������", "���Լ�", 
+    Failed to parse combined response
+
+--- [30/34] 30_�ڶ�ʮ���� ���꼶ƪ 12 ---
+  Volume text: 131,754 chars
+  Extracting characters + locations (combined)...
+    Found 27 characters, 10 locations
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\characters_extracted_partial.json
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\locations_extracted_partial.json
+  [CHECKPOINT] Merged: 91 chars, 105 locs
+
+--- [31/34] 31_��23.5�� ���꼶ƪ 12.5 ---
+  Volume text: 133,535 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "D",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "������", "�۲���ǿ", "����ʵ��", 
+    Failed to parse combined response
+
+--- [32/34] 32_�ڶ�ʮ�ľ� ���꼶ƪ 1 ---
+  Volume text: 113,909 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "������", "����ʵ��", "�۲�������",
+    Failed to parse combined response
+
+--- [33/34] 33_�ڶ�ʮ��� ���꼶ƪ 2 ---
+  Volume text: 119,616 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokouji_kiyotaka",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "�۲�������", "����ʵ��", "ȱ������
+    Failed to parse combined response
+
+--- [34/34] 34_�ڶ�ʮ���� ���꼶ƪ 3 ---
+  Volume text: 127,124 chars
+  Extracting characters + locations (combined)...
+    [WARN] Could not parse JSON from response (first 200 chars): ```json
+{
+  "characters": [
+    {
+      "name": "�С·��¡",
+      "role_id": "ayanokoji_kiyotaka",
+      "class_name": "C",
+      "enrollment_year": "2024",
+      "traits": ["�侲", "���", "�۲���ǿ", "����ʵ��", "
+    Failed to parse combined response
+
+============================================================
+  Phase 3: Extracting EVENTS per volume
+============================================================
+
+--- [1/34] 01_��һ�� ---
+  Extracting events (chunk 1/2)...
+    Found 7 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 16 events in chunk 2
+
+--- [2/34] 02_�ڶ��� ---
+  Extracting events (chunk 1/2)...
+    Found 5 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 7 events in chunk 2
+
+--- [3/34] 03_������ ---
+  Extracting events (chunk 1/2)...
+    Found 9 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 5 events in chunk 2
+
+--- [4/34] 04_���ľ� ---
+  Extracting events (chunk 1/2)...
+    Found 8 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 7 events in chunk 2
+
+--- [5/34] 05_��4.5�� ---
+  Extracting events (chunk 1/2)...
+    Found 6 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 12 events in chunk 2
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\events_extracted_partial.json
+  [CHECKPOINT] Merged: 82 events
+
+--- [6/34] 06_����� ---
+  Extracting events (chunk 1/2)...
+    Found 9 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 7 events in chunk 2
+
+--- [7/34] 07_������ ---
+  Extracting events (chunk 1/2)...
+    Found 9 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 9 events in chunk 2
+
+--- [8/34] 08_���߾� ---
+  Extracting events (chunk 1/2)...
+    Found 6 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 6 events in chunk 2
+
+--- [9/34] 09_��7.5�� ---
+  Extracting events (chunk 1/2)...
+    Found 9 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 7 events in chunk 2
+
+--- [10/34] 10_�ڰ˾� ---
+  Extracting events (chunk 1/2)...
+    Found 8 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 14 events in chunk 2
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\events_extracted_partial.json
+  [CHECKPOINT] Merged: 166 events
+
+--- [11/34] 11_�ھž� ---
+  Extracting events (chunk 1/2)...
+    Found 17 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 11 events in chunk 2
+
+--- [12/34] 12_��ʮ�� ---
+  Extracting events (chunk 1/2)...
+    Found 11 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 23 events in chunk 2
+
+--- [13/34] 13_��ʮһ�� ---
+  Extracting events (chunk 1/2)...
+    Found 8 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 22 events in chunk 2
+
+--- [14/34] 14_��ƪ ---
+  Extracting events (chunk 1/1)...
+    Found 8 events in chunk 1
+
+--- [15/34] 15_��11.5�� ---
+  Extracting events (chunk 1/2)...
+    Found 8 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 10 events in chunk 2
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\events_extracted_partial.json
+  [CHECKPOINT] Merged: 283 events
+
+--- [16/34] 16_��ʮ���� ���꼶ƪ 1 ---
+  Extracting events (chunk 1/2)...
+    Found 10 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 12 events in chunk 2
+
+--- [17/34] 17_��ʮ���� ���꼶ƪ 2 ---
+  Extracting events (chunk 1/2)...
+    Found 18 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 12 events in chunk 2
+
+--- [18/34] 18_��ʮ�ľ� ���꼶ƪ 3 ---
+  Extracting events (chunk 1/2)...
+    Found 3 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 13 events in chunk 2
+
+--- [19/34] 19_��ʮ��� ���꼶ƪ 4 ---
+  Extracting events (chunk 1/2)...
+    Found 6 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 5 events in chunk 2
+
+--- [20/34] 20_��15.5�� ���꼶ƪ 4.5 ---
+  Extracting events (chunk 1/2)...
+    Found 15 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 9 events in chunk 2
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\events_extracted_partial.json
+  [CHECKPOINT] Merged: 386 events
+
+--- [21/34] 21_��ʮ���� ���꼶ƪ 5 ---
+  Extracting events (chunk 1/2)...
+    Found 15 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 6 events in chunk 2
+
+--- [22/34] 22_��ʮ�߾� ���꼶ƪ 6 ---
+  Extracting events (chunk 1/2)...
+    Found 11 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 10 events in chunk 2
+
+--- [23/34] 23_��ʮ�˾� ���꼶ƪ 7 ---
+  Extracting events (chunk 1/2)...
+    Found 8 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 8 events in chunk 2
+
+--- [24/34] 24_��ʮ�ž� ���꼶ƪ 8 ---
+  Extracting events (chunk 1/2)...
+    Found 14 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 7 events in chunk 2
+
+--- [25/34] 25_����� ---
+  Extracting events (chunk 1/2)...
+    Found 14 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 4 events in chunk 2
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\events_extracted_partial.json
+  [CHECKPOINT] Merged: 480 events
+
+--- [26/34] 26_�ڶ�ʮ�� ���꼶ƪ 9 ---
+  Extracting events (chunk 1/2)...
+    Found 15 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 7 events in chunk 2
+
+--- [27/34] 27_��20.5�� ���꼶ƪ 9.5 ---
+  Extracting events (chunk 1/2)...
+    Found 13 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 6 events in chunk 2
+
+--- [28/34] 28_�ڶ�ʮһ�� ���꼶ƪ 10 ---
+  Extracting events (chunk 1/2)...
+    Found 6 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 9 events in chunk 2
+
+--- [29/34] 29_�ڶ�ʮ���� ���꼶ƪ 11 ---
+  Extracting events (chunk 1/2)...
+    Found 10 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 12 events in chunk 2
+
+--- [30/34] 30_�ڶ�ʮ���� ���꼶ƪ 12 ---
+  Extracting events (chunk 1/2)...
+    Found 12 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 8 events in chunk 2
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\events_extracted_partial.json
+  [CHECKPOINT] Merged: 572 events
+
+--- [31/34] 31_��23.5�� ���꼶ƪ 12.5 ---
+  Extracting events (chunk 1/2)...
+    Found 13 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 7 events in chunk 2
+
+--- [32/34] 32_�ڶ�ʮ�ľ� ���꼶ƪ 1 ---
+  Extracting events (chunk 1/2)...
+    Found 8 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 10 events in chunk 2
+
+--- [33/34] 33_�ڶ�ʮ��� ���꼶ƪ 2 ---
+  Extracting events (chunk 1/2)...
+    Found 7 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 6 events in chunk 2
+
+--- [34/34] 34_�ڶ�ʮ���� ���꼶ƪ 3 ---
+  Extracting events (chunk 1/2)...
+    Found 7 events in chunk 1
+  Extracting events (chunk 2/2)...
+    Found 10 events in chunk 2
+
+============================================================
+  Phase 4: Final Merge & Output
+============================================================
+
+  Final characters: 91
+  Final locations: 105
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\characters_extracted.json
+  Saved: C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\output\locations_extracted.json
+
+  Character roster:
+Traceback (most recent call last):
+  File "C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\extract_novel_data.py", line 779, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\FengCheJun\Desktop\classroom-elite-simulator\scripts\extract_novel_data.py", line 749, in main
+    for c in sorted(merged_chars, key=lambda x: (x["class_name"], x["name"])):
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'str'

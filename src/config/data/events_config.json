@@ -5,7 +5,8 @@
     "trigger_conditions": {
       "required_date": "2024-04-01",
       "required_location": "school_bus",
-      "required_time_slot": "morning"
+      "required_time_slot": "morning",
+      "required_player_char": "player"
     },
     "ai_setup_prompt": "【前情提要】你正乘坐公交车前往学校。车上座位已满，一位看起来不太好惹的高年级学生上了车，目光在车厢内扫视，最终落在一个女生身上。女生看起来有些困扰。\n【强制演出】描写车厢内的紧张气氛，让高年级学生开口要求女生让座，画面悬停在冲突即将爆发的一刻。严禁替玩家做决定！",
     "options": [
@@ -36,7 +37,8 @@
     "trigger_conditions": {
       "required_date": "2024-04-01",
       "required_location": "classroom_d",
-      "required_time_slot": "noon"
+      "required_time_slot": "noon",
+      "required_player_char": "player"
     },
     "active_prompt": "【环境氛围】这是高度育成高中一年D班的教室。学生们刚结束开学典礼，陆续回到教室。教室里的氛围慵懒而散漫——有人趴在桌上睡觉，有人旁若无人地聊天，还有人用手机外放音乐。黑板上写着今天的安排，但似乎没人在意。作为这所学校的新生，你能感受到这个班级与其他班级微妙的差距。空气中弥漫着一种'我们是吊车尾'的颓废气息。\n【要求】用一两句话自然地点缀这个环境氛围，不要大段堆砌描写。",
     "active_start_date": "2024-04-01",

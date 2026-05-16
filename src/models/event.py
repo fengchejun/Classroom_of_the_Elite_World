@@ -38,6 +38,7 @@ class Event(Base, TimestampMixin):
     required_date: Mapped[str | None] = mapped_column(String(10), default=None)
     required_time_slot: Mapped[str | None] = mapped_column(String(24), default=None)
     required_location: Mapped[str | None] = mapped_column(String(128), default=None)
+    required_player_char: Mapped[str | None] = mapped_column(String(64), default=None)
     prerequisite_events: Mapped[dict | None] = mapped_column(JSON, default=None)
 
     # Phase tracking

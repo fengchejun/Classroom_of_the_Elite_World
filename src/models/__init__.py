@@ -6,6 +6,7 @@ from src.models.game_session import GameSession
 from src.models.location import Location
 from src.models.secret import Secret, SecretKnowledge
 from src.models.social_relation import RelationType, SocialRelation
+from src.models.transaction import TransactionLog
 
 __all__ = [
     "Base",
@@ -24,4 +25,5 @@ __all__ = [
     "SecretKnowledge",
     "SocialRelation",
     "RelationType",
+    "TransactionLog",
 ]

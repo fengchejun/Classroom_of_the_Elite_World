@@ -2,13 +2,14 @@
 实教AI模拟器 - Web前端服务器 (SQLite版)
 
 启动: py -m src.web_server
-然后打开 http://localhost:8000
+然后打开 http://localhost:8001
 """
 
 from __future__ import annotations
 
 import io
 import json
+import re
 import sys
 
 # Fix Windows encoding
@@ -158,10 +159,25 @@ NPC_SCHEDULES = {
     ],
 }
 
+WORLDVIEW_CONTEXT: str = ""  # Loaded from worldview_extracted.json at startup
+
+def _derive_spending_habit(traits: list[str]) -> str:
+    """Derive spending_habit from character traits."""
+    traits_text = " ".join(traits)
+    if any(t in traits_text for t in ["孤高", "节俭", "朴素", "省钱", "节约", "体弱"]):
+        return "frugal"
+    if any(t in traits_text for t in ["社交", "外向", "开朗", "人脉", "辣妹", "天然"]):
+        return "socialite"
+    if any(t in traits_text for t in ["游戏", "漫画", "动漫", "二次元", "宅", "otaku"]):
+        return "gamer/otaku"
+    return "normal"
+
+
 CHARACTER_LIBRARY = {
     "绫小路清隆": {
         "role_id": "ayanokoji", "class_name": "D",
         "traits": ["冷静", "观察力极强", "隐藏实力", "智谋深沈"],
+        "private_points": 100000, "spending_habit": "frugal",
         "public_info": [
             {"label": "外貌", "content": "普通高中男生外表，棕发，不起眼的表情，总是坐在教室后排靠窗的位置"},
             {"label": "身份", "content": "一年D班学生，入学成绩平平"},
@@ -171,6 +187,7 @@ CHARACTER_LIBRARY = {
     "堀北铃音": {
         "role_id": "horikita", "class_name": "D",
         "traits": ["孤高", "认真", "不擅社交", "目标坚定"],
+        "private_points": 100000, "spending_habit": "frugal",
         "public_info": [
             {"label": "外貌", "content": "黑长直发，容貌端正，总是独自一人坐在前排"},
             {"label": "身份", "content": "一年D班学生，以优异成绩入学却被分配到D班"},
@@ -180,6 +197,7 @@ CHARACTER_LIBRARY = {
     "栉田桔梗": {
         "role_id": "kushida", "class_name": "D",
         "traits": ["表里不一", "社交达人", "人脉广泛"],
+        "private_points": 100000, "spending_habit": "socialite",
         "public_info": [
             {"label": "外貌", "content": "棕发，笑容甜美，在校内人气极高"},
             {"label": "身份", "content": "一年D班学生，深受同学信赖"},
@@ -189,6 +207,7 @@ CHARACTER_LIBRARY = {
     "龙园翔": {
         "role_id": "ryuen", "class_name": "C",
         "traits": ["暴力", "狡猾", "支配欲强", "领导力"],
+        "private_points": 100000, "spending_habit": "normal",
         "public_info": [
             {"label": "外貌", "content": "红发，眼神锐利，体格强健"},
             {"label": "身份", "content": "一年C班的实际支配者"},
@@ -198,6 +217,7 @@ CHARACTER_LIBRARY = {
     "轻井泽惠": {
         "role_id": "karuizawa", "class_name": "D",
         "traits": ["辣妹系", "女生团体领袖", "隐藏脆弱"],
+        "private_points": 100000, "spending_habit": "socialite",
         "public_info": [
             {"label": "外貌", "content": "染发辣妹风格，在女生中很显眼"},
             {"label": "身份", "content": "一年D班女生团体的中心人物"},
@@ -207,6 +227,7 @@ CHARACTER_LIBRARY = {
     "平田洋介": {
         "role_id": "hirata", "class_name": "D",
         "traits": ["正义感", "人望高", "足球部王牌"],
+        "private_points": 100000, "spending_habit": "socialite",
         "public_info": [
             {"label": "外貌", "content": "英俊的运动系男生，足球部成员"},
             {"label": "身份", "content": "一年D班的优等生，足球部王牌"},
@@ -216,6 +237,7 @@ CHARACTER_LIBRARY = {
     "须藤健": {
         "role_id": "sudo", "class_name": "D",
         "traits": ["冲动", "篮球天才", "暴躁"],
+        "private_points": 100000, "spending_habit": "normal",
         "public_info": [
             {"label": "外貌", "content": "身材高大的运动系男生"},
             {"label": "身份", "content": "一年D班学生，篮球部成员"},
@@ -225,6 +247,7 @@ CHARACTER_LIBRARY = {
     "一之濑帆波": {
         "role_id": "ichinose", "class_name": "B",
         "traits": ["开朗", "正义", "学生会成员", "天然"],
+        "private_points": 100000, "spending_habit": "socialite",
         "public_info": [
             {"label": "外貌", "content": "活泼开朗的美少女，笑容灿烂"},
             {"label": "身份", "content": "一年B班的核心人物"},
@@ -234,6 +257,7 @@ CHARACTER_LIBRARY = {
     "坂柳有栖": {
         "role_id": "sakayanagi", "class_name": "A",
         "traits": ["天才", "毒舌", "体弱", "理事长之女"],
+        "private_points": 100000, "spending_habit": "frugal",
         "public_info": [
             {"label": "外貌", "content": "银发，拄着拐杖，身形娇小"},
             {"label": "身份", "content": "一年A班的领袖，理事长之女"},
@@ -243,6 +267,7 @@ CHARACTER_LIBRARY = {
     "葛城康平": {
         "role_id": "katsuragi", "class_name": "A",
         "traits": ["稳重", "光头", "防守型策略"],
+        "private_points": 100000, "spending_habit": "normal",
         "public_info": [
             {"label": "外貌", "content": "光头，体格魁梧，给人一种压迫感"},
             {"label": "身份", "content": "一年A班的核心人物之一"},
@@ -252,6 +277,7 @@ CHARACTER_LIBRARY = {
     "伊吹澪": {
         "role_id": "ibuki", "class_name": "C",
         "traits": ["格斗高手", "寡言", "忠诚"],
+        "private_points": 100000, "spending_habit": "frugal",
         "public_info": [
             {"label": "外貌", "content": "蓝色短发，身材纤细但格斗能力极强"},
             {"label": "身份", "content": "一年C班学生，龙园的得力助手"},
@@ -261,6 +287,7 @@ CHARACTER_LIBRARY = {
     "石崎大地": {
         "role_id": "ishizaki", "class_name": "C",
         "traits": ["混混", "冲动", "龙园手下"],
+        "private_points": 100000, "spending_habit": "normal",
         "public_info": [
             {"label": "外貌", "content": "不良少年打扮"},
             {"label": "身份", "content": "一年C班学生，龙园的手下"},
@@ -270,6 +297,7 @@ CHARACTER_LIBRARY = {
     "椎名日和": {
         "role_id": "shina", "class_name": "D",
         "traits": ["文学少女", "安静", "观察者"],
+        "private_points": 100000, "spending_habit": "frugal",
         "public_info": [
             {"label": "外貌", "content": "戴眼镜的文静女生"},
             {"label": "身份", "content": "一年D班学生"},
@@ -332,17 +360,106 @@ TOOL_DEFINITIONS = [
             },
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_upcoming_events",
+            "description": "查询未来即将发生的事件/特别考试。返回未来N个即将发生的游戏事件信息，包括事件名称、日期、类型和简介。当玩家关心学校日程、即将到来的考试、或想知道近期会发生什么时调用。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "description": "返回的事件数量，默认3，最大10",
+                    },
+                },
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_worldview_info",
+            "description": "获取当前游戏世界观设定文本，包括学校理念、班级制度、S点数制度、特别考试概述和校规等核心设定信息。当需要了解这个世界的宏观规则、学校制度、或点数系统运作方式时调用。",
+            "parameters": {"type": "object", "properties": {}},
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "transfer_points",
+            "description": "在两个角色之间转移私人点数（个人点数）。amount为正时玩家向对方转赠点数，amount为负时对方转给玩家。需要验证余额充足性。仅当玩家明确表示要转赠/收取点数时调用。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "target_char": {
+                        "type": "string",
+                        "description": "目标角色名字，如'须藤健'、'轻井泽惠'",
+                    },
+                    "amount": {
+                        "type": "integer",
+                        "description": "转移点数，正数=玩家转给对方，负数=对方转给玩家",
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "转移点数的原因，如'帮忙垫付餐费'、'答谢情报'",
+                    },
+                },
+                "required": ["target_char", "amount", "reason"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "update_character_data",
+            "description": "更新某个角色的数据，包括私人点数、消费习惯、公开信息、人际关系、秘密、性格特质、状态标签、位置等。你可以通过此工具修改角色的任意可更新字段，传入一个data JSON对象，其中包含要更新的字段和新值。未在data中出现的字段不会被修改。当剧情发展导致角色状态改变（如关系变化、发现秘密、点数变动、位置迁移等）时调用。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "char_name": {
+                        "type": "string",
+                        "description": "要更新数据的角色名字，如'须藤健'、'轻井泽惠'",
+                    },
+                    "data": {
+                        "type": "object",
+                        "description": "要更新的角色数据。可包含以下字段（均可选，只需提供要修改的字段）：private_points（整数，私人点数）、spending_habit（消费习惯，可选值：frugal/socialite/gamer_otaku/normal）、public_info（公开信息数组，每项含label和content）、relations（人际关系数组，每项含to=角色名、type=trust/hostile/subservient/neutral、reason=原因描述）、secrets（秘密数组，每项含info_id、content、known_by=知情者role_id数组）、traits（性格特质字符串数组）、status_tags（状态标签字符串数组，如broke/injured/absent等）、current_location_id（当前所在位置ID）、class_name（班级 A/B/C/D）、schedule_weights（行为权重对象）",
+                    },
+                },
+                "required": ["char_name", "data"],
+            },
+        },
+    },
 ]
 
 
-def _execute_tool(tool_name: str, arguments: dict, player_name: str = "") -> str:
+async def _execute_tool(tool_name: str, arguments: dict, player_name: str = "") -> str:
     """Execute a tool by name and return the result as a JSON string."""
     if tool_name == "get_character_info":
         return _tool_get_character_info(arguments.get("char_name", ""))
     elif tool_name == "query_location_info":
         return _tool_query_location_info(arguments.get("location_id", ""), player_name)
-    elif tool_name == "check_exam_rules":
+    elif tool_name in ("check_exam_rules", "get_exam_rules"):
         return _tool_check_exam_rules(arguments.get("keyword", ""))
+    elif tool_name == "get_upcoming_events":
+        count = arguments.get("count", 3)
+        game_date = arguments.get("game_date", "")
+        return await _tool_get_upcoming_events(count, game_date)
+    elif tool_name == "get_worldview_info":
+        return _tool_get_worldview_info()
+    elif tool_name == "transfer_points":
+        return await _tool_transfer_points(
+            player_name,
+            arguments.get("target_char", ""),
+            arguments.get("amount", 0),
+            arguments.get("reason", ""),
+        )
+    elif tool_name == "update_character_data":
+        return await _tool_update_character_data(
+            arguments.get("char_name", ""),
+            arguments.get("data", {}),
+            player_name,
+        )
     else:
         return json.dumps({"error": f"未知工具: {tool_name}"}, ensure_ascii=False)
 
@@ -377,13 +494,19 @@ def _tool_get_character_info(char_name: str) -> str:
                 brief_status = n.get("brief_status", "")
                 break
 
+    enrollment_year = char.get("enrollment_year", "2024")
+    relations = char.get("relations", [])
     info = {
         "name": char_name,
         "class": f"{char['class_name']}班",
+        "enrollment_year": enrollment_year,
         "traits": char["traits"],
         "public_info": [f"{item['label']}: {item['content']}" for item in char.get("public_info", [])],
         "current_location": current_location,
         "current_status": brief_status,
+        "relations": [f"对{r['to']}：{r['type']}（{r.get('reason', '')}）" for r in relations],
+        "private_points": char.get("private_points", 100000),
+        "spending_habit": char.get("spending_habit", "normal"),
     }
     return json.dumps(info, ensure_ascii=False)
 
@@ -450,6 +573,372 @@ def _tool_check_exam_rules(keyword: str) -> str:
     return json.dumps({"keyword": keyword, "rules": content}, ensure_ascii=False)
 
 
+def _tool_get_worldview_info() -> str:
+    """Return the worldview context text."""
+    if not WORLDVIEW_CONTEXT:
+        return json.dumps({"error": "世界观数据未加载"}, ensure_ascii=False)
+    return json.dumps({"worldview": WORLDVIEW_CONTEXT}, ensure_ascii=False)
+
+
+async def _tool_get_upcoming_events(count: int = 3, game_date: str = "") -> str:
+    """Query the DB for upcoming events sorted by required_date."""
+    from src.models.event import Event, EventPhase
+
+    if not game_date:
+        async with async_session() as db:
+            result = await db.execute(
+                select(GameSession).where(GameSession.is_active == True).limit(1)
+            )
+            gs = result.scalar_one_or_none()
+            game_date = gs.game_date if gs else "2024-04-01"
+
+    count = max(1, min(count, 10))
+    async with async_session() as db:
+        result = await db.execute(
+            select(Event)
+            .where(
+                Event.required_date >= game_date,
+                Event.phase.in_([EventPhase.PENDING, EventPhase.FORESHADOWING]),
+            )
+            .order_by(Event.required_date.asc())
+            .limit(count)
+        )
+        events = result.scalars().all()
+
+    if not events:
+        return json.dumps({"events": [], "message": "暂无即将到来的事件"}, ensure_ascii=False)
+
+    event_list = []
+    for ev in events:
+        event_list.append({
+            "name": ev.name,
+            "date": ev.required_date,
+            "type": ev.event_type.value,
+            "phase": ev.phase.value,
+            "description": (ev.active_prompt or ev.ai_setup_prompt or "")[:200],
+        })
+    return json.dumps({"events": event_list, "count": len(event_list)}, ensure_ascii=False)
+
+
+async def _tool_transfer_points(
+    player_name: str,
+    target_name: str,
+    amount: int,
+    reason: str,
+    game_date: str = "",
+) -> str:
+    """Transfer private points between player and target character."""
+    from src.models.character import Character
+    from src.models.transaction import TransactionLog
+
+    if not player_name:
+        return json.dumps({"error": "无法确定当前玩家角色"}, ensure_ascii=False)
+
+    player_data = CHARACTER_LIBRARY.get(player_name)
+    if player_data is None:
+        return json.dumps({"error": f"未找到玩家角色: {player_name}"}, ensure_ascii=False)
+
+    # Fuzzy match target
+    target_data = CHARACTER_LIBRARY.get(target_name)
+    if target_data is None:
+        for name in CHARACTER_LIBRARY:
+            if target_name in name or name in target_name:
+                target_data = CHARACTER_LIBRARY[name]
+                target_name = name
+                break
+    if target_data is None:
+        return json.dumps({"error": f"未找到目标角色: {target_name}",
+                           "available": list(CHARACTER_LIBRARY.keys())[:20]},
+                          ensure_ascii=False)
+
+    if player_name == target_name:
+        return json.dumps({"error": "不能给自己转点数"}, ensure_ascii=False)
+
+    if amount == 0:
+        return json.dumps({"error": "转账金额不能为0"}, ensure_ascii=False)
+
+    # Determine sender/receiver
+    if amount > 0:
+        sender_name = player_name
+        sender_data = player_data
+        receiver_name = target_name
+        receiver_data = target_data
+    else:
+        sender_name = target_name
+        sender_data = target_data
+        receiver_name = player_name
+        receiver_data = player_data
+        amount = abs(amount)
+
+    # Validate balance
+    sender_balance = sender_data.get("private_points", 0)
+    if sender_balance < amount:
+        return json.dumps({
+            "error": f"{sender_name}的私人点数不足",
+            "sender_balance": sender_balance,
+            "required": amount,
+            "shortfall": amount - sender_balance,
+        }, ensure_ascii=False)
+
+    # Execute transfer
+    sender_data["private_points"] = sender_balance - amount
+    receiver_data["private_points"] = receiver_data.get("private_points", 0) + amount
+
+    # Get game_date if not provided
+    if not game_date:
+        async with async_session() as db:
+            result = await db.execute(
+                select(GameSession).where(GameSession.is_active == True).limit(1)
+            )
+            gs = result.scalar_one_or_none()
+            game_date = gs.game_date if gs else "2024-04-01"
+
+    # Record transactions in DB
+    async with async_session() as db:
+        tx1 = TransactionLog(
+            char_name=sender_name,
+            char_role_id=sender_data.get("role_id", ""),
+            amount=-amount,
+            category="transfer",
+            description=f"转赠给{receiver_name}：{reason}",
+            game_date=game_date,
+        )
+        db.add(tx1)
+        tx2 = TransactionLog(
+            char_name=receiver_name,
+            char_role_id=receiver_data.get("role_id", ""),
+            amount=amount,
+            category="transfer",
+            description=f"收到{sender_name}转赠：{reason}",
+            game_date=game_date,
+        )
+        db.add(tx2)
+
+        # Update DB Character rows
+        for name, data in [(sender_name, sender_data), (receiver_name, receiver_data)]:
+            role_id = data.get("role_id", "")
+            char_result = await db.execute(
+                select(Character).where(Character.role_id == role_id)
+            )
+            char_row = char_result.scalar_one_or_none()
+            if char_row:
+                char_row.private_points = data["private_points"]
+
+        await db.commit()
+
+    return json.dumps({
+        "success": True,
+        "sender": sender_name,
+        "receiver": receiver_name,
+        "amount": amount,
+        "reason": reason,
+        "sender_balance_after": sender_data["private_points"],
+        "receiver_balance_after": receiver_data["private_points"],
+    }, ensure_ascii=False)
+
+
+async def _tool_update_character_data(
+    char_name: str,
+    data: dict,
+    player_name: str = "",
+    game_date: str = "",
+) -> str:
+    """Update character data in CHARACTER_LIBRARY and sync to DB."""
+    from src.models.character import Character
+    from src.models.social_relation import RelationType, SocialRelation
+    from src.models.secret import Secret, SecretKnowledge
+
+    if not char_name or not data:
+        return json.dumps({"error": "缺少char_name或data参数"}, ensure_ascii=False)
+
+    # Fuzzy match target
+    target_data = CHARACTER_LIBRARY.get(char_name)
+    if target_data is None:
+        for name in CHARACTER_LIBRARY:
+            if char_name in name or name in char_name:
+                target_data = CHARACTER_LIBRARY[name]
+                char_name = name
+                break
+    if target_data is None:
+        return json.dumps({
+            "error": f"未找到角色: {char_name}",
+            "available": list(CHARACTER_LIBRARY.keys())[:20],
+        }, ensure_ascii=False)
+
+    # Fields stored in both CHARACTER_LIBRARY and DB Character model
+    db_fields = [
+        "private_points", "spending_habit", "public_info",
+        "status_tags", "current_location_id",
+        "schedule_weights", "class_name", "name",
+    ]
+    # Fields only in CHARACTER_LIBRARY (no DB column)
+    library_only_fields = ["traits"]
+
+    old_private_points = target_data.get("private_points", 100000)
+
+    changes = []
+    for field in db_fields:
+        if field in data:
+            target_data[field] = data[field]
+            changes.append(field)
+    for field in library_only_fields:
+        if field in data:
+            target_data[field] = data[field]
+            changes.append(field)
+
+    # Handle relations (stored in CHARACTER_LIBRARY as list of dicts)
+    if "relations" in data:
+        target_data["relations"] = data["relations"]
+        changes.append("relations")
+
+    # Handle secrets (stored in CHARACTER_LIBRARY as list of dicts)
+    if "secrets" in data:
+        target_data["secrets"] = data["secrets"]
+        changes.append("secrets")
+
+    if not changes:
+        return json.dumps({"success": True, "character": char_name, "updated_fields": []}, ensure_ascii=False)
+
+    # Get game_date if needed
+    if not game_date:
+        async with async_session() as db:
+            result = await db.execute(
+                select(GameSession).where(GameSession.is_active == True).limit(1)
+            )
+            gs = result.scalar_one_or_none()
+            game_date = gs.game_date if gs else "2024-04-01"
+
+    # Sync to DB
+    async with async_session() as db:
+        role_id = target_data.get("role_id", "")
+        char_result = await db.execute(
+            select(Character).where(Character.role_id == role_id)
+        )
+        char_row = char_result.scalar_one_or_none()
+
+        if char_row:
+            # Sync DB-column fields
+            if "private_points" in data:
+                char_row.private_points = data["private_points"]
+            if "spending_habit" in data:
+                char_row.spending_habit = data["spending_habit"]
+            if "public_info" in data:
+                char_row.public_info = data["public_info"]
+            if "status_tags" in data:
+                char_row.status_tags = data["status_tags"]
+            if "current_location_id" in data:
+                char_row.current_location_id = data["current_location_id"]
+            if "schedule_weights" in data:
+                char_row.schedule_weights = data["schedule_weights"]
+            if "class_name" in data:
+                char_row.class_name = data["class_name"]
+            if "name" in data:
+                char_row.name = data["name"]
+
+        # Sync relations to DB
+        if "relations" in data and char_row:
+            await db.execute(
+                delete(SocialRelation).where(SocialRelation.src_char_id == char_row.id)
+            )
+            for rel in data["relations"]:
+                to_name = rel.get("to", "")
+                to_data = CHARACTER_LIBRARY.get(to_name)
+                if not to_data:
+                    # Try fuzzy match for relation target
+                    for name in CHARACTER_LIBRARY:
+                        if to_name in name or name in to_name:
+                            to_data = CHARACTER_LIBRARY[name]
+                            break
+                if to_data:
+                    to_char_result = await db.execute(
+                        select(Character).where(Character.role_id == to_data.get("role_id"))
+                    )
+                    to_char_row = to_char_result.scalar_one_or_none()
+                    if to_char_row:
+                        rel_type_str = rel.get("type", "trust")
+                        try:
+                            rel_type = RelationType(rel_type_str)
+                        except ValueError:
+                            rel_type = RelationType.TRUST
+                        sr = SocialRelation(
+                            src_char_id=char_row.id,
+                            dst_char_id=to_char_row.id,
+                            relation_type=rel_type,
+                            reason=rel.get("reason", ""),
+                        )
+                        db.add(sr)
+
+        # Sync secrets to DB
+        if "secrets" in data:
+            for secret_data in data["secrets"]:
+                info_id = secret_data.get("info_id", "")
+                content = secret_data.get("content", "")
+                known_by = secret_data.get("known_by", [])
+                if not info_id or not content:
+                    continue
+
+                # Upsert secret
+                secret_result = await db.execute(
+                    select(Secret).where(Secret.info_id == info_id)
+                )
+                secret_row = secret_result.scalar_one_or_none()
+                if secret_row:
+                    secret_row.content = content
+                    if "is_public" in secret_data:
+                        secret_row.is_public = secret_data["is_public"]
+                else:
+                    secret_row = Secret(
+                        info_id=info_id,
+                        content=content,
+                        subject_char_id=char_row.id if char_row else None,
+                        is_public=secret_data.get("is_public", False),
+                    )
+                    db.add(secret_row)
+                    await db.flush()
+
+                # Rebuild knowledge entries
+                await db.execute(
+                    delete(SecretKnowledge).where(SecretKnowledge.secret_id == secret_row.id)
+                )
+                for knower_role_id in known_by:
+                    knower_result = await db.execute(
+                        select(Character).where(Character.role_id == knower_role_id)
+                    )
+                    knower_row = knower_result.scalar_one_or_none()
+                    if knower_row:
+                        sk = SecretKnowledge(
+                            secret_id=secret_row.id,
+                            character_id=knower_row.id,
+                            unlocked_reason=f"由{player_name}通过update_character_data更新",
+                        )
+                        db.add(sk)
+
+        # Record transaction if private_points changed significantly
+        if "private_points" in data and char_row:
+            from src.models.transaction import TransactionLog
+
+            new_points = data["private_points"]
+            delta = new_points - old_private_points
+            if abs(delta) >= 3000:
+                tx = TransactionLog(
+                    char_name=char_name,
+                    char_role_id=role_id,
+                    amount=delta,
+                    category="system_update",
+                    description=f"AI通过update_character_data修改点数（{old_private_points}→{new_points}），由{player_name}触发",
+                    game_date=game_date,
+                )
+                db.add(tx)
+
+        await db.commit()
+
+    return json.dumps({
+        "success": True,
+        "character": char_name,
+        "updated_fields": changes,
+    }, ensure_ascii=False)
+
+
 # ---- LLM Config ----
 
 DEEPSEEK_API_KEY = "sk-a027465f568346db99147bb047d7a643"
@@ -471,6 +960,7 @@ GAME_SYSTEM_PROMPT = """你是一个高级AI叙事引擎，负责驱动《实力
 5. 环境叙事克制：自然融入，每次不超过2-3句话
 6. 角色一致性：每个NPC严格遵循其公开形象的性格、说话方式、行为模式
 7. 换行要求（极其重要）：叙事文本必须使用\n来分隔段落。每段之间必须有\n\n（空行分隔），长段落内部也应用\n合理分行。禁止输出没有换行符的整块文本。JSON中narrative字段的值必须包含\n换行符。
+8. Token预算意识：确保你的完整JSON输出（包括narrative、choices、state_changes）在给定的token上限内完成。不要写到一半就因为token不足而被截断。如果token预算紧张，优先保证narrative的完整性和choices的生成，可以适当精简描写细节。
 
 ## 选项生成规则（极其重要）
 每次回复必须包含2-4个choices选项，除非玩家的行动是纯粹的环境观察（如"看看周围""观察""看窗外"）。
@@ -503,25 +993,31 @@ GAME_SYSTEM_PROMPT = """你是一个高级AI叙事引擎，负责驱动《实力
 ## state_changes规则（由AI自主判断）
 - new_location_id：仅当玩家明确移动到了新地点时填写目标地点ID
 - new_time_slot：当叙事中时间确实发生了变化时，直接填写目标时间段。可选值：morning（上午）、noon（中午）、dusk（傍晚）、evening（晚上）、late_night（深夜）。短暂行动（观察、简单回应、短暂思考、说几句话）不应改变时间，不要填写此字段
-- new_game_date：当日期发生变化时（如跨天），填写新日期，格式YYYY-MM-DD（如2024-04-02）。仅在同一天内不需要填写
+- new_game_date：当日期发生变化时（如跨天），填写新日期，格式YYYY-MM-DD（如2024-04-02）。仅在同一天内不需要填写。注意：跨天会触发系统的每日结算（自动扣除所有角色的生活费、随机消费等），你无需在叙事中详细描述结算过程，但可以在叙事中自然地暗示时间流逝和经济压力（如"新的一天，意味着又要面对每天1500点的生活费压力"）。
 - sleep_to_morning：仅当玩家明确去睡觉时填写true，并移动至dormitory。同时应填写new_time_slot为morning，如有跨天需填写new_game_date
 - 以下情况state_changes留空{}：纯粹观察、思考、看窗外、短暂闲聊、原地犹豫、简单回应
-- 重要：不必每次都推进时间。如果玩家在原地进行了多个短暂行动，可以连续多次不改变时间，让剧情在同一时间段内充分展开
+- 重要：不必每次都推进时间。如果玩家在原地进行了多个短暂行动，可以连续多次不改变时间，让剧情在同一时间段内充分展开。但也要合理推进——上课、吃饭、睡觉等自然节点应推进时间
 - 重要：在JSON中展示明确的new_time_slot，才能保证时间系统正确运行
 
 可用的地点ID：classroom_d, hallway_1f, hallway_3f, hallway_5f, library, cafeteria, school_gymnasium, school_field, rooftop, dormitory, school_gate, school_bus, special_building
 
 ## 可用工具（函数调用）
 你可以调用以下工具来获取准确的游戏数据。在生成叙事之前，根据需要使用工具查询信息：
-- get_character_info(char_name)：查询角色的详细信息（外貌、身份、性格、班级、当前所在位置）。当你需要深入了解某个NPC、角色首次出场、或玩家与角色深入互动时应主动调用，确保角色行为符合其设定。
+- get_character_info(char_name)：查询角色的详细信息（外貌、身份、性格、班级、当前所在位置、私人点数余额、消费习惯）。当你需要深入了解某个NPC、角色首次出场、或玩家与角色深入互动时应主动调用，确保角色行为符合其设定。
 - query_location_info(location_id)：查询地点的描述、连接的其他地点、以及当前在场NPC。当玩家移动到新地点或观察环境时调用。
 - check_exam_rules(keyword)：查询特别考试的完整规则（keyword为'midterm_exam'或'uninhabited_island'）。当剧情涉及考试、玩家讨论考试时调用。
+- get_upcoming_events(count=3)：查询未来即将发生的事件/特别考试。当玩家关心学校日程、即将到来的考试、或想知道近期重大事件时调用。
+- get_worldview_info()：获取完整的学校世界观设定（理念、班级制度、S点数制度、校规等）。当需要理解学校体系的底层逻辑、或玩家询问学校制度时调用。
+- transfer_points(target_char, amount, reason)：在玩家与目标角色之间转移私人点数。amount为正时玩家转给对方，为负时对方转给玩家。仅当玩家明确表示要转赠点数、请客、或收取点数时调用，不要主动建议玩家转账。
+- update_character_data(char_name, data)：更新某个角色的完整数据。data是一个JSON对象，包含要修改的字段，未出现的字段不会被修改。可更新的字段包括：private_points（私人点数）、spending_habit（消费习惯）、public_info（公开信息）、relations（人际关系，数组，每项含to/type/reason）、secrets（秘密，数组，每项含info_id/content/known_by）、traits（性格特质）、status_tags（状态标签）、current_location_id（位置）、class_name（班级）。当剧情发展导致角色状态发生实质性变化时调用——例如角色间关系升温/恶化、角色发现秘密、角色点数大幅变动、角色位置迁移、角色公开形象改变等。不要频繁调用，仅在发生有意义的持久性变化时才使用。
 
 工具调用要点：
-- 先调用工具获取准确数据，再生成叙事——不要凭空编造角色背景或考试规则
+- 先调用工具获取准确数据，再生成叙事——不要凭空编造角色背景、考试规则、学校制度或点数余额
 - 工具返回的数据是此世界的权威事实，请自然地融入叙事，不要机械复述
 - 可以一次调用多个工具（如果剧情涉及多个角色或多个地点）
 - 纯粹的环境观察、简单问候等不需要调用工具
+- 当角色可能面临经济困难时（如broke状态），可以调用get_character_info确认其点数后，在叙事中自然地体现
+- update_character_data用于持久化角色状态变化，确保后续游戏会话中这些变化被保留。重大剧情转折（如结盟、背叛、公开秘密、获得大量点数等）后应及时调用
 
 最终回复必须以JSON格式返回（narrative + choices + state_changes）。"""
 
@@ -530,11 +1026,14 @@ PERSPECTIVE_SYSTEM_PROMPT = """你是一个心理侧写引擎，负责以特定�
 ## 核心任务
 你将以「{character_name}」的第一人称视角（"我"），重写下方提供的剧情片段。你必须严格代入该角色的内心世界。
 
+## 最重要的约束——同一场景
+这是同一段剧情的不同视角重写。时间、地点、在场的其他人、发生的所有客观事件——这些全部与原剧情完全一致。你不是在写新剧情，而是在补充该角色的内心视角。原剧情中谁说了什么话、谁做了什么动作、环境如何——这些客观事实一个都不能改。你只负责添加原剧情中没有呈现的东西：该角色的内心想法、心理活动、未说出口的感受。
+
 ## 绝对规则
 1. **严格单一视角**：只写「{character_name}」能感知到、思考到、感受到的内容。绝不越界描写其他角色的内心想法——其他角色只能通过他们的表情、语气、动作等外部可观察特征来呈现。
 2. **我的叙事**：全文使用"我"来指代「{character_name}」。
 3. **基于性格推演**：该角色的心理活动必须符合其性格特质。从角色的立场出发，合理地推演他看到/听到这些事后的真实反应——他可能在想什么？有什么他没有说出口的？
-4. **不可改变剧情**：重写时不能改变原剧情中发生的客观事实（谁说了什么、做了什么）。只能补充角色的内心视角——那些在原剧情中没有被呈现的心理活动。
+4. **不可改变剧情**：原剧情中发生的客观事实（时间、地点、谁说了什么、谁做了什么、环境细节）必须完全保留。你只能补充该角色的内心视角——那些在原剧情中没有被呈现的心理活动。绝不能添加原剧情中不存在的对话或行动。
 5. **信息边界的尊重**：如果该角色不应该知道某些秘密或背景信息，就不要在心理活动中提及。
 6. **纯文本输出**：只输出叙事文本，不需要JSON、不需要选项、不需要state_changes。禁止输出任何JSON格式的内容。
 7. **换行要求**：使用\\n分隔段落，段落之间用\\n\\n空行分隔。禁止输出没有换行符的整块文本。
@@ -561,9 +1060,15 @@ def _build_perspective_context(
     if char_info:
         char_profile += f"【{target_npc_name}的角色资料】\n"
         char_profile += f"班级：{char_info.get('class_name', '未知')}班\n"
+        char_profile += f"入学年份：{char_info.get('enrollment_year', '2024')}\n"
         char_profile += f"性格特质：{'、'.join(char_info.get('traits', []))}\n"
         for info in char_info.get("public_info", []):
             char_profile += f"{info['label']}：{info['content']}\n"
+        relations = char_info.get("relations", [])
+        if relations:
+            char_profile += "人际关系（5月1日时）：\n"
+            for r in relations:
+                char_profile += f"  对{r['to']}：{r['type']}（{r.get('reason', '')}）\n"
         char_profile += f"\n"
     else:
         char_profile = f"【{target_npc_name}的角色资料】\n班级：未知\n性格特质：未知\n（以下为角色的公开言行模式，请基于此合理推演心理活动）\n\n"
@@ -583,7 +1088,8 @@ def _build_perspective_context(
 【原始剧情（以{player_name}视角叙述）】
 {last_narrative}
 
-请以「{target_npc_name}」的第一人称视角重写上述剧情，展现其内心心理活动。"""
+【严格约束——同一场景重写】
+时间（{time_display}）、地点（{loc_name}）、在场人物、所有客观事件均与原剧情完全一致。你只需以「{target_npc_name}」的第一人称视角重新叙述同一段场景，补充其内心想法和未说出口的心理活动。不得修改任何客观事实，不得添加原剧情中不存在的对话或行动。"""
 
     return [
         {"role": "system", "content": system_msg},
@@ -601,13 +1107,14 @@ def _build_state_dict(session: GameSession) -> dict:
     npcs = [n for n in npcs if n["name"] != session.player_name]
     char_entry = CHARACTER_LIBRARY.get(session.player_name, {})
     player_class = char_entry.get("class_name", "D") if char_entry else "D"
+    player_pp = char_entry.get("private_points", 100000) if char_entry else 100000
     return {
         "session_id": session.id,
         "game_date": session.game_date,
         "time_slot": session.time_slot,
         "location_id": session.player_location_id,
         "class_points": session.class_points,
-        "private_points": session.private_points,
+        "private_points": player_pp,
         "player_name": session.player_name,
         "player_char_id": session.player_char_id,
         "player_class": player_class,
@@ -647,10 +1154,117 @@ def _sleep_to_morning(state_dict: dict) -> dict:
         return _advance_state(state_dict, len(TIME_SLOTS) - idx)
 
 
+def _calculate_stochastic_spend(habit: str | None) -> int:
+    """Calculate random extra spending based on spending habit."""
+    import random
+
+    chances = {
+        "frugal": (0.10, 100, 500),
+        "socialite": (0.60, 2000, 5000),
+        "gamer/otaku": (0.30, 1000, 8000),
+        "normal": (0.20, 500, 2000),
+    }
+    prob, low, high = chances.get(habit or "normal", (0.20, 500, 2000))
+    if random.random() < prob:
+        return random.randint(low, high)
+    return 0
+
+
+async def daily_point_settlement(game_date: str) -> dict:
+    """Run daily point settlement for all characters at midnight/date change."""
+    from src.models.character import Character
+    from src.models.transaction import TransactionLog
+    import random as _random
+
+    results = {
+        "date": game_date,
+        "characters_processed": 0,
+        "broke_characters": [],
+        "significant_spends": [],
+        "total_living_cost": 0,
+        "total_stochastic_spend": 0,
+    }
+
+    async with async_session() as db:
+        for name, char_data in CHARACTER_LIBRARY.items():
+            balance = char_data.get("private_points", 100000)
+            habit = char_data.get("spending_habit", "normal")
+            role_id = char_data.get("role_id", "")
+            broke_added = False
+
+            # Tier 1: Living cost 1500 PP
+            living_cost = 1500
+            if balance < living_cost:
+                balance = 0
+                char_data["private_points"] = 0
+                # Add "broke" status tag
+                existing_tags = char_data.get("status_tags", [])
+                if isinstance(existing_tags, list) and "broke" not in existing_tags:
+                    existing_tags.append("broke")
+                    char_data["status_tags"] = existing_tags
+                    broke_added = True
+                results["broke_characters"].append(name)
+            else:
+                balance -= living_cost
+                char_data["private_points"] = balance
+            results["total_living_cost"] += min(living_cost, char_data.get("private_points", 0) + living_cost)
+
+            # Tier 2: Stochastic spending
+            extra_spend = _calculate_stochastic_spend(habit)
+            if extra_spend > 0:
+                if balance < extra_spend:
+                    extra_spend = balance
+                balance -= extra_spend
+                char_data["private_points"] = balance
+                results["total_stochastic_spend"] += extra_spend
+
+                # Tier 3: Record significant (>3000) transactions
+                if extra_spend > 3000:
+                    results["significant_spends"].append({
+                        "char_name": name,
+                        "role_id": role_id,
+                        "amount": extra_spend,
+                        "habit": habit,
+                    })
+                    tx = TransactionLog(
+                        char_name=name,
+                        char_role_id=role_id,
+                        amount=-(living_cost + extra_spend),
+                        category="daily_settlement",
+                        description=f"每日结算：生活费{living_cost} + {habit}随机消费{extra_spend}",
+                        game_date=game_date,
+                    )
+                    db.add(tx)
+            elif living_cost > 3000:
+                # Single large living cost is unusual but log it
+                pass
+
+            # Sync to DB Character row
+            char_result = await db.execute(
+                select(Character).where(Character.role_id == role_id)
+            )
+            char_row = char_result.scalar_one_or_none()
+            if char_row:
+                char_row.private_points = char_data["private_points"]
+                # Sync status_tags if broke was added
+                if broke_added:
+                    char_row.status_tags = char_data.get("status_tags", [])
+
+            results["characters_processed"] += 1
+
+        await db.commit()
+
+    return results
+
+
 def _apply_state_changes(session: GameSession, changes: dict) -> None:
     """Apply AI-requested state changes directly to the ORM object."""
     if not changes:
         return
+
+    # Capture old date for settlement detection
+    old_date = session.game_date
+
     new_loc = changes.get("new_location_id", "")
     if new_loc and new_loc in LOCATIONS:
         session.player_location_id = new_loc
@@ -675,6 +1289,10 @@ def _apply_state_changes(session: GameSession, changes: dict) -> None:
         session.game_date = sd["game_date"]
         session.time_slot = sd["time_slot"]
         session.player_location_id = "dormitory"
+
+    # Detect date change for daily settlement
+    if session.game_date != old_date:
+        session._pending_settlement = session.game_date
 
 
 async def _get_or_create_session(db) -> GameSession:
@@ -907,14 +1525,80 @@ def _build_llm_context(
 {word_req}
 【重要】请在JSON回复中包含至少2个choices选项，引导下一步行动。"""
 
+    system_content = GAME_SYSTEM_PROMPT
+    if WORLDVIEW_CONTEXT:
+        system_content += "\n\n## 世界观设定参考\n" + WORLDVIEW_CONTEXT
+
     return [
-        {"role": "system", "content": GAME_SYSTEM_PROMPT},
+        {"role": "system", "content": system_content},
         {"role": "user", "content": user_msg},
     ]
 
 
+def _recover_json_string(text: str, key: str) -> str | None:
+    """Recover a JSON string value from truncated JSON by walking characters."""
+    pattern = rf'"{key}"\s*:\s*"'
+    m = re.search(pattern, text)
+    if not m:
+        return None
+    pos = m.end()
+    result = []
+    while pos < len(text):
+        ch = text[pos]
+        if ch == '\\' and pos + 1 < len(text):
+            nxt = text[pos + 1]
+            escapes = {'n': '\n', '"': '"', '\\': '\\', 't': '\t', 'r': '\r'}
+            result.append(escapes.get(nxt, nxt))
+            pos += 2
+        elif ch == '"':
+            rest = text[pos + 1:pos + 21].lstrip()
+            if not rest or rest[0] in ',}':
+                break
+            result.append(ch)
+            pos += 1
+        else:
+            result.append(ch)
+            pos += 1
+    return ''.join(result)
+
+
+def _recover_json_array(text: str, key: str) -> list:
+    """Try to recover a JSON array from truncated JSON."""
+    pattern = rf'"{key}"\s*:\s*\['
+    m = re.search(pattern, text)
+    if not m:
+        return []
+    bracket_start = m.end() - 1
+    depth = 0
+    pos = bracket_start
+    in_string = False
+    while pos < len(text):
+        ch = text[pos]
+        if in_string:
+            if ch == '\\':
+                pos += 2
+                continue
+            if ch == '"':
+                in_string = False
+            pos += 1
+            continue
+        if ch == '"':
+            in_string = True
+        elif ch in '[{':
+            depth += 1
+        elif ch in ']}':
+            depth -= 1
+            if depth == 0:
+                try:
+                    return json.loads(text[bracket_start:pos + 1])
+                except json.JSONDecodeError:
+                    return []
+        pos += 1
+    return []
+
+
 def _parse_llm_content(content: str) -> dict:
-    """Parse JSON from LLM response text. Returns dict with narrative, choices, and state_changes."""
+    """Parse JSON from LLM response text. Falls back to regex recovery for truncated JSON."""
     content = content.strip()
     if content.startswith("```"):
         lines = content.split("\n")
@@ -927,7 +1611,9 @@ def _parse_llm_content(content: str) -> dict:
             "state_changes": result.get("state_changes", {}),
         }
     except json.JSONDecodeError:
-        return {"narrative": content, "choices": [], "state_changes": {}}
+        narrative = _recover_json_string(content, "narrative") or content
+        choices = _recover_json_array(content, "choices")
+        return {"narrative": narrative, "choices": choices, "state_changes": {}}
 
 
 # ---- Offline Response Generator ----
@@ -1067,7 +1753,7 @@ async def generate_llm_response(
                             fn_args = json.loads(tc["function"]["arguments"])
                         except json.JSONDecodeError:
                             fn_args = {}
-                        result = _execute_tool(fn_name, fn_args, state_dict.get("player_name", ""))
+                        result = await _execute_tool(fn_name, fn_args, state_dict.get("player_name", ""))
                         messages.append({
                             "role": "tool",
                             "tool_call_id": tc["id"],
@@ -1078,10 +1764,12 @@ async def generate_llm_response(
                     content = msg.get("content", "").strip()
                     if not content:
                         break
+                    finish_reason = data["choices"][0].get("finish_reason", "")
                     parsed = _parse_llm_content(content)
                     parsed["_tool_calls"] = len(
                         [m for m in messages if m.get("role") == "tool"]
                     )
+                    parsed["_truncated"] = finish_reason == "length"
                     return parsed
             except (httpx.HTTPError, json.JSONDecodeError, KeyError) as e:
                 return {"narrative": f"[LLM错误: {e}]", "choices": [], "state_changes": {}}
@@ -1102,8 +1790,12 @@ async def generate_llm_response(
                 },
             )
             resp.raise_for_status()
-            content = resp.json()["choices"][0]["message"]["content"].strip()
-            return _parse_llm_content(content)
+            data = resp.json()
+            content = data["choices"][0]["message"]["content"].strip()
+            finish_reason = data["choices"][0].get("finish_reason", "")
+            parsed = _parse_llm_content(content)
+            parsed["_truncated"] = finish_reason == "length"
+            return parsed
         except (httpx.HTTPError, json.JSONDecodeError, KeyError) as e:
             return {"narrative": f"[LLM错误: {e}]", "choices": [], "state_changes": {}}
 
@@ -1151,7 +1843,7 @@ async def generate_llm_stream(
                             fn_args = json.loads(tc["function"]["arguments"])
                         except json.JSONDecodeError:
                             fn_args = {}
-                        result = _execute_tool(fn_name, fn_args, state_dict.get("player_name", ""))
+                        result = await _execute_tool(fn_name, fn_args, state_dict.get("player_name", ""))
                         messages.append({
                             "role": "tool",
                             "tool_call_id": tc["id"],
@@ -1170,6 +1862,7 @@ async def generate_llm_stream(
                 return
 
         # ---- Phase 2: Stream the narrative ----
+        finish_reason = None
         try:
             async with client.stream(
                 "POST",
@@ -1197,6 +1890,9 @@ async def generate_llm_stream(
                         chunk = json.loads(data_str)
                         delta = chunk["choices"][0].get("delta", {})
                         content = delta.get("content", "")
+                        fr = chunk["choices"][0].get("finish_reason")
+                        if fr:
+                            finish_reason = fr
                         if content:
                             accumulated_content += content
                             yield f"data: {json.dumps({'token': content}, ensure_ascii=False)}\n\n"
@@ -1217,6 +1913,12 @@ async def generate_llm_stream(
 
     # Apply state changes and save dialogue
     _apply_state_changes(gs, parsed.get("state_changes", {}))
+
+    # Trigger daily settlement if date changed
+    if getattr(gs, '_pending_settlement', None):
+        settlement_date = gs._pending_settlement
+        delattr(gs, '_pending_settlement')
+        await daily_point_settlement(settlement_date)
 
     # Increment sequence number
     seq_result = await db_session.execute(
@@ -1249,6 +1951,7 @@ async def generate_llm_stream(
         "done": True,
         "choices": parsed.get("choices", []),
         "state": fresh_state,
+        "truncated": finish_reason == "length",
         "debug": {
             "prompt": json.dumps(messages, ensure_ascii=False, indent=2),
             "raw_json": accumulated_content,
@@ -1308,6 +2011,12 @@ async def act(request: Request):
 
         _apply_state_changes(gs, result.get("state_changes", {}))
 
+        # Trigger daily settlement if date changed
+        if getattr(gs, '_pending_settlement', None):
+            settlement_date = gs._pending_settlement
+            delattr(gs, '_pending_settlement')
+            await daily_point_settlement(settlement_date)
+
         seq_result = await db.execute(
             select(func.coalesce(func.max(DialogueLog.sequence_num), 0))
             .where(DialogueLog.session_id == gs.id)
@@ -1348,6 +2057,12 @@ async def llm_act(request: Request):
             history=history, summary=summary,
         )
         _apply_state_changes(gs, result.get("state_changes", {}))
+
+        # Trigger daily settlement if date changed
+        if getattr(gs, '_pending_settlement', None):
+            settlement_date = gs._pending_settlement
+            delattr(gs, '_pending_settlement')
+            await daily_point_settlement(settlement_date)
 
         seq_result = await db.execute(
             select(func.coalesce(func.max(DialogueLog.sequence_num), 0))
@@ -1428,6 +2143,7 @@ async def llm_perspective(request: Request):
 
     async def stream_perspective():
         accumulated = ""
+        finish_reason = None
         try:
             async with httpx.AsyncClient(timeout=120.0) as client:
                 async with client.stream(
@@ -1456,6 +2172,9 @@ async def llm_perspective(request: Request):
                             chunk = json.loads(data_str)
                             delta = chunk["choices"][0].get("delta", {})
                             content = delta.get("content", "")
+                            fr = chunk["choices"][0].get("finish_reason")
+                            if fr:
+                                finish_reason = fr
                             if content:
                                 accumulated += content
                                 yield f"data: {json.dumps({'token': content}, ensure_ascii=False)}\n\n"
@@ -1466,6 +2185,7 @@ async def llm_perspective(request: Request):
                 "done": True,
                 "perspective": accumulated,
                 "target_npc": target_npc_name,
+                "truncated": finish_reason == "length",
             }
             yield f"data: {json.dumps(done_msg, ensure_ascii=False)}\n\n"
 
@@ -1644,7 +2364,7 @@ async def create_character(request: Request):
 
 @app.post("/api/game/import")
 async def game_import(request: Request):
-    """Import JSON data (characters, locations, events)."""
+    """Import JSON data (characters, locations, events, worldview)."""
     body = await request.json()
     import_type = body.get("type", "")
     data = body.get("data", [])
@@ -1657,9 +2377,11 @@ async def game_import(request: Request):
                 CHARACTER_LIBRARY[name] = {
                     "role_id": entry.get("role_id", f"imported_{name.lower().replace(' ', '_')}"),
                     "class_name": entry.get("class_name", "D"),
+                    "enrollment_year": entry.get("enrollment_year", "2024"),
                     "traits": entry.get("traits", []),
                     "public_info": entry.get("public_info", []),
                     "secrets": entry.get("secrets", []),
+                    "relations": entry.get("relations", []),
                 }
                 count += 1
         return JSONResponse({"success": True, "imported": count, "type": "characters"})
@@ -1681,14 +2403,110 @@ async def game_import(request: Request):
         return JSONResponse({"success": True, "imported": count, "type": "locations"})
 
     elif import_type == "events":
-        # Events are stored in DB; for now, just acknowledge
-        return JSONResponse({"success": True, "imported": len(data), "type": "events"})
+        from src.core.event_bus.bus import EventBus
+        count = 0
+        async with async_session() as db:
+            bus = EventBus(db)
+            if isinstance(data, dict):
+                for event_id, definition in data.items():
+                    await bus._upsert_event(event_id, definition)
+                    count += 1
+            elif isinstance(data, list):
+                for item in data:
+                    event_id = item.get("event_id", item.get("name", f"event_{count}"))
+                    await bus._upsert_event(event_id, item)
+                    count += 1
+            await db.commit()
+        return JSONResponse({"success": True, "imported": count, "type": "events"})
 
     elif import_type == "worldview":
-        # Worldview is informational; stored for future use
+        import os
+        worldview_path = os.path.join(os.path.dirname(__file__), "config", "data", "worldview_extracted.json")
+        os.makedirs(os.path.dirname(worldview_path), exist_ok=True)
+        with open(worldview_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
         return JSONResponse({"success": True, "imported": 1, "type": "worldview"})
 
     return JSONResponse({"success": False, "error": f"Unknown import type: {import_type}"})
+
+
+# ---- Startup data loading ----
+
+def _load_extracted_data():
+    """Load characters, locations, and worldview from extracted JSON files at startup."""
+    import json as _json
+    import os as _os
+
+    script_dir = _os.path.dirname(_os.path.abspath(__file__))
+    output_dir = _os.path.join(script_dir, "..", "scripts", "output")
+
+    # Load characters
+    chars_path = _os.path.join(output_dir, "characters_extracted.json")
+    if _os.path.exists(chars_path):
+        with open(chars_path, "r", encoding="utf-8") as f:
+            chars_data = _json.load(f)
+        for entry in chars_data.get("data", []):
+            name = entry.get("name", "")
+            if name and name not in CHARACTER_LIBRARY:
+                traits = entry.get("traits", [])
+                CHARACTER_LIBRARY[name] = {
+                    "role_id": entry.get("role_id", f"imported_{name}"),
+                    "class_name": entry.get("class_name", "D"),
+                    "enrollment_year": entry.get("enrollment_year", "2024"),
+                    "traits": traits,
+                    "public_info": entry.get("public_info", []),
+                    "secrets": entry.get("secrets", []),
+                    "relations": entry.get("relations", []),
+                    "private_points": entry.get("private_points", 100000),
+                    "spending_habit": _derive_spending_habit(traits),
+                }
+        print(f"  [Startup] Loaded {len(chars_data.get('data', []))} characters from extracted JSON")
+
+    # Load locations
+    locs_path = _os.path.join(output_dir, "locations_extracted.json")
+    if _os.path.exists(locs_path):
+        with open(locs_path, "r", encoding="utf-8") as f:
+            locs_data = _json.load(f)
+        for entry in locs_data.get("data", []):
+            lid = entry.get("location_id", "")
+            if lid and lid not in LOCATIONS:
+                LOCATIONS[lid] = {
+                    "location_id": lid,
+                    "name": entry.get("name", lid),
+                    "description": entry.get("description", ""),
+                    "tags": entry.get("tags", []),
+                    "connected_to": entry.get("connected_to", []),
+                    "zone_id": entry.get("zone_id", ""),
+                }
+        print(f"  [Startup] Loaded {len(locs_data.get('data', []))} locations from extracted JSON")
+
+    # Load worldview into module-level variable
+    global WORLDVIEW_CONTEXT
+    worldview_path = _os.path.join(script_dir, "config", "data", "worldview_extracted.json")
+    if _os.path.exists(worldview_path):
+        with open(worldview_path, "r", encoding="utf-8") as f:
+            wv = _json.load(f)
+        # Handle both dict and list formats
+        if isinstance(wv, list):
+            wv = wv[0] if wv else {}
+        if not isinstance(wv, dict):
+            wv = {}
+        parts = []
+        parts.append(f"学校：{wv.get('school_name', '高度育成高等学校')}")
+        parts.append(f"理念：{wv.get('founding_principles', '')}")
+        cs = wv.get("class_system", {}) if isinstance(wv.get("class_system"), dict) else {}
+        if cs:
+            parts.append(f"班级制度：{cs.get('description', '')}")
+            parts.append(f"排名机制：{cs.get('ranking_mechanism', '')}")
+        sps = wv.get("s_point_system", {}) if isinstance(wv.get("s_point_system"), dict) else {}
+        if sps:
+            parts.append(f"S点数制度：{sps.get('description', '')}")
+            parts.append(f"每月分配：{sps.get('monthly_allocation', '')}")
+        parts.append(f"特别考试：{wv.get('special_exam_overview', '')}")
+        for rule in wv.get("rules", []):
+            parts.append(f"【{rule.get('name', '')}】{rule.get('content', '')}")
+        WORLDVIEW_CONTEXT = "\n".join(parts)
+        print(f"  [Startup] Loaded worldview ({len(WORLDVIEW_CONTEXT)} chars)")
 
 
 # ---- Main ----
@@ -1700,13 +2518,17 @@ def main():
     # Initialize database before starting server
     asyncio.run(init_db())
 
+    # Load extracted data (characters, locations) into in-memory structures
+    _load_extracted_data()
+
     print("=" * 60)
     print("  实教AI模拟器 - Web前端服务器 (SQLite版)")
     print("  数据库: elite_simulator.db")
-    print("  打开浏览器访问: http://localhost:8000")
+    print(f"  角色库: {len(CHARACTER_LIBRARY)}人 | 地点: {len(LOCATIONS)}处 | 事件: 已导入")
+    print("  打开浏览器访问: http://localhost:8001")
     print("  按 Ctrl+C 停止服务器")
     print("=" * 60)
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    uvicorn.run(app, host="0.0.0.0", port=8001, log_level="info")
 
 
 if __name__ == "__main__":

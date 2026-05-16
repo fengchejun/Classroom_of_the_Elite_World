@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from sqlalchemy import JSON, String, Text
+from sqlalchemy import JSON, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.models.base import Base, TimestampMixin, gen_uuid
@@ -35,6 +35,12 @@ class Character(Base, TimestampMixin):
 
     # Class: "A" | "B" | "C" | "D"
     class_name: Mapped[str | None] = mapped_column(String(8), default=None)
+
+    # Personal points (in-game currency)
+    private_points: Mapped[int] = mapped_column(Integer, default=100000)
+
+    # Spending behavior: "frugal" | "socialite" | "gamer/otaku" | "normal"
+    spending_habit: Mapped[str | None] = mapped_column(String(32), default="normal")
 
     # Relationships
     secrets_known: Mapped[list[SecretKnowledge]] = relationship(

@@ -87,6 +87,7 @@ class EventBus:
             "required_date": trigger.get("required_date"),
             "required_time_slot": trigger.get("required_time_slot"),
             "required_location": trigger.get("required_location"),
+            "required_player_char": trigger.get("required_player_char"),
             "prerequisite_events": trigger.get("prerequisite_events"),
             "foreshadow_start_date": definition.get("foreshadow_start_date"),
             "foreshadow_probability": definition.get("foreshadow_probability", 0.3),
@@ -113,7 +114,8 @@ class EventBus:
     # ---- Trigger Checking ----
 
     async def check_triggers(
-        self, location_id: str, game_date: str, time_slot: str
+        self, location_id: str, game_date: str, time_slot: str,
+        player_char_id: str | None = None,
     ) -> list[TriggerMatch]:
         """Check for event triggers at the current location and time."""
         result = await self.session.execute(
@@ -127,6 +129,7 @@ class EventBus:
             time_slot=time_slot,
             location_id=location_id,
             completed_events=self._completed_events,
+            player_char_id=player_char_id,
         )
         return matches
 
@@ -157,6 +160,10 @@ class EventBus:
         elif phase == "transition":
             event.phase = EventPhase.TRANSITION
 
+        # Apply silent effects immediately if present
+        if event.silent_effects:
+            await self._apply_silent_effects(event, event.silent_effects)
+
         await self.session.flush()
 
         rules = None
@@ -185,7 +192,7 @@ class EventBus:
             if adv:
                 advancements.append(adv)
                 # Execute silent effects if any
-                if adv.silent_effects and event.event_type == EventType.SILENT_FIXED:
+                if adv.silent_effects:
                     await self._apply_silent_effects(event, adv.silent_effects)
 
         await self.session.flush()
@@ -257,10 +264,10 @@ class EventBus:
     # ---- Silent Effects Application ----
 
     async def _apply_silent_effects(self, event: Event, effects: dict) -> None:
-        """Apply silent event effects (status tags, relation changes, etc.)."""
+        """Apply silent event effects (status tags, relation changes, class points, etc.)."""
         from src.models import Character, SocialRelation, RelationType
 
-        # Status tag changes
+        # Status tag changes (merge, not overwrite)
         tag_changes = effects.get("status_tag_changes", {})
         for role_id, tags in tag_changes.items():
             result = await self.session.execute(
@@ -268,9 +275,11 @@ class EventBus:
             )
             char = result.scalar_one_or_none()
             if char:
-                char.status_tags = tags
+                existing = set(char.status_tags or [])
+                existing.update(tags)
+                char.status_tags = list(existing)
 
-        # Relation changes
+        # Relation changes (with dedup)
         rel_changes = effects.get("relation_changes", [])
         for rc in rel_changes:
             from_result = await self.session.execute(
@@ -282,10 +291,44 @@ class EventBus:
             from_char = from_result.scalar_one_or_none()
             to_char = to_result.scalar_one_or_none()
             if from_char and to_char:
-                rel = SocialRelation(
-                    src_char_id=from_char.id,
-                    dst_char_id=to_char.id,
-                    relation_type=RelationType(rc["type"]),
-                    reason=rc.get("reason", f"Event: {event.name}"),
+                relation_type = RelationType(rc["type"])
+                # Check for existing relation of same type between same chars
+                from src.models.social_relation import SocialRelation as SR
+                existing_result = await self.session.execute(
+                    select(SR).where(
+                        SR.src_char_id == from_char.id,
+                        SR.dst_char_id == to_char.id,
+                        SR.relation_type == relation_type,
+                    )
                 )
-                self.session.add(rel)
+                if existing_result.scalar_one_or_none() is None:
+                    rel = SocialRelation(
+                        src_char_id=from_char.id,
+                        dst_char_id=to_char.id,
+                        relation_type=relation_type,
+                        reason=rc.get("reason", f"Event: {event.name}"),
+                    )
+                    self.session.add(rel)
+
+        # Class point changes
+        cp_changes = effects.get("class_point_changes", {})
+        if cp_changes:
+            from src.models.game_session import GameSession
+            # Update the active game session's class_points if player's class is affected
+            session_result = await self.session.execute(
+                select(GameSession).where(GameSession.is_active == True)
+            )
+            game_sessions = session_result.scalars().all()
+            for gs in game_sessions:
+                # Determine player's class from their character
+                if gs.player_char_id:
+                    char_result = await self.session.execute(
+                        select(Character).where(Character.role_id == gs.player_char_id)
+                    )
+                    player_char = char_result.scalar_one_or_none()
+                    if player_char and player_char.class_name in cp_changes:
+                        gs.class_points += cp_changes[player_char.class_name]
+                else:
+                    # Default: player is in D class if no char_id set
+                    if "D" in cp_changes:
+                        gs.class_points += cp_changes["D"]

@@ -22,6 +22,7 @@ class TriggerEngine:
         time_slot: str,
         location_id: str,
         completed_events: set[str],
+        player_char_id: str | None = None,
     ) -> list[TriggerMatch]:
         """
         Check all pending events for trigger matches.
@@ -31,7 +32,10 @@ class TriggerEngine:
 
         for event in events:
             if not event.is_active and event.phase.value == "pending":
-                match = self._evaluate(event, game_date, time_slot, location_id, completed_events)
+                match = self._evaluate(
+                    event, game_date, time_slot, location_id,
+                    completed_events, player_char_id,
+                )
                 if match:
                     matches.append(match)
 
@@ -46,6 +50,7 @@ class TriggerEngine:
         time_slot: str,
         location_id: str,
         completed_events: set[str],
+        player_char_id: str | None = None,
     ) -> TriggerMatch | None:
         """Evaluate a single event's trigger conditions."""
 
@@ -54,6 +59,10 @@ class TriggerEngine:
         for prereq in prerequisites:
             if prereq not in completed_events:
                 return None
+
+        # Check player character requirement
+        if event.required_player_char and event.required_player_char != player_char_id:
+            return None
 
         date_match = False
         location_match = False
@@ -80,14 +89,17 @@ class TriggerEngine:
         else:
             location_match = True
 
+        # Character match bonus
+        char_bonus = 2 if (event.required_player_char and event.required_player_char == player_char_id) else 0
+
         # Determine match type
         if date_match and location_match and slot_match:
-            return TriggerMatch(event=event, match_type="exact", priority=10)
+            return TriggerMatch(event=event, match_type="exact", priority=10 + char_bonus)
         elif date_match and slot_match:
-            return TriggerMatch(event=event, match_type="date_only", priority=5)
+            return TriggerMatch(event=event, match_type="date_only", priority=5 + char_bonus)
         elif location_match and slot_match:
-            return TriggerMatch(event=event, match_type="location_only", priority=3)
+            return TriggerMatch(event=event, match_type="location_only", priority=3 + char_bonus)
         elif date_match:
-            return TriggerMatch(event=event, match_type="date_only", priority=2)
+            return TriggerMatch(event=event, match_type="date_only", priority=2 + char_bonus)
 
         return None

@@ -52,14 +52,14 @@ classroom-elite-simulator/
 1. Web前端服务器 (推荐，无需数据库)
    cd classroom-elite-simulator
    py -m src.web_server
-   访问: http://localhost:8000
+   访问: http://localhost:8001
 
 2. CLI命令行测试
    cd classroom-elite-simulator
    py -m src.cli
 
 3. 完整API服务器 (需要PostgreSQL + Redis)
-   cd classroom-elite-simulator
+   cd Desktop/classroom-elite-simulator
    py -m src.app
 
 【API Key 配置】
