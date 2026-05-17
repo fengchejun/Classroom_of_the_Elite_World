@@ -1,0 +1,1562 @@
+{
+  "type": "locations",
+  "data": [
+    {
+      "location_id": "classroom_1d",
+      "name": "一年D班教室",
+      "description": "位于教学楼一层，窗明几净，但气氛因班级点数归零而略显压抑。桌椅排列整齐，黑板旁有OAA显示屏。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "school_building_corridor",
+        "school_corridor_1f"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "school_building_corridor",
+      "name": "教学楼走廊",
+      "description": "连接各教室和设施的走廊，学生在此行走、交谈，绫小路曾在此被栉田叫住。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "public"
+      ],
+      "connected_to": [
+        "classroom_1d",
+        "cafeteria_palette",
+        "library",
+        "teacher_office",
+        "student_council_room",
+        "campus_main_gate"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "cafeteria_palette",
+      "name": "咖啡厅帕雷特",
+      "description": "校舍一楼的咖啡厅，放学后女生常聚集于此，氛围轻松，绫小路和堀北曾在此与栉田“偶遇”。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "popular"
+      ],
+      "connected_to": [
+        "school_building_corridor"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "library",
+      "name": "图书馆",
+      "description": "学校图书馆，空间宽敞，常有学生团体学习，气氛安静但偶尔有冲突，有多个学习区域",
+      "tags": [
+        "indoor",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "school_building_corridor",
+        "school_building",
+        "school_corridor_1f"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "teacher_office",
+      "name": "教师办公室",
+      "description": "教师办公场所，绫小路和堀北曾在此与茶柱老师交涉，购买须藤的分数。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "school_building_corridor"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "first_gymnasium",
+      "name": "第一体育馆",
+      "description": "用于社团说明会和大型集会，空间广阔，堀北学在此发表学生会招募演讲，气场强大。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "large"
+      ],
+      "connected_to": [
+        "school_grounds"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "indoor_pool",
+      "name": "室内游泳池",
+      "description": "50米标准泳池，水质清澈，不受天气影响，男女合班上课，池和山内对此兴奋不已。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "large"
+      ],
+      "connected_to": [
+        "changing_room_male",
+        "changing_room_female"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "changing_room_male",
+      "name": "男生更衣室",
+      "description": "男生换泳装的地方，须藤在此全裸换装，毫不介意他人眼光。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "restricted"
+      ],
+      "connected_to": [
+        "indoor_pool"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "changing_room_female",
+      "name": "女生更衣室",
+      "description": "女生换泳装的地方，池曾幻想闯入。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "restricted"
+      ],
+      "connected_to": [
+        "indoor_pool"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "convenience_store",
+      "name": "校内便利商店",
+      "description": "位于校园内，商品齐全，包括泡面、日用品等，设有免费商品区，绫小路和堀北曾在此购物。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "commercial"
+      ],
+      "connected_to": [
+        "school_grounds",
+        "keyaki_mall",
+        "swimming_pool"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "student_restaurant",
+      "name": "学生餐厅",
+      "description": "提供各种套餐，包括山蔬套餐等，绫小路曾在此与三年级学长交易考古题。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_building_corridor"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "dormitory",
+      "name": "学生宿舍",
+      "description": "男女共用宿舍，每人一间约四坪的房间，配有基本设施，绫小路的房间在401号，堀北在1201号。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted",
+        "private",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_grounds",
+        "keyaki_mall",
+        "school_building",
+        "keyaki_shopping_center"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "dormitory_room_401",
+      "name": "宿舍401室",
+      "description": "绫小路的房间，简朴干净，只有日常用品，曾在此举办庆功宴。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "dormitory"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "dormitory_room_1201",
+      "name": "宿舍1201室",
+      "description": "堀北的房间，位于12楼女生区域，绫小路曾因担心堀北而闯入，看到她换衣服。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "dormitory"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "school_grounds",
+      "name": "校园",
+      "description": "广阔的校园，超过60万平方公尺，设有各种设施，包括卡拉OK、电影院等，形成小型商区。",
+      "tags": [
+        "outdoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "first_gymnasium",
+        "convenience_store",
+        "dormitory",
+        "school_gate",
+        "special_building",
+        "gymnasium",
+        "keyaki_mall",
+        "dormitory_lobby"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "school_gate",
+      "name": "学校正门",
+      "description": "通往校园的林荫大道入口，两旁树木成荫。早晨和放学时学生往来频繁，是校园与外界的分界点。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_grounds",
+        "school_corridor_1f",
+        "campus_path"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "bus_stop",
+      "name": "公车站",
+      "description": "学校附近的公车站，绫小路和堀北在此初次相遇，高圆寺也曾在此与OL发生争执。",
+      "tags": [
+        "outdoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_gate"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "class_1_d",
+      "name": "一年D班教室",
+      "description": "位于教学楼一层，教室宽敞明亮，设有课桌椅和讲台。天花板角落装有微型监视器，用于监控课堂纪律。早晨和放学后学生聚集，气氛时而热闹时而紧张。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_corridor_1f"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "special_teaching_building",
+      "name": "特别教学大楼",
+      "description": "位于校园边缘，是一栋多层建筑，内设特别课程教室、家政教室、视听教室等不常用设施。走廊闷热，放学后几乎无人，是学生私下会面的理想地点。三楼走廊装有假监视器（由一之濑等人临时安装）。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded",
+        "hot"
+      ],
+      "connected_to": [
+        "school_corridor_3f",
+        "school_entrance"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "student_council_office",
+      "name": "学生会办公室",
+      "description": "位于特别教学大楼内，房间宽敞，设有会议桌和文件柜。是学生会长堀北学和书记橘茜处理事务的地方，也是审议学生纠纷的场所。气氛严肃。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "special_teaching_building"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "student_cafeteria",
+      "name": "学生餐厅",
+      "description": "位于校园中心，空间宽敞，设有多个餐桌和取餐窗口。午餐时间人声鼎沸，是学生社交和用餐的主要场所。提供免费套餐给点数不足的学生。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_corridor_1f"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "dormitory_room_ayanokoji",
+      "name": "绫小路清隆的宿舍房间",
+      "description": "位于宿舍楼内，房间简洁，只有基本家具。因被池等人擅自制作备用钥匙，成为D班小团体的集合地点。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "dormitory_corridor"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "dormitory_cafeteria",
+      "name": "宿舍餐厅",
+      "description": "位于宿舍楼内，提供三餐，晚上九点关门。菜色简单，是学生日常用餐的地方。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "dormitory_corridor"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "electronics_store_back_entrance",
+      "name": "家电量贩店进出货入口",
+      "description": "位于校园外的商业区，是佐仓爱里被跟踪狂骚扰的地点。仓库铁卷门前，较为偏僻，平时少有人经过。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "school_corridor_1f",
+      "name": "教学楼一楼走廊",
+      "description": "连接教室、玄关和学生餐厅的主要通道，墙壁上设有公告栏。放学后人流减少，变得安静。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "class_1_d",
+        "student_cafeteria",
+        "school_gate",
+        "classroom_1d",
+        "classroom_1a",
+        "classroom_1b",
+        "classroom_1c"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "school_corridor_3f",
+      "name": "特别教学大楼三楼走廊",
+      "description": "连接理科教室和学生会办公室的走廊，闷热且安静。天花板装有假监视器，是须藤事件的发生地。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded",
+        "hot"
+      ],
+      "connected_to": [
+        "special_teaching_building",
+        "student_council_office"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "luxury_cruise_ship",
+      "name": "豪华游轮",
+      "description": "高度育成高中为暑假旅行准备的豪华游轮，设施齐全，包括餐厅、剧院、SPA等。学生们在此集合，开始无人岛考试。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "restricted"
+      ],
+      "connected_to": [
+        "private_beach",
+        "forest_path"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "private_beach",
+      "name": "私人海滩",
+      "description": "无人岛上的沙滩，阳光强烈，是考试开始的集合点。学生们在此接受规则说明，并决定基地营位置。",
+      "tags": [
+        "outdoor",
+        "noisy",
+        "sunny"
+      ],
+      "connected_to": [
+        "luxury_cruise_ship",
+        "forest_path",
+        "river_bank"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "forest_path",
+      "name": "森林小径",
+      "description": "从海滩通往岛屿内部的森林小径，树木茂密，地面泥泞，容易迷路。是学生们探索据点的主要通道。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "private_beach",
+        "cave_entrance",
+        "river_bank",
+        "cliff_edge"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "cave_entrance",
+      "name": "洞窟入口",
+      "description": "位于森林深处的洞窟，入口开阔，内部经过人工加固，设有占领终端。是A班最初发现的据点。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "forest_path",
+        "small_hut",
+        "tower"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "river_bank",
+      "name": "河岸",
+      "description": "一条宽约十米的清澈河流旁的平地，被D班选为基地营。河水可用于饮用和洗澡，但需煮沸。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "private_beach",
+        "forest_path"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "cliff_edge",
+      "name": "悬崖边缘",
+      "description": "森林中一处陡峭的悬崖，高约十米。绫小路和堀北在此处坠落，导致堀北伤势加重。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "dangerous"
+      ],
+      "connected_to": [
+        "forest_path"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "small_hut",
+      "name": "小屋",
+      "description": "位于洞窟附近的据点，具体功能不明，但推测是校方设置的设施之一。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "cave_entrance",
+        "tower"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "tower",
+      "name": "塔",
+      "description": "位于洞窟附近的据点，具体功能不明，但推测是校方设置的设施之一。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "cave_entrance",
+        "small_hut"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "cruise_ship",
+      "name": "豪华游轮",
+      "description": "高度育成高级中学为特别考试租用的豪华游轮，设施齐全，有餐厅、游泳池、娱乐设施等。学生在此进行为期两周的巡航旅行，但考试打破了平静。",
+      "tags": [
+        "indoor",
+        "outdoor",
+        "noisy",
+        "secluded"
+      ],
+      "connected_to": [
+        "deck",
+        "second_floor",
+        "third_floor",
+        "fourth_floor",
+        "fifth_floor",
+        "basement_one",
+        "basement_two",
+        "basement_three",
+        "basement_four"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "deck",
+      "name": "甲板",
+      "description": "游轮最上层，设有游泳池和轻食中心，是学生们享受阳光和休闲时光的地方。平田曾邀请绫小路在此用餐。",
+      "tags": [
+        "outdoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "cruise_ship",
+        "blue_ocean_cafe"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "blue_ocean_cafe",
+      "name": "Blue Ocean咖啡厅",
+      "description": "位于甲板上的咖啡厅，早晨几乎没有学生，是绫小路和堀北秘密会面的地点。环境安静，适合谈话。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "deck"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "second_floor",
+      "name": "游轮二楼",
+      "description": "设有多个特殊房间，用于考试说明和小组讨论。走廊冷清，少有学生走动。绫小路在此收到考试邮件，并前往兔组房间。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "cruise_ship",
+        "room_204",
+        "dragon_room",
+        "rabbit_room"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "room_204",
+      "name": "204号房",
+      "description": "位于二楼的一个房间，绫小路被指定在此接受考试说明。房间内有桌椅，真嶋老师在此对兔组成员进行说明。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "second_floor"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "rabbit_room",
+      "name": "兔组房间",
+      "description": "位于二楼，门上挂有‘兔’字门牌。是兔组进行小组讨论的房间，房间内椅子围成一圈，气氛紧张。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "second_floor"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "dragon_room",
+      "name": "龙组房间",
+      "description": "位于二楼，龙组进行小组讨论的房间。聚集了各班精英，气氛凝重。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "second_floor"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "third_floor",
+      "name": "游轮三楼",
+      "description": "男生客房所在楼层。绫小路、平田、高圆寺、幸村同住一间。走廊上曾发生高圆寺湿身事件。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "cruise_ship",
+        "second_floor",
+        "fourth_floor"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "fourth_floor",
+      "name": "游轮四楼",
+      "description": "女生客房所在楼层。轻井泽、佐仓等女生居住于此。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "cruise_ship",
+        "third_floor"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "emergency_stairs",
+      "name": "紧急楼梯",
+      "description": "游轮内一处隐蔽的楼梯间，光线昏暗，少有学生经过。真锅志保等人曾在此欺凌轻井泽惠。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "cruise_ship"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "basement_one",
+      "name": "地下一楼",
+      "description": "设有电影、舞台等娱乐设施，是学生休闲娱乐的场所。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "cruise_ship"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "basement_four",
+      "name": "地下四楼",
+      "description": "游轮最底层，设有配电盘室等机房，与学生生活无关，禁止学生进入。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "cruise_ship"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "keyaki_mall",
+      "name": "榉树购物中心",
+      "description": "学校用地内的复合商业设施，设有各种商店、餐厅和娱乐场所，是学生日常购物和休闲的主要地点。暑假期间，这里因占卜师活动而热闹非凡，情侣和学生聚集。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "commercial",
+        "public"
+      ],
+      "connected_to": [
+        "student_dormitory",
+        "school_building",
+        "dormitory",
+        "karaoke_room",
+        "cafe_2f",
+        "school_grounds",
+        "special_building"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "student_dormitory",
+      "name": "学生宿舍",
+      "description": "学生居住的宿舍楼，男女分开，房间配备基本家具和空调。绫小路的房间常被朋友用作聚会地点，因整洁而受欢迎。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "keyaki_mall",
+        "school_building"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "school_building",
+      "name": "教学楼",
+      "description": "学校的主要教学楼，暑假期间因学生会办公室改装工程而部分开放。葛城曾穿制服进入，试图联系学生会。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted",
+        "noisy"
+      ],
+      "connected_to": [
+        "keyaki_mall",
+        "student_dormitory",
+        "dormitory",
+        "classroom_b",
+        "library",
+        "courtyard",
+        "keyaki_shopping_center",
+        "special_building"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "student_council_room",
+      "name": "学生会办公室",
+      "description": "位于校舍内的学生会办公地点，暑假期间因改装工程而暂时关闭。堀北学在此处理学生事务，葛城曾来访请求寄送礼物。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "school_building",
+        "school_grounds",
+        "staff_room",
+        "special_building_corridor"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "swimming_pool",
+      "name": "特别游泳设施",
+      "description": "暑假最后三天开放的游泳池，比普通泳池大两倍，设有男女更衣室。学生在此进行排球比赛和游泳活动，气氛热烈。",
+      "tags": [
+        "outdoor",
+        "noisy",
+        "recreational"
+      ],
+      "connected_to": [
+        "keyaki_mall",
+        "student_dormitory"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "elevator_keyaki",
+      "name": "榉树购物中心电梯",
+      "description": "连接榉树购物中心各楼层的电梯，曾因停电导致绫小路和伊吹被困，内部闷热，紧急电话失灵。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "fortune_telling_booth",
+      "name": "占卜师临时摊位",
+      "description": "位于榉树购物中心五楼的临时占卜摊位，只接待两人一组，装饰有水晶球和神秘氛围，占卜师为老妇人。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "temporary"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "gift_shop",
+      "name": "礼品店",
+      "description": "榉树购物中心内的女生向礼品店，销售玩偶、手机壳、巧克力等商品。葛城曾在此购买生日礼物，池和山内也曾挑选礼物。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "commercial"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "avenue_of_trees",
+      "name": "林荫大道",
+      "description": "连接宿舍和榉树购物中心的主要道路，两旁种有行道树，提供遮荫。绫小路曾在此等待葛城，并偶遇堀北学。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "scenic"
+      ],
+      "connected_to": [
+        "student_dormitory",
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "coffee_shop_in_keyaki",
+      "name": "咖啡厅（榉树购物中心内）",
+      "description": "位于榉树购物中心内的咖啡厅，环境温馨，是学生聚会和约会的热门地点。圣诞节期间客满，需要排队等候。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "public"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "cinema_in_keyaki",
+      "name": "电影院（榉树购物中心内）",
+      "description": "位于榉树购物中心内的电影院，放映各种电影。寒假期间因情侣约会而人气旺盛，座位紧张。曾因设备故障导致放映中断。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "warehouse_near_keyaki",
+      "name": "仓库（榉树购物中心附近）",
+      "description": "榉树购物中心内的一个仓库，用于存放药妆店等商品。光线昏暗，暖气不足，平时上锁，但工作人员偶尔会忘记锁门。伊吹澪曾将绫小路清隆带至此地进行决斗。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded",
+        "restricted"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "legendary_tree",
+      "name": "传说之树",
+      "description": "校园内一棵据说有50年以上树龄的大树，据传在此告白成功率高达99%。成为情侣们告白的圣地，但需要选择傍晚时分且四下无人时才能成功。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "school_building"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "rooftop",
+      "name": "屋顶",
+      "description": "校舍的屋顶，平时较少人使用。曾发生龙园翔与绫小路清隆的对决，以及真锅等人对轻井泽惠的霸凌事件。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "school_building"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "park_bench_near_keyaki",
+      "name": "榉树购物中心附近的长椅",
+      "description": "位于榉树购物中心附近的长椅，清晨时分无人，积雪覆盖。绫小路清隆曾在此与龙园翔会面。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "bookstore_in_keyaki",
+      "name": "书店（榉树购物中心内）",
+      "description": "位于榉树购物中心内的书店，出售各类书籍和杂志。绫小路清隆曾在此购买《本年度流行商品排行榜》。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "classroom_b",
+      "name": "二年B班教室",
+      "description": "日常上课的教室，文化祭期间被改造为女仆咖啡厅。桌椅被重新布置，设有吧台和用餐区。窗户可看到校园景色。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_building",
+        "special_building",
+        "school_grounds"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "courtyard",
+      "name": "中庭",
+      "description": "学校中庭，有长椅和樱花树，学生常在此吃午饭或休息，樱花飘舞时景色风雅",
+      "tags": [
+        "outdoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "school_building"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "tree_avenue",
+      "name": "林荫道",
+      "description": "通往校舍的林荫道，两旁有树木，学生上学必经之路，寒假时人少，寒冷安静",
+      "tags": [
+        "outdoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "school_building",
+        "dormitory"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "classroom_2d",
+      "name": "二年D班教室",
+      "description": "位于教学楼二楼，配备有电子黑板和充电设备，桌椅排列整齐。新学期开始，黑板被巨大的萤幕取代，教科书也换成了平板电脑。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "school_corridor_2f"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "school_corridor_2f",
+      "name": "二年级走廊",
+      "description": "连接各教室的走廊，光线明亮，常有学生走动。午休时曾发生一年级生宝泉与二年级生的冲突。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "classroom_2d",
+        "classroom_2a",
+        "classroom_2b",
+        "classroom_2c"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "karaoke_room",
+      "name": "卡拉OK包厢",
+      "description": "位于榉树购物中心内，隔音良好，适合私下谈判。堀北与宝泉曾在此谈判，发生冲突。",
+      "tags": [
+        "indoor",
+        "secluded"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "cafe_2f",
+      "name": "二楼咖啡厅",
+      "description": "位于榉树购物中心二楼，环境安静，适合交谈。绫小路曾在此观察一年级生。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "gymnasium",
+      "name": "体育馆",
+      "description": "大型空间，被三年A班包下用于鬼屋与迷宫融合的摊位。试营运期间关灯，营造恐怖氛围。内部有各种装饰和机关，由学生扮演鬼怪。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "restricted",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "school_corridor_1f",
+        "school_grounds",
+        "keyaki_shopping_center"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "dormitory_1st_year",
+      "name": "一年级宿舍",
+      "description": "去年三年级生使用过的宿舍，今年分配给一年级生。宿舍后方较为黑暗安静，宝泉曾在此设伏。",
+      "tags": [
+        "outdoor",
+        "secluded"
+      ],
+      "connected_to": [
+        "dormitory_2nd_year"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "dormitory_2nd_year",
+      "name": "二年级宿舍",
+      "description": "二年级生居住的宿舍，环境整洁，靠近教学楼。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "dormitory_1st_year"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "meeting_room",
+      "name": "会议室",
+      "description": "位于东京某栋设施内，环境严肃，月城曾在此向White Room学生说明计划。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "uninhabited_island",
+      "name": "无人岛",
+      "description": "高度育成高中特别考试使用的岛屿，森林茂密，地形复杂，有沙滩、悬崖和溪流。天气多变，常有暴雨和浓雾。",
+      "tags": [
+        "outdoor",
+        "noisy",
+        "restricted"
+      ],
+      "connected_to": [
+        "ship",
+        "beach",
+        "forest"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "ship",
+      "name": "船上",
+      "description": "用于接送学生和公布考试结果的船只，内部有餐厅、甲板和宿舍，考试结束后学生在此休息。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "uninhabited_island",
+        "beach"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "beach",
+      "name": "海滩",
+      "description": "无人岛上的沙滩，用于休息和扎营，视野开阔，但阳光强烈。",
+      "tags": [
+        "outdoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "uninhabited_island",
+        "forest",
+        "ship"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "forest",
+      "name": "森林",
+      "description": "无人岛上的森林，树木茂密，光线昏暗，地面泥泞，容易迷路。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "uninhabited_island",
+        "beach",
+        "cliff"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "cliff",
+      "name": "悬崖",
+      "description": "无人岛上的悬崖，俯瞰大海，视野开阔，但危险。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "forest",
+        "beach"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "i2_area",
+      "name": "I2区域",
+      "description": "无人岛东北部的偏僻区域，靠近海滩，是月城代理理事长设下的陷阱地点。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "secluded",
+        "restricted"
+      ],
+      "connected_to": [
+        "forest",
+        "beach"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "starting_point",
+      "name": "起点",
+      "description": "无人岛考试的起点，设有帐篷和补给点，学生可在此休息和购买物资。",
+      "tags": [
+        "outdoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "forest",
+        "beach"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "keyaki_shopping_center",
+      "name": "榉树购物中心",
+      "description": "校园内的商业设施，有咖啡厅、健身房、KTV等店铺。圣诞节时装饰华丽，是学生社交和购物的主要场所。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "public"
+      ],
+      "connected_to": [
+        "school_building",
+        "dormitory",
+        "campus_main_gate",
+        "dormitory_area"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "special_building",
+      "name": "特别大楼",
+      "description": "三层楼建筑，共有八间教室可用于文化祭摆摊。越靠近入口楼梯，租金越高。三楼租金最低（1万-1.3万点），一楼最高（5万点）。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "restricted",
+        "quiet"
+      ],
+      "connected_to": [
+        "school_grounds",
+        "entrance_hall",
+        "keyaki_mall",
+        "school_building"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "health_room",
+      "name": "保健室",
+      "description": "位于教学楼内，有床铺和医疗设备。朝比奈荠扭伤后被绫小路清隆带来此处治疗。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "school_grounds"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "dormitory_lobby",
+      "name": "宿舍大厅",
+      "description": "学生宿舍的入口大厅，有电梯和休息区。绫小路清隆和轻井泽惠常在此会合。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "dormitory_rooms",
+        "keyaki_mall"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "entrance_hall",
+      "name": "玄关大厅",
+      "description": "学校主入口，有鞋柜和公告板。文化祭期间是来宾进入的主要通道。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "school_grounds",
+        "special_building"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "staff_room",
+      "name": "职员室",
+      "description": "教师办公室，茶柱老师等教师在此办公。文化祭后茶柱老师因女仆装照片被其他老师调侃。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "school_grounds"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "white_room_facility",
+      "name": "白屋",
+      "description": "位于埼玉县深山中的废弃制药工厂改建而成，以白色为基调，内部设有研究室、教室、宿舍和训练场。环境封闭，与外界隔绝，气氛压抑而肃穆。",
+      "tags": [
+        "indoor",
+        "secluded",
+        "restricted",
+        "quiet"
+      ],
+      "connected_to": [
+        "tokyo_office",
+        "saitama_forest"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "tokyo_office",
+      "name": "绫小路笃臣的事务所",
+      "description": "位于东京市中心附近的一栋破旧建筑内，月租10万日元左右。房间内堆满文件、啤酒罐和脏衣物，充满生活气息，与政治家的身份形成反差。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "cluttered"
+      ],
+      "connected_to": [
+        "white_room_facility",
+        "meguro_residence"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "meguro_residence",
+      "name": "绫小路笃臣的宅邸",
+      "description": "位于东京目黑区的住宅，是笃臣退出政界后的住所，用于安置绫小路清隆。环境相对安静，但缺乏家庭氛围。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "residential"
+      ],
+      "connected_to": [
+        "tokyo_office",
+        "white_room_facility"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "sakurako_mansion",
+      "name": "坂柳宅邸",
+      "description": "位于白金港区的高级住宅街，是一座雄伟且有历史感的宅院。大门前装有多个监控摄像头，内部有宽敞的榻榻米通道和西式房间，散发着香草清香。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "luxurious",
+        "restricted"
+      ],
+      "connected_to": [
+        "tokyo_office"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "ryotei_sasagawa",
+      "name": "料亭·笹川",
+      "description": "东京的高级日式料理店，环境雅致，有庭院和雪景。用于政治人物进行秘密会面。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded",
+        "luxurious"
+      ],
+      "connected_to": [
+        "tokyo_office"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "hotel_banquet_hall",
+      "name": "超高层酒店宴会厅",
+      "description": "位于东京一栋200米高的50层建筑中层，用于举办白屋计划的募资聚会。装饰豪华，可容纳60人，窗外可俯瞰城市景色。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "luxurious"
+      ],
+      "connected_to": [
+        "tokyo_office"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "psychiatric_clinic",
+      "name": "心理辅导诊所",
+      "description": "位于东京的私人诊所，环境安静，用于治疗心理创伤患者。雪在此接受治疗，房间内摆放有樱花装饰。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "tokyo_office"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "saitama_forest",
+      "name": "埼玉深山",
+      "description": "白屋设施所在的偏远山区，周围被群山包围，交通不便，远离城市喧嚣，确保了白屋的隐秘性。",
+      "tags": [
+        "outdoor",
+        "secluded",
+        "quiet"
+      ],
+      "connected_to": [
+        "white_room_facility"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "kabukicho_nightclub",
+      "name": "歌舞伎町夜总会",
+      "description": "位于东京歌舞伎町中心地带的高楼内，是政治家和财阀常去的场所。内部设有VIP室，环境私密，用于秘密交易和放松。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "secluded"
+      ],
+      "connected_to": [
+        "tokyo_office"
+      ],
+      "zone_id": "off_campus"
+    },
+    {
+      "location_id": "ktv_room",
+      "name": "KTV包厢",
+      "description": "位于榉树购物中心内，是学生进行读书会或秘密会议的常用场所。隔音良好，适合密谈。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "keyaki_shopping_center",
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "special_building_corridor",
+      "name": "特别大楼走廊",
+      "description": "连接学生会室和其他特殊教室的走廊，人烟稀少，适合秘密交谈。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "secluded"
+      ],
+      "connected_to": [
+        "student_council_room"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "campus_main_gate",
+      "name": "校门",
+      "description": "学校正门，连接校园与宿舍区。早晨和放学时分学生络绎不绝。",
+      "tags": [
+        "outdoor",
+        "noisy",
+        "public"
+      ],
+      "connected_to": [
+        "school_building_corridor",
+        "dormitory_area"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "dormitory_area",
+      "name": "宿舍区",
+      "description": "学生居住的区域，包括多栋宿舍楼。环境安静，是学生休息和私人活动的主要场所。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "campus_main_gate",
+        "keyaki_shopping_center"
+      ],
+      "zone_id": "dormitory"
+    },
+    {
+      "location_id": "cafeteria",
+      "name": "咖啡厅",
+      "description": "位于榉树购物中心内，是学生社交和读书会的热门地点。提供饮料和轻食，气氛轻松。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "public"
+      ],
+      "connected_to": [
+        "keyaki_shopping_center"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "classroom_2b",
+      "name": "二年B班教室",
+      "description": "堀北铃音班级的日常教室，桌椅整齐，黑板干净，充满学习氛围。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "school_building"
+      ],
+      "zone_id": "teaching_building"
+    },
+    {
+      "location_id": "cafe_keyaki",
+      "name": "榉树购物中心咖啡厅",
+      "description": "位于榉树购物中心内的咖啡厅，环境优雅，适合学生聚会或讨论。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "rest_area_2f",
+      "name": "二楼休息区",
+      "description": "榉树购物中心二楼的休息区，设有自动贩卖机，环境安静，适合独处。",
+      "tags": [
+        "indoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "campus"
+    },
+    {
+      "location_id": "gym",
+      "name": "健身房",
+      "description": "校园内的健身设施，设备齐全，学生可在此锻炼身体。",
+      "tags": [
+        "indoor",
+        "noisy"
+      ],
+      "connected_to": [
+        "keyaki_mall"
+      ],
+      "zone_id": "sports_area"
+    },
+    {
+      "location_id": "bench_on_school_road",
+      "name": "上学路长椅",
+      "description": "位于上学路旁的长椅，环境安静，适合短暂交谈。",
+      "tags": [
+        "outdoor",
+        "quiet"
+      ],
+      "connected_to": [
+        "school_building",
+        "dormitory"
+      ],
+      "zone_id": "campus"
+    }
+  ]
+}

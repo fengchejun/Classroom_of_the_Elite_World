@@ -40,122 +40,96 @@ TIME_DISPLAY = {
 }
 
 LOCATIONS = {
-    "classroom_d": {
-        "location_id": "classroom_d", "name": "D班教室",
+    "classroom_1d": {
+        "location_id": "classroom_1d", "name": "一年D班教室",
         "description": "一年D班的教室。桌椅有些陈旧，靠窗的后排能看到中庭。教室里弥漫着慵懒散漫的氛围——有人趴着睡觉，有人旁若无人地聊天。",
-        "tags": ["indoor", "classroom"],
-        "connected_to": ["hallway_1f"],
+        "tags": ["indoor", "classroom", "public"],
+        "connected_to": ["academic_hallway"],
         "zone_id": "teaching_building",
     },
-    "hallway_1f": {
-        "location_id": "hallway_1f", "name": "一楼走廊",
-        "description": "教学楼一楼的走廊，连接着各个教室和办公室。墙上贴着社团海报和通知。学生们来来往往。",
-        "tags": ["indoor", "corridor"],
-        "connected_to": ["classroom_d", "cafeteria", "school_gymnasium", "hallway_3f", "school_gate"],
+    "academic_hallway": {
+        "location_id": "academic_hallway", "name": "教学楼走廊",
+        "description": "教学区的枢纽走廊。连接各班级教室、学生会室、职员室。墙上贴着社团海报和通知，学生来来往往。",
+        "tags": ["indoor", "corridor", "public"],
+        "connected_to": ["classroom_1d", "campus_gate", "rooftop", "gymnasium"],
         "zone_id": "teaching_building",
     },
-    "hallway_3f": {
-        "location_id": "hallway_3f", "name": "三楼走廊",
-        "description": "比一楼安静得多。图书馆在这层，偶尔有小团体在角落密谈。",
-        "tags": ["indoor", "corridor", "quiet"],
-        "connected_to": ["hallway_1f", "library"],
-        "zone_id": "teaching_building",
+    "campus_gate": {
+        "location_id": "campus_gate", "name": "正门及周边",
+        "description": "校园的主入口，由天然岩石拼凑加工而成。早晨和放学时学生往来频繁，是校园与外界的分界点。",
+        "tags": ["outdoor", "public", "landmark"],
+        "connected_to": ["school_bus", "academic_hallway", "dorm_student", "sports_field"],
+        "zone_id": "campus_perimeter",
     },
-    "library": {
-        "location_id": "library", "name": "图书馆",
-        "description": "藏书丰富的图书馆，靠窗的自习区总是座无虚席。空气里弥漫着书页的味道。",
-        "tags": ["indoor", "quiet"],
-        "connected_to": ["hallway_3f"],
-        "zone_id": "teaching_building",
-    },
-    "cafeteria": {
-        "location_id": "cafeteria", "name": "学生食堂",
-        "description": "宽敞的食堂，可以用个人点数购买各种套餐。午餐时间总是人满为患。",
-        "tags": ["indoor", "noisy"],
-        "connected_to": ["hallway_1f", "school_field"],
-        "zone_id": "living_area",
-    },
-    "school_gymnasium": {
-        "location_id": "school_gymnasium", "name": "体育馆",
-        "description": "宽敞的室内体育馆，配备了可移动舞台。可容纳全校学生。",
-        "tags": ["indoor", "large"],
-        "connected_to": ["hallway_1f", "school_field"],
+    "gymnasium": {
+        "location_id": "gymnasium", "name": "体育馆",
+        "description": "宽敞的室内体育馆，配备了可移动舞台。可容纳全校学生，用于举行开学典礼、社团招新等大型集会。",
+        "tags": ["indoor", "large", "noisy"],
+        "connected_to": ["academic_hallway", "sports_field"],
         "zone_id": "sports_area",
     },
-    "school_field": {
-        "location_id": "school_field", "name": "操场",
-        "description": "标准的田径运动场，足球部和田径部在这里训练。跑道边有几个学生在慢跑。",
-        "tags": ["outdoor", "sports"],
-        "connected_to": ["school_gymnasium", "cafeteria", "special_building"],
+    "sports_field": {
+        "location_id": "sports_field", "name": "室外操场",
+        "description": "标准的田径运动场，包含跑道与足球场。足球部和田径部在这里训练，校运会在此举办。",
+        "tags": ["outdoor", "sports", "large"],
+        "connected_to": ["gymnasium", "campus_gate", "keyaki_mall"],
         "zone_id": "sports_area",
     },
     "rooftop": {
-        "location_id": "rooftop", "name": "天台",
-        "description": "教学楼顶层的天台。视野开阔，能俯瞰整个校园。门通常是锁的，但今天似乎被谁打开了。",
-        "tags": ["outdoor", "secluded"],
-        "connected_to": ["hallway_5f"],
+        "location_id": "rooftop", "name": "屋顶",
+        "description": "教学楼顶层，全年开放，装有牢固栅栏。仅门外上方有监视器，内部是绝佳的避人耳目之地，可俯瞰整个校园。",
+        "tags": ["outdoor", "secluded", "high"],
+        "connected_to": ["academic_hallway"],
         "zone_id": "teaching_building",
     },
-    "hallway_5f": {
-        "location_id": "hallway_5f", "name": "五楼走廊",
-        "description": "教学楼顶层的走廊，人迹罕至。通往天台的门就在走廊尽头。",
-        "tags": ["indoor", "corridor", "secluded"],
-        "connected_to": ["hallway_1f", "rooftop"],
-        "zone_id": "teaching_building",
-    },
-    "dormitory": {
-        "location_id": "dormitory", "name": "学生宿舍",
-        "description": "你的单人宿舍。虽然不大，但设施齐全。这里是你在这个学校里唯一的私人空间。",
-        "tags": ["indoor", "private"],
-        "connected_to": ["school_gate"],
-        "zone_id": "living_area",
-    },
-    "school_gate": {
-        "location_id": "school_gate", "name": "校门",
-        "description": "高度育成高中的正门，有保安值守。学生出入需要刷学生卡。",
-        "tags": ["outdoor"],
-        "connected_to": ["dormitory", "hallway_1f", "school_bus"],
-        "zone_id": "entrance",
+    "dorm_student": {
+        "location_id": "dorm_student", "name": "学生宿舍",
+        "description": "学生居住的宿舍楼。男女共用大楼但严禁不正当关系。房间为个人专用（约四坪），配有基本家具和空调。实行严格的房卡管理。",
+        "tags": ["indoor", "private", "restricted"],
+        "connected_to": ["campus_gate", "keyaki_mall"],
+        "zone_id": "dormitory",
     },
     "school_bus": {
-        "location_id": "school_bus", "name": "校车",
-        "description": "往返学校和市区的班车。每天早晚各一班，座位常常不够用。",
-        "tags": ["indoor", "vehicle"],
-        "connected_to": ["school_gate"],
-        "zone_id": "entrance",
+        "location_id": "school_bus", "name": "接驳公交车",
+        "description": "将学生从外界都市运送至学校正门的交通工具。仅在新生入学报到或特殊外出时使用。",
+        "tags": ["indoor", "vehicle", "transitional"],
+        "connected_to": ["campus_gate"],
+        "zone_id": "off_campus_special",
     },
     "special_building": {
-        "location_id": "special_building", "name": "特别教学楼",
-        "description": "校园深处独立的建筑。平时大门紧闭，只在进行特别考试时才开放。",
-        "tags": ["indoor", "restricted"],
-        "connected_to": ["school_field"],
-        "zone_id": "special_area",
+        "location_id": "special_building", "name": "特别教学大楼",
+        "description": "独立于普通教学楼。平时人烟稀少，不用于社团活动。三楼是校内极少数未设置监视器的盲区。文化祭时可租用教室摆摊。",
+        "tags": ["indoor", "quiet", "secluded", "restricted"],
+        "connected_to": ["academic_hallway", "campus_edge"],
+        "zone_id": "teaching_building",
+    },
+    "keyaki_mall": {
+        "location_id": "keyaki_mall", "name": "榉树购物中心",
+        "description": "校园内独立的庞大商业区。包含咖啡厅、便利店、电影院、卡拉OK、书店、礼品店、健身房等。是放学后学生最大的聚集地。",
+        "tags": ["indoor", "noisy", "commercial", "public"],
+        "connected_to": ["dorm_student", "academic_hallway", "sports_field"],
+        "zone_id": "commercial",
     },
 }
 
 NPC_SCHEDULES = {
-    "classroom_d": [
+    "classroom_1d": [
         {"name": "堀北铃音", "brief_status": "独自坐在前排看书", "is_critical": True},
         {"name": "须藤健", "brief_status": "趴在桌上睡觉", "is_critical": False},
     ],
-    "hallway_1f": [
+    "academic_hallway": [
         {"name": "栉田桔梗", "brief_status": "微笑着和朋友聊天", "is_critical": True},
+        {"name": "石崎大地", "brief_status": "在走廊里徘徊", "is_critical": False},
     ],
-    "cafeteria": [
-        {"name": "轻井泽惠", "brief_status": "和几个女生一起吃饭", "is_critical": False},
+    "keyaki_mall": [
+        {"name": "轻井泽惠", "brief_status": "和几个女生一起逛商场", "is_critical": False},
     ],
-    "school_field": [
+    "sports_field": [
         {"name": "平田洋介", "brief_status": "在足球场上训练", "is_critical": False},
         {"name": "须藤健", "brief_status": "在篮球场上投篮", "is_critical": False},
     ],
-    "library": [
-        {"name": "堀北铃音", "brief_status": "专注地看书", "is_critical": True},
-    ],
     "rooftop": [
         {"name": "龙园翔", "brief_status": "靠在栏杆上，居高临下地看着校园", "is_critical": True},
-    ],
-    "hallway_3f": [
-        {"name": "石崎大地", "brief_status": "在走廊里徘徊", "is_critical": False},
     ],
 }
 
@@ -164,7 +138,7 @@ WORLDVIEW_CONTEXT: str = ""  # Loaded from worldview_extracted.json at startup
 def _derive_spending_habit(traits: list[str]) -> str:
     """Derive spending_habit from character traits."""
     traits_text = " ".join(traits)
-    if any(t in traits_text for t in ["孤高", "节俭", "朴素", "省钱", "节约", "体弱"]):
+    if any(t in traits_text for t in ["孤高", "节俭", "朴素", "省钱", "节约", "体弱", "身体虚弱", "病弱"]):
         return "frugal"
     if any(t in traits_text for t in ["社交", "外向", "开朗", "人脉", "辣妹", "天然"]):
         return "socialite"
@@ -172,6 +146,76 @@ def _derive_spending_habit(traits: list[str]) -> str:
         return "gamer/otaku"
     return "normal"
 
+
+# ---- Location mapping for event system ----
+# Maps game LOCATIONS keys to event location IDs from the DB
+LOCATION_EVENT_MAP = {
+    "classroom_1d": [
+        "classroom_1d", "classroom_d", "classroom_d_1f", "classroom",
+        "first_year_d_classroom", "school_classroom",
+    ],
+    "academic_hallway": [
+        "school_corridor", "school_corridor_connecting_gym",
+        "special_teaching_building_corridor", "school_entrance_path",
+        "special_teaching_building_3f", "second_year_floor_corridor",
+        "school_roof_stairs", "school_library", "library",
+    ],
+    "gymnasium": [
+        "gym_1", "gymnasium", "school_gymnasium", "school_auditorium",
+    ],
+    "sports_field": [
+        "school_grounds", "school_playground", "school_grounds_remote",
+        "school_campus_edge", "school_field",
+    ],
+    "rooftop": [
+        "school_rooftop", "school_roof_stairs", "rooftop", "rooftop_stairs",
+        "special_building_rooftop",
+    ],
+    "dorm_student": [
+        "dormitory_outside", "dormitory_lobby", "dormitory_hall",
+        "dormitory_back", "dormitory_common_room", "dormitory_fountain",
+        "dormitory_room", "dormitory_ayanokoji", "dormitory_hirata",
+        "ayano_room", "ayanokoji_room", "ayanokouji_dorm_room",
+        "kiyotaka_room", "kiyotaka_apartment_room", "dorm_room_1201",
+        "dormitory_room_linaro", "kushida_room", "ichinose_room",
+        "horikita_room", "ryuen_room", "room_401", "albert_dorm_room",
+        "girls_shared_room",
+    ],
+    "campus_gate": [
+        "school_gate", "school_main_gate", "school_entrance",
+        "school_entrance_path", "main_gate",
+    ],
+    "keyaki_mall": [
+        "student_cafeteria", "cafeteria", "cafe_palette", "school_cafeteria",
+        "keyaki_mall_cafe", "keyaki_shopping_center_cafe", "restaurant",
+        "dining_hall", "keyaki_mall", "keyaki_shopping_center",
+        "shopping_mall", "mall",
+    ],
+    "school_bus": [
+        "school_bus", "school_bus_parking", "bus_to_mountain_school",
+    ],
+    "special_building": [
+        "special_building", "special_classroom_building",
+        "special_building_classroom", "special_building_corridor",
+        "special_building_exam_room", "special_teaching_building_3f",
+        "special_teaching_building_corridor", "school_special_building",
+        "special_exam_room_2", "special_exam_room_3",
+    ],
+}
+
+# Backward compatibility: map old location IDs to new ones for existing game saves
+_LOCATION_ALIASES = {
+    "classroom_d": "classroom_1d",
+    "hallway_1f": "academic_hallway",
+    "hallway_3f": "academic_hallway",
+    "hallway_5f": "academic_hallway",
+    "library": "academic_hallway",
+    "cafeteria": "keyaki_mall",
+    "school_gymnasium": "gymnasium",
+    "school_field": "sports_field",
+    "dormitory": "dorm_student",
+    "school_gate": "campus_gate",
+}
 
 CHARACTER_LIBRARY = {
     "绫小路清隆": {
@@ -336,7 +380,7 @@ TOOL_DEFINITIONS = [
                 "properties": {
                     "location_id": {
                         "type": "string",
-                        "description": "地点ID，如'library'、'cafeteria'、'school_gymnasium'、'rooftop'、'dormitory'等",
+                        "description": "地点ID，如'classroom_1d'、'keyaki_mall'、'gymnasium'、'rooftop'、'dorm_student'等",
                     },
                 },
                 "required": ["location_id"],
@@ -973,7 +1017,7 @@ GAME_SYSTEM_PROMPT = """你是一个高级AI叙事引擎，负责驱动《实力
 {
   "narrative": "我推开教室的后门，走向走廊。穿过一楼大厅，食堂就在前方。窗口飘来味噌汤的香气，正午的阳光透过玻璃窗洒进来...",
   "choices": [{"id": "1", "text": "去点一份午餐"}, {"id": "2", "text": "找个位置坐下观察"}],
-  "state_changes": {"new_location_id": "cafeteria", "new_time_slot": "noon"}
+  "state_changes": {"new_location_id": "keyaki_mall", "new_time_slot": "noon"}
 }
 
 示例2（玩家观察周围环境，时间不变）：
@@ -987,7 +1031,7 @@ GAME_SYSTEM_PROMPT = """你是一个高级AI叙事引擎，负责驱动《实力
 {
   "narrative": "我回到宿舍，躺在床上。白天的喧嚣在脑海中逐渐远去。闹钟响起时，窗外已经大亮——新的一天开始了。",
   "choices": [{"id": "1", "text": "起床洗漱"}, {"id": "2", "text": "再睡五分钟"}],
-  "state_changes": {"new_location_id": "dormitory", "sleep_to_morning": true, "new_time_slot": "morning", "new_game_date": "2024-04-02"}
+  "state_changes": {"new_location_id": "dorm_student", "sleep_to_morning": true, "new_time_slot": "morning", "new_game_date": "2024-04-02"}
 }
 
 ## state_changes规则（由AI自主判断）
@@ -999,7 +1043,7 @@ GAME_SYSTEM_PROMPT = """你是一个高级AI叙事引擎，负责驱动《实力
 - 重要：不必每次都推进时间。如果玩家在原地进行了多个短暂行动，可以连续多次不改变时间，让剧情在同一时间段内充分展开。但也要合理推进——上课、吃饭、睡觉等自然节点应推进时间
 - 重要：在JSON中展示明确的new_time_slot，才能保证时间系统正确运行
 
-可用的地点ID：classroom_d, hallway_1f, hallway_3f, hallway_5f, library, cafeteria, school_gymnasium, school_field, rooftop, dormitory, school_gate, school_bus, special_building
+可用的地点ID：classroom_1d, academic_hallway, campus_gate, gymnasium, sports_field, rooftop, dorm_student, school_bus, special_building, keyaki_mall
 
 ## 可用工具（函数调用）
 你可以调用以下工具来获取准确的游戏数据。在生成叙事之前，根据需要使用工具查询信息：
@@ -1101,8 +1145,9 @@ def _build_perspective_context(
 
 def _build_state_dict(session: GameSession) -> dict:
     """Build a state dict from a GameSession ORM object."""
-    loc = LOCATIONS.get(session.player_location_id, {})
-    npcs = NPC_SCHEDULES.get(session.player_location_id, [])
+    resolved_lid = _LOCATION_ALIASES.get(session.player_location_id, session.player_location_id)
+    loc = LOCATIONS.get(resolved_lid, {})
+    npcs = NPC_SCHEDULES.get(resolved_lid, [])
     # 过滤掉玩家自己扮演的角色，避免提示词中将玩家视为NPC
     npcs = [n for n in npcs if n["name"] != session.player_name]
     char_entry = CHARACTER_LIBRARY.get(session.player_name, {})
@@ -1288,7 +1333,7 @@ def _apply_state_changes(session: GameSession, changes: dict) -> None:
         sd = _sleep_to_morning(sd)
         session.game_date = sd["game_date"]
         session.time_slot = sd["time_slot"]
-        session.player_location_id = "dormitory"
+        session.player_location_id = "dorm_student"
 
     # Detect date change for daily settlement
     if session.game_date != old_date:
@@ -1457,9 +1502,130 @@ async def _maybe_summarize(db, session_id: str, gs: GameSession) -> None:
 
 # ---- Narrative Generation ----
 
+
+def _calc_days_left(game_date: str, end_date: str | None) -> str:
+    """Calculate days remaining until end_date for frontend display."""
+    if not end_date:
+        return "?"
+    try:
+        from datetime import date
+        current = date.fromisoformat(game_date)
+        end = date.fromisoformat(end_date)
+        delta = (end - current).days
+        return str(delta) if delta >= 0 else "已过期"
+    except Exception:
+        return "?"
+
+
+async def _event_lifecycle_advance(db, game_date: str) -> list[str]:
+    """Advance event lifecycles on date change. Returns active event prompts."""
+    from src.core.event_bus.bus import EventBus
+    bus = EventBus(db)
+    advs = await bus.advance_lifecycle(game_date)
+    prompts = []
+    for a in advs:
+        if a.new_phase in ("active", "transition") and a.prompt_to_inject:
+            prompts.append(f"【事件推进：{a.event_id}】\n{a.prompt_to_inject}")
+    return prompts
+
+
+async def _get_events_for_display(
+    db, location_id: str, game_date: str, time_slot: str,
+    player_char_id: str | None = None,
+) -> list[dict]:
+    """Query active events for frontend display without firing them."""
+    from src.core.event_bus.bus import EventBus
+
+    location_id = _LOCATION_ALIASES.get(location_id, location_id)
+
+    bus = EventBus(db)
+    matches = await bus.check_triggers(location_id, game_date, time_slot, player_char_id)
+
+    mapped_locs = LOCATION_EVENT_MAP.get(location_id, [location_id])
+    for mloc in mapped_locs:
+        if mloc != location_id:
+            extra = await bus.check_triggers(mloc, game_date, time_slot, player_char_id)
+            for m in extra:
+                if not any(mm.event.id == m.event.id for mm in matches):
+                    matches.append(m)
+
+    events = []
+    for match in matches:
+        ev = match.event
+        events.append({
+            "name": ev.name,
+            "description": (ev.active_prompt or ev.ai_setup_prompt or "")[:200],
+            "days_left": _calc_days_left(game_date, ev.active_end_date),
+            "phase": ev.phase.value if ev.phase else "?",
+            "match_type": match.match_type,
+        })
+    return events
+
+
+async def _check_and_fire_events(
+    db, location_id: str, game_date: str, time_slot: str,
+    player_char_id: str | None = None,
+) -> tuple[list[str], list[dict]]:
+    """Check event triggers and fire matching events.
+    Returns (prompts_for_llm, active_events_for_display)."""
+    location_id = _LOCATION_ALIASES.get(location_id, location_id)
+    from src.core.event_bus.bus import EventBus
+
+    bus = EventBus(db)
+
+    # Check static events (with location mapping)
+    matches = await bus.check_triggers(location_id, game_date, time_slot, player_char_id)
+    # Also check against mapped location IDs
+    mapped_locs = LOCATION_EVENT_MAP.get(location_id, [location_id])
+    for mloc in mapped_locs:
+        if mloc != location_id:
+            extra_matches = await bus.check_triggers(mloc, game_date, time_slot, player_char_id)
+            for m in extra_matches:
+                if not any(mm.event.id == m.event.id for mm in matches):
+                    matches.append(m)
+
+    # Also check dynamic events
+    dynamic_matches = await bus.check_dynamic_triggers(location_id, game_date)
+
+    prompts = []
+    active_events = []
+
+    for match in matches:
+        ctx = await bus.fire_event(match.event, phase="active")
+        if ctx and ctx.ai_prompt:
+            prompts.append(f"【事件触发：{ctx.event_name}】\n{ctx.ai_prompt}")
+        if ctx and ctx.rules_appendix:
+            prompts.append(f"【考试规则：{ctx.event_name}】\n{ctx.rules_appendix}")
+
+        ev = match.event
+        active_events.append({
+            "name": ev.name,
+            "description": (ev.active_prompt or ev.ai_setup_prompt or "")[:200],
+            "days_left": _calc_days_left(game_date, ev.active_end_date),
+            "phase": ev.phase.value if ev.phase else "?",
+            "match_type": match.match_type,
+        })
+
+    for dev in dynamic_matches:
+        if dev.ai_setup_prompt:
+            dev.is_triggered = True
+            prompts.append(f"【动态事件：{dev.name or '支线事件'}】\n{dev.ai_setup_prompt}")
+        active_events.append({
+            "name": dev.name or "支线事件",
+            "description": (dev.ai_setup_prompt or "")[:200],
+            "days_left": _calc_days_left(game_date, dev.expires_at or dev.trigger_date_end),
+            "phase": "dynamic",
+            "match_type": "dynamic",
+        })
+
+    await db.flush()
+    return prompts, active_events
+
+
 def _build_llm_context(
     user_input: str, state_dict: dict, max_tokens: int = 1024,
     history: list[dict] | None = None, summary: str = "",
+    event_prompts: list[str] | None = None,
 ) -> list[dict]:
     """Build messages for LLM call, with chat history injected."""
     loc = state_dict.get("location", {})
@@ -1529,10 +1695,15 @@ def _build_llm_context(
     if WORLDVIEW_CONTEXT:
         system_content += "\n\n## 世界观设定参考\n" + WORLDVIEW_CONTEXT
 
-    return [
-        {"role": "system", "content": system_content},
-        {"role": "user", "content": user_msg},
-    ]
+    messages = [{"role": "system", "content": system_content}]
+
+    # Inject triggered event prompts as additional system messages
+    if event_prompts:
+        for ep in event_prompts:
+            messages.append({"role": "system", "content": ep})
+
+    messages.append({"role": "user", "content": user_msg})
+    return messages
 
 
 def _recover_json_string(text: str, key: str) -> str | None:
@@ -1640,7 +1811,7 @@ def generate_offline_response(user_input: str, state_dict: dict) -> dict:
         return {
             "narrative": "你回到宿舍，躺在床上。在这个陌生的学校里，宿舍是你唯一的私人空间。\n\n第二天早上，闹钟准时响起。新的一天开始了。",
             "choices": [],
-            "state_changes": {"new_location_id": "dormitory", "sleep_to_morning": True},
+            "state_changes": {"new_location_id": "dorm_student", "sleep_to_morning": True},
         }
 
     if inp.startswith("/go "):
@@ -1717,9 +1888,10 @@ def generate_offline_response(user_input: str, state_dict: dict) -> dict:
 async def generate_llm_response(
     user_input: str, state_dict: dict, max_tokens: int = 1024,
     history: list[dict] | None = None, summary: str = "",
+    event_prompts: list[str] | None = None,
 ) -> dict:
     """Send the player input to DeepSeek and get a narrative response (with tool calling)."""
-    messages = _build_llm_context(user_input, state_dict, max_tokens, history, summary)
+    messages = _build_llm_context(user_input, state_dict, max_tokens, history, summary, event_prompts)
 
     async with httpx.AsyncClient(timeout=120.0) as client:
         # ---- Tool calling loop ----
@@ -1803,9 +1975,11 @@ async def generate_llm_response(
 async def generate_llm_stream(
     user_input: str, state_dict: dict, max_tokens: int,
     history: list[dict] | None, summary: str, db_session,
+    event_prompts: list[str] | None = None,
+    active_events: list[dict] | None = None,
 ):
     """SSE streaming generator with DB persistence and tool calling support."""
-    messages = _build_llm_context(user_input, state_dict, max_tokens, history, summary)
+    messages = _build_llm_context(user_input, state_dict, max_tokens, history, summary, event_prompts)
     accumulated_content = ""
     tool_call_history = []
 
@@ -1914,11 +2088,12 @@ async def generate_llm_stream(
     # Apply state changes and save dialogue
     _apply_state_changes(gs, parsed.get("state_changes", {}))
 
-    # Trigger daily settlement if date changed
+    # Trigger daily settlement and lifecycle advance if date changed
     if getattr(gs, '_pending_settlement', None):
         settlement_date = gs._pending_settlement
         delattr(gs, '_pending_settlement')
         await daily_point_settlement(settlement_date)
+        await _event_lifecycle_advance(db_session, settlement_date)
 
     # Increment sequence number
     seq_result = await db_session.execute(
@@ -1946,6 +2121,7 @@ async def generate_llm_stream(
     fresh_state = _build_state_dict(gs)
     fresh_state["narrative"] = parsed["narrative"]
     fresh_state["choices"] = parsed.get("choices", [])
+    fresh_state["active_events"] = active_events or []
 
     done_msg = {
         "done": True,
@@ -1984,7 +2160,12 @@ async def get_state():
     """Get current game state from DB."""
     async with async_session() as db:
         gs = await _get_or_create_session(db)
-        return JSONResponse(_build_state_dict(gs))
+        state_data = _build_state_dict(gs)
+        state_data["active_events"] = await _get_events_for_display(
+            db, gs.player_location_id, gs.game_date, gs.time_slot,
+            gs.player_char_id,
+        )
+        return JSONResponse(state_data)
 
 
 @app.post("/api/demo/act")
@@ -2002,20 +2183,27 @@ async def act(request: Request):
         summary = await _get_latest_summary(db, gs.id)
 
         if use_llm:
+            # Check for event triggers before LLM call
+            event_prompts, active_events = await _check_and_fire_events(
+                db, gs.player_location_id, gs.game_date, gs.time_slot,
+                gs.player_char_id,
+            )
             result = await generate_llm_response(
                 user_input, state_dict, max_tokens=max_tokens,
                 history=history, summary=summary,
+                event_prompts=event_prompts if event_prompts else None,
             )
         else:
             result = generate_offline_response(user_input, state_dict)
 
         _apply_state_changes(gs, result.get("state_changes", {}))
 
-        # Trigger daily settlement if date changed
+        # Trigger daily settlement and lifecycle advance if date changed
         if getattr(gs, '_pending_settlement', None):
             settlement_date = gs._pending_settlement
             delattr(gs, '_pending_settlement')
             await daily_point_settlement(settlement_date)
+            await _event_lifecycle_advance(db, settlement_date)
 
         seq_result = await db.execute(
             select(func.coalesce(func.max(DialogueLog.sequence_num), 0))
@@ -2036,6 +2224,7 @@ async def act(request: Request):
         state_data = _build_state_dict(gs)
         state_data["narrative"] = result["narrative"]
         state_data["choices"] = result.get("choices", [])
+        state_data["active_events"] = active_events if use_llm else []
         return JSONResponse(state_data)
 
 
@@ -2052,17 +2241,25 @@ async def llm_act(request: Request):
         history = await _get_recent_history(db, gs.id, limit=settings.max_history_dialogues)
         summary = await _get_latest_summary(db, gs.id)
 
+        # Check for event triggers before LLM call
+        event_prompts, active_events = await _check_and_fire_events(
+            db, gs.player_location_id, gs.game_date, gs.time_slot,
+            gs.player_char_id,
+        )
+
         result = await generate_llm_response(
             user_input, state_dict, max_tokens=max_tokens,
             history=history, summary=summary,
+            event_prompts=event_prompts if event_prompts else None,
         )
         _apply_state_changes(gs, result.get("state_changes", {}))
 
-        # Trigger daily settlement if date changed
+        # Trigger daily settlement and lifecycle advance if date changed
         if getattr(gs, '_pending_settlement', None):
             settlement_date = gs._pending_settlement
             delattr(gs, '_pending_settlement')
             await daily_point_settlement(settlement_date)
+            await _event_lifecycle_advance(db, settlement_date)
 
         seq_result = await db.execute(
             select(func.coalesce(func.max(DialogueLog.sequence_num), 0))
@@ -2083,6 +2280,7 @@ async def llm_act(request: Request):
         state_data = _build_state_dict(gs)
         state_data["narrative"] = result["narrative"]
         state_data["choices"] = result.get("choices", [])
+        state_data["active_events"] = active_events
         return JSONResponse(state_data)
 
 
@@ -2099,6 +2297,12 @@ async def llm_stream(request: Request):
         state_dict = _build_state_dict(gs)
         history = await _get_recent_history(db, gs.id, limit=settings.max_history_dialogues)
         summary = await _get_latest_summary(db, gs.id)
+
+        # Check for event triggers before LLM call
+        event_prompts, stream_active_events = await _check_and_fire_events(
+            db, gs.player_location_id, gs.game_date, gs.time_slot,
+            gs.player_char_id,
+        )
     except Exception as e:
         await db.close()
         return StreamingResponse(
@@ -2110,6 +2314,8 @@ async def llm_stream(request: Request):
         try:
             async for chunk in generate_llm_stream(
                 user_input, state_dict, max_tokens, history, summary, db,
+                event_prompts=event_prompts if event_prompts else None,
+                active_events=stream_active_events,
             ):
                 yield chunk
         finally:
@@ -2129,7 +2335,7 @@ async def llm_perspective(request: Request):
     target_npc_name = body.get("target_npc_name", "")
     last_narrative = body.get("last_narrative", "")
     last_user_input = body.get("last_user_input", "")
-    location_id = body.get("location_id", "classroom_d")
+    location_id = body.get("location_id", "classroom_1d")
     time_display = body.get("time_display", "")
     player_name = body.get("player_name", "")
     max_tokens = body.get("max_tokens", 1024)
@@ -2214,6 +2420,10 @@ async def game_load():
             return JSONResponse({"has_save": False, "state": None, "history": []})
 
         state_dict = _build_state_dict(gs)
+        state_dict["active_events"] = await _get_events_for_display(
+            db, gs.player_location_id, gs.game_date, gs.time_slot,
+            gs.player_char_id,
+        )
         history = await _get_recent_history(db, gs.id, limit=settings.max_history_dialogues)
         summary = await _get_latest_summary(db, gs.id)
 
@@ -2279,7 +2489,7 @@ async def game_reset(request: Request):
             player_char_id=player_char_id,
             game_date="2024-04-01",
             time_slot="morning",
-            player_location_id="classroom_d",
+            player_location_id="classroom_1d",
             class_points=0,
             private_points=100000,
             dialogue_count_since_summary=0,
@@ -2328,6 +2538,28 @@ async def match_character(request: Request):
         "suggestion": "create_new",
         "message": f"未找到与「{name}」匹配的角色，请创建新角色",
     })
+
+
+@app.get("/api/game/player_profile")
+async def player_profile():
+    """Get the player character's full profile from CHARACTER_LIBRARY."""
+    async with async_session() as db:
+        gs = await _get_or_create_session(db)
+        char_entry = CHARACTER_LIBRARY.get(gs.player_name, {})
+        if not char_entry:
+            return JSONResponse({"error": "Character not found"}, status_code=404)
+        return JSONResponse({
+            "name": gs.player_name,
+            "role_id": gs.player_char_id,
+            "class_name": char_entry.get("class_name", "D"),
+            "enrollment_year": char_entry.get("enrollment_year", "2024"),
+            "traits": char_entry.get("traits", []),
+            "private_points": char_entry.get("private_points", 100000),
+            "spending_habit": char_entry.get("spending_habit", "normal"),
+            "public_info": char_entry.get("public_info", []),
+            "secrets": char_entry.get("secrets", []),
+            "relations": char_entry.get("relations", []),
+        })
 
 
 @app.post("/api/game/create_character")
@@ -2447,7 +2679,7 @@ def _load_extracted_data():
             chars_data = _json.load(f)
         for entry in chars_data.get("data", []):
             name = entry.get("name", "")
-            if name and name not in CHARACTER_LIBRARY:
+            if name:
                 traits = entry.get("traits", [])
                 CHARACTER_LIBRARY[name] = {
                     "role_id": entry.get("role_id", f"imported_{name}"),

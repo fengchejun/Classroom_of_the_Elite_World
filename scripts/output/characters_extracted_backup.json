@@ -14,22 +14,7 @@
         "善于隐藏实力",
         "隐藏实力",
         "冷静",
-        "善于伪装",
-        "善于算计",
-        "和平主义",
-        "幕后操纵者",
-        "冷漠",
-        "孤独",
-        "聪明",
-        "不擅社交",
-        "有秘密",
-        "策略家",
-        "不引人注目",
-        "善于分析",
-        "情感淡漠",
-        "扑克脸",
-        "极度理性",
-        "操纵人心"
+        "善于伪装"
       ],
       "public_info": [
         {
@@ -47,223 +32,55 @@
       ],
       "secrets": [
         {
-          "info_id": "hidden_ability",
-          "content": "绫小路清隆拥有远超常人的身体能力和智力，但刻意隐藏实力，避免成为焦点。",
+          "info_id": "ayanokoji_hidden_ability",
+          "content": "绫小路清隆拥有远超常人的身体能力与智力，但他刻意隐藏这一切，只想度过平凡的校园生活。",
           "known_by": [
             "ayanokoji_kiyotaka"
           ]
         },
         {
-          "info_id": "father_relation",
-          "content": "绫小路清隆的父亲是政界或教育界有影响力的人物，也是White Room(白屋)的创始人和最高负责人。他进入这所学校是为了逃离父亲的掌控。",
+          "info_id": "ayanokoji_white_room",
+          "content": "绫小路清隆是「白屋」（White Room）的产物，从小接受极端精英教育，是第四期生中唯一的幸存者。他来到这所学校是为了逃离父亲的掌控，获得自由。",
           "known_by": [
             "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "ayanokoji_past",
-          "content": "绫小路清隆来自一个名为‘白屋’的极端教育机构，拥有超乎常人的身体素质和智力，但缺乏正常情感和人际交往能力。他进入这所学校是为了逃避过去，追求平凡的校园生活。",
-          "known_by": [
-            "茶柱佐枝"
-          ]
-        }, 
-        {
-          "info_id": "white_room_graduate",
-          "content": "他是白屋计划第四期生中唯一的幸存者，接受了最高难度的β课程教育，是白屋的最高杰作。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "tsukishiro",
-            "suzune"
           ]
         }
-        
-          
       ],
       "relations": [
         {
           "to": "堀北铃音",
           "type": "neutral",
-          "reason": "同桌，因公车事件相识，互相利用但保持距离。"
+          "reason": "邻座同学。入学第一天在公车上相遇，之后成为邻座。绫小路觉得堀北和自己一样孤独，偶尔搭话，但远谈不上朋友。"
         },
         {
           "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "栉田主动接近，绫小路协助她接近堀北，共享秘密。"
+          "type": "neutral",
+          "reason": "同班同学。栉田对所有人都很友善，绫小路表面配合但内心保持警惕——他觉得她过于完美，不自然。"
         },
         {
           "to": "须藤健",
-          "type": "friend",
-          "reason": "因便利商店事件结识，后加入读书会，关系逐渐友好。"
+          "type": "neutral",
+          "reason": "同班同学。在便利店帮须藤垫付了泡面钱，须藤因此对他有了印象，但两人还不太熟。"
         },
         {
           "to": "池宽治",
-          "type": "friend",
-          "reason": "同班同学，加入男生聊天群组，一起参加游泳课和赌局。"
+          "type": "neutral",
+          "reason": "同班同学。池创建了男生LINE群组，把绫小路也拉了进去，偶尔闲聊。"
         },
         {
           "to": "山内春树",
-          "type": "friend",
-          "reason": "同班同学，加入男生聊天群组，一起参加游泳课和赌局。"
+          "type": "neutral",
+          "reason": "同班同学。通过池的群组认识，偶尔一起聊天。"
         },
         {
           "to": "平田洋介",
           "type": "neutral",
-          "reason": "平田是班级中心人物，绫小路对其保持距离但尊重。"
-        },
-        {
-          "to": "高圆寺六助",
-          "type": "neutral",
-          "reason": "同班同学，高圆寺行为怪异，绫小路保持观察。"
+          "reason": "同班同学。平田是D班的中心人物，人缘极好。绫小路对他保持距离，避免被卷入班级事务。"
         },
         {
           "to": "茶柱佐枝",
           "type": "neutral",
-          "reason": "班导"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "friend",
-          "reason": "同桌，经常一起行动，互相理解但保持距离。"
-        },
-        {
-          "to": "佐仓爱里",
-          "type": "friend",
-          "reason": "在佐仓被跟踪狂骚扰时出手相助，建立了信任关系。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "friend",
-          "reason": "平田主动邀请绫小路出去玩，关系良好。"
-        },
-        {
-          "to": "堀北学",
-          "type": "neutral",
-          "reason": "学生会长，对绫小路的能力有所察觉，曾邀请他加入学生会。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "neutral",
-          "reason": "同班同学，栉田表面友好，绫小路对其保持警惕。"
-        },
-        {
-          "to": "茶柱佐枝",
-          "type": "subservient",
-          "reason": "班导，掌握绫小路的秘密，两人有秘密交易。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "subservient",
-          "reason": "通过威胁和掌控，让轻井泽成为自己的帮手。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "rival",
-          "reason": "龙园怀疑他是幕后黑手，两人处于暗中交锋状态。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "trust",
-          "reason": "通过合作建立信任，绫小路知晓轻井泽的过去并利用其作为情报来源。"
-        },
-        {
-          "to": "伊吹澪",
-          "type": "neutral",
-          "reason": "因占卜事件偶遇，关系平淡，但伊吹对绫小路有一定好奇。"
-        },
-        {
-          "to": "葛城康平",
-          "type": "friend",
-          "reason": "通过帮助葛城寄送礼物建立友谊，虽不同班但互相尊重。"
-        },
-        {
-          "to": "佐藤麻耶",
-          "type": "friend",
-          "reason": "接受其圣诞节约会邀请，但拒绝了告白，认为她无法取代轻井泽的价值。"
-        },
-        {
-          "to": "坂柳有栖",
-          "type": "rival",
-          "reason": "坂柳知道其White Room出身，视其为必须击败的对手。"
-        },
-        {
-          "to": "桐山生",
-          "type": "neutral",
-          "reason": "被桐山视为对抗南云雅的潜在盟友，但绫小路对其保持警惕。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "不同班级，一之濑在青春场景中拉他一起走"
-        },
-        {
-          "to": "外村",
-          "type": "friend",
-          "reason": "同班同学，一起玩游戏"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "crush",
-          "reason": "秘密交往的女朋友。"
-        },
-        {
-          "to": "三宅明人",
-          "type": "friend",
-          "reason": "同班同学，关系良好的朋友。"
-        },
-        {
-          "to": "宝泉和臣",
-          "type": "hostile",
-          "reason": "被宝泉设计陷害，但成功反制。"
-        },
-        {
-          "to": "月城",
-          "type": "hostile",
-          "reason": "月城是White Room派来的代理人，目标是让他退学。"
-        },
-        {
-          "to": "天泽一夏",
-          "type": "neutral",
-          "reason": "天泽是White Room后辈，5月1日时尚未正式接触，但已知其存在。"
-        },
-        {
-          "to": "月城代理理事长",
-          "type": "hostile",
-          "reason": "月城是White Room派来逼他退学的敌人，5月1日时已暗中对抗。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "trust",
-          "reason": "作为班级的幕后策划者，与领袖堀北铃音保持合作关系，共同推进班级策略。"
-        },
-        {
-          "to": "南云雅",
-          "type": "rival",
-          "reason": "南云雅视其为对手，绫小路清隆则保持距离，但最终接受对决提议。"
-        },
-        {
-          "to": "八神拓也",
-          "type": "hostile",
-          "reason": "设计让八神拓也退学，因为其威胁到班级稳定和自身计划。"
-        },
-        {
-          "to": "绫小路笃臣",
-          "type": "family",
-          "reason": "父子关系，但清隆对父亲没有感情，视其为需要警惕的对象。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "friend",
-          "reason": "一之濑对绫小路有好感，绫小路则利用她作为情报源和潜在盟友。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "hostile",
-          "reason": "栉田讨厌绫小路，绫小路则掌握她的秘密并加以利用。"
-        },
-        {
-          "to": "桥本正义",
-          "type": "neutral",
-          "reason": "桥本试图拉拢绫小路，但绫小路保持中立，并利用他传递口信。"
+          "reason": "D班班导。茶柱佐枝是一个看起来对班级漠不关心的老师，但绫小路隐约感觉到她在观察自己。"
         }
       ]
     },
@@ -280,29 +97,7 @@
         "不善交际",
         "孤高",
         "冷静",
-        "自尊心强",
-        "观察力敏锐",
-        "高傲",
-        "固执",
-        "优秀",
-        "能力出众",
-        "孤僻",
-        "不擅交际",
-        "认真",
-        "不善社交",
-        "好胜",
-        "有领导潜力",
-        "冷淡",
-        "文武双全",
-        "不服输",
-        "有领导力",
-        "努力型",
-        "成长中",
-        "责任感强",
-        "领袖气质",
-        "成长型",
-        "执着",
-        "有野心"
+        "自尊心强"
       ],
       "public_info": [
         {
@@ -320,135 +115,10 @@
       ],
       "secrets": [
         {
-          "info_id": "brother_relation",
-          "content": "堀北铃音是学生会会长堀北学的妹妹，她进入这所学校是为了追赶哥哥的脚步，但不愿公开关系。",
+          "info_id": "horikita_brother_complex",
+          "content": "堀北铃音对哥哥堀北学有着极深的执念。她来到这所学校、拼命想要升上A班，很大程度上是为了向哥哥证明自己的价值。她冷傲的外表下隐藏着对认可的极度渴望。",
           "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "lower_english_score",
-          "content": "为了降低班级平均分以帮助须藤及格，堀北故意在英文考试中只考了51分。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
             "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "horikita_brother",
-          "content": "堀北铃音是学生会长堀北学的妹妹，她进入这所学校是为了追赶哥哥的脚步，但两人关系紧张。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "horikita_feelings",
-          "content": "堀北铃音逐渐意识到自己对绫小路清隆的依赖和信任，但不愿承认，内心矛盾。",
-          "known_by": []
-        },
-        {
-          "info_id": "brother_goal",
-          "content": "进入这所学校是为了追赶哥哥堀北学，希望获得他的认可。",
-          "known_by": [
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "leader_failure",
-          "content": "在无人岛考试中担任领导者，但因身体不适和伊吹的算计而失败，被绫小路暗中操控。",
-          "known_by": [
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "brother_complex",
-          "content": "她的哥哥堀北学是学生会长，她一直试图超越哥哥，但内心对其充满复杂的感情。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "leader_swap_truth",
-          "content": "无人岛考试中，她并非真正的领导者，真正的领导者是绫小路清隆，她只是被推到台前。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "brother_complex",
-          "content": "渴望得到哥哥堀北学的认可，但表面装作不在意，内心对哥哥的冷漠感到受伤。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "hidden_vulnerability",
-          "content": "在泳池事件中因手臂卡在水壶里而被迫求助绫小路，感到极度羞耻。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "brother_relationship",
-          "content": "与哥哥堀北学关系复杂，哥哥暗中关注她的成长。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "brother_reconciliation",
-          "content": "与哥哥堀北学和解，剪发以示决心。",
-          "known_by": [
-            "horikita_suzune",
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "bet_with_ayanokouji",
-          "content": "与绫小路清隆约定在数学考试中一决胜负。",
-          "known_by": [
-            "horikita_suzune",
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "brother_complex",
-          "content": "她崇拜哥哥堀北学，努力想得到他的认可，但5月1日时关系仍紧张。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "hidden_emotions",
-          "content": "她对绫小路有潜在的好感，但自己未完全意识到，5月1日时仍以竞争关系为主。",
-          "known_by": []
-        },
-        {
-          "info_id": "ayanokoji_dependence",
-          "content": "虽然作为领袖，但内心依赖绫小路清隆的策划和判断。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "brother_complex",
-          "content": "堀北铃音极度崇拜并试图超越哥哥堀北学，这是她努力的动力。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "hidden_vulnerability",
-          "content": "在佐仓爱里退学事件中感到内疚，但表面装作坚强。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "brother_complex",
-          "content": "堀北铃音入学是为了追赶哥哥堀北学的脚步，并得到他的认可。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
           ]
         }
       ],
@@ -456,112 +126,22 @@
         {
           "to": "绫小路清隆",
           "type": "neutral",
-          "reason": "同桌，互相利用但保持距离，逐渐产生信任。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "hostile",
-          "reason": "栉田表面友好但内心讨厌堀北，堀北察觉后保持距离。"
-        },
-        {
-          "to": "须藤健",
-          "type": "friend",
-          "reason": "通过读书会逐渐认可须藤的努力，并为他降低分数。"
-        },
-        {
-          "to": "池宽治",
-          "type": "neutral",
-          "reason": "同班同学，认为池轻浮，保持距离。"
-        },
-        {
-          "to": "山内春树",
-          "type": "neutral",
-          "reason": "同班同学，认为山内轻浮，保持距离。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "neutral",
-          "reason": "平田关心班级，堀北认为其多管闲事。"
-        },
-        {
-          "to": "高圆寺六助",
-          "type": "neutral",
-          "reason": "同班同学，高圆寺行为怪异，堀北无视。"
+          "reason": "邻座同学。入学第一天在公车上相遇，堀北觉得他是个奇怪的家伙——看似不起眼，却偶尔说出有见地的话。她姑且允许他在自己身边待着，但不认为他是朋友。"
         },
         {
           "to": "堀北学",
           "type": "family",
-          "reason": "兄妹关系，堀北铃音以哥哥为目标，但关系复杂。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "同桌，经常一起行动，互相理解但保持距离。"
+          "reason": "哥哥，学生会会长。堀北铃音对哥哥有着复杂的情感——既崇拜又自卑，渴望得到他的认可。她不愿让哥哥知道自己在D班。"
         },
         {
           "to": "须藤健",
-          "type": "neutral",
-          "reason": "虽然批评须藤的行为，但在事件中仍出手相助。"
-        },
-        {
-          "to": "茶柱佐枝",
-          "type": "neutral",
-          "reason": "茶柱老师对堀北有期望，但堀北对其保持距离。"
+          "type": "hostile",
+          "reason": "同班同学。须藤是典型的D班废柴——冲动、成绩差、惹是生非。堀北觉得这种人拖累了班级，不想和他有任何瓜葛。"
         },
         {
           "to": "栉田桔梗",
-          "type": "neutral",
-          "reason": "栉田表面友好，但堀北对其保持距离。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "rival",
-          "reason": "被龙园视为主要对手，两人在考试中多次交锋。"
-        },
-        {
-          "to": "伊吹澪",
-          "type": "rival",
-          "reason": "在无人岛考试中交手，伊吹视其为死对头。"
-        },
-        {
-          "to": "佐仓爱里",
-          "type": "neutral",
-          "reason": "同班同学，一起上学但交流少"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "不同班级，一之濑主动递上联系方式但堀北拒绝"
-        },
-        {
-          "to": "外村",
-          "type": "neutral",
-          "reason": "同班同学，一起玩游戏但态度冷淡"
-        },
-        {
-          "to": "宝泉和臣",
           "type": "hostile",
-          "reason": "谈判破裂，被宝泉泼水并攻击。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "trust",
-          "reason": "作为班级领袖，信任并依赖绫小路清隆的幕后支持。"
-        },
-        {
-          "to": "南云雅",
-          "type": "neutral",
-          "reason": "作为学生会成员，与南云雅有工作往来，但对其行为保持怀疑。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "friend",
-          "reason": "同为学生会成员，一之濑辞职后堀北接任学生会长。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "friend",
-          "reason": "平田是班级的协调者，堀北尊重他的能力。"
+          "reason": "同班同学。栉田表面友善，但堀北直觉地不信任她。两人之间有一种微妙的敌意。"
         }
       ]
     },
@@ -578,27 +158,7 @@
         "有秘密",
         "表面温柔",
         "内心阴暗",
-        "有控制欲",
-        "善于交际",
-        "受欢迎",
-        "隐藏黑暗面",
-        "开朗",
-        "两面派",
-        "表面友善",
-        "报复心强",
-        "有黑暗面",
-        "温柔",
-        "社交型",
-        "表里不一",
-        "社交能力强",
-        "阴暗",
-        "双面人",
-        "情报收集",
-        "成长中",
-        "社交高手",
-        "腹黑",
-        "嫉妒心强",
-        "渴望认可"
+        "有控制欲"
       ],
       "public_info": [
         {
@@ -616,228 +176,28 @@
       ],
       "secrets": [
         {
-          "info_id": "true_feelings_toward_horikita",
-          "content": "栉田桔梗表面上想与堀北成为朋友，但实际上非常讨厌她，认为堀北是威胁。",
-          "known_by": [
-            "kushida_kikyo",
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "past_incident",
-          "content": "栉田在国中时期可能有过导致朋友关系破裂的事件，因此她极力维持完美形象。",
+          "info_id": "kushida_dark_side",
+          "content": "栉田桔梗有着极其黑暗的另一面人格。她内心极度厌恶所有人，维持完美形象对她来说是一种折磨。她会利用社交网络收集每个人的秘密和弱点，用于控制和摧毁威胁到她「完美形象」的人。任何可能暴露她真实面目的人都会被她视为必须摧毁的敌人。",
           "known_by": [
             "kushida_kikyo"
-          ]
-        },
-        {
-          "info_id": "kusuida_duality",
-          "content": "栉田桔梗表面友好，但私下讨厌堀北铃音，曾对绫小路清隆表现出威胁性的另一面。她渴望被所有人喜欢，但无法容忍堀北的独立。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "dark_side",
-          "content": "内心阴暗，曾因初中时的霸凌事件而怀恨在心，进入高中后刻意塑造完美形象以掩盖过去。",
-          "known_by": []
-        },
-        {
-          "info_id": "dark_past",
-          "content": "国中时期曾因嫉妒而毁掉一个女生的社交生活，导致她转学。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "preferential_treatment_in_dragon",
-          "content": "在游轮考试中，她是龙组的优待者，但被龙园翔识破。",
-          "known_by": [
-            "龙园翔",
-            "堀北铃音",
-            "平田洋介"
-          ]
-        },
-        {
-          "info_id": "true_nature",
-          "content": "表面友善，实则心机深沉，讨厌堀北铃音和绫小路清隆，曾试图破坏D班团结。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "past_bullying",
-          "content": "国中时期曾因霸凌事件导致朋友自杀未遂，因此被分到D班。",
-          "known_by": []
-        },
-        {
-          "info_id": "dark_side",
-          "content": "表面友善，实则内心阴暗，曾计划让堀北铃音退学。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "ryuuen_kakeru"
-          ]
-        },
-        {
-          "info_id": "dark_side",
-          "content": "拥有不为人知的黑暗面，对堀北有隐藏的敌意",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "past_destruction",
-          "content": "国中时期曾导致班级瓦解。",
-          "known_by": [
-            "kushida_kikyou",
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "hatred_of_horikita",
-          "content": "因堀北知道其过去而敌视她。",
-          "known_by": [
-            "kushida_kikyou"
-          ]
-        },
-        {
-          "info_id": "dark_side",
-          "content": "她曾因初中时的霸凌事件而内心扭曲，5月1日时已开始暗中报复。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "betrayal_of_class",
-          "content": "她曾背叛D班，泄露班级情报，5月1日时关系紧张。",
-          "known_by": [
-            "堀北铃音",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "past_betrayal",
-          "content": "过去曾因嫉妒而背叛朋友，导致对方退学，内心有阴影。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "change_of_heart",
-          "content": "在经历一系列事件后，开始尝试改变，不再单纯追求破坏。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "true_nature",
-          "content": "栉田桔梗表面友善，实则内心充满恶意，曾试图毁掉堀北铃音。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune",
-            "tenzawa_ichika"
-          ]
-        },
-        {
-          "info_id": "forced_into_student_council",
-          "content": "栉田被堀北铃音强迫加入学生会，作为交换条件，堀北曾下跪恳求。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "tenzawa_ichika"
-          ]
-        },
-        {
-          "info_id": "true_nature",
-          "content": "栉田桔梗的真面目是阴暗且报复心强的，她曾试图毁掉堀北铃音。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune"
           ]
         }
       ],
       "relations": [
         {
           "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "主动接近绫小路，共享秘密，利用他接近堀北。"
+          "type": "neutral",
+          "reason": "同班同学。栉田注意到绫小路和堀北走得近，对他产生了兴趣——她想通过绫小路了解堀北的弱点。表面保持友善。"
         },
         {
           "to": "堀北铃音",
           "type": "hostile",
-          "reason": "表面友好但内心讨厌，被堀北察觉后关系紧张。"
-        },
-        {
-          "to": "须藤健",
-          "type": "friend",
-          "reason": "通过读书会建立友好关系。"
-        },
-        {
-          "to": "池宽治",
-          "type": "friend",
-          "reason": "池喜欢栉田，栉田保持友好但保持距离。"
-        },
-        {
-          "to": "山内春树",
-          "type": "friend",
-          "reason": "同班同学，保持友好关系。"
+          "reason": "同班同学。堀北是唯一一个对栉田的友善无动于衷的人。栉田视堀北为威胁，想找到她的把柄并摧毁她。"
         },
         {
           "to": "平田洋介",
           "type": "friend",
-          "reason": "平田是班级中心，栉田与其保持良好关系。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "friend",
-          "reason": "同班女生，栉田与所有女生都保持友好。"
-        },
-        {
-          "to": "佐仓爱里",
-          "type": "friend",
-          "reason": "试图接近佐仓，但佐仓对其保持距离。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "表面友好，但暗中警惕绫小路，因其可能看穿她的伪装。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "表面关心，实则暗中观察。"
-        },
-        {
-          "to": "佐仓爱里",
-          "type": "neutral",
-          "reason": "佐仓对她有抗拒反应，关系不融洽。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "friend",
-          "reason": "不同班级但关系友好，互相以名字称呼"
-        },
-        {
-          "to": "八神拓也",
-          "type": "neutral",
-          "reason": "国中时期认识，被邀请搭档。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "绫小路知道她的秘密，5月1日时关系紧张。"
-        },
-        {
-          "to": "长谷部波瑠加",
-          "type": "friend",
-          "reason": "帮助长谷部波瑠加走出阴影，告知其佐仓爱里的近况。"
-        },
-        {
-          "to": "天泽一夏",
-          "type": "hostile",
-          "reason": "天泽一夏经常捉弄栉田，栉田对其恨之入骨。"
+          "reason": "同班同学。两人都是班级的核心人物，在班级事务上互相配合。"
         }
       ]
     },
@@ -854,19 +214,7 @@
         "重情义",
         "篮球天才",
         "直率",
-        "运动能力强",
-        "易惹麻烦",
-        "体育万能",
-        "头脑简单",
-        "讲义气",
-        "单纯",
-        "忠诚",
-        "暴力",
-        "有传言",
-        "学力低",
-        "成长中",
-        "努力型",
-        "成长型"
+        "运动能力强"
       ],
       "public_info": [
         {
@@ -882,133 +230,27 @@
           "content": "冲动易怒，但重情义，对篮球充满热情，通过读书会逐渐成长。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "crush_on_horikita",
-          "content": "须藤健在期中考后发现自己喜欢上了堀北铃音。",
-          "known_by": [
-            "sudo_ken",
-            "ike_kamihiro",
-            "yamauchi_haruki",
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "sudu_basketball",
-          "content": "须藤健在篮球方面有天赋，但因其冲动性格和不良形象，常被误解。在须藤事件中，他实际上是正当防卫。",
-          "known_by": [
-            "绫小路清隆",
-            "栉田桔梗",
-            "堀北铃音"
-          ]
-        },
-        {
-          "info_id": "brawl_coverup",
-          "content": "曾与C班学生打架，被绫小路和堀北暗中帮助避免退学。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "crush_on_horikita",
-          "content": "暗恋堀北铃音，但不敢直接表达，常通过绫小路接近她。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "crush_on_horikita",
-          "content": "暗恋堀北铃音。",
-          "known_by": [
-            "sutou_ken"
-          ]
-        },
-        {
-          "info_id": "vision_problem",
-          "content": "因过度学习导致视力下降，正在寻找眼镜店。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "crush_on_horikita",
-          "content": "须藤健对堀北铃音抱有好感，这是他用功念书的动力之一。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
           "to": "绫小路清隆",
           "type": "friend",
-          "reason": "因便利商店事件结识，后加入读书会，关系友好。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "crush",
-          "reason": "通过读书会逐渐认可堀北，期中考后喜欢上她。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "通过读书会建立友好关系。"
+          "reason": "同班同学。绫小路在便利店帮他垫了钱，须藤觉得这人够意思。虽然交流不多，但须藤把绫小路当朋友。"
         },
         {
           "to": "池宽治",
           "type": "friend",
-          "reason": "同班同学，三人组之一，经常一起行动。"
+          "reason": "同班同学。一起闲聊打混的朋友。"
         },
         {
           "to": "山内春树",
           "type": "friend",
-          "reason": "同班同学，三人组之一，经常一起行动。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "rival",
-          "reason": "平田是班级中心人物，须藤对其有竞争意识。"
-        },
-        {
-          "to": "高圆寺六助",
-          "type": "rival",
-          "reason": "游泳比赛中输给高圆寺，产生竞争意识。"
+          "reason": "同班同学。一起闲聊打混的朋友。"
         },
         {
           "to": "堀北铃音",
           "type": "neutral",
-          "reason": "虽然被堀北批评，但尊重她的能力。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "neutral",
-          "reason": "虽然不喜欢平田的完美形象，但接受他的帮助。"
-        },
-        {
-          "to": "高圆寺六助",
-          "type": "hostile",
-          "reason": "高圆寺公开嘲讽须藤，两人关系紧张。"
-        },
-        {
-          "to": "葛城康平",
-          "type": "neutral",
-          "reason": "通过绫小路间接认识，曾帮助葛城处理事务。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "在图书馆纠纷中被一之濑调解"
-        },
-        {
-          "to": "山胁",
-          "type": "hostile",
-          "reason": "在图书馆与山胁起冲突"
-        },
-        {
-          "to": "宝泉和臣",
-          "type": "hostile",
-          "reason": "被宝泉挑衅并殴打。"
+          "reason": "同班同学。觉得堀北很漂亮但太冷了，不怎么敢搭话。"
         }
       ]
     },
@@ -1025,27 +267,7 @@
         "爱抱怨",
         "朋友多",
         "缺乏深度",
-        "热情",
-        "粗鲁",
-        "有野外经验",
-        "易冲动",
-        "冲动",
-        "单纯",
-        "幼稚",
-        "热心",
-        "笨拙",
-        "活泼",
-        "爱玩",
-        "有点笨",
-        "胆小",
-        "学力低",
-        "容易慌张",
-        "善良",
-        "搞笑",
-        "努力型",
-        "自卑",
-        "忠诚",
-        "成长型"
+        "热情"
       ],
       "public_info": [
         {
@@ -1061,88 +283,22 @@
           "content": "轻浮好色，喜欢谈论女生，经常和山内一起起哄，但本质不坏。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "ike_tracking",
-          "content": "池宽治利用手机位置情报功能跟踪栉田桔梗，行为接近跟踪狂。",
-          "known_by": [
-            "绫小路清隆",
-            "山内春树"
-          ]
-        },
-        {
-          "info_id": "delta_operation",
-          "content": "策划偷窥女生更衣室的‘Delta作战’，但被绫小路和轻井泽暗中破坏。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "karuizawa_kei"
-          ]
-        },
-        {
-          "info_id": "crush_on_kushida",
-          "content": "暗恋栉田桔梗，但栉田只利用他。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "insecurity_about_studies",
-          "content": "池宽治对学力感到自卑，但通过努力有所提升。",
-          "known_by": [
-            "sugawara_satsuki"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
           "to": "绫小路清隆",
           "type": "friend",
-          "reason": "同班同学，邀请绫小路加入男生群组，一起参加活动。"
-        },
-        {
-          "to": "山内春树",
-          "type": "friend",
-          "reason": "同班同学，三人组之一，经常一起行动。"
+          "reason": "同班同学。池把绫小路拉进了自己的男生群组，觉得他是个好说话的家伙。"
         },
         {
           "to": "须藤健",
           "type": "friend",
-          "reason": "同班同学，三人组之一，经常一起行动。"
+          "reason": "同班同学。经常一起混的朋友。"
         },
         {
-          "to": "栉田桔梗",
-          "type": "crush",
-          "reason": "喜欢栉田，但不敢表白。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "rival",
-          "reason": "嫉妒平田的人气和能力。"
-        },
-        {
-          "to": "筱原皋月",
-          "type": "rival",
-          "reason": "常因琐事争吵，但实际关系复杂。"
-        },
-        {
-          "to": "筱原",
+          "to": "山内春树",
           "type": "friend",
-          "reason": "曾帮助筱原解围，但关系并不亲密。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "同班同学，邀请堀北玩游戏"
-        },
-        {
-          "to": "外村",
-          "type": "friend",
-          "reason": "同班同学，一起玩游戏"
-        },
-        {
-          "to": "筱原皋月",
-          "type": "crush",
-          "reason": "情侣关系。"
+          "reason": "同班同学。三人组之一。"
         }
       ]
     },
@@ -1159,10 +315,7 @@
         "朋友多",
         "缺乏自信",
         "善变",
-        "缺乏主见",
-        "虚荣",
-        "胆小",
-        "随波逐流"
+        "缺乏主见"
       ],
       "public_info": [
         {
@@ -1178,62 +331,22 @@
           "content": "轻浮爱吹牛，喜欢谈论女生，经常和池一起起哄，但本质不坏。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "fake_confession",
-          "content": "山内春树曾吹牛说佐仓爱里向他告白，但实际是谎言。",
-          "known_by": [
-            "yamauchi_haruki",
-            "ike_kamihiro",
-            "sudo_ken"
-          ]
-        },
-        {
-          "info_id": "delta_operation_participant",
-          "content": "参与偷窥计划，但同样被绫小路破坏。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "karuizawa_kei"
-          ]
-        },
-        {
-          "info_id": "fake_popularity",
-          "content": "自称受欢迎，实则没有女生喜欢。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
           "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "同班同学，邀请绫小路加入男生群组，一起参加活动。"
+          "type": "neutral",
+          "reason": "同班同学。偶尔在男生圈子里聊天的对象。"
         },
         {
           "to": "池宽治",
           "type": "friend",
-          "reason": "同班同学，三人组之一，经常一起行动。"
+          "reason": "同班同学，好友。"
         },
         {
           "to": "须藤健",
           "type": "friend",
-          "reason": "同班同学，三人组之一，经常一起行动。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "crush",
-          "reason": "喜欢栉田，但不敢表白。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "rival",
-          "reason": "嫉妒平田的人气和能力。"
-        },
-        {
-          "to": "佐仓爱里",
-          "type": "crush",
-          "reason": "5月1日时突然对佐仓产生兴趣，试图追求。"
+          "reason": "同班同学，好友。"
         }
       ]
     },
@@ -1250,20 +363,7 @@
         "运动全能",
         "温柔",
         "正义感强",
-        "理想主义",
-        "领袖气质",
-        "滥好人",
-        "善于协调",
-        "责任感强",
-        "善于交际",
-        "有领导力",
-        "过于善良",
-        "足球社成员",
-        "善于调解",
-        "可靠",
-        "成绩优秀",
-        "善于沟通",
-        "协调力强"
+        "理想主义"
       ],
       "public_info": [
         {
@@ -1281,65 +381,10 @@
       ],
       "secrets": [
         {
-          "info_id": "hirata_past",
-          "content": "平田洋介过去可能有过不为人知的经历，导致他极度重视班级团结和伙伴关系。",
-          "known_by": []
-        },
-        {
-          "info_id": "inner_struggle",
-          "content": "表面阳光，但内心承受巨大压力，尤其在无人岛考试中感到力不从心。",
-          "known_by": []
-        },
-        {
-          "info_id": "fake_relationship_with_kei",
-          "content": "与轻井泽惠的交往是虚假的，是为了保护她而达成的协议。",
+          "info_id": "hirata_trauma",
+          "content": "平田洋介在初中时期因为自己的懦弱导致最好的朋友自杀。这份深重的愧疚感驱使他在高中成为一个「完美的好人」——他必须保护所有人，不能拒绝任何人的求助。",
           "known_by": [
-            "轻井泽惠",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "inner_anxiety",
-          "content": "在无人岛考试中曾陷入半恍惚状态，内心对班级的团结和未来感到焦虑。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "fake_relationship_with_kei",
-          "content": "与轻井泽惠是假情侣，目的是帮助她维持地位。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "karuizawa_kei"
-          ]
-        },
-        {
-          "info_id": "friend_suicide_attempt",
-          "content": "国中时期朋友曾企图自杀，因此被分到D班。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "fake_relationship_with_karuizawa",
-          "content": "与轻井泽惠是假情侣，出于同情而帮助她。",
-          "known_by": [
-            "karuizawa_kei",
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "past_vulnerability",
-          "content": "一年级尾声曾暴露出内心的脆弱。",
-          "known_by": [
-            "hirata_yousuke"
-          ]
-        },
-        {
-          "info_id": "concern_for_class_d",
-          "content": "平田洋介对班级的不稳定感到担忧，经常试图调解矛盾。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
+            "hirata_yosuke"
           ]
         }
       ],
@@ -1347,57 +392,17 @@
         {
           "to": "轻井泽惠",
           "type": "crush",
-          "reason": "开学后不久与轻井泽惠成为情侣。"
+          "reason": "同班同学，公开的恋人关系。但这更多是轻井泽寻求保护，平田配合她的需要。"
         },
         {
           "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "关心绫小路，曾邀请他一起吃饭。"
-        },
-        {
-          "to": "堀北铃音",
           "type": "neutral",
-          "reason": "关心堀北的孤立状态，曾请绫小路帮忙。"
+          "reason": "同班同学。平田注意到绫小路虽然不起眼但很可靠，有心拉他融入班级。"
         },
         {
           "to": "栉田桔梗",
           "type": "friend",
-          "reason": "班级中心人物，与栉田保持良好关系。"
-        },
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "须藤对其有敌意，但平田仍关心他。"
-        },
-        {
-          "to": "池宽治",
-          "type": "neutral",
-          "reason": "池嫉妒平田，但平田保持友善。"
-        },
-        {
-          "to": "山内春树",
-          "type": "neutral",
-          "reason": "山内嫉妒平田，但平田保持友善。"
-        },
-        {
-          "to": "池宽治",
-          "type": "friend",
-          "reason": "同班同学，平田常调解池与筱原的矛盾。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "friend",
-          "reason": "假情侣关系，但互相尊重。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "同学关系，对绫小路的真实实力有所察觉。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "friend",
-          "reason": "共同领导班级，合作良好。"
+          "reason": "同班同学。两人在班级事务上互相协助，是D班的核心人物搭档。"
         }
       ]
     },
@@ -1414,16 +419,7 @@
         "富有",
         "孤高",
         "聪明",
-        "冷漠",
-        "特立独行",
-        "自由奔放",
-        "能力出众",
-        "不合群",
-        "能力超群",
-        "毒舌",
-        "独行侠",
-        "体力超群",
-        "任性"
+        "冷漠"
       ],
       "public_info": [
         {
@@ -1441,70 +437,14 @@
       ],
       "secrets": [
         {
-          "info_id": "kouenji_ability",
-          "content": "高圆寺六助拥有超乎常人的能力和智商，但他选择隐藏实力，只追求自己的兴趣。",
-          "known_by": []
-        },
-        {
-          "info_id": "hidden_ability",
-          "content": "拥有超强的观察力和体能，但刻意隐藏，只按自己兴趣行动。",
-          "known_by": []
-        },
-        {
-          "info_id": "guessed_answer",
-          "content": "在游轮考试中，他看似胡闹地猜对了优待者答案，为D班赢得了点数。",
+          "info_id": "kouenji_confidence",
+          "content": "高圆寺六助出身名门，拥有超强的身体能力和自信。他完全不在乎班级点数和个人点数，按照自己的节奏生活。他认为自己是最完美的存在。",
           "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "true_power",
-          "content": "他拥有超短睡眠体质，体力恢复极快，在无人岛考试中独自拿下第一名。",
-          "known_by": [
-            "绫小路清隆",
-            "桐山"
-          ]
-        },
-        {
-          "info_id": "deal_with_horikita",
-          "content": "他与堀北有约定，若拿下第一名可获得保护点数，5月1日时已开始行动。",
-          "known_by": [
-            "堀北铃音"
+            "kouenji_rokusuke"
           ]
         }
       ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "同班同学，高圆寺无视他人，绫小路保持观察。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "同班同学，高圆寺无视他人。"
-        },
-        {
-          "to": "须藤健",
-          "type": "rival",
-          "reason": "游泳比赛中击败须藤，成为其竞争对象。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "neutral",
-          "reason": "平田试图维持班级秩序，高圆寺无视。"
-        },
-        {
-          "to": "须藤健",
-          "type": "hostile",
-          "reason": "高圆寺公开嘲讽须藤，两人关系紧张。"
-        },
-        {
-          "to": "南云雅",
-          "type": "rival",
-          "reason": "在无人岛考试中竞争第一名，5月1日时尚未直接冲突。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "茶柱佐枝",
@@ -1519,16 +459,7 @@
         "毒舌",
         "洞察力强",
         "不负责",
-        "冷淡",
-        "严厉",
-        "神秘",
-        "有野心",
-        "善于威胁",
-        "不择手段",
-        "外冷内热",
-        "成长中",
-        "教师",
-        "有责任心"
+        "冷淡"
       ],
       "public_info": [
         {
@@ -1546,59 +477,10 @@
       ],
       "secrets": [
         {
-          "info_id": "delayed_exam_notice",
-          "content": "茶柱佐枝故意延迟通知D班考试范围变更，以测试学生的应对能力。",
+          "info_id": "chabashira_past",
+          "content": "茶柱佐枝曾经也是高度育成高中的学生，她所在的D班因为她的无能而没能升上A班。这份遗憾驱使她成为了教师，想看看自己这一届的D班能否创造奇迹。",
           "known_by": [
             "chabashira_sae"
-          ]
-        },
-        {
-          "info_id": "sold_exam_point",
-          "content": "茶柱佐枝接受了绫小路和堀北的提议，以10万点出售须藤英文成绩的一分，撤销其退学处分。",
-          "known_by": [
-            "chabashira_sae",
-            "ayanokoji_kiyotaka",
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "chabashira_knowledge",
-          "content": "茶柱佐枝知道绫小路清隆来自‘白屋’，并对他有特殊关注。她可能有自己的目的。",
-          "known_by": []
-        },
-        {
-          "info_id": "deal_with_father",
-          "content": "与绫小路的父亲有秘密约定，要求绫小路退学，并以此要挟绫小路参与考试。",
-          "known_by": [
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "threatened_ayanokoji",
-          "content": "她威胁绫小路清隆，如果不协助她升上A班，就让他退学。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "involved_in_rooftop",
-          "content": "在屋顶事件后协助绫小路处理后续。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "past_with_sudo",
-          "content": "过去曾因自己的学生退学而自责，导致性格变得冷漠。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "past_failure",
-          "content": "茶柱佐枝过去从未带领班级升上A班，因此对学生缺乏信心。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
           ]
         }
       ],
@@ -1606,37 +488,12 @@
         {
           "to": "绫小路清隆",
           "type": "neutral",
-          "reason": "班导，认可绫小路的能力，但保持距离。"
+          "reason": "D班学生。茶柱注意到这个学生的入学成绩和实际表现有明显落差，开始暗中关注他。她隐约觉得这个学生不简单。"
         },
         {
           "to": "堀北铃音",
           "type": "neutral",
-          "reason": "班导，认可堀北的能力，但保持距离。"
-        },
-        {
-          "to": "星之宫知惠",
-          "type": "neutral",
-          "reason": "同事，B班班导，两人关系不明。"
-        },
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "茶柱在须藤事件中保持中立，但最后给出建议。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "subservient",
-          "reason": "掌握绫小路的秘密，两人有秘密交易。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "trust",
-          "reason": "信任堀北铃音作为班级领袖的能力。"
-        },
-        {
-          "to": "星之宫知惠",
-          "type": "hostile",
-          "reason": "两人是过去的同学和现在的同事，星之宫对茶柱怀有敌意。"
+          "reason": "D班学生。茶柱看出堀北有潜力，但性格孤傲需要打磨。"
         }
       ]
     },
@@ -1653,12 +510,7 @@
         "理性",
         "洞察力强",
         "冷酷",
-        "有远见",
-        "严格",
-        "领导力强",
-        "严肃",
-        "强大",
-        "领袖气质"
+        "有远见"
       ],
       "public_info": [
         {
@@ -1674,63 +526,17 @@
           "content": "威严冷静，有强大的气场和领导力，是学校顶尖学生。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "sister_relation",
-          "content": "堀北学是堀北铃音的哥哥，但两人关系复杂，堀北学对妹妹要求严格。",
-          "known_by": [
-            "horikita_manabu",
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "horikita_senpai_past",
-          "content": "堀北学作为学生会长，对学校的规则和系统有深刻理解，他可能知道绫小路清隆的背景。",
-          "known_by": []
-        },
-        {
-          "info_id": "concern_for_sister",
-          "content": "表面冷漠，实则关心妹妹的成长，希望她能独立。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "political_ambition",
-          "content": "担心南云雅上台后学校会混乱，试图培养势力对抗。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "anti_nagumo_plot",
-          "content": "计划联合桐山等人将南云雅从学生会长位置上拉下来。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "kiriyama_ikuto"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
           "to": "堀北铃音",
           "type": "family",
-          "reason": "兄妹关系，堀北学是堀北铃音的目标和压力来源。"
+          "reason": "妹妹。堀北学对妹妹态度冷淡，认为她实力不足，不配做自己的妹妹。但他的严厉底下藏着希望妹妹能独立成长的期望。"
         },
         {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "在社团说明会上有过一面之缘，绫小路对其印象深刻。"
-        },
-        {
-          "to": "葛城康平",
-          "type": "neutral",
-          "reason": "作为学生会长，曾处理葛城的请求。"
-        },
-        {
-          "to": "南云雅",
-          "type": "hostile",
-          "reason": "两人是对立关系，南云视其为威胁。"
+          "to": "橘茜",
+          "type": "trust",
+          "reason": "学生会书记，堀北学最信任的助手。"
         }
       ]
     },
@@ -1747,35 +553,7 @@
         "外向",
         "强势",
         "时尚",
-        "社交达人",
-        "有影响力",
-        "女王蜂",
-        "表面自信",
-        "内心脆弱",
-        "虚荣",
-        "外强中干",
-        "有心理创伤",
-        "善于伪装",
-        "表面强势",
-        "善于社交",
-        "有领导力",
-        "隐藏创伤",
-        "依赖他人",
-        "逐渐成长",
-        "开朗",
-        "社交型",
-        "女生领袖",
-        "隐藏脆弱",
-        "忠诚",
-        "恋爱脑",
-        "社交能力强",
-        "成长中",
-        "依赖清隆",
-        "依赖型",
-        "嫉妒心强",
-        "成长型",
-        "依赖",
-        "敏感"
+        "社交达人"
       ],
       "public_info": [
         {
@@ -1794,140 +572,9 @@
       "secrets": [
         {
           "info_id": "karuizawa_past",
-          "content": "轻井泽惠过去可能有过被欺凌的经历，导致她极度重视表面上的强势和社交地位。",
-          "known_by": []
-        },
-        {
-          "info_id": "victim_of_bullying",
-          "content": "初中时曾遭受严重霸凌，导致内心有创伤，进入高中后刻意塑造强势形象以保护自己。",
-          "known_by": []
-        },
-        {
-          "info_id": "past_bullying",
-          "content": "国中时期遭受过严重的校园欺凌，包括身体暴力和精神折磨，导致她形成现在的性格。",
+          "content": "轻井泽惠在初中时期曾经是校园霸凌的受害者。那段经历给她留下了深重的心理创伤。她现在的强势外表、和平田的恋爱关系，全都是为了保护自己而建立的「防御系统」。她内心极度恐惧再次被孤立和欺负。",
           "known_by": [
-            "平田洋介",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "fake_relationship",
-          "content": "与平田洋介的交往是虚假的，只是为了巩固自己在班上的地位。",
-          "known_by": [
-            "平田洋介",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "preferential_treatment",
-          "content": "在游轮考试中，她是兔组的真正优待者，但被绫小路清隆利用和操控。",
-          "known_by": [
-            "绫小路清隆",
-            "平田洋介"
-          ]
-        },
-        {
-          "info_id": "past_bullying_victim",
-          "content": "国中时期曾遭受严重霸凌，腹部有伤痕，因此害怕游泳和暴露身体。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "hirata_yousuke"
-          ]
-        },
-        {
-          "info_id": "fake_relationship",
-          "content": "与平田洋介是假情侣，目的是维持班级地位，避免被孤立。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "hirata_yousuke"
-          ]
-        },
-        {
-          "info_id": "cooperation_with_ayanokoji",
-          "content": "与绫小路秘密合作，帮助他监视班级和破坏偷窥计划。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "fake_relationship_with_hirata",
-          "content": "与平田洋介是假情侣，为了在班级中获得地位而伪装。",
-          "known_by": [
-            "hirata_yousuke",
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "past_bullying_victim",
-          "content": "国中时期遭受严重霸凌，身上留有伤痕，因此害怕再次被欺凌。",
-          "known_by": [
-            "hirata_yousuke",
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "rooftop_incident_victim",
-          "content": "在屋顶事件中被真锅等人霸凌，后被绫小路拯救，从此依赖他。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "relationship_with_ayanokouji",
-          "content": "与绫小路清隆秘密交往。",
-          "known_by": [
-            "karuizawa_kei",
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "secret_relationship",
-          "content": "她是绫小路的秘密女友，两人通过模拟约会等方式维持关系。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "hidden_vulnerability",
-          "content": "她曾因校园霸凌而内心脆弱，但5月1日时已逐渐恢复。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "past_bullying",
-          "content": "过去曾遭受严重的校园霸凌，导致内心脆弱，后依赖绫小路清隆走出阴影。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "sato_maya"
-          ]
-        },
-        {
-          "info_id": "relationship_with_ayanokoji",
-          "content": "与绫小路清隆是公开的恋人关系，但关系复杂，包含依赖和利用。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "fake_relationship",
-          "content": "轻井泽惠与绫小路清隆是表面情侣，实际是绫小路控制的棋子。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "past_bullying",
-          "content": "轻井泽惠过去曾遭受校园欺凌，因此形成表面强势的性格。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "past_bullying",
-          "content": "轻井泽惠过去曾是校园欺凌的受害者，因此形成了现在的性格。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
+            "karuizawa_kei"
           ]
         }
       ],
@@ -1935,87 +582,7 @@
         {
           "to": "平田洋介",
           "type": "crush",
-          "reason": "开学后不久与平田洋介成为情侣。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "同班女生，关系友好。"
-        },
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "在须藤事件中，她支持平田帮助须藤。"
-        },
-        {
-          "to": "筱原皋月",
-          "type": "friend",
-          "reason": "女生团体成员，轻井泽是领袖。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "subservient",
-          "reason": "被绫小路抓住弱点并威胁，成为其棋子。"
-        },
-        {
-          "to": "真锅志保",
-          "type": "hostile",
-          "reason": "在游轮上被真锅等人欺凌，结下仇怨。"
-        },
-        {
-          "to": "伊吹澪",
-          "type": "hostile",
-          "reason": "因无人岛内裤事件而敌对。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "trust",
-          "reason": "秘密合作，轻井泽依赖绫小路保护自己。"
-        },
-        {
-          "to": "平田洋介",
-          "type": "friend",
-          "reason": "假情侣关系，但互相尊重，平田知晓其过去。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "neutral",
-          "reason": "表面友好，但轻井泽对其保持警惕。"
-        },
-        {
-          "to": "池宽治",
-          "type": "neutral",
-          "reason": "同班同学，关系一般。"
-        },
-        {
-          "to": "佐藤麻耶",
-          "type": "friend",
-          "reason": "帮助佐藤策划与绫小路的约会，但内心复杂。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "hostile",
-          "reason": "龙园曾利用真锅等人霸凌她。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "crush",
-          "reason": "秘密交往的女朋友。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "同班同学，关系一般。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "friend",
-          "reason": "同班同学，关系一般但互相尊重。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "hostile",
-          "reason": "轻井泽怀疑一之濑与绫小路有染，感到嫉妒。"
+          "reason": "同班同学，表面上的恋人。对轻井泽来说，平田是她维持自己在班级中地位的「护身符」。"
         }
       ]
     },
@@ -2032,11 +599,7 @@
         "胆小",
         "善良",
         "有艺术天赋",
-        "缺乏自信",
-        "不擅交际",
-        "认生",
-        "有偶像经历",
-        "学力低"
+        "缺乏自信"
       ],
       "public_info": [
         {
@@ -2054,85 +617,14 @@
       ],
       "secrets": [
         {
-          "info_id": "sakura_idol",
-          "content": "佐仓爱里在国中时期是偶像‘雫’，因害怕被认出而隐藏身份。她因被跟踪狂骚扰而痛苦，最终在绫小路帮助下解决。",
+          "info_id": "sakura_gravure",
+          "content": "佐仓爱里是一名知名网络平面偶像（写真偶像），但她极度害羞内向，不想让任何人知道这个身份。她在班级里几乎不与人交流，是一个存在感极低的学生。",
           "known_by": [
-            "绫小路清隆",
-            "一之濑帆波"
-          ]
-        },
-        {
-          "info_id": "model_past",
-          "content": "初中时曾是偶像，但因某些原因隐退，进入高中后刻意低调。",
-          "known_by": []
-        },
-        {
-          "info_id": "model_past",
-          "content": "国中时期曾是模特，但因被跟踪而退圈，因此变得内向。",
-          "known_by": []
-        },
-        {
-          "info_id": "crush_on_ayanokoji",
-          "content": "对绫小路有好感，但不敢表达。",
-          "known_by": []
-        },
-        {
-          "info_id": "crush_on_ayanokoji",
-          "content": "对绫小路清隆有好感，但未表白。",
-          "known_by": [
-            "hasebe_haruka"
-          ]
-        },
-        {
-          "info_id": "idol_past",
-          "content": "初中时做过平面偶像，但隐藏身份",
-          "known_by": [
-            "ayanokoji_kiyotaka"
+            "sakura_airi"
           ]
         }
       ],
-      "relations": [
-        {
-          "to": "山内春树",
-          "type": "neutral",
-          "reason": "山内曾吹牛说佐仓向他告白，但实际是谎言。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "绫小路在跟踪狂事件中救了她，她对其产生信任和依赖。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "栉田试图接近她，但佐仓因内向而保持距离。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "堀北发现她是目击者，但佐仓对其保持警惕。"
-        },
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "佐仓是须藤事件的目击者，但最初不愿作证。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "crush",
-          "reason": "5月1日时已对绫小路有好感，但不敢表达。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "neutral",
-          "reason": "对栉田有抗拒反应，关系不融洽。"
-        },
-        {
-          "to": "长谷部波琉加",
-          "type": "friend",
-          "reason": "好友，波琉加关心她的感情。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "长谷部波瑠加",
@@ -2147,10 +639,7 @@
         "内向",
         "重感情",
         "复仇心",
-        "成长中",
-        "忠诚",
-        "善良",
-        "敏感"
+        "成长中"
       ],
       "public_info": [
         {
@@ -2166,43 +655,8 @@
           "content": "对自己的美貌有自觉，对男生的目光保持警惕，选择见习游泳课。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "planned_retaliation",
-          "content": "曾计划在文化祭后退学以报复班级，但最终放弃。",
-          "known_by": [
-            "miyake_akito",
-            "kushida_kikyou"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "曾因佐仓爱里退学而憎恨绫小路清隆，后有所缓和。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "hostile",
-          "reason": "曾因佐仓爱里退学而憎恨堀北铃音，后有所缓和。"
-        },
-        {
-          "to": "三宅明人",
-          "type": "friend",
-          "reason": "与三宅明人是好友，共同经历退学危机。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "在栉田桔梗的帮助下走出阴影。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "长谷部曾试图与绫小路交谈，但被天泽打断。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "一之濑帆波",
@@ -2217,24 +671,7 @@
         "开朗",
         "善良",
         "正义感强",
-        "聪明",
-        "善于团结他人",
-        "巨乳",
-        "社交能力强",
-        "滥好人",
-        "善于照顾人",
-        "乐观",
-        "温柔",
-        "领导力",
-        "善于社交",
-        "优柔寡断",
-        "理想主义",
-        "领袖气质",
-        "内心脆弱",
-        "脆弱",
-        "成长型",
-        "有责任心",
-        "容易动摇"
+        "聪明"
       ],
       "public_info": [
         {
@@ -2253,199 +690,17 @@
       "secrets": [
         {
           "info_id": "ichinose_past",
-          "content": "一之濑帆波过去可能有过不为人知的经历，导致她极度重视诚实和正义。",
-          "known_by": []
-        },
-        {
-          "info_id": "past_crime",
-          "content": "初中时曾因盗窃事件而留下心理阴影，但具体细节不明。",
-          "known_by": []
-        },
-        {
-          "info_id": "huge_points",
-          "content": "她拥有巨额的个人点数，来源不明。",
+          "content": "一之濑帆波在初中时期曾经因为偷窃事件而被迫转学。这件事是她深深的阴影，她发誓要在高中做一个好人来弥补过去的错误。",
           "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "identified_plan",
-          "content": "在游轮考试中，她识破了绫小路清隆的掉包手机计划，并反将一军。",
-          "known_by": [
-            "一之濑帆波",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "family_secret",
-          "content": "家庭背景复杂，母亲曾因犯罪入狱，因此被分到B班。",
-          "known_by": []
-        },
-        {
-          "info_id": "financial_struggle",
-          "content": "虽然表面开朗，但实际点数紧张，生活节俭。",
-          "known_by": []
-        },
-        {
-          "info_id": "hidden_weakness",
-          "content": "坂柳有栖声称掌握其弱点，可能与过去的秘密有关。",
-          "known_by": [
-            "sakurako_arisu"
-          ]
-        },
-        {
-          "info_id": "past_incident",
-          "content": "她曾因初中时的盗窃事件而内心有阴影，但5月1日时已逐渐克服。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "interest_in_ayanokoji",
-          "content": "她对绫小路有好感，但5月1日时未明确表达。",
-          "known_by": []
-        },
-        {
-          "info_id": "past_crime",
-          "content": "过去曾因盗窃事件而内心有阴影，但未被公开。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "shoplifting_past",
-          "content": "一之濑帆波过去曾因家庭经济困难而顺手牵羊，这是她最大的心理创伤。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "nagumo_miyabi"
-          ]
-        },
-        {
-          "info_id": "crush_on_ayanokoji",
-          "content": "一之濑对绫小路清隆抱有好感，但隐藏自己的感情。",
-          "known_by": [
-            "sakurako_koenji",
-            "karuizawa_kei"
-          ]
-        },
-        {
-          "info_id": "love_for_ayanokoji",
-          "content": "一之濑帆波对绫小路清隆抱有爱慕之情，但知道他有女朋友后努力压抑。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
+            "ichinose_honami"
           ]
         }
       ],
       "relations": [
         {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "在图书馆平息了须藤与C班的冲突。"
-        },
-        {
-          "to": "山胁",
-          "type": "neutral",
-          "reason": "C班学生，一之濑制止了山胁的挑衅。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "在须藤事件中合作，对绫小路的能力表示赞赏。"
-        },
-        {
           "to": "神崎隆二",
           "type": "friend",
-          "reason": "两人是B班的领导者，关系良好。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "hostile",
-          "reason": "一之濑认为龙园是危险人物，曾与C班发生冲突。"
-        },
-        {
-          "to": "小千寻",
-          "type": "friend",
-          "reason": "同班同学，小千寻对她有好感，一之濑将其视为好友。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "在考试中互相试探，她对他产生了兴趣。"
-        },
-        {
-          "to": "滨口哲也",
-          "type": "friend",
-          "reason": "同班同学，在考试中配合行动。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "friend",
-          "reason": "在泳池活动中建立友谊，互相尊重。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "表面友好，但一之濑不知栉田真面目。"
-        },
-        {
-          "to": "坂柳有栖",
-          "type": "neutral",
-          "reason": "坂柳计划攻击B班，并声称掌握其弱点。"
-        },
-        {
-          "to": "柴田飒",
-          "type": "friend",
-          "reason": "同班同学，经常一起活动"
-        },
-        {
-          "to": "千寻",
-          "type": "friend",
-          "reason": "同班同学，关系亲密"
-        },
-        {
-          "to": "麻子",
-          "type": "friend",
-          "reason": "同班同学，关系亲密"
-        },
-        {
-          "to": "星之宫知惠",
-          "type": "neutral",
-          "reason": "师生关系，一之濑对老师的迟到感到无奈但理解"
-        },
-        {
-          "to": "桥本正义",
-          "type": "neutral",
-          "reason": "A班成员，偶遇时在场"
-        },
-        {
-          "to": "神室真澄",
-          "type": "neutral",
-          "reason": "A班成员，偶遇时在场"
-        },
-        {
-          "to": "佐仓爱里",
-          "type": "friend",
-          "reason": "不同班级但关系友好，一之濑主动递上联系方式"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "不同班级的领导者，互相尊重。"
-        },
-        {
-          "to": "神崎隆二",
-          "type": "neutral",
-          "reason": "与神崎隆二关系紧张，因理念不同。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "crush",
-          "reason": "一之濑对绫小路有好感，但保持朋友关系。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "rival",
-          "reason": "龙园视一之濑为障碍，一之濑则决心反击。"
+          "reason": "同班同学，B班的副手，一之濑最信任的伙伴。"
         }
       ]
     },
@@ -2475,23 +730,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "须藤健",
-          "type": "hostile",
-          "reason": "在图书馆挑衅须藤，引发冲突。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "hostile",
-          "reason": "与堀北在图书馆发生口角。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "被一之濑制止后退缩。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "井之头心",
@@ -2518,13 +757,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "栉田在自我介绍时鼓励了她。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "本堂",
@@ -2549,24 +782,8 @@
           "content": "内向，对游泳课感到自卑，担心自己的下体尺寸。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "insecurity_about_body",
-          "content": "本堂对游泳课感到自卑，担心自己的下体尺寸。",
-          "known_by": [
-            "hondo",
-            "sudo_ken",
-            "ike_kamihiro"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "须藤猜测本堂自卑的原因。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "小野寺",
@@ -2621,14 +838,9 @@
       "secrets": [],
       "relations": [
         {
-          "to": "池宽治",
-          "type": "friend",
-          "reason": "池邀请他制作女生胸部排行榜。"
-        },
-        {
           "to": "绫小路清隆",
           "type": "friend",
-          "reason": "同班同学，一起玩游戏"
+          "reason": "同班同学。外村（博士）是那种不起眼的宅男型学生，和绫小路一样不爱出风头，两人偶尔在班级角落里闲聊游戏。"
         }
       ]
     },
@@ -2645,12 +857,7 @@
         "轻浮",
         "关心学生",
         "懒散",
-        "宿醉",
-        "随和",
-        "表面开朗",
-        "内心阴暗",
-        "报复心强",
-        "执着"
+        "宿醉"
       ],
       "public_info": [
         {
@@ -2668,61 +875,20 @@
       ],
       "secrets": [
         {
-          "info_id": "relation_to_chabashira",
-          "content": "与茶柱佐枝有旧，似乎知道一些内幕。",
-          "known_by": []
-        },
-        {
-          "info_id": "grudge_against_chabashira",
-          "content": "星之宫知惠因过去未能升上A班而迁怒于茶柱佐枝，并决心阻止她成功。",
+          "info_id": "hoshinomiya_chabashira",
+          "content": "星之宫知惠是B班班导，与D班班导茶柱佐枝是学生时代的好友。她对茶柱有一种微妙的竞争心结。",
           "known_by": [
-            "ayanokoji_kiyotaka"
+            "hoshinomiya_chie"
           ]
         }
       ],
       "relations": [
         {
           "to": "茶柱佐枝",
-          "type": "neutral",
-          "reason": "同事，两人关系不明。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "师生关系，一之濑对老师的迟到感到无奈但理解"
-        },
-        {
-          "to": "茶柱佐枝",
-          "type": "hostile",
-          "reason": "星之宫视茶柱为劲敌，并试图破坏她的班级。"
+          "type": "friend",
+          "reason": "学生时代的好友，同为教师。星之宫表面上亲密，但内心有竞争意识。"
         }
       ]
-    },
-    {
-      "name": "橘",
-      "role_id": "imported_橘",
-      "class_name": "A",
-      "enrollment_year": "2022",
-      "traits": [
-        "认真",
-        "负责"
-      ],
-      "public_info": [
-        {
-          "label": "外貌",
-          "content": "普通男生外貌。"
-        },
-        {
-          "label": "身份",
-          "content": "三年级学生，学生会书记。"
-        },
-        {
-          "label": "性格",
-          "content": "认真负责，主持社团说明会。"
-        }
-      ],
-      "secrets": [],
-      "relations": []
     },
     {
       "name": "神崎隆二",
@@ -2737,23 +903,7 @@
         "重视规则",
         "正直",
         "有正义感",
-        "聪明",
-        "寡言",
-        "可靠",
-        "运动能力中等",
-        "沉默寡言",
-        "刚健",
-        "认真",
-        "有学力",
-        "责任感强",
-        "对班级现状不满",
-        "谨慎",
-        "有实力",
-        "避免麻烦",
-        "忠诚",
-        "策略家",
-        "隐忍",
-        "负责"
+        "聪明"
       ],
       "public_info": [
         {
@@ -2769,71 +919,12 @@
           "content": "冷静理性，重视规则和实际利益，与一之濑的感性形成互补。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "plan_to_change_class",
-          "content": "计划联合姬野等同学改变一之濑班的现状，甚至考虑转班。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "himeno"
-          ]
-        },
-        {
-          "info_id": "martial_arts_training",
-          "content": "他学习柔道和空手道，已达到黑带水平。",
-          "known_by": [
-            "kanzaki_ryuji",
-            "kanzaki_tomohiro"
-          ]
-        },
-        {
-          "info_id": "dissatisfaction_with_class_b",
-          "content": "神崎对一之濑班的现状感到焦虑，试图寻找复兴之路。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
           "to": "一之濑帆波",
-          "type": "friend",
-          "reason": "两人是B班的领导者，关系良好。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "在须藤事件中合作，但保持一定距离。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "曾帮助过她，对她有一定了解。"
-        },
-        {
-          "to": "柴田飒",
-          "type": "friend",
-          "reason": "同班同学，曾阻止柴田加入女生圈子"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "对一之濑帆波的领导方针感到不满，但尊重其为人。"
-        },
-        {
-          "to": "姬野",
-          "type": "friend",
-          "reason": "与姬野合作，试图改变班级现状。"
-        },
-        {
-          "to": "石上京",
-          "type": "neutral",
-          "reason": "在聚会上有过短暂交锋，观点不同。"
-        },
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "在聚会上被笃臣教导，但无深入关系。"
+          "type": "trust",
+          "reason": "同班同学，B班副手。神崎冷静理性，是一之濑最可靠的搭档。"
         }
       ]
     },
@@ -2850,27 +941,7 @@
         "危险",
         "好斗",
         "不择手段",
-        "霸道",
-        "善于算计",
-        "有策略",
-        "领导力强",
-        "暴力",
-        "独裁",
-        "聪明",
-        "有领袖魅力",
-        "有谋略",
-        "骄傲",
-        "策略家",
-        "好战",
-        "善于策略",
-        "冲动",
-        "暴力倾向",
-        "领袖气质",
-        "支配欲强",
-        "自信",
-        "有野心",
-        "善于威胁",
-        "成长中"
+        "霸道"
       ],
       "public_info": [
         {
@@ -2888,224 +959,23 @@
       ],
       "secrets": [
         {
-          "info_id": "ryuen_manipulation",
-          "content": "龙园翔是须藤事件的幕后黑手，他操控C班学生陷害须藤，目的是削弱D班。",
+          "info_id": "ryuen_ambition",
+          "content": "龙园翔以暴力殴打和威胁的手段迫使C班大部分学生臣服，正在建立自己的绝对统治。他享受掌控一切的快感，将全校视为自己的棋盘。",
           "known_by": [
-            "一之濑帆波"
-          ]
-        },
-        {
-          "info_id": "alliance_with_a",
-          "content": "在无人岛考试中与A班的葛城秘密结盟，牺牲C班点数以换取情报。",
-          "known_by": [
-            "ibuki_mio",
-            "katsuragi_kouhei"
-          ]
-        },
-        {
-          "info_id": "identified_kushida",
-          "content": "在游轮考试中，他识破了栉田桔梗是龙组的优待者。",
-          "known_by": [
-            "龙园翔"
-          ]
-        },
-        {
-          "info_id": "targeted_horikita",
-          "content": "他将堀北铃音视为主要对手，并计划在下一场考试中彻底击垮她。",
-          "known_by": [
-            "龙园翔"
-          ]
-        },
-        {
-          "info_id": "spy_network",
-          "content": "在C班内部建立间谍网络，监视所有成员。",
-          "known_by": []
-        },
-        {
-          "info_id": "target_on_d_class",
-          "content": "将D班视为主要对手，计划通过特别考试击垮D班。",
-          "known_by": []
-        },
-        {
-          "info_id": "rooftop_defeat",
-          "content": "在屋顶上被绫小路击败，被迫放弃退学并退出班级领导。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "ibuki_mio",
-            "ishizaki"
-          ]
-        },
-        {
-          "info_id": "eight_hundred_million_plan",
-          "content": "曾计划通过榨取全校学生的个人点数来让全班升上A班。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "recent_failure",
-          "content": "最近因事件失败，导致C班可能降级",
-          "known_by": [
-            "ibuki_mio",
-            "ishizaki_daichi",
-            "albert"
-          ]
-        },
-        {
-          "info_id": "past_defeat",
-          "content": "曾被绫小路击败。",
-          "known_by": [
-            "ryuuen_kakeru",
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "fight_with_hosen",
-          "content": "在无人岛考试中，他与宝泉和彦互殴，导致双方退场，但结果不明。",
-          "known_by": [
-            "坂柳有栖",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "deal_with_sakayanagi",
-          "content": "他与坂柳达成协议，帮她对付宝泉，以换取一个愿望。",
-          "known_by": [
-            "坂柳有栖",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "cooperation_with_b",
-          "content": "在文化祭中与堀北班表面敌对，实则暗中合作，共同获利。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune",
-            "katsuragi_kouhei"
-          ]
-        },
-        {
-          "info_id": "fear_of_ayanokoji",
-          "content": "龙园翔对绫小路清隆的实力感到忌惮，但表面装作不在意。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "manipulation_of_class_c",
-          "content": "龙园通过暴力和威胁控制C班，确保其服从。",
-          "known_by": [
-            "ishizaki_daichi"
-          ]
-        },
-        {
-          "info_id": "admiration_for_ayanokoji",
-          "content": "龙园翔内心将绫小路清隆视为必须超越的目标，并渴望与他正面交锋。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
+            "ryuen_kakeru"
           ]
         }
       ],
       "relations": [
         {
-          "to": "一之濑帆波",
-          "type": "hostile",
-          "reason": "龙园曾与B班发生冲突，一之濑视其为危险人物。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "龙园在事件后向绫小路和堀北宣战。"
-        },
-        {
           "to": "石崎大地",
           "type": "subservient",
-          "reason": "石崎是龙园的手下，执行龙园的命令。"
+          "reason": "C班学生。被龙园用暴力制服，现在完全服从龙园。"
         },
         {
           "to": "伊吹澪",
           "type": "subservient",
-          "reason": "5月1日时伊吹是他的下属，执行其命令。"
-        },
-        {
-          "to": "葛城康平",
-          "type": "rival",
-          "reason": "表面结盟，实则互相利用。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "rival",
-          "reason": "将她视为主要对手，多次挑衅和试探。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "怀疑他是幕后黑手，但尚未确认。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "rival",
-          "reason": "视绫小路为潜在威胁，但尚未直接冲突。"
-        },
-        {
-          "to": "伊吹澪",
-          "type": "neutral",
-          "reason": "曾是部下，但伊吹对其领导方式不满。"
-        },
-        {
-          "to": "石崎",
-          "type": "subservient",
-          "reason": "石崎曾试图挽留龙园，但龙园已决定退出。"
-        },
-        {
-          "to": "伊吹澪",
-          "type": "hostile",
-          "reason": "伊吹讨厌他但认可其能力"
-        },
-        {
-          "to": "阿尔伯特",
-          "type": "subservient",
-          "reason": "阿尔伯特被收服后听从命令"
-        },
-        {
-          "to": "宝泉和臣",
-          "type": "hostile",
-          "reason": "旧识，互相敌视。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "hostile",
-          "reason": "互相提防的对手。"
-        },
-        {
-          "to": "坂柳有栖",
-          "type": "neutral",
-          "reason": "达成协议，5月1日时关系合作但互相利用。"
-        },
-        {
-          "to": "南云雅",
-          "type": "neutral",
-          "reason": "曾向南云雅提出赌注，但被拒绝。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "rival",
-          "reason": "龙园视一之濑为障碍，试图通过威胁击垮她。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "龙园与堀北无直接冲突，但视其为潜在对手。"
-        },
-        {
-          "to": "坂柳有栖",
-          "type": "rival",
-          "reason": "两人赌上退学进行对决，龙园最终落败。"
-        },
-        {
-          "to": "桥本正义",
-          "type": "neutral",
-          "reason": "桥本是龙园的间谍，但龙园并不完全信任他。"
+          "reason": "C班学生。表面服从龙园的统治，但心中不服。"
         }
       ]
     },
@@ -3142,22 +1012,7 @@
         {
           "to": "龙园翔",
           "type": "subservient",
-          "reason": "石崎是龙园的手下，执行龙园的命令。"
-        },
-        {
-          "to": "须藤健",
-          "type": "hostile",
-          "reason": "石崎是须藤事件的参与者之一，与须藤有冲突。"
-        },
-        {
-          "to": "伊吹澪",
-          "type": "neutral",
-          "reason": "同班同学，邀请伊吹喝茶"
-        },
-        {
-          "to": "阿尔伯特",
-          "type": "friend",
-          "reason": "同班同学，经常一起行动"
+          "reason": "C班实际统治者。石崎对龙园极度畏惧，完全不敢违抗他的命令。"
         }
       ]
     },
@@ -3182,7 +1037,7 @@
         },
         {
           "label": "身份",
-          "content": "二年级学生，学生会书记。"
+          "content": "三年级学生，学生会书记。"
         },
         {
           "label": "性格",
@@ -3193,13 +1048,8 @@
       "relations": [
         {
           "to": "堀北学",
-          "type": "subservient",
-          "reason": "橘是堀北学的下属，对其非常尊敬。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "对绫小路的态度感到不满，认为其无礼。"
+          "type": "trust",
+          "reason": "学生会书记，堀北学的忠实助手。"
         }
       ]
     },
@@ -3233,23 +1083,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "池宽治",
-          "type": "rival",
-          "reason": "常因琐事争吵，但实际关系复杂。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "friend",
-          "reason": "女生团体成员，追随轻井泽。"
-        },
-        {
-          "to": "池宽治",
-          "type": "crush",
-          "reason": "情侣关系。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "幸村辉彦",
@@ -3264,8 +1098,7 @@
         "认真",
         "学力高",
         "易怒",
-        "缺乏变通",
-        "有责任感"
+        "缺乏变通"
       ],
       "public_info": [
         {
@@ -3281,38 +1114,8 @@
           "content": "严谨理性，固执己见，在无人岛考试中主张节省点数。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "duped_by_ayanokoji",
-          "content": "在游轮考试中，被绫小路清隆利用，成为其掉包手机计划的一环。",
-          "known_by": [
-            "绫小路清隆",
-            "一之濑帆波"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "平田洋介",
-          "type": "neutral",
-          "reason": "在考试策略上有分歧，但尊重平田的领袖地位。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "同寝室友，对他有些不满，但不得不合作。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "hostile",
-          "reason": "看不惯她的态度，经常发生口角。"
-        },
-        {
-          "to": "外村秀雄",
-          "type": "neutral",
-          "reason": "对外村的言行感到不耐烦。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "伊吹澪",
@@ -3327,18 +1130,7 @@
         "有实力",
         "直率",
         "孤僻",
-        "有常识",
-        "不善社交",
-        "固执",
-        "有武道经验",
-        "暴躁",
-        "独立",
-        "好胜",
-        "自我厌恶",
-        "冲动",
-        "不善合作",
-        "体力好",
-        "身体能力强"
+        "有常识"
       ],
       "public_info": [
         {
@@ -3347,140 +1139,19 @@
         },
         {
           "label": "身份",
-          "content": "一年C班学生，被龙园派往D班做间谍。"
+          "content": "一年C班学生，龙园的跟班之一。"
         },
         {
           "label": "性格",
           "content": "寡言好斗，对龙园忠诚，善于伪装和战斗。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "spy_for_ryuuen",
-          "content": "受龙园指使潜入D班，偷取领导者钥匙卡并制造混乱。",
-          "known_by": [
-            "ryuuen_kakeru",
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "spy_in_d",
-          "content": "在无人岛考试中，作为间谍潜入D班，偷走了轻井泽的内裤。",
-          "known_by": [
-            "龙园翔",
-            "堀北铃音",
-            "轻井泽惠"
-          ]
-        },
-        {
-          "info_id": "spy_mission",
-          "content": "在无人岛考试中受龙园指示潜入D班，试图找出领导者但被绫小路妨碍。",
-          "known_by": [
-            "ryuuen_kakeru",
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "social_anxiety",
-          "content": "因紧张而说话带刺，并非本意，实际上渴望正常交流。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "defeated_by_ayanokoji_twice",
-          "content": "在屋顶事件和仓库中两次被绫小路击败，被迫承认失败。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "self_blame",
-          "content": "因C班失败而自责，认为自己不够可靠导致龙园犯错",
-          "known_by": []
-        },
-        {
-          "info_id": "dehydration_incident",
-          "content": "在无人岛考试中，她因脱水差点退场，被绫小路暗中帮助但拒绝承认。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "rivalry_with_horikita",
-          "content": "她视堀北为最大对手，但5月1日时尚未有直接冲突。",
-          "known_by": [
-            "堀北铃音"
-          ]
-        },
-        {
-          "info_id": "distrust_of_yagami",
-          "content": "直觉认为八神拓也很危险，并协助堀北铃音调查。",
-          "known_by": [
-            "horikita_suzune"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
           "to": "龙园翔",
-          "type": "subservient",
-          "reason": "5月1日时是龙园的下属，执行其命令。"
-        },
-        {
-          "to": "堀北铃音",
           "type": "hostile",
-          "reason": "在无人岛考试中直接冲突，偷取其钥匙卡。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "rival",
-          "reason": "在无人岛考试中交手，对她怀有敌意。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "hostile",
-          "reason": "因内裤事件而敌对。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "因占卜事件偶遇，伊吹对其有一定好奇但保持距离。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "因被其击败而感到屈辱，但被迫承认失败。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "neutral",
-          "reason": "曾是部下，但对龙园的领导方式有不满。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "hostile",
-          "reason": "讨厌龙园但认可其能力，曾揍龙园"
-        },
-        {
-          "to": "石崎大地",
-          "type": "neutral",
-          "reason": "同班同学，被石崎邀请喝茶"
-        },
-        {
-          "to": "阿尔伯特",
-          "type": "neutral",
-          "reason": "同班同学，一起喝茶"
-        },
-        {
-          "to": "椎名日和",
-          "type": "neutral",
-          "reason": "同班同学，椎名主动搭话"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "与堀北铃音有合作，共同调查八神拓也。"
+          "reason": "C班同学。伊吹对龙园的暴力统治心中不服，但暂时没有反抗的力量。"
         }
       ]
     },
@@ -3497,11 +1168,7 @@
         "保守",
         "理性",
         "善于防守",
-        "正派",
-        "深思熟虑",
-        "光头",
-        "善于分析",
-        "忠诚"
+        "正派"
       ],
       "public_info": [
         {
@@ -3517,71 +1184,12 @@
           "content": "冷静谨慎，重视策略，但有时过于保守。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "alliance_with_c",
-          "content": "在无人岛考试中与C班的龙园秘密结盟，以获取情报和点数。",
-          "known_by": [
-            "ryuuen_kakeru",
-            "ibuki_mio"
-          ]
-        },
-        {
-          "info_id": "family_situation",
-          "content": "父母双亡，有一个双胞胎妹妹，想寄生日礼物但被校规限制。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_manabu"
-          ]
-        },
-        {
-          "info_id": "gift_plan",
-          "content": "曾试图通过学生会寄送礼物给妹妹，被拒后接受绫小路的帮助。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
-          "to": "龙园翔",
+          "to": "坂柳有栖",
           "type": "rival",
-          "reason": "表面结盟，实则互相利用。"
-        },
-        {
-          "to": "弥彦",
-          "type": "subservient",
-          "reason": "弥彦是他的下属，但葛城对其并不完全信任。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "在无人岛考试后开始重视她，视为潜在对手。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "在考试中互相试探。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "因礼物事件建立友谊，互相尊重。"
-        },
-        {
-          "to": "堀北学",
-          "type": "neutral",
-          "reason": "作为学生，曾向学生会求助。"
-        },
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "通过绫小路间接认识，关系平淡。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "subservient",
-          "reason": "葛城对龙园忠诚，并协助他管理班级。"
+          "reason": "同班同学。葛城与坂柳在A班内部形成了两派对立，争夺班级主导权。"
         }
       ]
     },
@@ -3609,22 +1217,8 @@
           "content": "冲动粗心，对葛城忠诚，但有时会犯低级错误。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "leader_mistake",
-          "content": "在无人岛考试中因粗心大意而暴露了A班领导者的身份。",
-          "known_by": [
-            "ayanokouji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "葛城康平",
-          "type": "subservient",
-          "reason": "5月1日时是葛城的追随者，执行其命令。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "真嶋老师",
@@ -3683,18 +1277,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "同组伙伴，能进行正常沟通。"
-        },
-        {
-          "to": "幸村辉彦",
-          "type": "neutral",
-          "reason": "幸村对他的言行感到不满。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "真锅志保",
@@ -3714,35 +1297,15 @@
         },
         {
           "label": "身份",
-          "content": "一年C班学生，轻井泽惠的欺凌者。"
+          "content": "一年C班学生"
         },
         {
           "label": "性格",
           "content": "性格冲动，喜欢欺凌弱者，但害怕龙园。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "bullied_kei",
-          "content": "在游轮上对轻井泽惠进行身体和精神上的欺凌。",
-          "known_by": [
-            "绫小路清隆",
-            "轻井泽惠"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "轻井泽惠",
-          "type": "hostile",
-          "reason": "在游轮上欺凌她。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "subservient",
-          "reason": "害怕龙园，听从他的命令。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "町田浩二",
@@ -3770,18 +1333,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "葛城康平",
-          "type": "subservient",
-          "reason": "服从葛城的领导。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "在考试中与她对立。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "滨口哲也",
@@ -3812,13 +1364,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "一之濑帆波",
-          "type": "friend",
-          "reason": "同班同学，在考试中配合行动。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "柴田飒",
@@ -3849,23 +1395,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "一之濑帆波",
-          "type": "friend",
-          "reason": "B班同学，一起参加泳池活动。"
-        },
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "在排球比赛中交手，互相认可运动能力。"
-        },
-        {
-          "to": "神崎隆二",
-          "type": "friend",
-          "reason": "同班同学，曾被神崎阻止加入女生圈子"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "南云雅",
@@ -3880,16 +1410,7 @@
         "有领导力",
         "善于拉拢",
         "独裁",
-        "善于策略",
-        "好胜",
-        "领袖气质",
-        "权力欲",
-        "策略家",
-        "野心家",
-        "控制欲强",
-        "天才",
-        "任性",
-        "善于操纵"
+        "善于策略"
       ],
       "public_info": [
         {
@@ -3905,128 +1426,15 @@
           "content": "自信开朗，有强烈的野心，善于拉拢人心。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "political_ambition",
-          "content": "计划改革学生会，削弱堀北学的势力，建立自己的体系。",
-          "known_by": [
-            "horikita_manabu"
-          ]
-        },
-        {
-          "info_id": "target_on_ayanokoji",
-          "content": "因体育祭的接力赛注意到绫小路，计划将其排除。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "control_of_third_year",
-          "content": "他通过自由组控制三年级，让后段组别支援自己，确保第一名。",
-          "known_by": [
-            "桐山",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "rivalry_with_kouenji",
-          "content": "他在无人岛考试中与高圆寺竞争第一名，但最终以两分之差落败。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "obsession_with_ayanokoji",
-          "content": "对绫小路清隆有强烈的执念，视其为唯一能与之匹敌的对手。",
-          "known_by": [
-            "asahina_nazuna"
-          ]
-        },
-        {
-          "info_id": "planned_showdown",
-          "content": "接受了绫小路清隆的对决提议，计划在后续特别考试中一决胜负。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "obsession_with_ayanokoji",
-          "content": "南云雅将绫小路清隆视为必须打倒的对手，认为只有战胜他才能证明自己的实力。",
-          "known_by": [
-            "kiriyama_ryuuji"
-          ]
-        },
-        {
-          "info_id": "manipulation_of_third_years",
-          "content": "南云通过个人点数和转班券控制三年级生，建立自己的权力体系。",
-          "known_by": [
-            "kiriyama_ryuuji",
-            "kichijoji_fuka"
-          ]
-        }
-      ],
+      "secrets": [],
       "relations": [
         {
           "to": "堀北学",
           "type": "rival",
-          "reason": "视堀北学为对手，计划取代其学生会长位置。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "尚未直接接触，但绫小路对其保持警惕。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "视其为潜在威胁，计划将其排除。"
-        },
-        {
-          "to": "桐山生",
-          "type": "hostile",
-          "reason": "桐山对其统治不满，计划将其拉下台。"
-        },
-        {
-          "to": "高圆寺六助",
-          "type": "rival",
-          "reason": "在无人岛考试中竞争第一名，5月1日时尚未直接冲突。"
-        },
-        {
-          "to": "桐山",
-          "type": "subservient",
-          "reason": "桐山是他的部下，负责执行封锁高圆寺的计划。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "rival",
-          "reason": "视绫小路清隆为必须击败的对手，但对其保持警惕。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "作为学生会长，与堀北铃音有工作关系，但对其不信任。"
-        },
-        {
-          "to": "朝比奈荠",
-          "type": "friend",
-          "reason": "与朝比奈荠是同班同学，关系较为亲近。"
-        },
-        {
-          "to": "八神拓也",
-          "type": "hostile",
-          "reason": "怀疑八神拓也散播谣言，并参与了对他的逼问。"
-        },
-        {
-          "to": "桐山龙二",
-          "type": "subservient",
-          "reason": "桐山是南云的副会长，但暗中策划破坏南云的计划。"
-        },
-        {
-          "to": "鬼龙院枫花",
-          "type": "hostile",
-          "reason": "鬼龙院怀疑南云陷害她，南云则无视她的指控。"
+          "reason": "二年级A班学生，学生会副会长。南云对堀北学的权威持挑战态度，有取而代之的野心。"
         }
-      ]
+      ],
+      "status_note": "二年级学生，锚点时的存在感低"
     },
     {
       "name": "佐藤麻耶",
@@ -4041,11 +1449,7 @@
         "开朗",
         "社交",
         "内心脆弱",
-        "成长中",
-        "关心朋友",
-        "八卦",
-        "直率",
-        "忠诚"
+        "成长中"
       ],
       "public_info": [
         {
@@ -4061,47 +1465,8 @@
           "content": "开朗直率，但对恋爱充满憧憬，缺乏实际经验。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "crush_on_ayanokoji",
-          "content": "喜欢绫小路清隆，并策划了圣诞节约会，但告白被拒。",
-          "known_by": [
-            "karuizawa_kei"
-          ]
-        },
-        {
-          "info_id": "threatened_by_tsubaki",
-          "content": "曾被椿樱子威胁，被迫提供情报，后向绫小路清隆和轻井泽惠求助。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "karuizawa_kei"
-          ]
-        },
-        {
-          "info_id": "support_for_kei",
-          "content": "佐藤麻耶全力支持轻井泽惠，帮助她处理与绫小路的关系。",
-          "known_by": [
-            "karuizawa_kei"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "crush",
-          "reason": "因体育祭的大队接力对其产生好感，告白被拒。"
-        },
-        {
-          "to": "轻井泽惠",
-          "type": "friend",
-          "reason": "向轻井泽请教恋爱技巧，并请求其协助约会。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "曾因椿樱子的威胁而接近绫小路清隆，后成为盟友。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "坂柳有栖",
@@ -4116,15 +1481,7 @@
         "身体虚弱",
         "自信",
         "神秘",
-        "有谋略",
-        "有策略",
-        "善于策略",
-        "有领导力",
-        "策略家",
-        "好胜",
-        "天才",
-        "病弱",
-        "体弱多病"
+        "有谋略"
       ],
       "public_info": [
         {
@@ -4142,118 +1499,14 @@
       ],
       "secrets": [
         {
-          "info_id": "chairman_daughter",
-          "content": "是学校理事长的女儿，因此被分到A班。",
+          "info_id": "sakayanagi_white_room",
+          "content": "坂柳有栖知道「白屋」的存在，并且知道绫小路清隆是白屋的最高杰作。她视绫小路为必须击败的对手，但此时尚未与他正式接触。",
           "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "knows_white_room",
-          "content": "知道绫小路出身于White Room，并对此感兴趣。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "target_on_ichinose",
-          "content": "计划在第三学期攻击B班，以逼迫绫小路与她正面对决。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "deal_with_ryuuen",
-          "content": "她与龙园翔达成协议，让龙园对付宝泉，以换取一个愿望。",
-          "known_by": [
-            "绫小路清隆",
-            "龙园翔"
-          ]
-        },
-        {
-          "info_id": "interest_in_ayanokoji",
-          "content": "她视绫小路为最大对手，渴望与他进行一场公平对决。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "deal_with_houzen",
-          "content": "在文化祭中与一年D班宝泉和臣达成交易，通过提供资金换取营收，确保班级排名。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "rivalry_with_ayanokoji",
-          "content": "坂柳有栖视绫小路清隆为对手，认为他是唯一能与自己匹敌的人。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "manipulation_of_class_a",
-          "content": "坂柳通过策略和情报控制A班，确保其领先地位。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "heart_condition",
-          "content": "坂柳有栖患有先天性心脏病，身体状况不佳，但从未示弱。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "katsuragi_kohei"
+            "sakayanagi_arisu"
           ]
         }
       ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "rival",
-          "reason": "视其为必须击败的对手，计划通过攻击B班来逼迫他出手。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "hostile",
-          "reason": "计划攻击B班，认为一之濑有弱点可乘。"
-        },
-        {
-          "to": "神室真澄",
-          "type": "subservient",
-          "reason": "利用神室的秘密控制她，使其成为自己的手下。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "主动找一之濑商量烦恼，递上联系方式"
-        },
-        {
-          "to": "桥本正义",
-          "type": "neutral",
-          "reason": "A班成员，一起行动"
-        },
-        {
-          "to": "神室真澄",
-          "type": "neutral",
-          "reason": "A班成员，一起行动"
-        },
-        {
-          "to": "龙园翔",
-          "type": "neutral",
-          "reason": "互相试探的对手。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "rival",
-          "reason": "与龙园翔是竞争对手。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "rival",
-          "reason": "坂柳与堀北在特别考试中直接对决，堀北获胜。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "桐山生",
@@ -4279,28 +1532,8 @@
           "content": "谨慎而有野心，对南云雅的学生会长统治不满。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "anti_nagumo_plot",
-          "content": "计划联合一年级生将南云雅从学生会长位置上拉下来。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_manabu"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "视其为对抗南云雅的潜在盟友。"
-        },
-        {
-          "to": "南云雅",
-          "type": "hostile",
-          "reason": "对南云的统治不满，计划将其拉下台。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "神室真澄",
@@ -4327,32 +1560,8 @@
           "content": "冷静忠诚，但似乎有不愿提及的秘密。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "secret_held_by_sakurako",
-          "content": "坂柳有栖掌握其秘密，因此被迫为其效力。",
-          "known_by": [
-            "sakurako_arisu"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "坂柳有栖",
-          "type": "subservient",
-          "reason": "因秘密被掌握而被迫成为其手下。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "曾与绫小路有过接触，但关系不深。"
-        },
-        {
-          "to": "坂柳有栖",
-          "type": "neutral",
-          "reason": "A班成员，一起行动"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "长谷部波琉加",
@@ -4379,55 +1588,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "朋友关系，曾打电话询问其圣诞节约会安排。"
-        },
-        {
-          "to": "佐仓爱里",
-          "type": "friend",
-          "reason": "关心佐仓爱里对绫小路的感情。"
-        }
-      ]
-    },
-    {
-      "name": "筱原",
-      "role_id": "shinohara",
-      "class_name": "D",
-      "enrollment_year": "2024",
-      "traits": [
-        "普通",
-        "友善"
-      ],
-      "public_info": [
-        {
-          "label": "外貌",
-          "content": "普通女生。"
-        },
-        {
-          "label": "身份",
-          "content": "一年D班学生。"
-        },
-        {
-          "label": "性格",
-          "content": "友善，但有时会因小事与人争执。"
-        }
-      ],
-      "secrets": [],
-      "relations": [
-        {
-          "to": "池宽治",
-          "type": "friend",
-          "reason": "曾被池帮助解围。"
-        },
-        {
-          "to": "佐藤麻耶",
-          "type": "friend",
-          "reason": "朋友关系。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "松下",
@@ -4453,13 +1614,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "佐藤麻耶",
-          "type": "friend",
-          "reason": "朋友关系。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "石崎",
@@ -4486,18 +1641,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "龙园翔",
-          "type": "subservient",
-          "reason": "曾是部下，试图挽留龙园。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "对绫小路有敌意，但未直接冲突。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "阿尔伯特",
@@ -4526,23 +1670,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "龙园翔",
-          "type": "subservient",
-          "reason": "曾是部下，忠诚于龙园。"
-        },
-        {
-          "to": "石崎大地",
-          "type": "friend",
-          "reason": "同班同学，经常一起行动"
-        },
-        {
-          "to": "伊吹澪",
-          "type": "neutral",
-          "reason": "同班同学，一起喝茶"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "真锅",
@@ -4567,28 +1695,8 @@
           "content": "欺凌者，但内心懦弱，被龙园利用。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "bullying_karuizawa",
-          "content": "在龙园的指示下霸凌轻井泽惠。",
-          "known_by": [
-            "ryuuen_kakeru",
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "轻井泽惠",
-          "type": "hostile",
-          "reason": "曾参与霸凌轻井泽。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "subservient",
-          "reason": "被龙园利用来霸凌轻井泽。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "桥本正义",
@@ -4619,47 +1727,8 @@
           "content": "随和，跟随坂柳行动"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "past_trauma",
-          "content": "桥本正义过去曾被欺凌，因此养成了背叛和撒谎的生存之道。",
-          "known_by": [
-            "sakurako_arisu"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "坂柳有栖",
-          "type": "neutral",
-          "reason": "A班成员，一起行动"
-        },
-        {
-          "to": "坂柳有栖",
-          "type": "subservient",
-          "reason": "坂柳的助手，服从其指示。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "不同班级，互相试探。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "subservient",
-          "reason": "桥本暗中与龙园合作，希望借助他升上A班。"
-        },
-        {
-          "to": "坂柳有栖",
-          "type": "hostile",
-          "reason": "桥本计划背叛坂柳，但最终被坂柳原谅。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "桥本试图拉拢绫小路，但绫小路保持中立。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "椎名日和",
@@ -4692,24 +1761,9 @@
       "secrets": [],
       "relations": [
         {
-          "to": "伊吹澪",
-          "type": "neutral",
-          "reason": "同班同学，主动搭话并邀请看电影"
-        },
-        {
-          "to": "石崎大地",
-          "type": "neutral",
-          "reason": "同班同学，一起喝茶"
-        },
-        {
-          "to": "阿尔伯特",
-          "type": "neutral",
-          "reason": "同班同学，一起喝茶"
-        },
-        {
           "to": "龙园翔",
-          "type": "subservient",
-          "reason": "椎名对龙园忠诚，并协助他管理班级。"
+          "type": "neutral",
+          "reason": "同班同学。椎名是C班少数不受龙园暴力统治影响的人之一，她有自己的原则和底线。"
         }
       ]
     },
@@ -4741,44 +1795,8 @@
           "content": "外表冷静，有过去，重情义，对朋友忠诚。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "past_delinquent",
-          "content": "国中时期曾是不良少年，后专注弓道。",
-          "known_by": [
-            "miyake_akito"
-          ]
-        },
-        {
-          "info_id": "planned_retaliation_with_haruka",
-          "content": "曾计划与长谷部波瑠加一同退学以报复班级。",
-          "known_by": [
-            "hasebe_haruka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "friend",
-          "reason": "关系良好的朋友。"
-        },
-        {
-          "to": "宝泉和臣",
-          "type": "hostile",
-          "reason": "知道宝泉的过去，认为其危险。"
-        },
-        {
-          "to": "长谷部波瑠加",
-          "type": "friend",
-          "reason": "与长谷部波瑠加是好友，共同经历退学危机。"
-        },
-        {
-          "to": "启诚",
-          "type": "friend",
-          "reason": "与启诚是好友，后和解。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "宝泉和臣",
@@ -4806,53 +1824,8 @@
           "content": "暴力傲慢，有实力，但也会使用策略，危险人物。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "mission_to_expel_ayanokouji",
-          "content": "接受任务，让绫小路退学可获得两千万点数。",
-          "known_by": [
-            "houzen_kazuomi",
-            "七濑翼",
-            "天泽一夏"
-          ]
-        },
-        {
-          "info_id": "knife_plan",
-          "content": "计划用绫小路买的刀自残陷害绫小路。",
-          "known_by": [
-            "houzen_kazuomi",
-            "七濑翼",
-            "天泽一夏"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "目标是让绫小路退学。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "hostile",
-          "reason": "谈判破裂，发生冲突。"
-        },
-        {
-          "to": "须藤健",
-          "type": "hostile",
-          "reason": "挑衅并殴打须藤。"
-        },
-        {
-          "to": "龙园翔",
-          "type": "rival",
-          "reason": "旧识，互相敌视。"
-        },
-        {
-          "to": "七濑翼",
-          "type": "subservient",
-          "reason": "七濑是其同班同学，协助其行动。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "七濑翼",
@@ -4867,14 +1840,7 @@
         "忠诚",
         "勇敢",
         "冲动",
-        "正义感强",
-        "体力充沛",
-        "认真",
-        "直率",
-        "努力型",
-        "尊敬前辈",
-        "积极",
-        "神秘"
+        "正义感强"
       ],
       "public_info": [
         {
@@ -4890,100 +1856,8 @@
           "content": "表面礼貌冷静，观察力强，有明确目的性。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "mission_to_expel_ayanokouji",
-          "content": "协助宝泉执行让绫小路退学的任务。",
-          "known_by": [
-            "houzen_kazuomi",
-            "nanase_tsubasa",
-            "天泽一夏"
-          ]
-        },
-        {
-          "info_id": "personal_motive",
-          "content": "认为绫小路不适合这所学校，有个人动机。",
-          "known_by": [
-            "nanase_tsubasa"
-          ]
-        },
-        {
-          "info_id": "former_enemy",
-          "content": "她最初与宝泉和彦合作，计划让绫小路退学，但在无人岛考试中倒戈成为绫小路的伙伴。",
-          "known_by": [
-            "绫小路清隆",
-            "天泽一夏"
-          ]
-        },
-        {
-          "info_id": "witness_of_amazawa",
-          "content": "她目击天泽一夏在袭击现场附近，怀疑天泽是袭击小宫和木下的犯人。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "admiration_for_horikita",
-          "content": "七濑翼对堀北铃音抱有敬意，积极加入学生会以协助她。",
-          "known_by": [
-            "horikita_suzune"
-          ]
-        },
-        {
-          "info_id": "true_purpose",
-          "content": "七濑翼接近绫小路清隆的真正目的尚不明确，但可能来自White Room。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "宝泉和臣",
-          "type": "subservient",
-          "reason": "协助宝泉行动，但有自己的想法。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "表面礼貌，实际在观察和试探。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "最终与堀北达成合作关系。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "trust",
-          "reason": "5月1日时已倒戈，成为绫小路的忠实伙伴。"
-        },
-        {
-          "to": "天泽一夏",
-          "type": "hostile",
-          "reason": "怀疑天泽是袭击者，5月1日时关系紧张。"
-        },
-        {
-          "to": "宝泉和彦",
-          "type": "neutral",
-          "reason": "曾合作但已决裂，5月1日时无直接联系。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "friend",
-          "reason": "七濑加入学生会协助堀北。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "friend",
-          "reason": "同为学生会成员，关系融洽。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "subservient",
-          "reason": "七濑自称是绫小路的‘骑士’，但动机不明。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "天泽一夏",
@@ -4998,16 +1872,7 @@
         "善于伪装",
         "战斗能力强",
         "崇拜绫小路",
-        "叛逆",
-        "冷静",
-        "忠诚",
-        "身体能力强",
-        "小恶魔",
-        "爱捉弄人",
-        "观察力强",
-        "神秘",
-        "活泼",
-        "善于观察"
+        "叛逆"
       ],
       "public_info": [
         {
@@ -5023,132 +1888,8 @@
           "content": "聪明狡猾，表面辣妹风格，实际有目的性。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "mission_to_expel_ayanokouji",
-          "content": "协助宝泉执行让绫小路退学的任务。",
-          "known_by": [
-            "houzen_kazuomi",
-            "nanase_tsubasa",
-            "amazawa_ichika"
-          ]
-        },
-        {
-          "info_id": "knife_accomplice",
-          "content": "帮助宝泉购买并藏匿刀子。",
-          "known_by": [
-            "amazawa_ichika",
-            "houzen_kazuomi"
-          ]
-        },
-        {
-          "info_id": "white_room_agent",
-          "content": "她是White Room五期生，被月城派来逼绫小路退学，但实际对绫小路抱有崇拜，可能背叛月城。",
-          "known_by": [
-            "月城代理理事长",
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "attack_on_komiya",
-          "content": "在无人岛考试中，她可能袭击了小宫和木下，导致他们受伤退场，但无确凿证据。",
-          "known_by": [
-            "七濑翼"
-          ]
-        },
-        {
-          "info_id": "true_loyalty",
-          "content": "她声称自己崇拜绫小路，不愿做敌人，但真实立场不明，可能仍在月城和绫小路之间摇摆。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "white_room_connection",
-          "content": "与White Room有关联，负责监视八神拓也。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "white_room_connection",
-          "content": "天泽一夏与White Room有关，可能是绫小路清隆的监视者或同僚。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "interest_in_kushida",
-          "content": "天泽一夏对栉田桔梗的本性感兴趣，经常捉弄她以观察反应。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "white_room_agent",
-          "content": "天泽一夏是White Room派来监视绫小路清隆的，但后来选择帮助他。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "宝泉和臣",
-          "type": "neutral",
-          "reason": "合作执行让绫小路退学的计划。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "目标是让绫小路退学。"
-        },
-        {
-          "to": "须藤健",
-          "type": "neutral",
-          "reason": "曾提出以打架或烹饪为条件搭档。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "crush",
-          "reason": "崇拜绫小路，5月1日时已暗中关注，但未正式接触。"
-        },
-        {
-          "to": "月城代理理事长",
-          "type": "subservient",
-          "reason": "表面服从月城命令，但内心叛逆，5月1日时仍在执行任务。"
-        },
-        {
-          "to": "七濑翼",
-          "type": "hostile",
-          "reason": "同组但互相猜忌，七濑怀疑她是袭击者，5月1日时关系紧张。"
-        },
-        {
-          "to": "八神拓也",
-          "type": "hostile",
-          "reason": "负责监视八神拓也，并在其失控时阻止他。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "与绫小路清隆有间接联系，但关系不明。"
-        },
-        {
-          "to": "栉田桔梗",
-          "type": "hostile",
-          "reason": "天泽经常捉弄栉田，栉田对其恨之入骨。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "天泽对堀北感兴趣，但未深入接触。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "subservient",
-          "reason": "天泽视绫小路为前辈和主人，愿意为他执行任务。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "八神拓也",
@@ -5179,65 +1920,8 @@
           "content": "表面礼貌温和，观察力强，行为可疑。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "possible_white_room",
-          "content": "可能是White Room派来的学生，但尚未确认。",
-          "known_by": [
-            "ayanokouji_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "white_room_student",
-          "content": "出身于White Room，拥有超乎常人的身体能力和智力。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "sakurako_tsubaki"
-          ]
-        },
-        {
-          "info_id": "assault_on_classmates",
-          "content": "在无人岛考试中袭击了小宫和木下，导致其重伤。",
-          "known_by": [
-            "ryuuen_kakeru",
-            "nagumo_miyabi"
-          ]
-        },
-        {
-          "info_id": "manipulation_attempts",
-          "content": "试图操纵栉田桔梗和佐藤麻耶，但最终失败。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "栉田桔梗",
-          "type": "neutral",
-          "reason": "国中时期认识，邀请搭档。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "表面礼貌，实际在观察。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "视绫小路清隆为必须击败的对手，但被其设计退学。"
-        },
-        {
-          "to": "南云雅",
-          "type": "hostile",
-          "reason": "被南云雅怀疑散播谣言，关系紧张。"
-        },
-        {
-          "to": "椿樱子",
-          "type": "neutral",
-          "reason": "与椿樱子有合作，但被其利用。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "月城",
@@ -5252,8 +1936,7 @@
         "神秘莫测",
         "笑里藏刀",
         "手腕高超",
-        "情报通",
-        "冷静沉着"
+        "情报通"
       ],
       "public_info": [
         {
@@ -5269,110 +1952,8 @@
           "content": "狡猾冷静，善于操纵，目标是让绫小路退学。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "white_room_agent",
-          "content": "受White Room指派，目标是让绫小路退学并带回。",
-          "known_by": [
-            "tsukishiro",
-            "ayanokouki_kiyotaka"
-          ]
-        },
-        {
-          "info_id": "white_room_overseer",
-          "content": "他是直江老师安插在白屋计划的监视者，同时为绫小路笃臣提供协助，但忠诚度不明。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "naoe_sensei"
-          ]
-        },
-        {
-          "info_id": "multiple_clients",
-          "content": "他同时为多个政治派系和财阀服务，包括直江老师和鬼岛老师，立场灵活。",
-          "known_by": [
-            "ayanokoji_atsushi"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "目标是让绫小路退学。"
-        },
-        {
-          "to": "绫小路笃臣",
-          "type": "trust",
-          "reason": "月城是笃臣的合作伙伴和情报来源，但双方互相警惕。"
-        },
-        {
-          "to": "直江老师",
-          "type": "subservient",
-          "reason": "月城最初受直江老师指派监视白屋计划，但后来与笃臣合作。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "月城对清隆的能力感兴趣，但尚未直接接触。"
-        }
-      ]
-    },
-    {
-      "name": "月城代理理事长",
-      "role_id": "tsukishiro_acting_chairman",
-      "class_name": "A",
-      "enrollment_year": "2022",
-      "traits": [
-        "狡猾",
-        "冷酷",
-        "善于算计",
-        "战斗能力强",
-        "深不可测"
-      ],
-      "public_info": [
-        {
-          "label": "外貌",
-          "content": "中年男性，常穿西装，眼神锐利，身材匀称。"
-        },
-        {
-          "label": "身份",
-          "content": "高度育成高中代理理事长，White Room高层，负责逼绫小路退学。"
-        },
-        {
-          "label": "性格",
-          "content": "表面温和，实则冷酷无情，善于利用规则和权力，为达目的不择手段。"
-        }
-      ],
-      "secrets": [
-        {
-          "info_id": "white_room_commander",
-          "content": "他是White Room在学校的代理人，负责执行逼绫小路退学的计划。",
-          "known_by": [
-            "绫小路清隆",
-            "天泽一夏"
-          ]
-        },
-        {
-          "info_id": "fight_with_ayanokoji",
-          "content": "在无人岛考试中，他亲自与绫小路战斗，但被绫小路识破并击败。",
-          "known_by": [
-            "绫小路清隆",
-            "鬼龙院枫花"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "目标是逼绫小路退学，5月1日时已开始暗中行动。"
-        },
-        {
-          "to": "天泽一夏",
-          "type": "subservient",
-          "reason": "天泽是他的棋子，但5月1日时天泽已有背叛迹象。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "鬼龙院枫花",
@@ -5387,8 +1968,7 @@
         "洒脱",
         "孤高",
         "强大",
-        "厌恶犯罪",
-        "直率"
+        "厌恶犯罪"
       ],
       "public_info": [
         {
@@ -5404,51 +1984,8 @@
           "content": "自信且洒脱，喜欢观察强者，不轻易介入纷争，但必要时会出手。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "witness_of_fight",
-          "content": "她目睹了绫小路与月城的战斗，并出手相助，但未对外声张。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        },
-        {
-          "info_id": "interest_in_ayanokoji",
-          "content": "她对绫小路的实力和背景感兴趣，5月1日时已开始暗中观察。",
-          "known_by": []
-        },
-        {
-          "info_id": "framed_for_shoplifting",
-          "content": "鬼龙院枫花被桐山龙二设计陷害，差点被栽赃顺手牵羊。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune",
-            "nagumo_miyabi"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "对他感兴趣，5月1日时无直接交集。"
-        },
-        {
-          "to": "南云雅",
-          "type": "neutral",
-          "reason": "对南云的策略不以为然，5月1日时关系一般。"
-        },
-        {
-          "to": "南云雅",
-          "type": "hostile",
-          "reason": "鬼龙院怀疑南云陷害她，但实际是桐山所为。"
-        },
-        {
-          "to": "桐山龙二",
-          "type": "hostile",
-          "reason": "桐山设计陷害鬼龙院，鬼龙院最终得知真相。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "桐山",
@@ -5476,33 +2013,8 @@
           "content": "冷静且谨慎，善于制定策略，对南云忠诚但有自己的判断。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "blockade_of_kouenji",
-          "content": "他指挥六个自由组封锁高圆寺，但未能成功阻止高圆寺拿下第一名。",
-          "known_by": [
-            "南云雅",
-            "三木谷"
-          ]
-        },
-        {
-          "info_id": "concern_about_ayanokoji",
-          "content": "他对绫小路的实力有所警觉，但5月1日时未采取行动。",
-          "known_by": []
-        }
-      ],
-      "relations": [
-        {
-          "to": "南云雅",
-          "type": "subservient",
-          "reason": "南云的部下，5月1日时关系紧密。"
-        },
-        {
-          "to": "高圆寺六助",
-          "type": "hostile",
-          "reason": "负责封锁高圆寺，5月1日时已开始计划。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "白波千寻",
@@ -5530,27 +2042,8 @@
           "content": "胆小且依赖性强，但善良细心，对朋友忠诚。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "lost_in_forest",
-          "content": "在无人岛考试中，她因迷路被绫小路帮助，5月1日时尚未发生。",
-          "known_by": [
-            "绫小路清隆"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "5月1日时无直接交集。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "friend",
-          "reason": "同班同学，关系友好。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "小桥梦",
@@ -5579,13 +2072,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "白波千寻",
-          "type": "friend",
-          "reason": "同班同学，关系友好。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "竹本",
@@ -5614,13 +2101,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "坂柳有栖",
-          "type": "subservient",
-          "reason": "坂柳班级的成员，5月1日时关系紧密。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "宝泉和彦",
@@ -5648,28 +2129,8 @@
           "content": "暴力且冲动，好斗，对敌人毫不留情。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "fight_with_ryuuen",
-          "content": "在无人岛考试中，他与龙园翔互殴，导致双方退场。",
-          "known_by": [
-            "坂柳有栖",
-            "绫小路清隆"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "龙园翔",
-          "type": "hostile",
-          "reason": "互殴导致退场，5月1日时关系敌对。"
-        },
-        {
-          "to": "七濑翼",
-          "type": "neutral",
-          "reason": "曾合作但已决裂，5月1日时无直接联系。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "司马老师",
@@ -5697,28 +2158,8 @@
           "content": "冷酷且忠诚，善于执行命令，战斗能力强。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "loyal_to_tsukishiro",
-          "content": "他是月城代理理事长的手下，负责监视天泽和执行逼绫小路退学的计划。",
-          "known_by": [
-            "月城代理理事长",
-            "绫小路清隆"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "月城代理理事长",
-          "type": "subservient",
-          "reason": "月城的手下，5月1日时关系紧密。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "hostile",
-          "reason": "执行逼退计划，5月1日时已开始行动。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "三木谷",
@@ -5746,28 +2187,8 @@
           "content": "冲动且好胜，善于战斗，但急躁易怒。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "failed_blockade",
-          "content": "他参与封锁高圆寺的行动，但未能成功，导致高圆寺拿下第一名。",
-          "known_by": [
-            "桐山",
-            "南云雅"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "桐山",
-          "type": "subservient",
-          "reason": "桐山的部下，5月1日时关系紧密。"
-        },
-        {
-          "to": "高圆寺六助",
-          "type": "hostile",
-          "reason": "负责封锁高圆寺，5月1日时已开始行动。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "椿樱子",
@@ -5794,27 +2215,8 @@
           "content": "聪明冷静，善于策略，因同班同学被八神拓也退学而怀有复仇心。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "manipulated_sato",
-          "content": "通过威胁佐藤麻耶，间接推动八神拓也的退学。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "与绫小路清隆有合作，共同对付八神拓也。"
-        },
-        {
-          "to": "八神拓也",
-          "type": "hostile",
-          "reason": "因八神拓也导致同班同学退学而怀恨在心。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "朝比奈荠",
@@ -5840,27 +2242,8 @@
           "content": "开朗友善，善于观察，对南云雅的行为有深刻理解。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "understanding_of_nagumo",
-          "content": "深知南云雅的内心和弱点，认为他从未真正失败过。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "南云雅",
-          "type": "friend",
-          "reason": "与南云雅是同班同学，关系较为亲近。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "与绫小路清隆有接触，提供关于南云雅的情报。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "姬野",
@@ -5887,116 +2270,8 @@
           "content": "内向且随波逐流，但内心对班级现状有不满，渴望改变。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "dissatisfaction_with_class",
-          "content": "对一之濑班的现状感到不满，但不敢表达，后与神崎隆二合作。",
-          "known_by": [
-            "kanzaki_ryuuji",
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "神崎隆二",
-          "type": "friend",
-          "reason": "与神崎隆二合作，试图改变班级现状。"
-        },
-        {
-          "to": "一之濑帆波",
-          "type": "neutral",
-          "reason": "对一之濑帆波的领导方针有保留意见。"
-        }
-      ]
-    },
-    {
-      "name": "绫小路笃臣",
-      "role_id": "ayanokoji_atsushi",
-      "class_name": "D",
-      "enrollment_year": "N/A",
-      "traits": [
-        "野心勃勃",
-        "冷酷无情",
-        "精于算计",
-        "隐忍坚韧",
-        "不择手段"
-      ],
-      "public_info": [
-        {
-          "label": "外貌",
-          "content": "年龄约40岁前后，身材中等，面容严肃，眼神锐利。"
-        },
-        {
-          "label": "身份",
-          "content": "前国会议员（市民党），白屋（White Room）计划的创立者和运营者。"
-        },
-        {
-          "label": "性格",
-          "content": "极度理性，为达目的不惜牺牲一切，包括自己的儿子。对权力和地位有着无法抑制的野心。"
-        }
-      ],
-      "secrets": [
-        {
-          "info_id": "white_room_founder",
-          "content": "他是白屋计划的创始人和实际控制者，利用政治和黑道资源非法获取新生儿进行残酷教育实验。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "tsukishiro",
-            "suzune"
-          ]
-        },
-        {
-          "info_id": "son_as_tool",
-          "content": "将自己的亲生儿子绫小路清隆送入白屋接受最高难度的β课程，将其视为实现政治野心的工具。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "tsukishiro",
-            "suzune"
-          ]
-        },
-        {
-          "info_id": "political_downfall",
-          "content": "被其政治导师直江老师背叛并抛弃，被迫退出政界，但暗中积蓄力量准备东山再起。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "tsukishiro",
-            "kamuro"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "family",
-          "reason": "父子关系，但笃臣视清隆为工具和棋子，缺乏亲情。"
-        },
-        {
-          "to": "月城",
-          "type": "trust",
-          "reason": "月城是笃臣的得力助手和情报提供者，两人互相利用，关系复杂。"
-        },
-        {
-          "to": "坂柳成守",
-          "type": "neutral",
-          "reason": "曾经的合作伙伴，后因政治立场和理念分歧而疏远，但保持表面上的尊重。"
-        },
-        {
-          "to": "直江老师",
-          "type": "hostile",
-          "reason": "直江老师是笃臣的政治导师，但最终背叛并抛弃了他，成为笃臣复仇的目标。"
-        },
-        {
-          "to": "鸭川",
-          "type": "trust",
-          "reason": "鸭川是笃臣的忠实部下，在白屋计划和政治生涯中给予支持。"
-        },
-        {
-          "to": "美香",
-          "type": "neutral",
-          "reason": "前情人，清隆的生母，笃臣利用她生下清隆后便断绝关系。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "坂柳成守",
@@ -6024,39 +2299,8 @@
           "content": "待人谦和，但内心坚定，对教育有理想化的追求，反对白屋的非人道做法。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "white_room_opponent",
-          "content": "他了解白屋计划的真相，并对其非人道的教育方式持反对态度，但出于对绫小路笃臣的尊重而保持沉默。",
-          "known_by": [
-            "sakurako_shigemori"
-          ]
-        },
-        {
-          "info_id": "fathers_influence",
-          "content": "他的父亲是高度育成高等学校的创始人，他继承父业成为理事长，致力于改革教育。",
-          "known_by": [
-            "sakurako_shigemori"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "曾经的合作伙伴，因理念分歧而疏远，但保持表面上的尊重。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "对清隆的处境有所了解，但未直接干预。"
-        },
-        {
-          "to": "鬼岛老师",
-          "type": "trust",
-          "reason": "坂柳家族与鬼岛老师关系密切，他后来支持鬼岛老师成为总理。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "鸭川",
@@ -6084,28 +2328,8 @@
           "content": "对笃臣忠心耿耿，但缺乏政治手腕，容易动摇，在经历中逐渐成长。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "white_room_involvement",
-          "content": "他参与了白屋计划的选址和部分运营，但对其非人道细节了解有限。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "kamogawa"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "trust",
-          "reason": "鸭川是笃臣的忠实部下，在白屋计划和政治生涯中给予支持。"
-        },
-        {
-          "to": "直江老师",
-          "type": "subservient",
-          "reason": "鸭川后来留在直江派阀中，但心向笃臣。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "铃悬锻冶",
@@ -6133,35 +2357,8 @@
           "content": "对研究充满热情，将孩子视为实验对象，追求人类能力的极限，缺乏情感共鸣。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "beta_curriculum_creator",
-          "content": "他设计了最高难度的β课程，并用于教育绫小路清隆，认为清隆是白屋的杰作。",
-          "known_by": [
-            "suzukake_kaji",
-            "ayanokoji_atsushi"
-          ]
-        },
-        {
-          "info_id": "admiration_for_kiyotaka",
-          "content": "他私下认为绫小路清隆是超越教育理论的异常存在，对其能力既惊叹又恐惧。",
-          "known_by": [
-            "suzukake_kaji"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "subservient",
-          "reason": "铃悬是笃臣雇佣的研究员，服从其命令，但有自己的研究追求。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "铃悬是清隆的教育者之一，对清隆的能力既欣赏又警惕。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "美香",
@@ -6189,36 +2386,8 @@
           "content": "为了金钱和利益可以牺牲一切，包括自己的孩子，对感情持实用主义态度。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "kiyotakas_mother",
-          "content": "她是绫小路清隆的生母，但为了5000万日元和自由，放弃了孩子的抚养权。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "mika"
-          ]
-        },
-        {
-          "info_id": "relationship_with_atsushi",
-          "content": "她与笃臣的关系是纯粹的利益交换，包括生下清隆。",
-          "known_by": [
-            "ayanokoji_atsushi",
-            "mika"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "前情人，双方关系基于利益，无感情基础。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "family",
-          "reason": "生母，但从未履行母亲职责，视其为交易的一部分。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "直江老师",
@@ -6246,42 +2415,8 @@
           "content": "极度自私，将他人视为棋子，为了维护自己的权力不惜牺牲任何人。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "white_room_originator",
-          "content": "他是白屋计划的真正发起者，但后来为了政治利益而抛弃了该计划。",
-          "known_by": [
-            "naoe_sensei",
-            "ayanokoji_atsushi"
-          ]
-        },
-        {
-          "info_id": "betrayal_of_atsushi",
-          "content": "他为了与鬼岛老师达成政治交易，背叛并抛弃了绫小路笃臣。",
-          "known_by": [
-            "naoe_sensei",
-            "ayanokoji_atsushi",
-            "tsukishiro"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "hostile",
-          "reason": "曾经的导师和下属，后因政治利益背叛，成为敌人。"
-        },
-        {
-          "to": "鬼岛老师",
-          "type": "rival",
-          "reason": "政治对手，但为了自保而选择支持对方。"
-        },
-        {
-          "to": "月城",
-          "type": "trust",
-          "reason": "月城曾是他的棋子，用于监视白屋计划。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "鬼岛老师",
@@ -6309,35 +2444,8 @@
           "content": "表面正直，但内心深不可测，对教育有独到见解，是直江老师的对手。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "white_room_opposition",
-          "content": "他反对白屋计划，认为其非人道，并利用政治手段迫使直江老师放弃该计划。",
-          "known_by": [
-            "onijima_sensei",
-            "naoe_sensei"
-          ]
-        },
-        {
-          "info_id": "similar_plan",
-          "content": "他暗中推动与白屋类似的教育计划，但更注重伦理和合法性。",
-          "known_by": [
-            "onijima_sensei"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "直江老师",
-          "type": "rival",
-          "reason": "政治对手，最终在总理选举中胜出。"
-        },
-        {
-          "to": "坂柳成守",
-          "type": "trust",
-          "reason": "与坂柳家族关系密切，支持其成为高育理事长。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "石上京",
@@ -6365,28 +2473,8 @@
           "content": "比同龄人成熟，善于思考，不畏惧权威，有领导潜质。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "fathers_ambition",
-          "content": "他的父亲石上五郎希望他未来进入政界，并为此培养他。",
-          "known_by": [
-            "ishigami_kyo",
-            "ishigami_goro"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "在聚会上被笃臣注意到其才能，但无直接关系。"
-        },
-        {
-          "to": "神崎隆二",
-          "type": "neutral",
-          "reason": "在聚会上有过短暂交锋，观点不同。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "雪",
@@ -6414,28 +2502,8 @@
           "content": "因白屋的经历而患有严重心理疾病，对外界充满恐惧，但对清隆有执念。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "white_room_dropout",
-          "content": "她是白屋第四期生的淘汰者，因无法承受教育压力而精神崩溃。",
-          "known_by": [
-            "yuki",
-            "yukis_father"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "crush",
-          "reason": "对清隆有强烈的依恋和执念，视其为精神支柱。"
-        },
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "她的父亲通过笃臣安排与清隆见面，但无直接关系。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "田渊",
@@ -6463,22 +2531,8 @@
           "content": "对白屋的非人道做法感到不安，但出于恐惧和利益而服从命令。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "moral_conflict",
-          "content": "他对白屋的教育方式有道德上的抵触，但不敢反抗绫小路笃臣。",
-          "known_by": [
-            "tabuchi"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "subservient",
-          "reason": "田渊是笃臣的部下，服从其命令，但内心有挣扎。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "宗谷",
@@ -6506,23 +2560,8 @@
           "content": "对自己的能力极度自信，不认为自己的行为有错，缺乏悔意。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "medical_misconduct",
-          "content": "他因多次问题行为被剥夺医师证，但被笃臣雇佣进行白屋教育。",
-          "known_by": [
-            "souya",
-            "ayanokoji_atsushi"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "subservient",
-          "reason": "宗谷是笃臣雇佣的研究员，为金钱和工作而服从。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "石田",
@@ -6550,22 +2589,8 @@
           "content": "相对理性，对教育有自己的一套方法，但最终服从于实验目标。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "educational_method",
-          "content": "他主张温和的教育方式，但在竞争中失败，最终接受铃悬的领导。",
-          "known_by": [
-            "ishida"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "subservient",
-          "reason": "石田是笃臣雇佣的研究员，服从其命令。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "天泽社长",
@@ -6593,23 +2618,8 @@
           "content": "对家庭不负责任，将孩子视为麻烦，用金钱解决问题。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "multiple_children_in_white_room",
-          "content": "他将自己的私生子送入白屋，包括一个女儿和一个即将出生的孩子。",
-          "known_by": [
-            "amazawa",
-            "ayanokoji_atsushi"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "投资者关系，天泽提供资金，笃臣处理其私生子问题。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "石上五郎",
@@ -6637,28 +2647,8 @@
           "content": "对儿子石上京的教育非常重视，希望他未来能进入政界。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "son_ambition",
-          "content": "他希望儿子石上京未来进入政界，并为此向绫小路笃臣寻求指导。",
-          "known_by": [
-            "ishigami_goro",
-            "ayanokoji_atsushi"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "在聚会上请求笃臣未来指导其子石上京。"
-        },
-        {
-          "to": "石上京",
-          "type": "family",
-          "reason": "父子关系，对儿子寄予厚望。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "神崎智弘",
@@ -6685,28 +2675,8 @@
           "content": "对儿子的教育非常上心，希望儿子能成为优秀的人。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "investment_in_white_room",
-          "content": "他是白屋计划的投资者，希望通过投资获得政治和人脉上的回报。",
-          "known_by": [
-            "kanzaki_tomohiro",
-            "ayanokoji_atsushi"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "投资者关系，对笃臣的能力表示尊重。"
-        },
-        {
-          "to": "神崎隆二",
-          "type": "family",
-          "reason": "父子关系，对儿子寄予厚望。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "雪的父亲",
@@ -6733,27 +2703,8 @@
           "content": "为了女儿的心理健康不惜一切，但面对清隆的冷漠感到无力。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "daughter_white_room",
-          "content": "他的女儿雪是白屋计划的淘汰者，他为此花费大量资源进行心理治疗。",
-          "known_by": [
-            "yukis_father"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "雪",
-          "type": "family",
-          "reason": "父女关系，对女儿充满关爱。"
-        },
-        {
-          "to": "绫小路笃臣",
-          "type": "neutral",
-          "reason": "通过笃臣安排女儿与清隆见面。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "桐山龙二",
@@ -6781,41 +2732,8 @@
           "content": "表面忠诚于南云，实则暗中策划破坏南云的计划，以保护三年级生利益。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "mastermind_of_framing",
-          "content": "桐山龙二设计陷害鬼龙院枫花，目的是破坏学生会选举，阻止南云浪费点数。",
-          "known_by": [
-            "ayanokoji_kiyotaka",
-            "horikita_suzune",
-            "nagumo_miyabi"
-          ]
-        },
-        {
-          "info_id": "discontent_with_nagumo",
-          "content": "桐山对南云滥用个人点数和权力感到不满，暗中策划反抗。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "南云雅",
-          "type": "subservient",
-          "reason": "表面忠诚，实则暗中策划破坏南云的计划。"
-        },
-        {
-          "to": "鬼龙院枫花",
-          "type": "hostile",
-          "reason": "桐山设计陷害鬼龙院，但最终被揭发。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "桐山尊重堀北的推理能力，但保持距离。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "姬野雪",
@@ -6843,27 +2761,8 @@
           "content": "内向敏感，自我怀疑，但观察力强。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "insecurity_about_class_b",
-          "content": "姬野雪对班级的未来感到不安，怀疑自己的行动是否有效。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "神崎隆二",
-          "type": "friend",
-          "reason": "共同策划班级复兴。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "姬野对绫小路感到好奇，但保持距离。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "石上优",
@@ -6891,27 +2790,8 @@
           "content": "冷静聪明，但孤僻，对学生会不感兴趣。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "knowledge_of_ayanokoji",
-          "content": "石上优知道绫小路清隆的真面目，但保持沉默。",
-          "known_by": [
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "石上知道绫小路的真面目，但保持距离。"
-        },
-        {
-          "to": "堀北铃音",
-          "type": "neutral",
-          "reason": "堀北邀请石上加入学生会，但被拒绝。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "西野武子",
@@ -6925,26 +2805,13 @@
       ],
       "public_info": [
         {
-          "label": "外貌",
-          "content": "短发，眼神锐利。"
-        },
-        {
-          "label": "身份",
-          "content": "二年C班学生，龙园班的成员。"
-        },
-        {
-          "label": "性格",
-          "content": "大胆无畏，对龙园忠诚。"
+          "label": "状态",
+          "content": "5月1日时尚未登场或未活跃"
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "龙园翔",
-          "type": "subservient",
-          "reason": "西野对龙园忠诚，并担任代表。"
-        }
-      ]
+      "relations": [],
+      "status_at_anchor": "未登场"
     },
     {
       "name": "鬼头隼",
@@ -6958,26 +2825,13 @@
       ],
       "public_info": [
         {
-          "label": "外貌",
-          "content": "黑色短发，体格健壮，表情严肃。"
-        },
-        {
-          "label": "身份",
-          "content": "二年A班学生，坂柳班的心腹。"
-        },
-        {
-          "label": "性格",
-          "content": "沉默寡言，对坂柳忠诚。"
+          "label": "状态",
+          "content": "5月1日时尚未登场或未活跃"
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "坂柳有栖",
-          "type": "subservient",
-          "reason": "鬼头是坂柳的心腹，执行她的命令。"
-        }
-      ]
+      "relations": [],
+      "status_at_anchor": "未登场"
     },
     {
       "name": "真田康生",
@@ -7004,13 +2858,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "坂柳有栖",
-          "type": "subservient",
-          "reason": "真田对坂柳忠诚，并担任代表。"
-        }
-      ]
+      "relations": []
     },
     {
       "name": "山村美纪",
@@ -7036,28 +2884,8 @@
           "content": "内向但善于观察，对坂柳忠诚。"
         }
       ],
-      "secrets": [
-        {
-          "info_id": "spy_for_sakurako",
-          "content": "山村美纪长期为坂柳有栖收集情报，包括监视桥本正义。",
-          "known_by": [
-            "sakurako_arisu",
-            "ayanokoji_kiyotaka"
-          ]
-        }
-      ],
-      "relations": [
-        {
-          "to": "坂柳有栖",
-          "type": "subservient",
-          "reason": "山村是坂柳的情报员，执行她的命令。"
-        },
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "山村曾向绫小路提供情报。"
-        }
-      ]
+      "secrets": [],
+      "relations": []
     },
     {
       "name": "松下千秋",
@@ -7084,13 +2912,7 @@
         }
       ],
       "secrets": [],
-      "relations": [
-        {
-          "to": "绫小路清隆",
-          "type": "neutral",
-          "reason": "松下对绫小路感兴趣，并接受了他的测试。"
-        }
-      ]
+      "relations": []
     }
   ]
 }

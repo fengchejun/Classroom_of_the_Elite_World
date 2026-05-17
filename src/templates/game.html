@@ -34,6 +34,80 @@
     #event-panel-content { font-size: 0.8em; color: #da8; line-height: 1.5; }
     #event-panel-content:empty { display: none; }
     #event-panel-content:empty + .side-panel-title { display: none; }
+    /* Character info panel */
+    #char-info-section { }
+    #char-info-content { font-size: 0.78em; line-height: 1.5; }
+    #char-info-content:empty { display: none; }
+    .char-info-block {
+        margin-bottom: 8px;
+        border: 1px solid #2a2a3a;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .char-info-toggle {
+        background: #12122a;
+        color: #8090b0;
+        border: none;
+        padding: 4px 10px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        font-size: 0.9em;
+        transition: color 0.15s;
+    }
+    .char-info-toggle:hover { color: #e0d8c8; }
+    .char-info-toggle .arrow { font-size: 0.8em; margin-right: 4px; }
+    .char-info-body {
+        display: none;
+        background: #0d0d1a;
+        padding: 6px 10px;
+        color: #a0b0d0;
+    }
+    .char-info-body.open { display: block; }
+    .char-info-body .label { color: #6070a0; font-size: 0.85em; }
+    .char-info-item { margin: 3px 0; }
+    .char-info-secret {
+        margin: 4px 0;
+        padding: 4px 8px;
+        background: rgba(233, 69, 96, 0.08);
+        border-left: 2px solid #e94560;
+        border-radius: 0 4px 4px 0;
+        font-size: 0.9em;
+    }
+    .char-info-secret .secret-known {
+        font-size: 0.8em;
+        color: #8090b0;
+        margin-top: 2px;
+    }
+    .char-info-relation {
+        margin: 3px 0;
+        padding: 2px 6px;
+        background: rgba(83, 52, 131, 0.1);
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+    .char-info-relation .rel-type {
+        font-size: 0.75em;
+        padding: 1px 6px;
+        border-radius: 3px;
+        margin-right: 4px;
+    }
+    .rel-type.friendly { background: #1a3a1a; color: #4a4; }
+    .rel-type.neutral { background: #1a1a2a; color: #888; }
+    .rel-type.rival { background: #3a1a1a; color: #a44; }
+    .rel-type.hostile { background: #3a1a1a; color: #e44; }
+    .rel-type.trust { background: #1a2a3a; color: #48a; }
+    .char-info-tags { display: flex; gap: 4px; flex-wrap: wrap; margin: 4px 0; }
+    .char-info-tag {
+        background: #0f3460;
+        color: #a0b0d0;
+        padding: 1px 8px;
+        border-radius: 10px;
+        font-size: 0.85em;
+    }
+    .char-info-stats { margin: 4px 0; }
+    .char-info-stats .stat-row { display: flex; justify-content: space-between; margin: 2px 0; }
+    .char-info-empty { color: #555; font-style: italic; font-size: 0.85em; padding: 4px 0; }
     #debug-panel-section { display: none; flex-direction: column; gap: 4px; }
     .debug-block {
         margin: 0;
@@ -601,6 +675,10 @@
         <div class="side-panel-title">◆ 事件</div>
         <div id="event-panel-content"></div>
     </div>
+    <div id="char-info-section">
+        <div class="side-panel-title">◆ 角色档案</div>
+        <div id="char-info-content"></div>
+    </div>
     <div id="debug-panel-section">
         <div class="side-panel-title">◆ 调试</div>
         <div id="debug-panel-content"></div>
@@ -746,6 +824,7 @@ async function continueGame() {
 
         // Restore state
         if (resp.state) updateUI(resp.state);
+        loadPlayerProfile();
 
         // Restore history
         const area = document.getElementById('narrative-area');
@@ -973,6 +1052,7 @@ async function confirmStart() {
         // Refresh state and send intro
         const stateResp = await fetch('/api/demo/state').then(r => r.json());
         updateUI(stateResp);
+        loadPlayerProfile();
 
         if (useLLM) {
             await sendInputStream('/intro');
@@ -1448,6 +1528,8 @@ function updateUI(data) {
     } else {
         eventPanel.innerHTML = '';
     }
+    // Refresh character profile (PP may have changed)
+    loadPlayerProfile();
 }
 
 function appendNarrativeBlock(type, text) {
@@ -1513,6 +1595,92 @@ function clearChoices() {
     currentChoices = [];
     document.getElementById('choices-area').innerHTML = '';
 }
+
+// ---- Character Info Panel ----
+async function loadPlayerProfile() {
+    try {
+        const resp = await fetch('/api/game/player_profile').then(r => r.json());
+        if (resp.error) { console.warn('Profile:', resp.error); return; }
+        renderPlayerProfile(resp);
+    } catch(e) {
+        console.warn('Profile load failed:', e.message);
+    }
+}
+
+function renderPlayerProfile(p) {
+    const container = document.getElementById('char-info-content');
+    let html = '';
+
+    // Section 1: Basic stats
+    html += '<div class="char-info-block">';
+    html += '<button class="char-info-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\')"><span class="arrow">▼</span>基本信息</button>';
+    html += '<div class="char-info-body open">';
+    html += '<div class="char-info-stats">';
+    html += `<div class="stat-row"><span class="label">班级</span><span>${escapeHtml(p.class_name)}班</span></div>`;
+    html += `<div class="stat-row"><span class="label">私人点数</span><span>${(p.private_points || 0).toLocaleString()}</span></div>`;
+    const habitLabels = {frugal: '节俭', socialite: '交际', normal: '普通', 'gamer/otaku': '娱乐宅'};
+    html += `<div class="stat-row"><span class="label">消费习惯</span><span>${habitLabels[p.spending_habit] || p.spending_habit}</span></div>`;
+    html += `<div class="stat-row"><span class="label">入学年份</span><span>${escapeHtml(p.enrollment_year || '?')}</span></div>`;
+    html += '</div>';
+    if (p.traits && p.traits.length > 0) {
+        html += '<div class="char-info-tags">' + p.traits.map(t => `<span class="char-info-tag">${escapeHtml(t)}</span>`).join('') + '</div>';
+    }
+    html += '</div></div>';
+
+    // Section 2: Public info
+    html += '<div class="char-info-block">';
+    html += '<button class="char-info-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\')"><span class="arrow">▼</span>公开信息</button>';
+    html += '<div class="char-info-body open">';
+    if (p.public_info && p.public_info.length > 0) {
+        for (const info of p.public_info) {
+            html += `<div class="char-info-item"><span class="label">${escapeHtml(info.label)}：</span>${escapeHtml(info.content)}</div>`;
+        }
+    } else {
+        html += '<div class="char-info-empty">（无）</div>';
+    }
+    html += '</div></div>';
+
+    // Section 3: Secrets
+    html += '<div class="char-info-block">';
+    html += '<button class="char-info-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\')"><span class="arrow">▼</span>隐藏信息 / 秘密</button>';
+    html += '<div class="char-info-body">';
+    if (p.secrets && p.secrets.length > 0) {
+        for (const s of p.secrets) {
+            html += `<div class="char-info-secret">${escapeHtml(s.content)}`;
+            if (s.known_by && s.known_by.length > 0) {
+                html += `<div class="secret-known">已知者：${escapeHtml(s.known_by.join('、'))}</div>`;
+            } else {
+                html += '<div class="secret-known" style="color:#6070a0;">仅自己知晓</div>';
+            }
+            html += '</div>';
+        }
+    } else {
+        html += '<div class="char-info-empty">（无特殊秘密）</div>';
+    }
+    html += '</div></div>';
+
+    // Section 4: Relations
+    html += '<div class="char-info-block">';
+    html += '<button class="char-info-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\')"><span class="arrow">▼</span>人际关系</button>';
+    html += '<div class="char-info-body">';
+    if (p.relations && p.relations.length > 0) {
+        for (const r of p.relations) {
+            const typeClass = r.type || 'neutral';
+            const typeLabels = {friendly: '友好', neutral: '中立', rival: '对手', hostile: '敌对', trust: '信赖'};
+            html += `<div class="char-info-relation">`;
+            html += `<span class="rel-type ${typeClass}">${typeLabels[r.type] || r.type}</span>`;
+            html += `<strong>${escapeHtml(r.to)}</strong>`;
+            html += `<div style="font-size:0.85em;color:#8090b0;margin-top:1px;">${escapeHtml(r.reason || '')}</div>`;
+            html += '</div>';
+        }
+    } else {
+        html += '<div class="char-info-empty">（暂无记录）</div>';
+    }
+    html += '</div></div>';
+
+    container.innerHTML = html;
+}
+
 </script>
 </body>
 </html>
