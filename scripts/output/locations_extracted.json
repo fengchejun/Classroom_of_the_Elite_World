@@ -1,48 +1,1841 @@
 {
-  "type": "locations",
   "data": [
     {
-      "location_id": "campus_gate",
-      "name": "正门及周边",
-      "description": "通往校园的林荫大道入口，两旁树木成荫。早晨和放学时学生往来频繁，是校园与外界的分界点。",
+      "location_id": "hallway_1f",
+      "name": "一层走廊",
+      "description": "教学楼一层的主走廊，连接正门方向。公告栏上贴着各类通知和社团招新海报。下课时间学生来来往往，是最繁忙的通道。",
       "tags": [
-        "outdoor",
-        "quiet",
-        "noisy"
+        "indoor",
+        "corridor",
+        "public"
       ],
       "connected_to": [
-        "school_bus",
-        "academic_hallway",
-        "dorm_student",
+        "hallway_2f",
+        "library",
+        "teachers_office",
+        "campus_gate",
+        "special_building_1f",
         "sports_field"
       ],
-      "zone_id": "campus_perimeter"
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "1F",
+      "scene_image": "hallway_1f.png"
     },
     {
-      "location_id": "campus_edge",
-      "name": "校区边缘与无人点",
-      "description": "包含未经许可禁用的'小型装配屋'以及教学楼背面等非营业区域。人流量极低，适合独处或秘密接触。",
+      "location_id": "hallway_2f",
+      "name": "二层走廊",
+      "description": "教学楼二层的走廊，一年级教室分布在这一层。课间时一年级学生在此穿梭，偶尔能看到二年级学生经过。",
       "tags": [
-        "outdoor",
-        "quiet",
-        "secluded"
+        "indoor",
+        "corridor",
+        "public"
       ],
       "connected_to": [
-        "academic_hallway",
-        "special_building"
+        "hallway_1f",
+        "hallway_3f",
+        "classroom_1a",
+        "classroom_1b",
+        "classroom_1c",
+        "classroom_1d"
       ],
-      "zone_id": "campus_perimeter"
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "2F",
+      "scene_image": "hallway_2f.png"
     },
     {
-      "location_id": "academic_hallway",
-      "name": "教学楼走廊",
-      "description": "教学区的枢纽走廊。各楼层走廊（尤其是理科教室附近）装设有无死角的监视器。连接各班级教室、学生会室和职员室。",
+      "location_id": "hallway_3f",
+      "name": "三层走廊",
+      "description": "教学楼三层的走廊，二年级教室分布在这一层。较为安静，偶尔能听到教室里传来的讲课声。",
+      "tags": [
+        "indoor",
+        "corridor",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_2f",
+        "hallway_4f",
+        "classroom_2a",
+        "classroom_2b",
+        "classroom_2c",
+        "classroom_2d"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "3F",
+      "scene_image": "hallway_3f.png"
+    },
+    {
+      "location_id": "hallway_4f",
+      "name": "四层走廊",
+      "description": "教学楼四层的走廊，三年级教室和学生会室分布在这一层。临近毕业的三年级学生行色匆匆，气氛比其他楼层更为严肃。",
+      "tags": [
+        "indoor",
+        "corridor",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_3f",
+        "rooftop",
+        "student_council_room",
+        "guidance_room",
+        "classroom_3a",
+        "classroom_3b",
+        "classroom_3c",
+        "classroom_3d"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_1a",
+      "name": "一年A班教室",
+      "description": "一年A班的教室。坂柳有栖所在的精英班级，桌椅整齐，氛围严肃认真，学生成绩普遍优异。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_2f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "2F",
+      "scene_image": "classroom_1a.png"
+    },
+    {
+      "location_id": "classroom_1b",
+      "name": "一年B班教室",
+      "description": "一年B班的教室。一之濑帆波所在的班级，班级凝聚力强，气氛融洽友好。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_2f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "2F",
+      "scene_image": "classroom_1b.png"
+    },
+    {
+      "location_id": "classroom_1c",
+      "name": "一年C班教室",
+      "description": "一年C班的教室。龙园翔所在的班级，气氛紧张压抑，弥漫着实力至上的残酷竞争氛围。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_2f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "2F",
+      "scene_image": "classroom_1c.png"
+    },
+    {
+      "location_id": "classroom_1d",
+      "name": "一年D班教室",
+      "description": "一年D班的教室。桌椅有些陈旧，靠窗的后排能看到中庭。教室里弥漫着慵懒散漫的氛围——有人趴着睡觉，有人旁若无人地聊天。这是缺陷品聚集的班级。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_2f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "2F",
+      "scene_image": "classroom_1d.png"
+    },
+    {
+      "location_id": "classroom_2a",
+      "name": "二年A班教室",
+      "description": "二年A班的教室。南云雅所在的班级，气氛紧张且充满竞争性。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_3f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_2b",
+      "name": "二年B班教室",
+      "description": "二年B班的教室。桐山生叶所在的班级。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_3f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_2c",
+      "name": "二年C班教室",
+      "description": "二年C班的教室。鬼头隼所在的班级。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_3f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_2d",
+      "name": "二年D班教室",
+      "description": "二年D班的教室。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_3f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_3a",
+      "name": "三年A班教室",
+      "description": "三年A班的教室。临近毕业的最高年级精英班级，氛围专注而紧张。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_4f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_3b",
+      "name": "三年B班教室",
+      "description": "三年B班的教室。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_4f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_3c",
+      "name": "三年C班教室",
+      "description": "三年C班的教室。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_4f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "classroom_3d",
+      "name": "三年D班教室",
+      "description": "三年D班的教室。",
+      "tags": [
+        "indoor",
+        "classroom",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_4f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "library",
+      "name": "图书馆",
+      "description": "教学楼一层的大型图书馆，藏书丰富，安静整洁。靠窗有一排自习座位，是学生自习和查阅资料的理想场所。偶尔有学生在书架间低声交谈。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_1f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "1F",
+      "scene_image": "library.png"
+    },
+    {
+      "location_id": "student_council_room",
+      "name": "学生会室",
+      "description": "位于教学楼四楼的学生会室。内设长桌，用于举行正式会议或审议。气氛庄重严肃，墙上挂着历届学生会成员的照片。",
+      "tags": [
+        "indoor",
+        "formal",
+        "restricted"
+      ],
+      "connected_to": [
+        "hallway_4f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "teachers_office",
+      "name": "教员办公室",
+      "description": "教职员办公区。走廊有监视器，学生不可随意进入。如需找老师谈话，需在门口说明来意。",
+      "tags": [
+        "indoor",
+        "restricted",
+        "quiet"
+      ],
+      "connected_to": [
+        "hallway_1f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "1F",
+      "scene_image": "teachers_office.png"
+    },
+    {
+      "location_id": "guidance_room",
+      "name": "辅导室",
+      "description": "专门用于教师与学生个别面谈的房间。位于四楼，内部有独立茶水间。与普通教室不同，这里没有安装监控设备，是私下交谈的安心场所。",
+      "tags": [
+        "indoor",
+        "private",
+        "quiet"
+      ],
+      "connected_to": [
+        "hallway_4f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "rooftop",
+      "name": "屋顶",
+      "description": "教学楼顶层，全年开放，装有牢固栅栏。仅门外上方有监视器，内部是绝佳的避人耳目之地，可俯瞰整个校园。风很大，几乎没有人会在这里久留——正因为如此，这里是校内少数可以放心密谈的地点。",
+      "tags": [
+        "outdoor",
+        "secluded",
+        "high"
+      ],
+      "connected_to": [
+        "hallway_4f"
+      ],
+      "parent_zone": "teaching_building",
+      "zone_name": "教学楼",
+      "floor": "RF",
+      "scene_image": ""
+    },
+    {
+      "location_id": "special_building_1f",
+      "name": "特别大楼一层",
+      "description": "特别教学大楼的一层入口。平时人烟稀少，走廊空旷安静。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "public"
+      ],
+      "connected_to": [
+        "hallway_1f",
+        "special_building_2f"
+      ],
+      "parent_zone": "special_building",
+      "zone_name": "特别教学大楼",
+      "floor": "1F",
+      "scene_image": "special_building_1f.png"
+    },
+    {
+      "location_id": "special_building_2f",
+      "name": "特别大楼二层",
+      "description": "特别教学大楼的二层。偶尔用于特别考试或补课，平时几乎无人使用。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "restricted"
+      ],
+      "connected_to": [
+        "special_building_1f",
+        "special_building_3f"
+      ],
+      "parent_zone": "special_building",
+      "zone_name": "特别教学大楼",
+      "floor": "2F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "special_building_3f",
+      "name": "特别大楼三层",
+      "description": "特别教学大楼的三层。这是校内极少数未安装监视器的盲区。废弃的教室空旷无人，是秘密会面的绝佳场所。",
+      "tags": [
+        "indoor",
+        "secluded",
+        "restricted"
+      ],
+      "connected_to": [
+        "special_building_2f"
+      ],
+      "parent_zone": "special_building",
+      "zone_name": "特别教学大楼",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_lobby",
+      "name": "宿舍大厅",
+      "description": "学生宿舍的主入口大厅。设有前台、房卡管理系统和电梯间。墙上贴着宿舍管理规范和各类通知。早晚时段学生往来频繁。",
       "tags": [
         "indoor",
         "public",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor",
+        "dorm_female_floor",
+        "dorm_courtyard",
+        "campus_gate",
+        "mall_entrance"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "1F",
+      "scene_image": "dorm_lobby.png"
+    },
+    {
+      "location_id": "dorm_male_floor",
+      "name": "男生楼层",
+      "description": "男生宿舍楼层。走廊两侧排列着各自的单人房间（约四坪），配备基本家具和空调。同年级的男生集中居住在此。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_lobby",
+        "dorm_room_0101",
+        "dorm_room_0102",
+        "dorm_room_0103",
+        "dorm_room_0104",
+        "dorm_room_0105",
+        "dorm_room_0201",
+        "dorm_room_0202",
+        "dorm_room_0203",
+        "dorm_room_0204",
+        "dorm_room_0205",
+        "dorm_room_0301",
+        "dorm_room_0302",
+        "dorm_room_0303",
+        "dorm_room_0304",
+        "dorm_room_0305",
+        "dorm_room_0401",
+        "dorm_room_0402",
+        "dorm_room_0403",
+        "dorm_room_0404",
+        "dorm_room_0405",
+        "dorm_room_0501",
+        "dorm_room_0502",
+        "dorm_room_0503",
+        "dorm_room_0504",
+        "dorm_room_0505"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "scene_image": "dorm_male_floor.png"
+    },
+    {
+      "location_id": "dorm_female_floor",
+      "name": "女生楼层",
+      "description": "女生宿舍楼层，位于男生楼层之上。走廊整洁安静，每间房为个人专用。严禁男生进入。",
+      "tags": [
+        "indoor",
+        "private",
+        "restricted"
+      ],
+      "connected_to": [
+        "dorm_lobby",
+        "dorm_room_0701",
+        "dorm_room_0702",
+        "dorm_room_0703",
+        "dorm_room_0704",
+        "dorm_room_0705",
+        "dorm_room_0801",
+        "dorm_room_0802",
+        "dorm_room_0803",
+        "dorm_room_0804",
+        "dorm_room_0805",
+        "dorm_room_0901",
+        "dorm_room_0902",
+        "dorm_room_0903",
+        "dorm_room_0904",
+        "dorm_room_0905",
+        "dorm_room_1001",
+        "dorm_room_1002",
+        "dorm_room_1003",
+        "dorm_room_1004",
+        "dorm_room_1005",
+        "dorm_room_1101",
+        "dorm_room_1102",
+        "dorm_room_1103",
+        "dorm_room_1104",
+        "dorm_room_1105"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "scene_image": "dorm_female_floor.png"
+    },
+    {
+      "location_id": "dorm_courtyard",
+      "name": "宿舍中庭",
+      "description": "宿舍楼之间的户外空间。有几张长椅和绿化带，偶尔有学生在傍晚时分在此闲聊或等人。",
+      "tags": [
+        "outdoor",
+        "quiet",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_lobby"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "GF",
+      "scene_image": "dorm_courtyard.png"
+    },
+    {
+      "location_id": "mall_entrance",
+      "name": "购物中心入口",
+      "description": "榉树购物中心的主入口。玻璃大门上贴着促销海报和营业时间。放学后这里是最热闹的地方。",
+      "tags": [
+        "indoor",
+        "public",
+        "commercial"
+      ],
+      "connected_to": [
+        "mall_cafeteria",
+        "mall_cafe",
+        "mall_shop",
+        "mall_entertainment",
+        "dorm_lobby"
+      ],
+      "parent_zone": "keyaki_mall",
+      "zone_name": "榉树购物中心",
+      "floor": "1F",
+      "scene_image": "mall_entrance.png"
+    },
+    {
+      "location_id": "mall_cafeteria",
+      "name": "学生食堂",
+      "description": "榉树购物中心内最大的学生食堂。提供价格不等的套餐——免费简餐到丰盛定食都有。午间高峰期座无虚席，是学生社交和信息交换的核心场所。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "commercial",
+        "public"
+      ],
+      "connected_to": [
+        "mall_entrance"
+      ],
+      "parent_zone": "keyaki_mall",
+      "zone_name": "榉树购物中心",
+      "floor": "1F",
+      "scene_image": "mall_cafeteria.png"
+    },
+    {
+      "location_id": "mall_cafe",
+      "name": "帕雷特咖啡馆",
+      "description": "购物中心内的时尚咖啡馆。提供咖啡、茶饮和精致甜点，价格略高于食堂。环境安静舒适，是女生团体和情侣偏爱的场所。",
+      "tags": [
+        "indoor",
+        "quiet",
+        "commercial",
+        "public"
+      ],
+      "connected_to": [
+        "mall_entrance"
+      ],
+      "parent_zone": "keyaki_mall",
+      "zone_name": "榉树购物中心",
+      "floor": "1F",
+      "scene_image": "mall_cafe.png"
+    },
+    {
+      "location_id": "mall_shop",
+      "name": "便利店",
+      "description": "购物中心内的便利店，货架上摆满了零食、饮料、文具和日常用品。价格比校外稍贵，但在封闭校园中这就是唯一的购物选择。",
+      "tags": [
+        "indoor",
+        "commercial",
+        "public"
+      ],
+      "connected_to": [
+        "mall_entrance"
+      ],
+      "parent_zone": "keyaki_mall",
+      "zone_name": "榉树购物中心",
+      "floor": "1F",
+      "scene_image": "mall_shop.png"
+    },
+    {
+      "location_id": "mall_entertainment",
+      "name": "娱乐区",
+      "description": "购物中心的娱乐区域，包含电影院和卡拉OK包厢。周末和假日这里需要提前预约，是学生的解压圣地。",
+      "tags": [
+        "indoor",
+        "noisy",
+        "commercial",
+        "public"
+      ],
+      "connected_to": [
+        "mall_entrance"
+      ],
+      "parent_zone": "keyaki_mall",
+      "zone_name": "榉树购物中心",
+      "floor": "1F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_0f",
+      "name": "游轮顶层·露天甲板",
+      "description": "圣维纳斯号的顶层露天甲板。设有游泳池和咖啡厅，可眺望无垠的大海。海风拂面，视野开阔，是游轮上最令人放松的场所。",
+      "tags": [
+        "outdoor",
+        "leisure",
+        "scenic"
+      ],
+      "connected_to": [
+        "cruise_1f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "RF",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_1f",
+      "name": "游轮一层·宴会厅",
+      "description": "游轮一层的主宴会厅。华丽的吊灯、铺着白桌布的长桌，用于举办宴会和大型集会。",
+      "tags": [
+        "indoor",
+        "formal",
+        "large"
+      ],
+      "connected_to": [
+        "cruise_0f",
+        "cruise_2f",
+        "cruise_b1f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "1F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_2f",
+      "name": "游轮二层·考试区",
+      "description": "在船上举行特别考试时使用的楼层。设有多个小型说明间和大型会议室。平日几乎没有学生会来这一层。",
+      "tags": [
+        "indoor",
+        "formal",
+        "restricted"
+      ],
+      "connected_to": [
+        "cruise_1f",
+        "cruise_3f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "2F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_3f",
+      "name": "游轮三层·男生客房",
+      "description": "男生客房楼层。四人一间房，配有基本住宿设施。走廊铺着深色地毯。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "cruise_2f",
+        "cruise_4f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_4f",
+      "name": "游轮四层·女生客房",
+      "description": "女生客房楼层。四人一间房，装修比男生楼层更精致。严禁男生进入。",
+      "tags": [
+        "indoor",
+        "private",
+        "restricted"
+      ],
+      "connected_to": [
+        "cruise_3f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_b1f",
+      "name": "游轮负一层·娱乐区",
+      "description": "游轮地下一层的娱乐区域，设有各种休闲设施供乘客打发时间。",
+      "tags": [
+        "indoor",
+        "leisure",
+        "public"
+      ],
+      "connected_to": [
+        "cruise_1f",
+        "cruise_b2f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "B1",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_b2f",
+      "name": "游轮负二层",
+      "description": "游轮地下二层。",
+      "tags": [
+        "indoor",
+        "restricted"
+      ],
+      "connected_to": [
+        "cruise_b1f",
+        "cruise_b3f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "B2",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_b3f",
+      "name": "游轮负三层",
+      "description": "游轮地下三层。",
+      "tags": [
+        "indoor",
+        "restricted"
+      ],
+      "connected_to": [
+        "cruise_b2f",
+        "cruise_b4f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "B3",
+      "scene_image": ""
+    },
+    {
+      "location_id": "cruise_b4f",
+      "name": "游轮负四层·设备层",
+      "description": "游轮最底层，主要为机械设备区域。一般乘客不会来此。",
+      "tags": [
+        "indoor",
+        "restricted",
+        "mechanical"
+      ],
+      "connected_to": [
+        "cruise_b3f"
+      ],
+      "parent_zone": "event_cruise",
+      "zone_name": "豪华游轮",
+      "floor": "B4",
+      "scene_image": ""
+    },
+    {
+      "location_id": "island_beach",
+      "name": "无人岛·海滩",
+      "description": "无人岛的海滩登陆点。白沙与碧海相接，是考试开始时学生们被投放的地点。沙滩上有零星的漂流木和贝壳。",
+      "tags": [
+        "outdoor",
+        "coastal",
+        "wild"
+      ],
+      "connected_to": [
+        "island_forest"
+      ],
+      "parent_zone": "event_island",
+      "zone_name": "无人岛",
+      "scene_image": ""
+    },
+    {
+      "location_id": "island_forest",
+      "name": "无人岛·森林",
+      "description": "覆盖岛屿大部分面积的密林。树木茂密，光线斑驳。地面不平，时有树根绊脚。林中有多条小路通向各处据点。",
+      "tags": [
+        "outdoor",
+        "forest",
+        "wild"
+      ],
+      "connected_to": [
+        "island_beach",
+        "island_river",
+        "island_base1",
+        "island_base2",
+        "island_base3"
+      ],
+      "parent_zone": "event_island",
+      "zone_name": "无人岛",
+      "scene_image": ""
+    },
+    {
+      "location_id": "island_river",
+      "name": "无人岛·河流",
+      "description": "穿过岛屿内陆的清澈河流，是无人岛上唯一的核心水源。水质清甜可直接饮用。河畔较为开阔，适合休息和补给。",
+      "tags": [
+        "outdoor",
+        "water",
+        "wild"
+      ],
+      "connected_to": [
+        "island_forest",
+        "island_base2"
+      ],
+      "parent_zone": "event_island",
+      "zone_name": "无人岛",
+      "scene_image": ""
+    },
+    {
+      "location_id": "island_base1",
+      "name": "无人岛·据点1（洞窟）",
+      "description": "位于岛屿边缘一处洞窟洞口的据点。洞口周围未被树林遮盖，视野较好，易守难攻。洞内阴凉干燥，可避风雨。",
+      "tags": [
+        "outdoor",
+        "cave",
+        "strategic"
+      ],
+      "connected_to": [
+        "island_forest"
+      ],
+      "parent_zone": "event_island",
+      "zone_name": "无人岛",
+      "scene_image": ""
+    },
+    {
+      "location_id": "island_base2",
+      "name": "无人岛·据点2（河畔大树）",
+      "description": "位于内陆河流旁一棵巨树下的据点。临近水源，地势平坦，是最适合扎营的地点之一。",
+      "tags": [
+        "outdoor",
+        "riverside",
+        "strategic"
+      ],
+      "connected_to": [
+        "island_forest",
+        "island_river"
+      ],
+      "parent_zone": "event_island",
+      "zone_name": "无人岛",
+      "scene_image": ""
+    },
+    {
+      "location_id": "island_base3",
+      "name": "无人岛·据点3（瀑布）",
+      "description": "位于岛屿内陆瀑布旁的据点。瀑布的轰鸣声掩盖了说话声，是密谈的好地方。",
+      "tags": [
+        "outdoor",
+        "waterfall",
+        "strategic"
+      ],
+      "connected_to": [
+        "island_forest"
+      ],
+      "parent_zone": "event_island",
+      "zone_name": "无人岛",
+      "scene_image": ""
+    },
+    {
+      "location_id": "campus_gate",
+      "name": "正门及周边",
+      "description": "校园的主入口，由天然岩石拼凑加工而成。早晨和放学时学生往来频繁，是校园与外界的分界点。文化祭时按距离远近设有收费/免费摆摊区。",
+      "tags": [
+        "outdoor",
+        "public",
+        "landmark"
+      ],
+      "connected_to": [
+        "school_bus",
+        "hallway_1f",
+        "dorm_lobby",
+        "sports_field"
+      ],
+      "parent_zone": null,
+      "zone_name": "校园外围",
+      "scene_image": "campus_gate.png"
+    },
+    {
+      "location_id": "school_bus",
+      "name": "接驳公交车",
+      "description": "将学生从外界都市运送至学校正门的交通工具。仅在新生入学报到或特殊外出时使用。车内座位舒适，窗外校园景色逐渐映入眼帘。",
+      "tags": [
+        "indoor",
+        "vehicle",
+        "transitional"
+      ],
+      "connected_to": [
+        "campus_gate"
+      ],
+      "parent_zone": null,
+      "zone_name": "校外",
+      "scene_image": ""
+    },
+    {
+      "location_id": "sports_field",
+      "name": "室外操场",
+      "description": "标准的田径运动场，包含跑道与足球场。足球部和田径部在这里训练，校运会在此举办。周围有看台和少量健身器材。",
+      "tags": [
+        "outdoor",
+        "sports",
+        "large"
+      ],
+      "connected_to": [
+        "gymnasium",
+        "campus_gate",
+        "hallway_1f"
+      ],
+      "parent_zone": null,
+      "zone_name": "运动区",
+      "scene_image": "sports_field.png"
+    },
+    {
+      "location_id": "gymnasium",
+      "name": "体育馆",
+      "description": "宽敞的室内体育馆，配备了可移动舞台。细分有多个场馆，内含上课用游泳池。可容纳全校学生，用于举行开学典礼、社团招新等大型集会。",
+      "tags": [
+        "indoor",
+        "large",
         "noisy"
       ],
       "connected_to": [
+        "sports_field",
+        "hallway_1f"
+      ],
+      "parent_zone": null,
+      "zone_name": "运动区",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0101",
+      "name": "宿舍房间 0101",
+      "description": "宿舍1楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "1F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0102",
+      "name": "宿舍房间 0102",
+      "description": "宿舍1楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "1F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0103",
+      "name": "宿舍房间 0103",
+      "description": "宿舍1楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "1F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0104",
+      "name": "宿舍房间 0104",
+      "description": "宿舍1楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "1F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0105",
+      "name": "宿舍房间 0105",
+      "description": "宿舍1楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "1F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0201",
+      "name": "宿舍房间 0201",
+      "description": "宿舍2楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "2F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0202",
+      "name": "宿舍房间 0202",
+      "description": "宿舍2楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "2F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0203",
+      "name": "宿舍房间 0203",
+      "description": "宿舍2楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "2F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0204",
+      "name": "宿舍房间 0204",
+      "description": "宿舍2楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "2F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0205",
+      "name": "宿舍房间 0205",
+      "description": "宿舍2楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "2F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0301",
+      "name": "宿舍房间 0301",
+      "description": "宿舍3楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0302",
+      "name": "宿舍房间 0302",
+      "description": "宿舍3楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0303",
+      "name": "宿舍房间 0303",
+      "description": "宿舍3楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0304",
+      "name": "宿舍房间 0304",
+      "description": "宿舍3楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0305",
+      "name": "宿舍房间 0305",
+      "description": "宿舍3楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "3F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0401",
+      "name": "宿舍房间 0401",
+      "description": "宿舍4楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0402",
+      "name": "宿舍房间 0402",
+      "description": "宿舍4楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0403",
+      "name": "宿舍房间 0403",
+      "description": "宿舍4楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0404",
+      "name": "宿舍房间 0404",
+      "description": "宿舍4楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0405",
+      "name": "宿舍房间 0405",
+      "description": "宿舍4楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "4F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0501",
+      "name": "宿舍房间 0501",
+      "description": "宿舍5楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "5F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0502",
+      "name": "宿舍房间 0502",
+      "description": "宿舍5楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "5F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0503",
+      "name": "宿舍房间 0503",
+      "description": "宿舍5楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "5F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0504",
+      "name": "宿舍房间 0504",
+      "description": "宿舍5楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "5F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0505",
+      "name": "宿舍房间 0505",
+      "description": "宿舍5楼的一间男生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_male_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "5F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0701",
+      "name": "宿舍房间 0701",
+      "description": "宿舍7楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "7F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0702",
+      "name": "宿舍房间 0702",
+      "description": "宿舍7楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "7F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0703",
+      "name": "宿舍房间 0703",
+      "description": "宿舍7楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "7F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0704",
+      "name": "宿舍房间 0704",
+      "description": "宿舍7楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "7F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0705",
+      "name": "宿舍房间 0705",
+      "description": "宿舍7楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "7F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0801",
+      "name": "宿舍房间 0801",
+      "description": "宿舍8楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "8F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0802",
+      "name": "宿舍房间 0802",
+      "description": "宿舍8楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "8F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0803",
+      "name": "宿舍房间 0803",
+      "description": "宿舍8楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "8F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0804",
+      "name": "宿舍房间 0804",
+      "description": "宿舍8楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "8F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0805",
+      "name": "宿舍房间 0805",
+      "description": "宿舍8楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "8F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0901",
+      "name": "宿舍房间 0901",
+      "description": "宿舍9楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "9F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0902",
+      "name": "宿舍房间 0902",
+      "description": "宿舍9楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "9F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0903",
+      "name": "宿舍房间 0903",
+      "description": "宿舍9楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "9F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0904",
+      "name": "宿舍房间 0904",
+      "description": "宿舍9楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "9F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_0905",
+      "name": "宿舍房间 0905",
+      "description": "宿舍9楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "9F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1001",
+      "name": "宿舍房间 1001",
+      "description": "宿舍10楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "10F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1002",
+      "name": "宿舍房间 1002",
+      "description": "宿舍10楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "10F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1003",
+      "name": "宿舍房间 1003",
+      "description": "宿舍10楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "10F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1004",
+      "name": "宿舍房间 1004",
+      "description": "宿舍10楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "10F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1005",
+      "name": "宿舍房间 1005",
+      "description": "宿舍10楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "10F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1101",
+      "name": "宿舍房间 1101",
+      "description": "宿舍11楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "11F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1102",
+      "name": "宿舍房间 1102",
+      "description": "宿舍11楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "11F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1103",
+      "name": "宿舍房间 1103",
+      "description": "宿舍11楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "11F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1104",
+      "name": "宿舍房间 1104",
+      "description": "宿舍11楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "11F",
+      "scene_image": ""
+    },
+    {
+      "location_id": "dorm_room_1105",
+      "name": "宿舍房间 1105",
+      "description": "宿舍11楼的一间女生单人房间，约四坪大小，配备基本家具和空调。",
+      "tags": [
+        "indoor",
+        "private",
+        "residential"
+      ],
+      "connected_to": [
+        "dorm_female_floor"
+      ],
+      "parent_zone": "dormitory",
+      "zone_name": "宿舍区",
+      "floor": "11F",
+      "scene_image": ""
+    }
+  ],
+  "zones": [
+    {
+      "zone_id": "teaching_building",
+      "name": "教学楼",
+      "description": "高度育成高中的核心教学区，四层建筑。一层有主入口、图书馆和教员办公室；二层为一年级教室；三层为二年级教室；四层为三年级教室和学生会室。各层由走廊串联，楼梯和走廊设有监视器。屋顶全年开放，仅门外有监视器，是校内少数监控盲区之一。",
+      "type": "campus",
+      "sub_locations": [
+        "hallway_1f",
+        "hallway_2f",
+        "hallway_3f",
+        "hallway_4f",
         "classroom_1a",
         "classroom_1b",
         "classroom_1c",
@@ -55,637 +1848,97 @@
         "classroom_3b",
         "classroom_3c",
         "classroom_3d",
-        "academic_student_council",
-        "admin_office",
+        "library",
+        "student_council_room",
+        "teachers_office",
         "guidance_room",
-        "campus_gate",
-        "rooftop",
-        "campus_edge"
+        "rooftop"
       ],
-      "zone_id": "teaching_building"
+      "entry_points": [
+        "hallway_1f"
+      ]
     },
     {
-      "location_id": "classroom_1a",
-      "name": "一年A班教室",
-      "description": "一年A班的教室，气氛严肃，学生自律性极强。坂柳有栖通常坐在前排靠窗位置。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_1b",
-      "name": "一年B班教室",
-      "description": "一年B班的教室，气氛活跃而和谐，一之濑帆波是班级的中心人物。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_1c",
-      "name": "一年C班教室",
-      "description": "一年C班的教室，龙园翔以暴力和恐惧统治着这个班级，气氛压抑。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_1d",
-      "name": "一年D班教室",
-      "description": "位于教学楼一层，窗明几净，但气氛因班级点数归零而略显压抑。桌椅排列整齐，黑板旁有OAA显示屏。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_2a",
-      "name": "二年A班教室",
-      "description": "二年A班教室。位于教学楼内，是学生日常上课和班级会议的主要场所。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_2b",
-      "name": "二年B班教室",
-      "description": "堀北铃音班级的日常教室，桌椅整齐，黑板干净，充满学习氛围。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_2c",
-      "name": "二年C班教室",
-      "description": "二年C班教室。位于教学楼内，是学生日常上课和班级会议的主要场所。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_2d",
-      "name": "二年D班教室",
-      "description": "位于教学楼二楼，配备有电子黑板和充电设备，桌椅排列整齐。新学期开始，黑板被巨大的萤幕取代，教科书也换成了平板电脑。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_3a",
-      "name": "三年A班教室",
-      "description": "三年A班教室。位于教学楼内，是学生日常上课和班级会议的主要场所。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_3b",
-      "name": "三年B班教室",
-      "description": "三年B班教室。位于教学楼内，是学生日常上课和班级会议的主要场所。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_3c",
-      "name": "三年C班教室",
-      "description": "三年C班教室。位于教学楼内，是学生日常上课和班级会议的主要场所。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "classroom_3d",
-      "name": "三年D班教室",
-      "description": "三年D班教室。位于教学楼内，是学生日常上课和班级会议的主要场所。",
-      "tags": [
-        "indoor",
-        "public"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "academic_student_council",
-      "name": "学生会室",
-      "description": "位于校舍内的学生会办公地点，暑假期间因改装工程而暂时关闭。堀北学在此处理学生事务，葛城曾来访请求寄送礼物。",
-      "tags": [
-        "indoor",
-        "quiet",
-        "restricted"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "special_building",
+      "zone_id": "special_building",
       "name": "特别教学大楼",
-      "description": "三层楼建筑，共有八间教室可用于文化祭摆摊。越靠近入口楼梯，租金越高。三楼租金最低（1万-1.3万点），一楼最高（5万点）。",
-      "tags": [
-        "indoor",
-        "quiet",
-        "secluded"
+      "description": "独立于普通教学楼的建筑。平时人烟稀少，不用于社团活动。三楼是校内极少数未设置监视器的盲区。文化祭时可租用教室摆摊。",
+      "type": "campus",
+      "sub_locations": [
+        "special_building_1f",
+        "special_building_2f",
+        "special_building_3f"
       ],
-      "connected_to": [
-        "academic_hallway",
-        "campus_edge"
-      ],
-      "zone_id": "teaching_building"
+      "entry_points": [
+        "special_building_1f"
+      ]
     },
     {
-      "location_id": "admin_office",
-      "name": "职员室",
-      "description": "教师办公场所，绫小路和堀北曾在此与茶柱老师交涉，购买须藤的分数。",
-      "tags": [
-        "indoor",
-        "quiet",
-        "restricted"
+      "zone_id": "dormitory",
+      "name": "宿舍区",
+      "description": "学生居住区，共有3栋独立楼宇。男女共用大楼但严禁不正当关系。实行严格的房卡管理和倒垃圾/噪音规范。同一年级的学生住在同一栋楼，男生在低层，女生在高层。主要由电梯上下楼。",
+      "type": "campus",
+      "sub_locations": [
+        "dorm_lobby",
+        "dorm_male_floor",
+        "dorm_female_floor",
+        "dorm_courtyard"
       ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
+      "entry_points": [
+        "dorm_lobby"
+      ]
     },
     {
-      "location_id": "guidance_room",
-      "name": "辅导室",
-      "description": "专门用于教师与个别学生面谈、面对面辅导的房间。内有独立茶水间，内部没有监控。气氛私密，适合进行深入的个人交流。",
-      "tags": [
-        "indoor",
-        "quiet",
-        "private",
-        "restricted"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "rooftop",
-      "name": "屋顶",
-      "description": "校舍的屋顶，平时较少人使用。曾发生龙园翔与绫小路清隆的对决，以及真锅等人对轻井泽惠的霸凌事件。",
-      "tags": [
-        "outdoor",
-        "quiet",
-        "secluded",
-        "high"
-      ],
-      "connected_to": [
-        "academic_hallway"
-      ],
-      "zone_id": "teaching_building"
-    },
-    {
-      "location_id": "sports_field",
-      "name": "室外操场",
-      "description": "教学区外侧，包含跑道与足球场，其他室外体育项目也统一在此进行。校运会在此举办，是学生体育活动和大型户外集会的主要场地。",
-      "tags": [
-        "outdoor",
-        "noisy",
-        "large"
-      ],
-      "connected_to": [
-        "gymnasium",
-        "club_facilities",
-        "campus_gate",
-        "keyaki_mall"
-      ],
-      "zone_id": "sports_area"
-    },
-    {
-      "location_id": "gymnasium",
-      "name": "体育馆",
-      "description": "大型空间，被三年A班包下用于鬼屋与迷宫融合的摊位。试营运期间关灯，营造恐怖氛围。内部有各种装饰和机关，由学生扮演鬼怪。",
-      "tags": [
-        "indoor",
-        "noisy",
-        "large"
-      ],
-      "connected_to": [
-        "sports_field",
-        "club_facilities"
-      ],
-      "zone_id": "sports_area"
-    },
-    {
-      "location_id": "club_facilities",
-      "name": "社团场地",
-      "description": "各类社团专用的独立场馆区。包括音乐室、美术室、料理教室、武道场等，放学后社团活动的主要场所。",
-      "tags": [
-        "indoor",
-        "noisy"
-      ],
-      "connected_to": [
-        "sports_field",
-        "gymnasium",
-        "academic_hallway"
-      ],
-      "zone_id": "sports_area"
-    },
-    {
-      "location_id": "dorm_student",
-      "name": "学生宿舍",
-      "description": "男女共用宿舍，每人一间约四坪的房间，配有基本设施，绫小路的房间在401号，堀北在1201号。",
-      "tags": [
-        "indoor",
-        "quiet",
-        "restricted",
-        "residential"
-      ],
-      "connected_to": [
-        "campus_gate",
-        "keyaki_mall",
-        "academic_hallway"
-      ],
-      "zone_id": "dormitory"
-    },
-    {
-      "location_id": "dorm_staff",
-      "name": "教职员宿舍",
-      "description": "供教师及工作人员居住的独立区域，学生一般禁止靠近。环境安静，与教学区和学生宿舍保持一定距离。",
-      "tags": [
-        "indoor",
-        "quiet",
-        "restricted"
-      ],
-      "connected_to": [
-        "campus_edge"
-      ],
-      "zone_id": "dormitory"
-    },
-    {
-      "location_id": "keyaki_mall",
+      "zone_id": "keyaki_mall",
       "name": "榉树购物中心",
-      "description": "学校用地内的复合商业设施，设有各种商店、餐厅和娱乐场所，是学生日常购物和休闲的主要地点。暑假期间，这里因占卜师活动而热闹非凡，情侣和学生聚集。",
-      "tags": [
-        "indoor",
-        "noisy",
-        "commercial",
-        "public"
+      "description": "校园内独立的庞大商业区。包含学生食堂、帕雷特咖啡馆、便利店、电影院、卡拉OK等设施。是放学后学生最大的聚集地，也是学校生活的重要社交场所。",
+      "type": "campus",
+      "sub_locations": [
+        "mall_entrance",
+        "mall_cafeteria",
+        "mall_cafe",
+        "mall_shop",
+        "mall_entertainment"
       ],
-      "connected_to": [
-        "dorm_student",
-        "academic_hallway",
-        "sports_field",
-        "water_paradise"
-      ],
-      "zone_id": "commercial"
+      "entry_points": [
+        "mall_entrance"
+      ]
     },
     {
-      "location_id": "water_paradise",
-      "name": "水上乐园",
-      "description": "包含大量与水有关的娱乐设施：水上排球、跳水台、造浪池、漂流河、各种水滑梯。有独立的更衣室。是暑假玩乐的不二选择。",
-      "tags": [
-        "outdoor",
-        "noisy",
-        "recreational",
-        "seasonal"
-      ],
-      "connected_to": [
-        "keyaki_mall"
-      ],
-      "zone_id": "commercial"
-    },
-    {
-      "location_id": "school_bus",
-      "name": "接驳公交车",
-      "description": "学校附近的公车站，绫小路和堀北在此初次相遇，高圆寺也曾在此与OL发生争执。",
-      "tags": [
-        "indoor",
-        "vehicle",
-        "transitional"
-      ],
-      "connected_to": [
-        "campus_gate"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise",
+      "zone_id": "event_cruise",
       "name": "豪华游轮·圣维纳斯号",
-      "description": "高度育成高级中学为特别考试租用的豪华游轮，设施齐全，有餐厅、游泳池、娱乐设施等。学生在此进行为期两周的巡航旅行，但考试打破了平静。",
-      "tags": [
-        "indoor",
-        "vehicle",
-        "restricted",
-        "special"
+      "description": "仅在特别考试（如无人岛考试后的船上考试）期间开放。共有地上四层、地下四层及顶层甲板。包含宴会厅、考试区、男女客房、娱乐区等设施。",
+      "type": "event",
+      "sub_locations": [
+        "cruise_0f",
+        "cruise_1f",
+        "cruise_2f",
+        "cruise_3f",
+        "cruise_4f",
+        "cruise_b1f",
+        "cruise_b2f",
+        "cruise_b3f",
+        "cruise_b4f"
       ],
-      "connected_to": [
-        "event_cruise_0f",
-        "event_cruise_1f",
-        "event_cruise_2f",
-        "event_cruise_3f",
-        "event_cruise_4f",
-        "event_cruise_-1f",
-        "event_cruise_-2f",
-        "event_cruise_-3f",
-        "event_cruise_-4f"
-      ],
-      "zone_id": "off_campus_special"
+      "entry_points": [
+        "cruise_1f"
+      ]
     },
     {
-      "location_id": "event_cruise_0f",
-      "name": "游轮顶层·甲板",
-      "description": "设有露天游泳池和咖啡厅。阳光充足，是学生享受休闲时光的地方。早晨几乎没有学生，适合秘密会面。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_1f",
-      "name": "游轮一层·宴会厅",
-      "description": "休息室和宴会使用的楼层。空间宽敞，可用于大型聚会和活动。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_2f",
-      "name": "游轮二层·考试区",
-      "description": "在船上举行特别考试时使用。有多个小型说明间和大型会议室。平日几乎没有学生会去该层。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_3f",
-      "name": "游轮三层·男生客房",
-      "description": "男生客房区，四人一间。绫小路、平田、高圆寺、幸村同住一间。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_4f",
-      "name": "游轮四层·女生客房",
-      "description": "女生客房区，四人一间。轻井泽、佐仓等女生居住于此。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_-1f",
-      "name": "游轮负一层·娱乐区",
-      "description": "设有电影、舞台等娱乐设施，是学生休闲娱乐的场所。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_-2f",
-      "name": "游轮负二层",
-      "description": "游轮下层区域，包含部分功能设施。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_-3f",
-      "name": "游轮负三层",
-      "description": "游轮下层区域，机房和储存空间所在。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_cruise_-4f",
-      "name": "游轮负四层·设备层",
-      "description": "游轮最底层，设有配电盘室等机房。与学生生活无关，禁止学生进入。",
-      "tags": [
-        "indoor",
-        "restricted",
-        "special"
-      ],
-      "connected_to": [
-        "event_cruise"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_island",
+      "zone_id": "event_island",
       "name": "无人岛",
-      "description": "高度育成高中特别考试使用的岛屿，森林茂密，地形复杂，有沙滩、悬崖和溪流。天气多变，常有暴雨和浓雾。",
-      "tags": [
-        "outdoor",
-        "secluded",
-        "dangerous",
-        "special"
+      "description": "仅在特别考试（无人岛生存考试）期间开放。面积约0.5平方公里的荒岛，包含海岸登陆点、内陆河流（核心水源）、森林陡坡，以及散布在洞窟或河边的占领据点。地形复杂易迷路。",
+      "type": "event",
+      "sub_locations": [
+        "island_beach",
+        "island_forest",
+        "island_river",
+        "island_base1",
+        "island_base2",
+        "island_base3"
       ],
-      "connected_to": [
-        "event_island_base1",
-        "event_island_base2",
-        "event_island_base3",
-        "event_island_beach",
-        "event_island_forest",
-        "event_island_river"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_island_beach",
-      "name": "无人岛·海滩",
-      "description": "无人岛上的沙滩，是考试开始的集合点。学生们在此接受规则说明并选择基地营位置。视野开阔，阳光强烈。",
-      "tags": [
-        "outdoor",
-        "noisy",
-        "special"
-      ],
-      "connected_to": [
-        "event_island",
-        "event_island_forest"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_island_forest",
-      "name": "无人岛·森林",
-      "description": "从海滩通往岛屿内部的森林区域。树木茂密，光线昏暗，地面泥泞，容易迷路。是学生们探索据点的主要通道。",
-      "tags": [
-        "outdoor",
-        "quiet",
-        "secluded",
-        "special"
-      ],
-      "connected_to": [
-        "event_island",
-        "event_island_beach",
-        "event_island_river",
-        "event_island_base1",
-        "event_island_base2",
-        "event_island_base3"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_island_river",
-      "name": "无人岛·河流",
-      "description": "一条宽约十米的清澈河流，是岛上的核心水源。河水可用于饮用和洗澡，但需煮沸。河岸平地常被选为基地营。",
-      "tags": [
-        "outdoor",
-        "quiet",
-        "secluded",
-        "special"
-      ],
-      "connected_to": [
-        "event_island",
-        "event_island_forest",
-        "event_island_base2"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_island_base1",
-      "name": "无人岛·据点1（洞窟）",
-      "description": "位于无人岛边缘地带的一处洞窟洞口处，周围一圈未被树林遮盖。内部经过人工加固，设有占领终端。",
-      "tags": [
-        "outdoor",
-        "quiet",
-        "secluded",
-        "special"
-      ],
-      "connected_to": [
-        "event_island",
-        "event_island_forest"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_island_base2",
-      "name": "无人岛·据点2（河畔大树）",
-      "description": "位于无人岛内陆河流一旁的大树下，是D班选定的基地营之一。靠近水源，易于防守。",
-      "tags": [
-        "outdoor",
-        "quiet",
-        "secluded",
-        "special"
-      ],
-      "connected_to": [
-        "event_island",
-        "event_island_river"
-      ],
-      "zone_id": "off_campus_special"
-    },
-    {
-      "location_id": "event_island_base3",
-      "name": "无人岛·据点3（瀑布）",
-      "description": "位于无人岛内陆瀑布旁，景色壮丽但地形险峻。是岛上最有价值的据点之一。",
-      "tags": [
-        "outdoor",
-        "quiet",
-        "secluded",
-        "special"
-      ],
-      "connected_to": [
-        "event_island",
-        "event_island_forest"
-      ],
-      "zone_id": "off_campus_special"
+      "entry_points": [
+        "island_beach"
+      ]
     }
   ]
 }

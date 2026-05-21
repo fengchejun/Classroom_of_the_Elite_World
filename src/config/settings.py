@@ -24,14 +24,19 @@ class Settings(BaseSettings):
     forecaster_model: str = "deepseek-chat"
     forecaster_schedule_day: int = 7  # Sunday
     forecaster_schedule_slot: str = "evening"
+    forecaster_min_pending: int = 2   # 动态事件池最低待处理数，低于此值触发生成
 
     # Spotlight
-    spotlight_max_npcs: int = 3
+    spotlight_max_npcs: int = 4
     spotlight_base_count: int = 2
 
     # Dialogue
     dialogue_summary_threshold: int = 10
     max_history_dialogues: int = 10
+
+    # Validation
+    ai_validation_max_retries: int = 2
+    ai_validation_reachability_check: bool = False
 
     # App
     debug: bool = False

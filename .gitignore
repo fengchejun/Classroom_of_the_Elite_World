@@ -6,3 +6,6 @@ __pycache__/
 *.tmp
 *.log
 scripts/output/.cache/
+.playwright-mcp/
+server_err.txt
+server_out.txt

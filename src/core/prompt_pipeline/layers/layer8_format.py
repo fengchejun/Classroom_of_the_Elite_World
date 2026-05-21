@@ -6,24 +6,14 @@ RETURN_FORMAT_PROMPT = """【返回格式要求】
 
 {
   "narrative": "你的叙事文本（第一人称，包含对话和环境描写）",
-  "state_changes": {
-    "player_location": "可选，玩家移动后的新位置ID",
-    "time_advance_slots": 0,
-    "new_events": [],
-    "npc_status_updates": {}
-  },
-  "triggered_events": [],
-  "npc_reactions": {}
+  "choices": [{"id": "1", "text": "选项文本"}, ...]
 }
 
 字段说明：
 - narrative: 必须包含。这是显示给玩家的叙述文本。
-- state_changes: 可选。当玩家行为导致状态变化时填写。
-  - player_location: 当玩家明确移动到新地点时填写地点ID
-  - time_advance_slots: 当需要推进时间时填写（1-5）
-  - new_events: 新触发的事件ID列表
-- triggered_events: 剧情中触发了哪些事件
-- npc_reactions: 在场NPC的具体反应，格式为 {"角色名": "反应描述"}
+- choices: 引导下一步行动的选项列表，通常2-4个。
+
+注意：你只需要返回 narrative 和 choices。时间推进、位置变化、点数变动、人际关系变化等状态变更由另一个专门的系统自动处理，你无需在JSON中包含state_changes字段。
 
 如果你需要调用工具来获取信息，先调用工具，不要在不确定时编造信息。
 """

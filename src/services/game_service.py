@@ -16,6 +16,7 @@ from src.core.prompt_pipeline.assembler import AssemblyInput, PromptAssembler
 from src.core.time_engine.clock import Clock, TimeState
 from src.core.time_engine.scheduler import Scheduler
 from src.core.time_engine.spotlight import Spotlight
+from src.core.variable_agent import extract_variable_changes
 from src.models import Character, DialogueLog, Event, GameSession, Location, StorySummary
 from src.utils.logger import get_logger
 
@@ -142,13 +143,31 @@ class GameService:
 
         assembled = await self.prompt_assembler.assemble(assembly_input)
 
-        # Send to LLM
+        # Send to LLM (Narrative Agent - no state_changes expected)
         llm_response = await self.llm_gateway.chat(
             messages=assembled.messages,
             system=assembled.system_prompt,
         )
 
-        # Process state changes from LLM response
+        # Run Variable Agent to extract state changes from narrative
+        if llm_response.narrative:
+            try:
+                char_names = await self._get_character_names()
+                var_changes = await extract_variable_changes(
+                    narrative=llm_response.narrative,
+                    current_state={
+                        "game_date": self.clock.now.game_date,
+                        "time_slot": self.clock.now.time_slot,
+                        "location_id": game_session.player_location_id,
+                        "player_name": game_session.player_name,
+                    },
+                    character_names=char_names,
+                )
+                llm_response.state_changes = var_changes
+            except Exception as e:
+                logger.warning(f"Variable Agent extraction failed: {e}")
+
+        # Process state changes from Variable Agent
         await self._apply_state_changes(game_session, llm_response)
 
         # Advance time if requested
@@ -225,6 +244,13 @@ class GameService:
         return results
 
     # ---- Internal Helpers ----
+
+    async def _get_character_names(self) -> list[str]:
+        """Get all character names for the Variable Agent."""
+        result = await self.session.execute(
+            select(Character.name).where(Character.role_id != "player")
+        )
+        return [row[0] for row in result.all()]
 
     async def _advance_time(self, session: GameSession, slots: int) -> None:
         """Advance game time and run settlement."""

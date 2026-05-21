@@ -9,13 +9,48 @@
     /* Side Panel */
     #app-wrapper { display: none; }
     #app-wrapper.active { display: flex; }
+    /* Portrait panel - left side */
+    #portrait-panel {
+        width: 260px;
+        min-width: 260px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 0 0 0;
+        pointer-events: none;
+        overflow: visible;
+    }
+    #portrait-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: visible;
+    }
+    #portrait-img {
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        object-fit: none;
+        object-position: bottom center;
+        filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+        opacity: 0.95;
+        transition: opacity 0.6s ease-in-out;
+    }
+
     #side-panel {
         width: 300px;
         min-width: 300px;
         height: 100vh;
         overflow-y: auto;
-        background: #111827;
-        border-left: 1px solid #2a2a4a;
+        background: rgba(17, 24, 39, 0.85);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-left: 1px solid rgba(42, 42, 74, 0.5);
         padding: 12px;
         display: flex;
         flex-direction: column;
@@ -27,7 +62,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1e2a3a;
+        border-bottom: 1px solid rgba(30, 42, 58, 0.5);
         padding-bottom: 4px;
     }
     #event-panel-section:empty { display: none; }
@@ -40,12 +75,12 @@
     #char-info-content:empty { display: none; }
     .char-info-block {
         margin-bottom: 8px;
-        border: 1px solid #2a2a3a;
+        border: 1px solid rgba(42, 42, 58, 0.5);
         border-radius: 4px;
         overflow: hidden;
     }
     .char-info-toggle {
-        background: #12122a;
+        background: rgba(18, 18, 42, 0.75);
         color: #8090b0;
         border: none;
         padding: 4px 10px;
@@ -59,7 +94,7 @@
     .char-info-toggle .arrow { font-size: 0.8em; margin-right: 4px; }
     .char-info-body {
         display: none;
-        background: #0d0d1a;
+        background: rgba(13, 13, 26, 0.7);
         padding: 6px 10px;
         color: #a0b0d0;
     }
@@ -69,7 +104,7 @@
     .char-info-secret {
         margin: 4px 0;
         padding: 4px 8px;
-        background: rgba(233, 69, 96, 0.08);
+        background: rgba(233, 69, 96, 0.14);
         border-left: 2px solid #e94560;
         border-radius: 0 4px 4px 0;
         font-size: 0.9em;
@@ -82,7 +117,7 @@
     .char-info-relation {
         margin: 3px 0;
         padding: 2px 6px;
-        background: rgba(83, 52, 131, 0.1);
+        background: rgba(83, 52, 131, 0.18);
         border-radius: 3px;
         font-size: 0.9em;
     }
@@ -99,7 +134,7 @@
     .rel-type.trust { background: #1a2a3a; color: #48a; }
     .char-info-tags { display: flex; gap: 4px; flex-wrap: wrap; margin: 4px 0; }
     .char-info-tag {
-        background: #0f3460;
+        background: rgba(15, 52, 96, 0.75);
         color: #a0b0d0;
         padding: 1px 8px;
         border-radius: 10px;
@@ -113,12 +148,12 @@
         margin: 0;
         font-size: 0.7em;
         color: #a0a0c0;
-        border: 1px solid #3a3a5a;
+        border: 1px solid rgba(58, 58, 90, 0.5);
         border-radius: 4px;
         overflow: hidden;
     }
     .debug-toggle {
-        background: #1a1a35;
+        background: rgba(26, 26, 53, 0.7);
         color: #8090b0;
         border: none;
         padding: 4px 10px;
@@ -130,7 +165,7 @@
     .debug-toggle:hover { color: #e0d8c8; }
     .debug-content {
         display: none;
-        background: #0d0d1a;
+        background: rgba(13, 13, 26, 0.65);
         padding: 6px 10px;
         white-space: pre-wrap;
         word-break: break-all;
@@ -143,15 +178,52 @@
     .debug-label {
         font-size: 0.75em;
         color: #6070a0;
-        border-top: 1px solid #1e2a3a;
+        border-top: 1px solid rgba(30, 42, 58, 0.5);
         padding-top: 4px;
         margin-top: 4px;
     }
+    /* Event test panel */
+    #event-test-panel-section { display: none; flex-direction: column; gap: 4px; }
+    .event-test-card {
+        margin: 0;
+        font-size: 0.72em;
+        color: #c0c0d0;
+        border: 1px solid rgba(42, 58, 74, 0.5);
+        border-radius: 4px;
+        padding: 6px 8px;
+        background: rgba(13, 13, 26, 0.65);
+    }
+    .event-test-card.dynamic { border-color: rgba(58, 42, 26, 0.6); background: rgba(26, 13, 13, 0.65); }
+    .event-test-card.active { border-color: rgba(42, 74, 42, 0.6); }
+    .event-test-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+    .event-test-name { font-weight: bold; color: #e0d8c8; }
+    .event-test-name .tag { font-size: 0.8em; padding: 0 4px; border-radius: 3px; margin-left: 4px; }
+    .event-test-name .tag.static { background: #1a2a3a; color: #68a; }
+    .event-test-name .tag.dynamic { background: #3a1a1a; color: #a64; }
+    .event-test-name .tag.triggered { background: #1a3a1a; color: #4a4; }
+    .event-test-conditions { color: #889; font-size: 0.95em; }
+    .event-test-conditions span { margin-right: 8px; }
+    .event-test-actions { display: flex; gap: 4px; margin-top: 4px; }
+    .event-test-btn {
+        background: rgba(26, 42, 58, 0.7);
+        color: #8ac;
+        border: 1px solid rgba(42, 74, 90, 0.5);
+        padding: 2px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: all 0.15s;
+    }
+    .event-test-btn:hover { background: rgba(42, 58, 74, 0.75); color: #c0e0f0; }
+    .event-test-btn.primary { background: rgba(26, 42, 26, 0.7); color: #8c8; border-color: rgba(58, 90, 58, 0.5); }
+    .event-test-btn.primary:hover { background: rgba(42, 58, 42, 0.75); color: #c0f0c0; }
+    .event-test-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .event-test-feedback { color: #8c8; font-size: 0.9em; margin-top: 2px; }
     /* Perspective area */
     /* Perspective */
     .perspective-sep {
         width: 100%;
-        border-top: 1px solid #3a2a4a;
+        border-top: 1px solid rgba(58, 42, 74, 0.5);
         margin: 8px 0;
     }
     .perspective-hint {
@@ -165,16 +237,16 @@
         margin-top: 8px;
     }
     .perspective-btn {
-        background: #0f3460;
+        background: rgba(15, 52, 96, 0.8);
         color: #e0d8c8;
-        border: 1px solid #533483;
+        border: 1px solid rgba(83, 52, 131, 0.55);
         padding: 8px 16px;
         border-radius: 6px;
         cursor: pointer;
         font-size: 0.85em;
         transition: all 0.15s;
     }
-    .perspective-btn:hover { background: #533483; }
+    .perspective-btn:hover { background: rgba(83, 52, 131, 0.8); }
     .perspective-narrative {
         background: rgba(83, 52, 131, 0.15);
         border-left: 3px solid #9070b0;
@@ -208,7 +280,7 @@
         display: block;
         width: 100%;
         background: none;
-        border: 1px solid #1e2a3a;
+        border: 1px solid rgba(30, 42, 58, 0.5);
         color: #6070a0;
         padding: 4px 10px;
         border-radius: 4px;
@@ -218,12 +290,13 @@
         transition: all 0.15s;
     }
     .choices-toggle:hover {
-        background: #111827;
+        background: rgba(17, 24, 39, 0.7);
         color: #8090c0;
-        border-color: #2a2a4a;
+        border-color: rgba(42, 42, 74, 0.5);
     }
 
     @media (max-width: 900px) {
+        #portrait-panel { display: none !important; }
         #side-panel { display: none; }
     }
 
@@ -236,9 +309,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: #16213e;
-        border-left: 1px solid #2a2a4a;
-        border-right: 1px solid #2a2a4a;
+        background: rgba(22, 33, 62, 0.85);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-left: 1px solid rgba(42, 42, 74, 0.5);
+        border-right: 1px solid rgba(42, 42, 74, 0.5);
         padding: 40px 20px;
     }
     #character-setup { justify-content: flex-start; padding-top: 60px; }
@@ -270,11 +345,11 @@
     }
     .menu-btn.primary:hover { background: #c73652; }
     .menu-btn.secondary {
-        background: #0f3460;
+        background: rgba(15, 52, 96, 0.8);
         color: #e0d8c8;
-        border: 1px solid #533483;
+        border: 1px solid rgba(83, 52, 131, 0.5);
     }
-    .menu-btn.secondary:hover { background: #533483; }
+    .menu-btn.secondary:hover { background: rgba(83, 52, 131, 0.8); }
     .menu-btn:disabled {
         background: #2a2a3a;
         color: #555;
@@ -298,8 +373,8 @@
     }
     .setup-input {
         width: 100%;
-        background: #1a1a35;
-        border: 1px solid #3a3a5a;
+        background: rgba(26, 26, 53, 0.8);
+        border: 1px solid rgba(58, 58, 90, 0.5);
         color: #e0d8c8;
         padding: 10px 14px;
         border-radius: 6px;
@@ -308,7 +383,7 @@
         margin-bottom: 16px;
         outline: none;
     }
-    .setup-input:focus { border-color: #533483; }
+    .setup-input:focus { border-color: rgba(83, 52, 131, 0.7); }
     .setup-label {
         color: #8090b0;
         font-size: 0.85em;
@@ -317,8 +392,8 @@
     }
     .setup-select {
         width: 100%;
-        background: #1a1a35;
-        border: 1px solid #3a3a5a;
+        background: rgba(26, 26, 53, 0.8);
+        border: 1px solid rgba(58, 58, 90, 0.5);
         color: #e0d8c8;
         padding: 10px 14px;
         border-radius: 6px;
@@ -328,8 +403,8 @@
         outline: none;
     }
     .char-card {
-        background: #1a1a35;
-        border: 1px solid #533483;
+        background: rgba(26, 26, 53, 0.75);
+        border: 1px solid rgba(83, 52, 131, 0.5);
         border-radius: 8px;
         padding: 16px;
         margin: 16px 0;
@@ -339,7 +414,7 @@
     .char-card .info-label { color: #8090b0; }
     .tag-list { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
     .tag {
-        background: #0f3460;
+        background: rgba(15, 52, 96, 0.75);
         color: #a0b0d0;
         padding: 2px 10px;
         border-radius: 12px;
@@ -361,8 +436,8 @@
     }
     .btn-sm.primary { background: #e94560; color: #fff; }
     .btn-sm.primary:hover { background: #c73652; }
-    .btn-sm.secondary { background: #2a2a4a; color: #a0a0c0; border: 1px solid #3a3a5a; }
-    .btn-sm.secondary:hover { background: #3a3a5a; }
+    .btn-sm.secondary { background: rgba(42, 42, 74, 0.7); color: #a0a0c0; border: 1px solid rgba(58, 58, 90, 0.5); }
+    .btn-sm.secondary:hover { background: rgba(58, 58, 90, 0.75); }
     .setup-msg {
         color: #8090b0;
         font-size: 0.85em;
@@ -375,7 +450,7 @@
 
     /* File upload */
     .file-upload-area {
-        border: 2px dashed #3a3a5a;
+        border: 2px dashed rgba(58, 58, 90, 0.5);
         border-radius: 8px;
         padding: 20px;
         text-align: center;
@@ -383,21 +458,26 @@
         cursor: pointer;
         transition: border-color 0.2s;
     }
-    .file-upload-area:hover { border-color: #533483; }
+    .file-upload-area:hover { border-color: rgba(83, 52, 131, 0.7); }
     .file-upload-area input { display: none; }
 
     /* Story blocks (for history display) */
+    .narrative-block.system {
+        background: rgba(22, 33, 62, 0.5);
+        padding: 6px 12px;
+        border-radius: 4px;
+    }
     .narrative-block.user {
         color: #a0b0d0;
         font-size: 0.9em;
         padding: 4px 0;
-        border-bottom: 1px dashed #2a2a3a;
+        border-bottom: 1px dashed rgba(42, 42, 58, 0.5);
     }
 
     /* Format panel */
     #import-format-panel {
-        background: #12122a;
-        border: 1px solid #2a2a4a;
+        background: rgba(18, 18, 42, 0.8);
+        border: 1px solid rgba(42, 42, 74, 0.5);
         border-radius: 8px;
         padding: 20px;
         margin: 16px 0;
@@ -407,7 +487,7 @@
     .format-section {
         margin-bottom: 20px;
         padding-bottom: 16px;
-        border-bottom: 1px solid #1a1a3a;
+        border-bottom: 1px solid rgba(26, 26, 58, 0.5);
     }
     .format-section:last-child { border-bottom: none; margin-bottom: 0; }
     .format-section h4 {
@@ -420,8 +500,8 @@
         margin-bottom: 8px;
     }
     .format-section pre {
-        background: #0a0a1a;
-        border: 1px solid #1a1a3a;
+        background: rgba(10, 10, 26, 0.7);
+        border: 1px solid rgba(26, 26, 58, 0.5);
         border-radius: 4px;
         padding: 10px 14px;
         overflow-x: auto;
@@ -441,13 +521,29 @@
     }
     .format-table td {
         padding: 3px 8px;
-        border: 1px solid #1a1a3a;
+        border: 1px solid rgba(26, 26, 58, 0.5);
         color: #8090b0;
     }
     .format-table td:first-child {
         color: #c0a0a0;
         white-space: nowrap;
         width: 1%;
+    }
+    /* Connected location tags */
+    .connected-tag {
+        display: inline-block;
+        padding: 2px 8px;
+        margin: 2px 3px;
+        border-radius: 4px;
+        background: rgba(26, 39, 64, 0.7);
+        color: #8090b0;
+        font-size: 0.75em;
+        border: 1px solid rgba(42, 58, 80, 0.5);
+    }
+    .connected-tag.cross-zone {
+        background: rgba(42, 26, 48, 0.7);
+        color: #c0a0c0;
+        border-color: rgba(74, 42, 80, 0.5);
     }
 </style>
 </head>
@@ -630,6 +726,13 @@
 
 <!-- ===== MAIN GAME ===== -->
 <div id="app-wrapper">
+
+<div id="portrait-panel" style="display:none;">
+    <div id="portrait-container">
+        <img id="portrait-img" src="" alt="角色立绘" />
+    </div>
+</div>
+
 <div id="app" style="display:none;">
     <div id="header">
         <h1>实教AI模拟器</h1>
@@ -679,6 +782,12 @@
         <div class="side-panel-title">◆ 角色档案</div>
         <div id="char-info-content"></div>
     </div>
+    <div id="event-test-panel-section">
+        <div class="side-panel-title">◆ 事件测试
+            <button onclick="fetchTestEvents()" style="background:none;border:1px solid #3a5a3a;color:#8c8;padding:0 6px;border-radius:3px;cursor:pointer;font-size:0.85em;margin-left:6px;">刷新</button>
+        </div>
+        <div id="event-test-panel-content"></div>
+    </div>
     <div id="debug-panel-section">
         <div class="side-panel-title">◆ 调试</div>
         <div id="debug-panel-content"></div>
@@ -701,6 +810,28 @@ let lastPlayerInput = '';
 let perspectiveMode = false;
 let lastNarrative = '';
 let lastStateData = null;
+let userScrolledUp = false;
+
+// Smart scroll: track whether user has manually scrolled up
+function initSmartScroll() {
+    const area = document.getElementById('narrative-area');
+    if (!area) return;
+    area.addEventListener('scroll', () => {
+        const atBottom = area.scrollHeight - area.scrollTop - area.clientHeight < 50;
+        if (atBottom) {
+            userScrolledUp = false;
+        } else {
+            userScrolledUp = true;
+        }
+    });
+}
+
+function smartScrollToBottom() {
+    if (!userScrolledUp) {
+        const area = document.getElementById('narrative-area');
+        area.scrollTop = area.scrollHeight;
+    }
+}
 
 // ---- Persistence ----
 function loadSettings() {
@@ -738,11 +869,15 @@ function applySettings() {
 }
 
 function updateDebugPanelVisibility() {
-    const section = document.getElementById('debug-panel-section');
+    const debugSection = document.getElementById('debug-panel-section');
+    const testSection = document.getElementById('event-test-panel-section');
     if (testMode) {
-        section.style.display = 'flex';
+        debugSection.style.display = 'flex';
+        testSection.style.display = 'flex';
+        fetchTestEvents();
     } else {
-        section.style.display = 'none';
+        debugSection.style.display = 'none';
+        testSection.style.display = 'none';
     }
 }
 
@@ -765,6 +900,149 @@ function toggleLLM() {
     useLLM = !useLLM;
     updateLLMButton();
     saveSettings();
+}
+
+// ---- Event Test Panel ----
+let _eventCache = {};
+let _feedbackCache = {};
+
+async function fetchTestEvents() {
+    const panel = document.getElementById('event-test-panel-content');
+    _eventCache = {};
+    try {
+        const resp = await fetch('/api/test/events');
+        const data = await resp.json();
+        if (!data.events || data.events.length === 0) {
+            panel.innerHTML = '<div style="color:#555;font-size:0.8em;padding:4px 0;">暂无事件</div>';
+            return;
+        }
+        panel.innerHTML = data.events.map(ev => {
+            _eventCache[ev.id] = ev;
+            const conds = ev.trigger_conditions || {};
+            let condItems = [];
+            if (conds.required_date) condItems.push(`日期:${conds.required_date}`);
+            if (conds.date_start) condItems.push(`日期:${conds.date_start}~${conds.date_end||'?'}`);
+            if (conds.required_location || conds.location) {
+                const lid = conds.required_location || conds.location;
+                const lname = ev.location_name || lid || '';
+                condItems.push(`位置:${lname||lid}`);
+            }
+            if (conds.required_time_slot) condItems.push(`时段:${conds.required_time_slot}`);
+            if (conds.required_player_char) condItems.push(`角色:${conds.required_player_char}`);
+            const condStr = condItems.join(' · ');
+            const isDynamic = ev.is_dynamic;
+            const isActive = ev.is_active || ev.phase === 'active';
+            const isTriggered = ev.is_active;
+            const typeLabels = { ai_guided_choice: '选择', fixed_story: '固定', silent_fixed: '静默' };
+            const typeLabel = typeLabels[ev.type] || ev.type;
+            const phaseLabels = { pending: '待触发', foreshadowing: '预示', transition: '转场', active: '进行中', expired: '已过期' };
+            const phaseLabel = phaseLabels[ev.phase] || ev.phase;
+            const cardClass = isDynamic ? 'dynamic' : (isActive ? 'active' : '');
+            const tagClass = isDynamic ? 'dynamic' : (isTriggered ? 'triggered' : 'static');
+            const tagText = isDynamic ? '动态' : (isTriggered ? '已触发' : '静态');
+            const locId = conds.required_location || conds.location || '';
+            return `<div class="event-test-card ${cardClass}">
+                <div class="event-test-header">
+                    <span class="event-test-name">
+                        ${escapeHtml(ev.name)}
+                        <span class="tag ${tagClass}">${tagText}</span>
+                        <span style="font-size:0.8em;color:#666;">${typeLabel}·${phaseLabel}</span>
+                    </span>
+                </div>
+                <div class="event-test-conditions">${condStr || '(无条件)'}</div>
+                <div class="event-test-actions">
+                    <button class="event-test-btn primary" onclick="triggerEvent('${ev.id}')" ${isTriggered ? 'disabled' : ''}>
+                        设置条件并触发
+                    </button>
+                    <button class="event-test-btn" onclick="goToLocation('${locId}')" ${locId ? '' : 'disabled'}>
+                        前往此地点
+                    </button>
+                </div>
+                <div id="feedback-${ev.id}" class="event-test-feedback"></div>
+            </div>`;
+        }).join('');
+        // Restore cached feedback messages
+        for (const [id, msg] of Object.entries(_feedbackCache)) {
+            const fb = document.getElementById('feedback-' + id);
+            if (fb) fb.textContent = msg;
+        }
+    } catch (e) {
+        panel.innerHTML = `<div style="color:#a44;font-size:0.8em;">加载失败: ${escapeHtml(e.message)}</div>`;
+    }
+}
+
+async function triggerEvent(eventId) {
+    const ev = _eventCache[eventId];
+    if (!ev) return;
+    const fb = document.getElementById('feedback-' + eventId);
+    if (fb) fb.textContent = '正在调整...';
+    try {
+        const resp = await fetch('/api/test/trigger_event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_id: ev.id,
+                is_dynamic: ev.is_dynamic,
+                trigger_conditions: ev.trigger_conditions || {},
+            }),
+        });
+        const data = await resp.json();
+        if (data.success) {
+            const sc = data.state;
+            const locName = sc.location ? sc.location.name : sc.location_id;
+            const msg = `已调整 → ${sc.game_date} ${sc.time_slot} @ ${locName}`;
+            if (fb) fb.textContent = msg;
+            _feedbackCache[eventId] = msg;
+            setTimeout(() => {
+                refreshGameState();
+                fetchTestEvents();
+            }, 500);
+        } else {
+            if (fb) fb.textContent = '失败: ' + (data.error || '未知错误');
+        }
+    } catch (e) {
+        if (fb) fb.textContent = '请求失败: ' + e.message;
+    }
+}
+
+async function goToLocation(locationId) {
+    if (!locationId) return;
+    // Clear visible narrative immediately
+    const narrativeArea = document.getElementById('narrative-area');
+    if (narrativeArea) narrativeArea.innerHTML = '<div class="narrative-block system"><div class="narrative-text" style="color:#5a5;font-style:italic;">已跳转至新地点，正在清除历史记录...</div></div>';
+    try {
+        const resp = await fetch('/api/test/trigger_event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_id: 'manual',
+                is_dynamic: false,
+                clear_history: true,
+                trigger_conditions: { required_location: locationId },
+            }),
+        });
+        const data = await resp.json();
+        if (data.success) {
+            const cleared = data.applied_changes?.history_cleared || 0;
+            if (narrativeArea) narrativeArea.innerHTML = `<div class="narrative-block system"><div class="narrative-text" style="color:#5a5;font-style:italic;">已跳转至新地点，清除了 ${cleared} 条历史记录。可以开始新的剧情。</div></div>`;
+            setTimeout(() => refreshGameState(), 500);
+        }
+    } catch (e) {
+        console.error('goToLocation failed:', e);
+    }
+}
+
+async function refreshGameState() {
+    try {
+        const resp = await fetch('/api/demo/state');
+        const data = await resp.json();
+        if (data.state) {
+            updateUI(data.state);
+            loadPlayerProfile();
+        }
+    } catch (e) {
+        console.error('refreshGameState failed:', e);
+    }
 }
 
 // ---- Initialize ----
@@ -821,6 +1099,7 @@ async function continueGame() {
         document.getElementById('character-setup').style.display = 'none';
         document.getElementById('app-wrapper').classList.add('active');
         document.getElementById('app').style.display = 'flex';
+        initSmartScroll();
 
         // Restore state
         if (resp.state) updateUI(resp.state);
@@ -840,10 +1119,22 @@ async function continueGame() {
                     area.appendChild(choiceDiv);
                 }
             }
-            area.scrollTop = area.scrollHeight;
+        } else if (resp.opening_narrative) {
+            // New game with class-specific opening — stream it
+            streamNarrative('system', resp.opening_narrative, () => {
+                saveChatHistory(resp.history || []);
+                if (useLLM) document.getElementById('user-input').focus();
+                showChoices([]);
+            });
+            return; // streamNarrative handles the rest asynchronously
         } else {
             // No history, show default intro
-            appendNarrative('system', '欢迎回到高度育成高中。');
+            streamNarrative('system', '欢迎回到高度育成高中。', () => {
+                saveChatHistory(resp.history || []);
+                if (useLLM) document.getElementById('user-input').focus();
+                showChoices([]);
+            });
+            return;
         }
 
         // Save to localStorage
@@ -853,6 +1144,9 @@ async function continueGame() {
         if (useLLM) {
             document.getElementById('user-input').focus();
         }
+
+        // Always show skip button after loading
+        showChoices([]);
     } catch(e) {
         alert('加载存档失败: ' + e.message);
     }
@@ -1032,7 +1326,7 @@ async function confirmStart() {
     }
 
     try {
-        await fetch('/api/game/reset', {
+        const resetResp = await fetch('/api/game/reset', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -1048,16 +1342,33 @@ async function confirmStart() {
         document.getElementById('character-setup').style.display = 'none';
         document.getElementById('app-wrapper').classList.add('active');
         document.getElementById('app').style.display = 'flex';
+        initSmartScroll();
 
-        // Refresh state and send intro
-        const stateResp = await fetch('/api/demo/state').then(r => r.json());
-        updateUI(stateResp);
-        loadPlayerProfile();
-
-        if (useLLM) {
-            await sendInputStream('/intro');
+        // Display class-specific opening narrative — stream it
+        if (resetResp.opening_narrative) {
+            const area = document.getElementById('narrative-area');
+            area.innerHTML = '';
+            streamNarrative('system', resetResp.opening_narrative, async () => {
+                const stateResp2 = await fetch('/api/demo/state').then(r => r.json());
+                updateUI(stateResp2);
+                loadPlayerProfile();
+                if (useLLM) {
+                    await sendInputStream('/intro');
+                } else {
+                    streamNarrative('system', `欢迎来到高度育成高中。你是${matchedCharacter.class_name || 'D'}班的新生${matchedCharacter.name}。`);
+                }
+            });
         } else {
-            appendNarrative('system', `欢迎来到高度育成高中。你是${matchedCharacter.class_name || 'D'}班的新生${matchedCharacter.name}。`);
+            // Refresh state and send intro
+            const stateResp = await fetch('/api/demo/state').then(r => r.json());
+            updateUI(stateResp);
+            loadPlayerProfile();
+
+            if (useLLM) {
+                await sendInputStream('/intro');
+            } else {
+                streamNarrative('system', `欢迎来到高度育成高中。你是${matchedCharacter.class_name || 'D'}班的新生${matchedCharacter.name}。`);
+            }
         }
     } catch(e) {
         alert('启动游戏失败: ' + e.message);
@@ -1138,7 +1449,7 @@ async function sendInputNormal(userText) {
             lastStateData.choices = data.choices;
         }
 
-        if (data.choices && data.choices.length > 0) showChoices(data.choices);
+        showChoices(data.choices || []);
 
         // Save to localStorage
         const history = loadChatHistory();
@@ -1192,6 +1503,7 @@ async function sendInputStream(userText) {
                         } else {
                             block.innerHTML = '[空响应，请重试]';
                         }
+                        smartScrollToBottom();
                         accumulatedRaw = '';
                         updateUI(data.state || {});
 
@@ -1203,7 +1515,7 @@ async function sendInputStream(userText) {
                             lastStateData.choices = data.choices;
                         }
 
-                        if (data.choices && data.choices.length > 0) showChoices(data.choices);
+                        showChoices(data.choices || []);
                         lastDebug = data.debug;
                         if (testMode && lastDebug) insertDebugBlocks(dialogueRoundCounter, lastDebug);
 
@@ -1234,11 +1546,11 @@ async function sendInputStream(userText) {
                         // Don't show snippets that look like raw JSON beginnings
                         if (extracted && !extracted.startsWith('{') && !extracted.startsWith('[')) {
                             block.innerHTML = escapeHtml(extracted).replace(/\n/g, '<br>');
+                            smartScrollToBottom();
                         } else if (!extracted) {
                             // Show subtle "thinking" dots instead of raw JSON
                             block.innerHTML = '<span style="color:#6070a0">...</span>';
                         }
-                        document.getElementById('narrative-area').scrollTop = document.getElementById('narrative-area').scrollHeight;
                     } else if (data.error) {
                         block.innerHTML += '<br>[' + escapeHtml(data.error) + ']';
                     }
@@ -1285,8 +1597,6 @@ function insertDebugBlocks(roundLabel, debug) {
     rawDiv.className = 'debug-block';
     rawDiv.innerHTML = `<button class="debug-toggle" onclick="this.nextElementSibling.classList.toggle('open')">▶ 原始JSON返回</button><div class="debug-content">${escapeHtml(debug.raw_json)}</div>`;
     area.appendChild(rawDiv);
-
-    area.scrollIntoView({behavior: 'smooth', block: 'nearest'});
 }
 
 function escapeHtml(str) {
@@ -1393,7 +1703,6 @@ async function viewPerspective(npcName) {
                     } else if (data.token) {
                         accumulated += data.token;
                         narrativeDiv.textContent = accumulated;
-                        narrativeArea.scrollTop = narrativeArea.scrollHeight;
                     } else if (data.error) {
                         narrativeDiv.textContent = '[错误] ' + data.error;
                         document.getElementById('loading').classList.remove('active');
@@ -1480,10 +1789,60 @@ async function sendChoice(choiceId, choiceText) {
                 lastStateData.choices = data.choices;
             }
 
-            if (data.choices && data.choices.length > 0) showChoices(data.choices);
+            showChoices(data.choices || []);
 
             const history = loadChatHistory();
             history.push({user_input: '[选择] ' + choiceText, narrative: data.narrative, choices: data.choices || []});
+            saveChatHistory(history);
+
+            perspectiveMode = false;
+        } catch(e) {
+            appendNarrative('system', '[错误] 服务器连接失败。');
+        }
+    }
+
+    document.getElementById('send-btn').disabled = false;
+    document.getElementById('loading').classList.remove('active');
+    isLoading = false;
+}
+
+// ---- Skip to Next Day ----
+async function sendSkipDay() {
+    if (isLoading) return;
+    isLoading = true;
+    document.getElementById('send-btn').disabled = true;
+    document.getElementById('loading').classList.add('active');
+    clearChoices();
+    // Clean up any lingering perspective result
+    const oldPersp = document.getElementById('perspective-result');
+    if (oldPersp) oldPersp.remove();
+    perspectiveMode = false;
+    appendNarrative('user', '[快进到明天]');
+
+    if (useLLM) {
+        await sendInputStream('/skip_day');
+    } else {
+        try {
+            const resp = await fetch('/api/demo/act', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({user_input: '/skip_day', use_llm: false, max_tokens: maxTokens}),
+            });
+            const data = await resp.json();
+            appendNarrative('story', data.narrative);
+            updateUI(data);
+
+            lastPlayerInput = '/skip_day';
+            lastNarrative = data.narrative || '';
+            lastStateData = data;
+            if (data.choices && data.choices.length > 0) {
+                lastStateData.choices = data.choices;
+            }
+
+            showChoices(data.choices || []);
+
+            const history = loadChatHistory();
+            history.push({user_input: '/skip_day', narrative: data.narrative, choices: data.choices || []});
             saveChatHistory(history);
 
             perspectiveMode = false;
@@ -1503,7 +1862,27 @@ function updateUI(data) {
         document.getElementById('time-display').textContent = data.time_display;
     }
     if (data.location && data.location.name) {
-        document.getElementById('location-display').textContent = data.location.name;
+        const zoneName = data.location.zone_name || '';
+        const locName = data.location.name;
+        document.getElementById('location-display').textContent = zoneName ? `${zoneName} > ${locName}` : locName;
+
+        // Update scene background
+        if (data.location.scene_image) {
+            const bgUrl = `/static/images/scenes/${data.location.scene_image}`;
+            document.body.style.backgroundImage = `url('${bgUrl}')`;
+        } else {
+            document.body.style.backgroundImage = '';
+        }
+    }
+
+    // Show/hide portrait panel
+    const portraitPanel = document.getElementById('portrait-panel');
+    if (portraitPanel) {
+        if (data.player_name && data.location) {
+            portraitPanel.style.display = 'flex';
+        } else if (!data.player_name) {
+            portraitPanel.style.display = 'none';
+        }
     }
     if (data.player_state) {
         document.getElementById('class-pts').textContent = data.player_state.class_points || 0;
@@ -1512,13 +1891,30 @@ function updateUI(data) {
         document.getElementById('class-pts').textContent = data.class_points || 0;
         document.getElementById('private-pts').textContent = (data.private_points || 0).toLocaleString();
     }
+    const allNpcNames = [];
     if (data.spotlight_npcs && data.spotlight_npcs.length > 0) {
-        document.getElementById('npcs-present').textContent = data.spotlight_npcs.map(n => n.name).join('、');
+        allNpcNames.push(...data.spotlight_npcs.map(n => n.name));
+    }
+    if (data.background_npcs && data.background_npcs.length > 0) {
+        allNpcNames.push(...data.background_npcs.map(n => n.name));
+    }
+    if (allNpcNames.length > 0) {
+        document.getElementById('npcs-present').textContent = allNpcNames.join('、');
     } else {
         document.getElementById('npcs-present').textContent = '无';
     }
     if (data.location && data.location.connected_to) {
-        document.getElementById('connected-area').innerHTML = data.location.connected_to.map(id => `<span class="connected-tag">${id}</span>`).join('');
+        const currentZone = data.location.parent_zone;
+        const names = data.location.connected_names || {};
+        document.getElementById('connected-area').innerHTML = data.location.connected_to.map(id => {
+            const info = names[id] || {name: id, zone_name: ''};
+            // Cross-zone connections get a highlighted style
+            const isCrossZone = currentZone && info.zone_name && info.zone_name !== data.location.zone_name;
+            const cls = isCrossZone ? 'connected-tag cross-zone' : 'connected-tag';
+            const label = info.zone_name && info.zone_name !== data.location.zone_name
+                ? `${info.zone_name}·${info.name}` : info.name;
+            return `<span class="${cls}" onclick="goToLocation('${id}')" title="点击前往">→ ${label}</span>`;
+        }).join('');
     }
     const eventPanel = document.getElementById('event-panel-content');
     if (data.active_events && data.active_events.length > 0) {
@@ -1540,12 +1936,48 @@ function appendNarrativeBlock(type, text) {
     // Escape HTML entities, then convert newlines to <br>
     div.innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
     area.appendChild(div);
-    area.scrollTop = area.scrollHeight;
+    smartScrollToBottom();
     return div;
 }
 
 function appendNarrative(type, text) {
     appendNarrativeBlock(type, text);
+}
+
+// Stream text character by character like LLM output
+function streamNarrative(type, text, onDone, speedMs) {
+    const area = document.getElementById('narrative-area');
+    const div = document.createElement('div');
+    div.className = `narrative-block ${type}`;
+    div.style.whiteSpace = 'pre-line';
+    area.appendChild(div);
+
+    const charsPerTick = 3;
+    const tickMs = speedMs || 18;
+    const escaped = escapeHtml(text);
+    let pos = 0;
+    let htmlBuf = '';
+
+    function tick() {
+        // Advance by charsPerTick, respecting newlines
+        let added = 0;
+        while (added < charsPerTick && pos < escaped.length) {
+            htmlBuf += escaped[pos];
+            pos++;
+            added++;
+        }
+        div.innerHTML = htmlBuf.replace(/\n/g, '<br>');
+        smartScrollToBottom();
+
+        if (pos < escaped.length) {
+            setTimeout(tick, tickMs);
+        } else {
+            if (onDone) onDone();
+        }
+    }
+
+    tick();
+    return div;
 }
 
 function toggleChoices() {
@@ -1563,32 +1995,42 @@ function toggleChoices() {
 }
 
 function showChoices(choices) {
-    currentChoices = choices;
+    currentChoices = choices || [];
     const area = document.getElementById('choices-area');
     area.innerHTML = '';
 
-    // Toggle button to collapse/expand
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'choices-toggle';
-    toggleBtn.textContent = '▼ 折叠选项';
-    toggleBtn.onclick = toggleChoices;
-    area.appendChild(toggleBtn);
+    // Always render the skip-to-tomorrow button
+    const skipBtn = document.createElement('button');
+    skipBtn.className = 'skip-day-btn';
+    skipBtn.textContent = '快进到明天';
+    skipBtn.onclick = () => sendSkipDay();
+    area.appendChild(skipBtn);
 
-    // Wrapper for all collapsible choice/perspective buttons
-    const wrapper = document.createElement('div');
-    wrapper.id = 'choices-collapsible';
+    // Render LLM-generated choices if any
+    if (choices && choices.length > 0) {
+        // Toggle button to collapse/expand
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'choices-toggle';
+        toggleBtn.textContent = '▼ 折叠选项';
+        toggleBtn.onclick = toggleChoices;
+        area.appendChild(toggleBtn);
 
-    choices.forEach(c => {
-        const btn = document.createElement('button');
-        btn.className = 'choice-btn';
-        btn.textContent = `[${c.id}] ${c.text}`;
-        btn.onclick = () => sendChoice(c.id, c.text);
-        wrapper.appendChild(btn);
-    });
-    area.appendChild(wrapper);
+        // Wrapper for all collapsible choice/perspective buttons
+        const wrapper = document.createElement('div');
+        wrapper.id = 'choices-collapsible';
 
-    // Append perspective NPC buttons inside the wrapper (so they collapse too)
-    renderPerspectiveNPCButtons(wrapper);
+        choices.forEach(c => {
+            const btn = document.createElement('button');
+            btn.className = 'choice-btn';
+            btn.textContent = `[${c.id}] ${c.text}`;
+            btn.onclick = () => sendChoice(c.id, c.text);
+            wrapper.appendChild(btn);
+        });
+        area.appendChild(wrapper);
+
+        // Append perspective NPC buttons inside the wrapper (so they collapse too)
+        renderPerspectiveNPCButtons(wrapper);
+    }
 }
 
 function clearChoices() {
@@ -1602,8 +2044,24 @@ async function loadPlayerProfile() {
         const resp = await fetch('/api/game/player_profile').then(r => r.json());
         if (resp.error) { console.warn('Profile:', resp.error); return; }
         renderPlayerProfile(resp);
+        updatePortrait(resp);
     } catch(e) {
         console.warn('Profile load failed:', e.message);
+    }
+}
+
+function updatePortrait(profileData) {
+    const panel = document.getElementById('portrait-panel');
+    const img = document.getElementById('portrait-img');
+    if (!panel || !img) return;
+    if (profileData && profileData.portrait_image) {
+        img.src = `/static/images/characters/${profileData.portrait_image}`;
+        img.style.display = 'block';
+        panel.style.display = 'flex';
+    } else {
+        img.src = '';
+        img.style.display = 'none';
+        panel.style.display = 'none';
     }
 }
 
@@ -1616,7 +2074,10 @@ function renderPlayerProfile(p) {
     html += '<button class="char-info-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\')"><span class="arrow">▼</span>基本信息</button>';
     html += '<div class="char-info-body open">';
     html += '<div class="char-info-stats">';
+    html += `<div class="stat-row"><span class="label">姓名</span><span>${escapeHtml(p.name || '?')}</span></div>`;
     html += `<div class="stat-row"><span class="label">班级</span><span>${escapeHtml(p.class_name)}班</span></div>`;
+    const genderLabel = {male: '男', female: '女'};
+    html += `<div class="stat-row"><span class="label">性别</span><span>${genderLabel[p.gender] || p.gender || '?'}</span></div>`;
     html += `<div class="stat-row"><span class="label">私人点数</span><span>${(p.private_points || 0).toLocaleString()}</span></div>`;
     const habitLabels = {frugal: '节俭', socialite: '交际', normal: '普通', 'gamer/otaku': '娱乐宅'};
     html += `<div class="stat-row"><span class="label">消费习惯</span><span>${habitLabels[p.spending_habit] || p.spending_habit}</span></div>`;

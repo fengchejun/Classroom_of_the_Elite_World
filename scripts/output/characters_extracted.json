@@ -35,14 +35,24 @@
           "info_id": "ayanokoji_hidden_ability",
           "content": "绫小路清隆拥有远超常人的身体能力与智力，但他刻意隐藏这一切，只想度过平凡的校园生活。",
           "known_by": [
-            "ayanokoji_kiyotaka"
+            "ayanokoji_kiyotaka",
+            "sakayanagi_arisu"
           ]
         },
         {
           "info_id": "ayanokoji_white_room",
           "content": "绫小路清隆是「白屋」（White Room）的产物，从小接受极端精英教育，是第四期生中唯一的幸存者。他来到这所学校是为了逃离父亲的掌控，获得自由。",
           "known_by": [
-            "ayanokoji_kiyotaka"
+            "ayanokoji_kiyotaka",
+            "sakayanagi_arisu"
+          ]
+        },
+        {
+          "info_id": "ayanokoji_emotion",
+          "content": "绫小路清隆最大的缺陷是没有感情，他把所有人视为棋子，不会对任何人产生情感，即使有，也是伪装出来的。",
+          "known_by": [
+            "ayanokoji_kiyotaka",
+            "sakayanagi_arisu"
           ]
         }
       ],
@@ -84,7 +94,9 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": "绫小路清隆.png"
     },
     {
       "name": "堀北铃音",
@@ -147,7 +159,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "frugal"
+      "spending_habit": "frugal",
+      "dorm_room_id": "dorm_room_0701",
+      "gender": "female",
+      "portrait_image": "堀北铃音.png"
     },
     {
       "name": "栉田桔梗",
@@ -205,7 +220,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "dorm_room_id": "dorm_room_0702",
+      "gender": "female",
+      "portrait_image": "栉田桔梗.png"
     },
     {
       "name": "须藤健",
@@ -260,7 +278,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0101",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "池宽治",
@@ -310,7 +331,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0102",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "山内春树",
@@ -360,7 +384,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0103",
+      "gender": "male",
+      "portrait_image": "山内春树.png"
     },
     {
       "name": "平田洋介",
@@ -418,7 +445,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0104",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "高圆寺六助",
@@ -460,13 +490,16 @@
       ],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "frugal"
+      "spending_habit": "frugal",
+      "dorm_room_id": "dorm_room_0105",
+      "gender": "male",
+      "portrait_image": "高圆寺六助.png"
     },
     {
       "name": "茶柱佐枝",
       "role_id": "chabashira_sae",
       "class_name": "D",
-      "enrollment_year": "2024",
+      "enrollment_year": "N/A",
       "traits": [
         "严格",
         "冷漠",
@@ -513,7 +546,9 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "female",
+      "portrait_image": "茶柱佐枝.png"
     },
     {
       "name": "堀北学",
@@ -558,7 +593,9 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "轻井泽惠",
@@ -606,7 +643,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "dorm_room_id": "dorm_room_0703",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "佐仓爱里",
@@ -648,7 +688,10 @@
       ],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "frugal"
+      "spending_habit": "frugal",
+      "dorm_room_id": "dorm_room_0704",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "长谷部波瑠加",
@@ -682,7 +725,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0705",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "一之濑帆波",
@@ -730,7 +776,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "dorm_room_id": "dorm_room_0801",
+      "gender": "female",
+      "portrait_image": "一之濑帆波.png"
     },
     {
       "name": "山胁",
@@ -760,7 +809,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0201",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "井之头心",
@@ -789,7 +841,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0802",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "本堂",
@@ -817,7 +872,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0202",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "小野寺",
@@ -845,7 +903,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0803",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "外村",
@@ -880,13 +941,16 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0203",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "星之宫知惠",
       "role_id": "hoshinomiya_chie",
       "class_name": "B",
-      "enrollment_year": "2024",
+      "enrollment_year": "N/A",
       "traits": [
         "温柔",
         "神秘",
@@ -928,7 +992,9 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "神崎隆二",
@@ -968,7 +1034,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0204",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "龙园翔",
@@ -1021,7 +1090,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0205",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "石崎大地",
@@ -1060,7 +1132,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0301",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "橘茜",
@@ -1099,7 +1174,9 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "筱原皋月",
@@ -1133,7 +1210,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0804",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "幸村辉彦",
@@ -1167,7 +1247,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0302",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "伊吹澪",
@@ -1207,7 +1290,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0805",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "葛城康平",
@@ -1247,7 +1333,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0303",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "弥彦",
@@ -1276,13 +1365,16 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0304",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "真嶋老师",
       "role_id": "majima_sensei",
       "class_name": "A",
-      "enrollment_year": "2024",
+      "enrollment_year": "N/A",
       "traits": [
         "严谨",
         "严厉",
@@ -1308,7 +1400,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "外村秀雄",
@@ -1339,7 +1433,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "gamer/otaku"
+      "spending_habit": "gamer/otaku",
+      "dorm_room_id": "dorm_room_0305",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "真锅志保",
@@ -1369,7 +1466,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0901",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "町田浩二",
@@ -1399,7 +1499,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0401",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "滨口哲也",
@@ -1432,7 +1535,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0402",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "柴田飒",
@@ -1465,7 +1571,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "dorm_room_id": "dorm_room_0403",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "南云雅",
@@ -1504,9 +1613,10 @@
           "reason": "二年级A班学生，学生会副会长。南云对堀北学的权威持挑战态度，有取而代之的野心。"
         }
       ],
-      "status_note": "二年级学生，锚点时的存在感低",
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "佐藤麻耶",
@@ -1540,7 +1650,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "dorm_room_id": "dorm_room_0902",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "坂柳有栖",
@@ -1582,7 +1695,10 @@
       ],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0903",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "桐山生",
@@ -1611,7 +1727,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "神室真澄",
@@ -1641,7 +1759,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0904",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "长谷部波琉加",
@@ -1670,7 +1791,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0905",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "松下",
@@ -1698,7 +1822,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1001",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "石崎",
@@ -1727,7 +1854,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0404",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "阿尔伯特",
@@ -1758,7 +1888,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0405",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "真锅",
@@ -1786,7 +1919,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1002",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "桥本正义",
@@ -1820,7 +1956,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0501",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "椎名日和",
@@ -1859,7 +1998,10 @@
         }
       ],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1003",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "三宅明人",
@@ -1892,7 +2034,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0502",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "宝泉和臣",
@@ -1923,7 +2068,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "七濑翼",
@@ -1957,7 +2104,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "天泽一夏",
@@ -1991,7 +2140,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "八神拓也",
@@ -2025,7 +2176,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "月城",
@@ -2059,7 +2212,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "鬼龙院枫花",
@@ -2093,7 +2248,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "frugal"
+      "spending_habit": "frugal",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "桐山",
@@ -2124,7 +2281,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "白波千寻",
@@ -2155,7 +2314,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1004",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "小桥梦",
@@ -2186,7 +2348,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "dorm_room_id": "dorm_room_1005",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "竹本",
@@ -2217,7 +2382,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0503",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "宝泉和彦",
@@ -2248,7 +2416,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "司马老师",
@@ -2279,7 +2449,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "三木谷",
@@ -2310,7 +2482,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "椿樱子",
@@ -2340,7 +2514,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "朝比奈荠",
@@ -2369,7 +2545,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "socialite"
+      "spending_habit": "socialite",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "姬野",
@@ -2399,7 +2577,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1101",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "坂柳成守",
@@ -2430,7 +2611,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "鸭川",
@@ -2461,7 +2644,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "铃悬锻冶",
@@ -2492,7 +2677,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "美香",
@@ -2523,7 +2710,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "直江老师",
@@ -2554,7 +2743,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "鬼岛老师",
@@ -2585,7 +2776,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "石上京",
@@ -2616,7 +2809,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "雪",
@@ -2647,7 +2842,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "田渊",
@@ -2678,7 +2875,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "宗谷",
@@ -2709,7 +2908,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "石田",
@@ -2740,7 +2941,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "天泽社长",
@@ -2771,7 +2974,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "石上五郎",
@@ -2802,7 +3007,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "神崎智弘",
@@ -2832,7 +3039,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "雪的父亲",
@@ -2862,7 +3071,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "桐山龙二",
@@ -2893,7 +3104,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "姬野雪",
@@ -2924,7 +3137,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1102",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "石上优",
@@ -2955,7 +3171,9 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "西野武子",
@@ -2977,7 +3195,10 @@
       "relations": [],
       "status_at_anchor": "未登场",
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1103",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "鬼头隼",
@@ -2999,7 +3220,10 @@
       "relations": [],
       "status_at_anchor": "未登场",
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0504",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "真田康生",
@@ -3028,7 +3252,10 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_0505",
+      "gender": "male",
+      "portrait_image": ""
     },
     {
       "name": "山村美纪",
@@ -3057,12 +3284,15 @@
       "secrets": [],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1104",
+      "gender": "female",
+      "portrait_image": ""
     },
     {
       "name": "松下千秋",
       "role_id": "matsushita_chiaki",
-      "class_name": "B",
+      "class_name": "D",
       "enrollment_year": "2024",
       "traits": [
         "聪明",
@@ -3072,21 +3302,26 @@
       "public_info": [
         {
           "label": "外貌",
-          "content": "黑色长发，气质冷静。"
+          "content": "棕色长发，气质冷静美丽。"
         },
         {
           "label": "身份",
-          "content": "二年B班学生，堀北班的成员。"
+          "content": "一年D班学生，惠的女生团体的一员"
         },
         {
           "label": "性格",
           "content": "聪明且谨慎，善于观察。"
         }
       ],
-      "secrets": [],
+      "secrets": [
+        {}
+      ],
       "relations": [],
       "private_points": 100000,
-      "spending_habit": "normal"
+      "spending_habit": "normal",
+      "dorm_room_id": "dorm_room_1105",
+      "gender": "female",
+      "portrait_image": ""
     }
   ]
 }
